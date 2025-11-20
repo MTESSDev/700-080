@@ -2,6 +2,7 @@
 
 workflows:
   - id: bail53000
+    # Rôles du WF
     roles:
       - id: locateurPrincipal
         label: 
@@ -12,8 +13,10 @@ workflows:
       - id: locataire
         label: 
           fr: "Locataire"
-
+    # Étapes du WF
     etapes:
+      # Étape initiale (le locateur principal rempli le form)
+      # Quand terminé on passe à l'étape contribution pour les rôles locataire et autreSignataire (TODO)
       - id: initial
         label: 
           fr: Initial
@@ -24,7 +27,14 @@ workflows:
               options: 
                   role: locataire
                   vers: contribution
+                  chargerCourrielsWorkflow: true   
+                  modeBoutonTesterTransmission: simuler
+            - tache: interventionParticipant
+              options: 
+                  role: locateurPrincipal
+                  vers: validation
                   chargerCourrielsWorkflow: true
+                  modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.  
 
             - tache: envoyerCourrielParticipant
               options: 
@@ -32,70 +42,82 @@ workflows:
                   gabarit: demandeContribution
                   #conditionsEt:
                   #  - condition: '=='
-                        
+            - tache: envoyerCourrielParticipant
+              options: 
+                  role: locateurPrincipal
+                  gabarit: suiviBail
+                  modeBoutonTesterTransmission: simuler
+
+      # Étape de contribution (les locataires et autres signataires prennent connaissance du bail et complètent leur partie)
+      # Quand terminé on passe à l'étape validation par locateur
       - id: contribution
         label: 
           fr: Contribution
           en: Contribution      
         evenements:
           quandLeDernierTransmet:
-            - tache: interventionParticipant
-              options: 
-                  role: locateurPrincipal
-                  vers: validationPrincipal
-                  chargerCourrielsWorkflow: true
-
             - tache: envoyerCourrielParticipant
               options: 
                   role: locateurPrincipal
                   gabarit: demandeValidationPrincipal
+                  modeBoutonTesterTransmission: simuler
                   #conditionsEt:
                   #  - condition: '=='
 
-      - id: validationPrincipal
+      # Étape de validation (le locataire principal valide le bail complété par toutes les parties)
+      # Quand terminé on passe à l'étape signature globale (toutes les parties sauf locateur principal)
+      - id: validation
         label: 
           fr: Validation par le locateur principal
           en: TODO english Validation par le locateur principal
         evenements:
-          quandLeDernierTransmet:
+          quandLeDernierTransmet:            
+            - tache: interventionParticipant
+              options: 
+                  role: locateurPrincipal
+                  vers: transmission
+                  chargerCourrielsWorkflow: true
+                  modeBoutonTesterTransmission: simuler
             - tache: interventionParticipant
               options: 
                   role: locateur
                   vers: validationSignatureGlobal
                   chargerCourrielsWorkflow: true
-
+                  modeBoutonTesterTransmission: simuler
             - tache: interventionParticipant
               options: 
                   role: locataire
                   vers: validationSignatureGlobal
                   chargerCourrielsWorkflow: true
+                  modeBoutonTesterTransmission: simuler
 
             - tache: envoyerCourrielParticipant
               options: 
                   role: locateur
                   gabarit: demandeValidationSignatureGlobal
-
+                  modeBoutonTesterTransmission: simuler
             - tache: envoyerCourrielParticipant
               options: 
                   role: locataire
                   gabarit: demandeValidationSignatureGlobal
-      
+                  modeBoutonTesterTransmission: simuler
+            - tache: envoyerCourrielParticipant
+              options: 
+                  role: locateurPrincipal
+                  gabarit: demandeTransmission
+                  modeBoutonTesterTransmission: simuler
+                  
       - id: validationSignatureGlobal
         label: 
           fr: Validation et signature global
           en: TODO english Validation et signature global
         evenements:
           quandLeDernierTransmet:
-            - tache: interventionParticipant
-              options: 
-                  role: locateurPrincipal
-                  vers: transmission
-                  chargerCourrielsWorkflow: true
-
             - tache: envoyerCourrielParticipant
               options: 
                   role: locateurPrincipal
                   gabarit: demandeTransmission
+                  modeBoutonTesterTransmission: simuler
                   #conditionsEt:
                   #  - condition: '=='
 
@@ -105,10 +127,46 @@ workflows:
           en: TODO english Transmission
         evenements:
           quandQuelqunTransmet:
-             - tache: envoyerCourriel
-               options: 
-                   gabarit: finFinal
-
+            - tache: genererPDF
+            - tache: traiterDocumentsSoumis
+            - tache: ajouterEstampille
+            - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
+              options: 
+                  role: locateurPrincipal
+                  gabarit: confirmationBailLocateur
+                  modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.
+                  filtresDocuments:
+                    - typeFiltre: tacheSource
+                      valeurs: genererPDF     
+            - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
+              options: 
+                  role: locateur
+                  gabarit: confirmationBailLocateur
+                  modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.
+                  filtresDocuments:
+                    - typeFiltre: tacheSource
+                      valeurs: genererPDF   
+            - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
+              options: 
+                  role: locataire
+                  gabarit: confirmationBailLocataire
+                  modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.
+                  filtresDocuments:
+                    - typeFiltre: tacheSource
+                      valeurs: genererPDF                          
+####
+# Contribution ok + autres locateurs ET Validation locateur (résumé + sommaire) tu peux suivre, les gens ont signé tu peux valider
+# 
+# Locateur valide on part la signature à TOUS sauf locateur principal résumé signatures. Quand tous fini, on passe en signatureFinale
+#
+# Locateur principal recoit courriel pour signer
+#
+#
+#
+#
+#
+#
+####
 
 gabaritsCourriels:
   - id: demandeContribution
@@ -124,6 +182,19 @@ gabaritsCourriels:
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
     corps: |
       <p>Cliquez ici pour démarrer l'étape de contribution : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>contribuer</a> - {{envoyerCourriel.profilCourant.courriel}}</p>
+  - id: suiviBail
+    # Liste des destinataires (peut être une liste)
+    #a:
+    #  tous: 
+    #    - '{{participantCourrant.courriel}}'
+    # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
+    nomExpediteur: De nouveaux locataires
+    # Permet de spécifier l'adresse de retour
+    # L'objet du courriel peut contenir des parties variables
+    objet: Suivre l'évolution de votre bail
+    # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
+    corps: |
+      <p>Cliquez ici pour accéder au suivi de votre bail : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>Suivi du bail</a> - {{envoyerCourriel.profilCourant.courriel}}</p>
   - id: demandeValidationPrincipal
     # Liste des destinataires (peut être une liste)
     #a:
@@ -136,7 +207,7 @@ gabaritsCourriels:
     objet: Valider les informations fournies par les participants et transmettre pour signature
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
     corps: |
-      <p>Cliquez ici pour démarrer l'étape de signature : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>vérifier et signer le bail</a> - {{envoyerCourriel.profilCourant.courriel}}</p>
+      <p>Cliquez ici pour démarrer l'étape de validation : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>Valider les informations</a> - {{envoyerCourriel.profilCourant.courriel}}</p>
   - id: demandeValidationSignatureGlobal
     # Liste des destinataires (peut être une liste)
     #a:
@@ -162,4 +233,40 @@ gabaritsCourriels:
     objet: Payer et transmettre le bail
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
     corps: |
-      <p>Cliquez ici pour démarrer l'étape de signature : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>vérifier et signer le bail</a> - {{envoyerCourriel.profilCourant.courriel}}</p>
+      <p>Cliquez ici pour démarrer l'étape de paiement et transmission : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>Terminer le bail</a> - {{envoyerCourriel.profilCourant.courriel}}</p>
+  - id: confirmationBailLocateur
+    # Liste des destinataires (peut être une liste)
+    #a:
+    #  tous: 
+    #    - '{{participantCourrant.courriel}}'
+    # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
+    nomExpediteur: Confirmation de transmission
+    # Permet de spécifier l'adresse de retour
+    # L'objet du courriel peut contenir des parties variables
+    objet: Votre bail complété (locateur)
+    # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
+    corps: |
+        Bonjour, <br> Voici une copie du bail complété pour les locateurs.
+        <ul>
+          {{#listePJ}}
+        <li><a href="{{url}}">{{nomOriginal}}</a></li>
+          {{/listePJ}}
+        </ul>    
+  - id: confirmationBailLocataire
+    # Liste des destinataires (peut être une liste)
+    #a:
+    #  tous: 
+    #    - '{{participantCourrant.courriel}}'
+    # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
+    nomExpediteur: Confirmation de transmission
+    # Permet de spécifier l'adresse de retour
+    # L'objet du courriel peut contenir des parties variables
+    objet: Votre bail complété (locataires)
+    # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
+    corps: |
+        Bonjour, <br> Voici une copie du bail complété pour les locataires.
+        <ul>
+          {{#listePJ}}
+        <li><a href="{{url}}">{{nomOriginal}}</a></li>
+          {{/listePJ}}
+        </ul>    

@@ -12,8 +12,8 @@ config:
   piv:
     entete:
       nomSiteMOLigne1: 
-        fr: Tribunal administratif du logement
-        en: Tribunal administratif du logement
+        fr: TEST Tribunal administratif du logement
+        en: TEST Tribunal administratif du logement
       nomSiteMOLigne2:
         fr: 
     piedPage:
@@ -2752,6 +2752,9 @@ form:
 
           components:
             - type: suiviEtapesWF
+              label: 
+                fr: Résumé du processus de contribution des locataires
+                en: (en)Résumé du processus de contribution des locataires
               etapesVisibles: contribution              
               templateDescriptionRoleParticipant: "{{#nom}}{{nom}}{{/nom}}"              
 
