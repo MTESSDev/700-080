@@ -1,0 +1,165 @@
+# yaml-language-server: $schema=C:/Users/gagsa09/source/repos/SPFS-FRW/SPFS-FRW-Configuration/out/FRW-transmission.schema.json
+
+workflows:
+  - id: bail53000
+    roles:
+      - id: locateurPrincipal
+        label: 
+          fr: "Locateur principal"
+      - id: locateur
+        label: 
+          fr: "Locateur"
+      - id: locataire
+        label: 
+          fr: "Locataire"
+
+    etapes:
+      - id: initial
+        label: 
+          fr: Initial
+          en: Initial      
+        evenements:
+          quandQuelqunTransmet:
+            - tache: interventionParticipant
+              options: 
+                  role: locataire
+                  vers: contribution
+                  chargerCourrielsWorkflow: true
+
+            - tache: envoyerCourrielParticipant
+              options: 
+                  role: locataire
+                  gabarit: demandeContribution
+                  #conditionsEt:
+                  #  - condition: '=='
+                        
+      - id: contribution
+        label: 
+          fr: Contribution
+          en: Contribution      
+        evenements:
+          quandLeDernierTransmet:
+            - tache: interventionParticipant
+              options: 
+                  role: locateurPrincipal
+                  vers: validationPrincipal
+                  chargerCourrielsWorkflow: true
+
+            - tache: envoyerCourrielParticipant
+              options: 
+                  role: locateurPrincipal
+                  gabarit: demandeValidationPrincipal
+                  #conditionsEt:
+                  #  - condition: '=='
+
+      - id: validationPrincipal
+        label: 
+          fr: Validation par le locateur principal
+          en: TODO english Validation par le locateur principal
+        evenements:
+          quandLeDernierTransmet:
+            - tache: interventionParticipant
+              options: 
+                  role: locateur
+                  vers: validationSignatureGlobal
+                  chargerCourrielsWorkflow: true
+
+            - tache: interventionParticipant
+              options: 
+                  role: locataire
+                  vers: validationSignatureGlobal
+                  chargerCourrielsWorkflow: true
+
+            - tache: envoyerCourrielParticipant
+              options: 
+                  role: locateur
+                  gabarit: demandeValidationSignatureGlobal
+
+            - tache: envoyerCourrielParticipant
+              options: 
+                  role: locataire
+                  gabarit: demandeValidationSignatureGlobal
+      
+      - id: validationSignatureGlobal
+        label: 
+          fr: Validation et signature global
+          en: TODO english Validation et signature global
+        evenements:
+          quandLeDernierTransmet:
+            - tache: interventionParticipant
+              options: 
+                  role: locateurPrincipal
+                  vers: transmission
+                  chargerCourrielsWorkflow: true
+
+            - tache: envoyerCourrielParticipant
+              options: 
+                  role: locateurPrincipal
+                  gabarit: demandeTransmission
+                  #conditionsEt:
+                  #  - condition: '=='
+
+      - id: transmission
+        label: 
+          fr: Transmission
+          en: TODO english Transmission
+        evenements:
+          quandQuelqunTransmet:
+             - tache: envoyerCourriel
+               options: 
+                   gabarit: finFinal
+
+
+gabaritsCourriels:
+  - id: demandeContribution
+    # Liste des destinataires (peut être une liste)
+    #a:
+    #  tous: 
+    #    - '{{participantCourrant.courriel}}'
+    # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
+    nomExpediteur: Un gentil locateur
+    # Permet de spécifier l'adresse de retour
+    # L'objet du courriel peut contenir des parties variables
+    objet: Veuillez réviser et compléter votre bail de logement
+    # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
+    corps: |
+      <p>Cliquez ici pour démarrer l'étape de contribution : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>contribuer</a> - {{envoyerCourriel.profilCourant.courriel}}</p>
+  - id: demandeValidationPrincipal
+    # Liste des destinataires (peut être une liste)
+    #a:
+    #  tous: 
+    #    - '{{participantCourrant.courriel}}'
+    # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
+    nomExpediteur: De nouveaux locataires
+    # Permet de spécifier l'adresse de retour
+    # L'objet du courriel peut contenir des parties variables
+    objet: Valider les informations fournies par les participants et transmettre pour signature
+    # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
+    corps: |
+      <p>Cliquez ici pour démarrer l'étape de signature : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>vérifier et signer le bail</a> - {{envoyerCourriel.profilCourant.courriel}}</p>
+  - id: demandeValidationSignatureGlobal
+    # Liste des destinataires (peut être une liste)
+    #a:
+    #  tous: 
+    #    - '{{participantCourrant.courriel}}'
+    # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
+    nomExpediteur: Signature globale
+    # Permet de spécifier l'adresse de retour
+    # L'objet du courriel peut contenir des parties variables
+    objet: Vérifier et signer le bail
+    # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
+    corps: |
+      <p>Cliquez ici pour démarrer l'étape de signature : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>vérifier et signer le bail</a> - {{envoyerCourriel.profilCourant.courriel}}</p>
+  - id: demandeTransmission
+    # Liste des destinataires (peut être une liste)
+    #a:
+    #  tous: 
+    #    - '{{participantCourrant.courriel}}'
+    # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
+    nomExpediteur: Transmission
+    # Permet de spécifier l'adresse de retour
+    # L'objet du courriel peut contenir des parties variables
+    objet: Payer et transmettre le bail
+    # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
+    corps: |
+      <p>Cliquez ici pour démarrer l'étape de signature : <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>vérifier et signer le bail</a> - {{envoyerCourriel.profilCourant.courriel}}</p>

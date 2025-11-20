@@ -1,0 +1,4 @@
+# Ajouter une tâche pour l'appel à un service web, même si vous n'avez pas encore d'API, copiez tel quel.
+etapes:
+- tache: genererWord
+- tache: extraireQuestions

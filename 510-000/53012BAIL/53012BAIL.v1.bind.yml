@@ -1,0 +1,38 @@
+config:
+  formulaire:
+    systeme: 510
+    type: 53012BAIL
+  pdf:
+    rapetisserTexteTropLong: true
+    redirigerAnnexeTexteTroplong: true
+    pourcentageDepassementAnnexe: 20
+    verrouillerChampsPdf: true
+bundles:
+  - nomSortie: 53012BAIL
+    templates:
+      - 01
+    estampille:
+      #positionX: 175
+      #positionY: 775
+      #tailleFont: 10
+      positionX: 25
+      positionY: 710
+      tailleFont: 7
+      lignes:
+        - 'Numéro de référence : {{NoConfirmation}}'
+        - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
+        - '{{^DonneesFormulaire.estampille.texteAuthentification}}Utilisateur Quebec.ca{{/DonneesFormulaire.estampille.texteAuthentification}}{{{DonneesFormulaire.estampille.texteAuthentification}}}'
+templates:
+- id: 01
+  name: 53012 - BAIL
+  gabarit:
+    fr: 53012_Bail_enseignement_VF
+    en: 53012_Lease_educational_VF
+- id: 02
+  name: 53000 - ANNEXE 6
+  gabarit:
+    fr: 53000_ANNEXE-6_FR_VF_Dynamique
+    en: 53000_BAIL_EN_VF_Dynamique
+bind:
+  01:
+  02:

@@ -1,0 +1,1021 @@
+# yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/form
+config:
+  securite:
+    accesAnonyme: true
+  title:
+    fr: Formulaires en ligne - Tribunal administratif du logement
+    en: Formulaires en ligne - Tribunal administratif du logement
+  piv:
+    entete:
+      nomSiteMOLigne1: 
+        fr: Tribunal administratif du logement
+        en: Tribunal administratif du logement
+      nomSiteMOLigne2:
+        fr: 
+    piedPage:
+      logo:
+        base64: 
+          fr: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iU2lnbmF0dXJlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDI0OC40NDUgOTQuNjU5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNDguNDQ1IDk0LjY1OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6bm9uZTt9DQoJLnN0MXtmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDt9DQoJLnN0MntmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOiMwOTU3OTc7fQ0KCS5zdDN7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8Zz4NCgk8Zz4NCgkJPHJlY3QgY2xhc3M9InN0MCIgd2lkdGg9IjI0OC40NDUiIGhlaWdodD0iOTQuNjU5Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQoJPGc+DQoJCTxnPg0KCQkJPHBhdGggZD0iTTEwMi45ODEsNzAuNjE2VjU3LjUwN2gtMC4xYy0wLjQ2NiwwLjQyNi0yLjE4OCwwLjQ2NS0yLjkyLDAuNDY1aC0xLjI2OHYwLjEwNWMxLjQ2NSwwLjg5NiwxLjI2NCwyLjIyNSwxLjI2NCwzLjg3Nw0KCQkJCWwwLjAwNCw1LjU0N2MwLDIuNzc1LTIuNzI3LDQuNzIzLTQuOTIyLDQuNzIzYy0yLjg5MywwLTQuMDk2LTIuMDU3LTQuMDk2LTUuMzY5di05LjM0OGgtMC4wOTgNCgkJCQljLTAuNDY3LDAuNDI2LTIuMjAxLDAuNDY1LTIuOTMzLDAuNDY1aC0xLjI1NXYwLjEwNWMxLjQ2NSwwLjg5NiwxLjI2NCwyLjIyNSwxLjI2NCwzLjg3N3Y1LjUyOWMwLDUuMDYzLDIuMTk1LDcuNDY5LDYuMTIxLDcuNDY5DQoJCQkJYzIuMzI3LDAsNC43MTktMC44MjYsNS45MTgtMi44MDN2Mi4zOTVoNC4yODR2LTAuMTA5QzEwMi43ODQsNzMuNjA4LDEwMi45ODEsNzIuMjcyLDEwMi45ODEsNzAuNjE2eiIvPg0KCQkJPHBhdGggZD0iTTEwOS42MjYsNjMuNjA2YzAuNDAxLTIuMjU0LDIuMDY0LTMuNjg0LDQuMjk1LTMuNjg0YzIuMzk2LDAsMy45MjYsMS4xOCw0LjI5MSwzLjY4NEgxMDkuNjI2eiBNMTIxLjcwOCw2NS42OTQNCgkJCQljMC4xMzItNC42MjctMi45NjMtOC4xMjEtNy40ODgtOC4xMjFjLTQuOTU5LDAtOC4zMTgsMy42LTguMzE4LDguNTkyYzAsNS4wMjcsMy44OTEsOC44NTcsOS41NDksOC44NTcNCgkJCQljMS41NjQsMCwzLjE2Mi0wLjI1LDQuNTk0LTAuODkxbDEuNjY0LTMuMzc1aC0wLjFjLTEuNTMxLDEuMzAxLTMuNDYsMS45Mi01LjQ1OSwxLjkyYy0zLjc2LDAtNi41ODgtMi41Ny02LjY1NC02Ljk4MkgxMjEuNzA4eiINCgkJCQkvPg0KCQkJPHBhdGggZD0iTTEyNC4zNDksNDkuODg4YzAuNzk3LDAsMi40MjItMC4wNDksMi45MTQtMC41MzNoMC4xdjIyLjcwN2MwLjg5NSwwLjI1LDEuODE4LDAuNDMsMi43NDIsMC40Mw0KCQkJCWMzLjYzOSwwLDUuNzIxLTIuNTQzLDUuNzIxLTYuMDljMC0zLjQ3My0xLjYyMS02LjE2LTQuOTU5LTYuMTZjLTEuMDU5LDAtMS44ODUsMC4yODUtMi43NzcsMC43ODlsMS43ODctMy4wNTkNCgkJCQljMC43NTgtMC4yODksMS41NTMtMC4zOTgsMi4zNDYtMC4zOThjMy43NzEsMCw2Ljk3NywzLjI3Nyw2Ljk3Nyw4LjE4NWMwLDUuNjIxLTMuODAzLDkuMjU2LTkuODIsOS4yNTYNCgkJCQljLTIuMjQ2LDAtNC40MDYtMC4zOTYtNi4wMzYtMC42NDZ2LTAuMTA5YzEuMDk4LTAuNTA2LDAuOTk4LTEuNjk1LDAuOTk4LTIuODc5VjU0Ljg3NGMwLTEuNjU2LDAuMTk5LTMuOTc3LTEuMjMtNC44Nzd2LTAuMTA5DQoJCQkJSDEyNC4zNDl6Ii8+DQoJCQk8cGF0aCBkPSJNMTQ1LjEwNyw2My42MDZjMC4zOTgtMi4yNTQsMi4wNjQtMy42ODQsNC4yOTEtMy42ODRjMi4zOTYsMCwzLjkyOCwxLjE4LDQuMjk1LDMuNjg0SDE0NS4xMDd6IE0xNTcuMTg1LDY1LjY5NA0KCQkJCWMwLjEzNS00LjYyNy0yLjk2MS04LjEyMS03LjQ4OC04LjEyMWMtNC45NTUsMC04LjMxNCwzLjYtOC4zMTQsOC41OTJjMCw1LjAyNywzLjg5MSw4Ljg1Nyw5LjU0Nyw4Ljg1Nw0KCQkJCWMxLjU2NCwwLDMuMTYyLTAuMjUsNC41OTItMC44OTFsMS42NjQtMy4zNzVoLTAuMDk4Yy0xLjUzMywxLjMwMS0zLjQ2MywxLjkyLTUuNDU5LDEuOTJjLTMuNzYsMC02LjU4Ni0yLjU3LTYuNjU0LTYuOTgySDE1Ny4xODUNCgkJCQl6Ii8+DQoJCQk8cGF0aCBkPSJNMTcyLjA3LDYxLjY5aC0wLjFjLTAuOTY3LTEuMTkxLTIuNTY0LTEuNzY4LTQuMDYzLTEuNzY4Yy0zLjIyNywwLTUuNTU1LDIuNDQ5LTUuNTU1LDUuODcxDQoJCQkJYzAsNC4xNDQsMy4yMjksNi44ODMsNi45Miw2Ljg4M2MxLjY5NywwLDMuNTYxLTAuNzIxLDQuODU5LTEuNzY4aDAuMTAybC0xLjczMiwzLjQwMmMtMS4zOTgsMC41Ny0yLjkyOCwwLjcxMS00LjM5NSwwLjcxMQ0KCQkJCWMtNS4xMjMsMC05LjEyOS0zLjYwNy05LjEyOS04LjI5MWMwLTYuMTkzLDQuNDczLTkuMTU4LDkuNDk2LTkuMTU4YzEuMTk5LDAsMi40MywwLjE0NCwzLjU5NiwwLjQzVjYxLjY5eiIvPg0KCQkJPHBhdGggY2xhc3M9InN0MSIgZD0iTTExNy41NTYsNTQuNjAyYzAtMS42NzQsMC0zLjYwMywwLTMuNjAzYy0yLjE4MiwwLjk4LTQuMjA2LDIuODA5LTUuNTU4LDQuNTg4djEuNDAyDQoJCQkJQzExNS4yMzMsNTQuODA4LDExNy41NTYsNTQuNzA0LDExNy41NTYsNTQuNjAyeiIvPg0KCQkJPHBhdGggZD0iTTcyLjk2Niw3Mi41NDZjLTUuMDI1LDAtOC41MjEtNS42Ny04LjUyMS0xMC40ODZjMC0wLjA0OSwwLTAuNDk2LDAuMDAyLTAuNTQxYzAuMDYxLTQuNjY2LDMuMDgtOS4wNDMsOC4zNTMtOS4wNDMNCgkJCQljNS41NDYsMCw4LjQwNyw1LjI1LDguNDUzLDEwLjIxN2MwLDAuMDQzLDAsMC40NzksMCwwLjUyQzgxLjI1Miw2OC41MTEsNzcuOTU4LDcyLjU0Niw3Mi45NjYsNzIuNTQ2eiBNOTAuMTg4LDc4LjA1Ng0KCQkJCWMtMy43MDksMC42MDctNy4yNzctMC41NjMtMTEuMDY2LTQuODk2YzMuNjYxLTEuODQsNS45MjYtNi40MTYsNS45MjYtMTAuNjY4YzAtMC4wNDUtMC4wMDItMC40ODQtMC4wMDItMC41MjkNCgkJCQljLTAuMDY1LTcuMjc1LTUuNTMxLTEyLjA4LTEyLjA0OS0xMi4wOGMtNi41MjgsMC0xMi4yOTcsNS4wMDItMTIuMzQ3LDEyLjMzNmMwLDAuMDMxLDAsMC40NTcsMCwwLjQ4OA0KCQkJCWMwLDcuMTM3LDUuMjkzLDEyLjQzMiwxMS43OCwxMi40MzJjMC45MzQsMCwxLjgzMi0wLjE0NSwyLjczMS0wLjM1OWM0LjI1LDMuOTg0LDguMDQxLDUuNjc2LDExLjMxMSw1LjI4MQ0KCQkJCWMxLjU1NC0wLjE4NiwzLjE5Ni0wLjgwMSw0LjE4MS0yLjA4NEw5MC4xODgsNzguMDU2eiIvPg0KCQk8L2c+DQoJPC9nPg0KCTxnPg0KCQk8Zz4NCgkJCTxwYXRoIGQ9Ik0yMS4wMTQsMjAuMDg1aDcuNTYxbC0wLjQwOCwxLjg4N2gtMi40OTJsLTEuNjc1LDcuODg1aC0yLjYzM2wxLjY3Ni03Ljg4NWgtMi40MjJMMjEuMDE0LDIwLjA4NXoiLz4NCgkJCTxwYXRoIGQ9Ik0zNC40NDYsMjIuNTc3bC0wLjU2MywyLjExMmMtMC40NjktMC4xMzEtMC44MzYtMC4xOTctMS4wOTgtMC4xOTdjLTAuNjEsMC0xLjA4LDAuMjMtMS40MDgsMC42OQ0KCQkJCWMtMC4yMzUsMC4zMjktMC40MjcsMC44NDUtMC41NzgsMS41NDhsLTAuNjc2LDMuMTI2aC0yLjUzNGwxLjQ3OS03LjI2NWgyLjI5NWwtMC4yNjcsMS4zMjNjMC42OTQtMC45OTUsMS40OTItMS40OTIsMi4zOTMtMS40OTINCgkJCQlDMzMuNzcsMjIuNDIyLDM0LjA4OSwyMi40NzQsMzQuNDQ2LDIyLjU3N3oiLz4NCgkJCTxwYXRoIGQ9Ik0zNS42NywyMi42MDVoMi40NjRsLTEuNTc3LDcuMjUxaC0yLjQ2NEwzNS42NywyMi42MDV6IE0zNi4xNzcsMjAuMDg1aDIuNDc5bC0wLjI1MywxLjI5NWgtMi40NjRMMzYuMTc3LDIwLjA4NXoiLz4NCgkJCTxwYXRoIGQ9Ik00MC42MTMsMjAuMDg1aDIuNTA2bC0wLjc2LDMuNDVjMC42NzYtMC43NTEsMS40NzktMS4xMjYsMi40MDgtMS4xMjZjMC45MTEsMCwxLjYxOSwwLjMxOSwyLjEyNiwwLjk1OA0KCQkJCWMwLjQ2LDAuNTkxLDAuNjksMS4zNTIsMC42OSwyLjI4MWMwLDEuMjMtMC4zMjQsMi4yNTMtMC45NzEsMy4wNjljLTAuNzE0LDAuODkyLTEuNjY3LDEuMzM4LTIuODU4LDEuMzM4DQoJCQkJYy0xLjE0NiwwLTEuOTk1LTAuNTU0LTIuNTQ4LTEuNjYybC0wLjM1MiwxLjQ2NGgtMi4yODFMNDAuNjEzLDIwLjA4NXogTTQ0Ljk5MiwyNS43NDVjMC0wLjQxMy0wLjEwOC0wLjc1OC0wLjMyNC0xLjAzNQ0KCQkJCWMtMC4yMTYtMC4yNzYtMC41MjYtMC40MTUtMC45MjktMC40MTVjLTAuNTU0LDAtMS4wMTgsMC4yNjMtMS4zOTQsMC43ODljLTAuMzM4LDAuNDY5LTAuNTA3LDAuOTk1LTAuNTA3LDEuNTc3DQoJCQkJYzAsMC40NDEsMC4xMTcsMC44MDgsMC4zNTIsMS4wOThjMC4yMzQsMC4yOTIsMC41NjMsMC40MzcsMC45ODYsMC40MzdjMC41NjMsMCwxLjAxOC0wLjI3NiwxLjM2Ni0wLjgzMQ0KCQkJCUM0NC44NDEsMjYuODc2LDQ0Ljk5MiwyNi4zMzYsNDQuOTkyLDI1Ljc0NXoiLz4NCgkJCTxwYXRoIGQ9Ik00OS4zOTgsMjIuNjE5aDIuNTM0Yy0wLjE2OSwwLjcyMy0wLjM0MiwxLjQ1LTAuNTIxLDIuMTgzYy0wLjIxNiwwLjkzOS0wLjMyNCwxLjY2Mi0wLjMyNCwyLjE2OQ0KCQkJCWMwLDAuNzIzLDAuMzE5LDEuMDg0LDAuOTU4LDEuMDg0YzAuOTY3LDAsMS42MTktMC43OTMsMS45NTctMi4zNzlsMC42NDgtMy4wNTZoMi41MzRsLTEuNTQ5LDcuMjM3aC0yLjI2N2wwLjI4MS0xLjIyNQ0KCQkJCWMtMC44MjYsMC45MzktMS43NDYsMS40MDgtMi43NTksMS40MDhjLTAuNzcsMC0xLjM1Ny0wLjIyNi0xLjc2LTAuNjc2Yy0wLjQwNC0wLjQ1MS0wLjYwNS0xLjA2Ni0wLjYwNS0xLjg0NQ0KCQkJCWMwLTAuNjY2LDAuMTA0LTEuNDkyLDAuMzEtMi40NzhDNDkuMDIzLDI0LjIzNCw0OS4yMSwyMy40MjcsNDkuMzk4LDIyLjYxOXoiLz4NCgkJCTxwYXRoIGQ9Ik02NS4xNTQsMjkuODU2aC0yLjUyMWMwLjE3OC0wLjcyMywwLjM1Mi0xLjQ0NSwwLjUyMS0yLjE2OGMwLjIxNi0wLjkyOSwwLjMyNC0xLjY1NiwwLjMyNC0yLjE4Mg0KCQkJCWMwLTAuNzEzLTAuMzA1LTEuMDctMC45MTYtMS4wN2MtMC45OTUsMC0xLjY2MSwwLjc4OS0xLjk5OSwyLjM2NmwtMC42NDgsMy4wNTVoLTIuNTM0bDEuNTQ5LTcuMzA4aDIuMjY3bC0wLjI4MiwxLjI5NQ0KCQkJCWMwLjgyNi0wLjkzOSwxLjc0Ni0xLjQwOCwyLjc2LTEuNDA4YzAuNzcsMCwxLjM1NywwLjIyOCwxLjc2LDAuNjgzYzAuNDAzLDAuNDU2LDAuNjA1LDEuMDczLDAuNjA1LDEuODUyDQoJCQkJYzAsMC42NjctMC4xMDgsMS40ODgtMC4zMjQsMi40NjRDNjUuNTI5LDI4LjI0Miw2NS4zNDEsMjkuMDQ5LDY1LjE1NCwyOS44NTZ6Ii8+DQoJCQk8cGF0aCBkPSJNNzMuODI3LDI5Ljg1NmgtMi4wOThsMC4xNDEtMS4wOThjLTAuNTYzLDAuODM1LTEuMzk5LDEuMjUzLTIuNTA2LDEuMjUzYy0wLjY5NSwwLTEuMjYzLTAuMTgzLTEuNzA0LTAuNTQ5DQoJCQkJYy0wLjQ3OS0wLjM5NC0wLjcxOC0wLjkzLTAuNzE4LTEuNjA1YzAtMC45NjYsMC40OC0xLjY3LDEuNDQtMi4xMTJjMC43MjUtMC4zMzgsMS42NzUtMC41MDcsMi44NTItMC41MDcNCgkJCQljMC4zODYsMCwwLjc3MSwwLjAxOSwxLjE1NywwLjA1NnYtMC4yMzljMC4wNDctMC43NTEtMC40MTgtMS4xMjYtMS4zOTQtMS4xMjZjLTAuODQ1LDAtMS42MzMsMC4xODMtMi4zNjYsMC41NDlsMC4yOTYtMS42OQ0KCQkJCWMwLjc4OS0wLjI4MSwxLjU5MS0wLjQyMiwyLjQwOC0wLjQyMmMwLjkwMSwwLDEuNjQ3LDAuMTYsMi4yMzksMC40NzljMC43NSwwLjM5NCwxLjEyNiwxLjAwNCwxLjEyNiwxLjgzDQoJCQkJYzAsMC42MjktMC4xMjcsMS40OTMtMC4zOCwyLjU5MUM3NC4wMjksMjguNDg2LDczLjg2NCwyOS4zNSw3My44MjcsMjkuODU2eiBNNzIuMDgxLDI2LjU0OA0KCQkJCWMtMC4xNjktMC4wMTktMC40MDgtMC4wMjgtMC43MTgtMC4wMjhjLTEuMzcxLDAtMi4wNTYsMC4zNzUtMi4wNTYsMS4xMjdjMCwwLjI1MywwLjA4OSwwLjQ1MywwLjI2OCwwLjU5OA0KCQkJCWMwLjE3OCwwLjE0NiwwLjM5OSwwLjIxOCwwLjY2MiwwLjIxOGMwLjQ5NywwLDAuOTE5LTAuMjAyLDEuMjY3LTAuNjA1QzcxLjgxMywyNy41MSw3Mi4wMDYsMjcuMDczLDcyLjA4MSwyNi41NDh6Ii8+DQoJCQk8cGF0aCBkPSJNNzcuNTQ0LDIwLjA5OWgyLjUwNmwtMi4xMTIsOS43NTdoLTIuNTA2TDc3LjU0NCwyMC4wOTl6Ii8+DQoJCQk8cGF0aCBkPSJNOTEuMjE1LDI5Ljg1NmgtMi4wOThsMC4xNDEtMS4wOThjLTAuNTYzLDAuODM1LTEuMzk4LDEuMjUzLTIuNTA2LDEuMjUzYy0wLjY5NCwwLTEuMjYyLTAuMTgzLTEuNzA0LTAuNTQ5DQoJCQkJYy0wLjQ3OS0wLjM5NC0wLjcxOC0wLjkzLTAuNzE4LTEuNjA1YzAtMC45NjYsMC40NzktMS42NywxLjQ0LTIuMTEyYzAuNzI1LTAuMzM4LDEuNjc1LTAuNTA3LDIuODUxLTAuNTA3DQoJCQkJYzAuMzg2LDAsMC43NzIsMC4wMTksMS4xNTgsMC4wNTZ2LTAuMjM5YzAuMDQ3LTAuNzUxLTAuNDE3LTEuMTI2LTEuMzk0LTEuMTI2Yy0wLjg0NSwwLTEuNjMzLDAuMTgzLTIuMzY1LDAuNTQ5bDAuMjk2LTEuNjkNCgkJCQljMC43ODgtMC4yODEsMS41OTEtMC40MjIsMi40MDctMC40MjJjMC45MDEsMCwxLjY0NywwLjE2LDIuMjM5LDAuNDc5YzAuNzUxLDAuMzk0LDEuMTI2LDEuMDA0LDEuMTI2LDEuODMNCgkJCQljMCwwLjYyOS0wLjEyNiwxLjQ5My0wLjM4LDIuNTkxQzkxLjQxNywyOC40ODYsOTEuMjUzLDI5LjM1LDkxLjIxNSwyOS44NTZ6IE04OS40NywyNi41NDhjLTAuMTY5LTAuMDE5LTAuNDA4LTAuMDI4LTAuNzE4LTAuMDI4DQoJCQkJYy0xLjM3MSwwLTIuMDU2LDAuMzc1LTIuMDU2LDEuMTI3YzAsMC4yNTMsMC4wODksMC40NTMsMC4yNjgsMC41OThjMC4xNzgsMC4xNDYsMC4zOTksMC4yMTgsMC42NjIsMC4yMTgNCgkJCQljMC40OTgsMCwwLjkyLTAuMjAyLDEuMjY4LTAuNjA1Qzg5LjIwMiwyNy41MSw4OS4zOTUsMjcuMDczLDg5LjQ3LDI2LjU0OHoiLz4NCgkJCTxwYXRoIGQ9Ik0xMDAuMSwyMC4wODVoMi40OTJsLTIuMDU2LDkuNzcxaC0yLjI1M2wwLjI2OC0xLjIxMWMtMC43MDQsMC45NDgtMS41ODYsMS40MjItMi42NDcsMS40MjINCgkJCQljLTAuOTExLDAtMS42Mi0wLjMxNS0yLjEyNi0wLjk0M2MtMC40NjktMC41ODItMC43MDQtMS4zNDItMC43MDQtMi4yODFjMC0xLjIyOSwwLjMyOC0yLjI1NywwLjk4NS0zLjA4Mw0KCQkJCWMwLjcwNC0wLjg5MiwxLjY1Ny0xLjMzNywyLjg1OC0xLjMzN2MxLjA4OSwwLDEuODgyLDAuNDc0LDIuMzc5LDEuNDIyTDEwMC4xLDIwLjA4NXogTTk4LjgzMywyNS43NzMNCgkJCQljMC0wLjQxMy0wLjEyMi0wLjc2My0wLjM2Ni0xLjA0OWMtMC4yNDQtMC4yODYtMC41NzMtMC40MjktMC45ODYtMC40MjljLTAuNTczLDAtMS4wMzMsMC4yODYtMS4zOCwwLjg1OQ0KCQkJCWMtMC4yOTEsMC40NzktMC40MzcsMS4wMjMtMC40MzcsMS42MzNjMCwwLjM5NCwwLjExMywwLjcyNywwLjMzOCwxYzAuMjI2LDAuMjcyLDAuNTMsMC40MDgsMC45MTYsMC40MDgNCgkJCQljMC41NzIsMCwxLjA0Ni0wLjI2OCwxLjQyMi0wLjgwMkM5OC42NjgsMjYuOTE0LDk4LjgzMywyNi4zNzQsOTguODMzLDI1Ljc3M3oiLz4NCgkJCTxwYXRoIGQ9Ik0xMTMuOTU1LDI5Ljg1NmgtMi40MDhjMC4xNzgtMC43NTEsMC4zNTYtMS41MDYsMC41MzUtMi4yNjdjMC4yMzQtMC45OTUsMC4zNTItMS43NSwwLjM1Mi0yLjI2Nw0KCQkJCWMwLTAuNTcyLTAuMjUzLTAuODU5LTAuNzYtMC44NTljLTAuNTI2LDAtMC45MiwwLjI3Ny0xLjE4MywwLjgzYy0wLjExMiwwLjIzNS0wLjI0OSwwLjczNy0wLjQwOCwxLjUwN2wtMC42NDcsMy4wNTVoLTIuNTYzDQoJCQkJYzAuMTg4LTAuNzYsMC4zNzUtMS41MjUsMC41NjMtMi4yOTVjMC4yMTYtMC45NDgsMC4zMjQtMS43MjMsMC4zMjQtMi4zMjNjMC0wLjUxNi0wLjI1My0wLjc3NC0wLjc2LTAuNzc0DQoJCQkJYy0wLjcyMywwLTEuMjExLDAuNTk2LTEuNDY0LDEuNzg4bC0wLjc3NCwzLjYwNGgtMi41NjJsMS41NDktNy4zMDhoMi4xNjlsLTAuMjgyLDEuMzI0YzAuNzk4LTAuOTU4LDEuNjQzLTEuNDM2LDIuNTM0LTEuNDM2DQoJCQkJYzEuMDIzLDAsMS42ODUsMC40NzQsMS45ODUsMS40MjJjMC43NjktMC45NDgsMS42MzMtMS40MjIsMi41OTEtMS40MjJjMC42ODUsMCwxLjIyNSwwLjIwNywxLjYxOSwwLjYxOQ0KCQkJCWMwLjM5NSwwLjQxMywwLjU5MSwwLjk2NywwLjU5MSwxLjY2MmMwLDAuNjM4LTAuMTI2LDEuNTAyLTAuMzgsMi41OTFDMTE0LjM2OCwyOC4xNTMsMTE0LjE2MSwyOS4wMDIsMTEzLjk1NSwyOS44NTZ6Ii8+DQoJCQk8cGF0aCBkPSJNMTE3LjQ3NSwyMi42MDVoMi40NjRsLTEuNTc3LDcuMjUxaC0yLjQ2NEwxMTcuNDc1LDIyLjYwNXogTTExNy45ODEsMjAuMDg1aDIuNDc4bC0wLjI1MywxLjI5NWgtMi40NjRMMTE3Ljk4MSwyMC4wODV6Ig0KCQkJCS8+DQoJCQk8cGF0aCBkPSJNMTI4LjAwNiwyOS44NTZoLTIuNTIxYzAuMTc4LTAuNzIzLDAuMzUyLTEuNDQ1LDAuNTIxLTIuMTY4YzAuMjE2LTAuOTI5LDAuMzI0LTEuNjU2LDAuMzI0LTIuMTgyDQoJCQkJYzAtMC43MTMtMC4zMDUtMS4wNy0wLjkxNS0xLjA3Yy0wLjk5NSwwLTEuNjYyLDAuNzg5LTEuOTk5LDIuMzY2bC0wLjY0NywzLjA1NWgtMi41MzVsMS41NDktNy4zMDhoMi4yNjdsLTAuMjgyLDEuMjk1DQoJCQkJYzAuODI2LTAuOTM5LDEuNzQ2LTEuNDA4LDIuNzYtMS40MDhjMC43NywwLDEuMzU2LDAuMjI4LDEuNzYsMC42ODNjMC40MDMsMC40NTYsMC42MDUsMS4wNzMsMC42MDUsMS44NTINCgkJCQljMCwwLjY2Ny0wLjEwOCwxLjQ4OC0wLjMyNCwyLjQ2NEMxMjguMzgxLDI4LjI0MiwxMjguMTk0LDI5LjA0OSwxMjguMDA2LDI5Ljg1NnoiLz4NCgkJCTxwYXRoIGQ9Ik0xMzEuNDQxLDIyLjYwNWgyLjQ2NGwtMS41NzcsNy4yNTFoLTIuNDY0TDEzMS40NDEsMjIuNjA1eiBNMTMxLjk0OSwyMC4wODVoMi40NzhsLTAuMjUzLDEuMjk1aC0yLjQ2NEwxMzEuOTQ5LDIwLjA4NXoiDQoJCQkJLz4NCgkJCTxwYXRoIGQ9Ik0xNDEuMDQ0LDIyLjg0NWwtMC41NDksMS41OTFjLTAuODE3LTAuMjcyLTEuNDU1LTAuNDA4LTEuOTE1LTAuNDA4Yy0wLjc1MSwwLTEuMTI2LDAuMjIxLTEuMTI2LDAuNjYyDQoJCQkJYzAsMC4yNDQsMC4yNTgsMC40NywwLjc3NSwwLjY3NmMwLjc3OSwwLjMxLDEuMjUzLDAuNTIxLDEuNDIyLDAuNjM0YzAuNTE2LDAuMzQ3LDAuNzc0LDAuODIxLDAuNzc0LDEuNDIyDQoJCQkJYzAsMC44ODMtMC4zNjYsMS41NTktMS4wOTksMi4wMjhjLTAuNjE5LDAuNDA0LTEuMzk0LDAuNjA2LTIuMzIzLDAuNjA2Yy0xLjAyMywwLTEuOTg1LTAuMTU1LTIuODg2LTAuNDY1bDAuNTIxLTEuNzQ2DQoJCQkJYzAuNjY3LDAuMzI5LDEuMzQyLDAuNDkzLDIuMDI3LDAuNDkzYzAuODQ1LDAsMS4yNjgtMC4yMTYsMS4yNjgtMC42NDhjMC0wLjI4MS0wLjI0OS0wLjUzLTAuNzQ3LTAuNzQ2DQoJCQkJYy0wLjc3LTAuMzI5LTEuMjI5LTAuNTQ5LTEuMzgtMC42NjJjLTAuNDk4LTAuMzU3LTAuNzQ2LTAuODU0LTAuNzQ2LTEuNDkzYzAtMC44MDcsMC4zOS0xLjQyNywxLjE2OS0xLjg1OA0KCQkJCWMwLjYzOS0wLjM0NywxLjM5NC0wLjUyMSwyLjI2Ny0wLjUyMUMxMzkuMjY1LDIyLjQwOCwxNDAuMTE1LDIyLjU1NCwxNDEuMDQ0LDIyLjg0NXoiLz4NCgkJCTxwYXRoIGQ9Ik0xNDYuMzM4LDIwLjE5OGwtMC41MjEsMi40MjFoMS43ODhsLTAuMzY2LDEuNzMyaC0xLjc4OGMtMC4xMzIsMC41MjQtMC4yNjMsMS4wNDMtMC4zOTUsMS41NTcNCgkJCQljLTAuMTYsMC42NDYtMC4yMzksMS4xNzQtMC4yMzksMS41ODVjMCwwLjQ5NiwwLjI2MywwLjc0NCwwLjc4OSwwLjc0NGMwLjIxNiwwLDAuNDkzLTAuMDQyLDAuODMxLTAuMTI3bC0wLjM2NiwxLjcxOQ0KCQkJCWMtMC42MDEsMC4xMDItMS4wNjUsMC4xNTQtMS4zOTQsMC4xNTRjLTAuNzIzLDAtMS4yOTEtMC4xODMtMS43MDQtMC41NDhjLTAuNDQxLTAuMzg0LTAuNjYyLTAuOTMyLTAuNjYyLTEuNjQzDQoJCQkJYzAtMC40NjgsMC4wNzktMS4wNDQsMC4yMzktMS43MjdjMC4xMzEtMC41NzEsMC4yNjgtMS4xNDMsMC40MDgtMS43MTRoLTEuNDc5bDAuMzY2LTEuNzMyaDEuNDc5bDAuMzY2LTEuNzE4TDE0Ni4zMzgsMjAuMTk4eiIvPg0KCQkJPHBhdGggZD0iTTE1NC4yNTEsMjIuNTc3bC0wLjU2MywyLjExMmMtMC40NjktMC4xMzEtMC44MzUtMC4xOTctMS4wOTgtMC4xOTdjLTAuNjEsMC0xLjA4LDAuMjMtMS40MDgsMC42OQ0KCQkJCWMtMC4yMzUsMC4zMjktMC40MjcsMC44NDUtMC41NzgsMS41NDhsLTAuNjc2LDMuMTI2aC0yLjUzNGwxLjQ3OS03LjI2NWgyLjI5NWwtMC4yNjgsMS4zMjNjMC42OTQtMC45OTUsMS40OTMtMS40OTIsMi4zOTQtMS40OTINCgkJCQlDMTUzLjU3NSwyMi40MjIsMTUzLjg5NCwyMi40NzQsMTU0LjI1MSwyMi41Nzd6Ii8+DQoJCQk8cGF0aCBkPSJNMTYwLjcxMywyOS44NTZoLTIuMDk4bDAuMTQxLTEuMDk4Yy0wLjU2MywwLjgzNS0xLjM5OCwxLjI1My0yLjUwNiwxLjI1M2MtMC42OTQsMC0xLjI2Mi0wLjE4My0xLjcwNC0wLjU0OQ0KCQkJCWMtMC40NzktMC4zOTQtMC43MTgtMC45My0wLjcxOC0xLjYwNWMwLTAuOTY2LDAuNDc5LTEuNjcsMS40NC0yLjExMmMwLjcyNS0wLjMzOCwxLjY3NS0wLjUwNywyLjg1MS0wLjUwNw0KCQkJCWMwLjM4NiwwLDAuNzcyLDAuMDE5LDEuMTU4LDAuMDU2di0wLjIzOWMwLjA0Ny0wLjc1MS0wLjQxOC0xLjEyNi0xLjM5NC0xLjEyNmMtMC44NDUsMC0xLjYzMywwLjE4My0yLjM2NSwwLjU0OWwwLjI5NS0xLjY5DQoJCQkJYzAuNzg5LTAuMjgxLDEuNTkxLTAuNDIyLDIuNDA4LTAuNDIyYzAuOTAxLDAsMS42NDgsMC4xNiwyLjIzOSwwLjQ3OWMwLjc1MSwwLjM5NCwxLjEyNywxLjAwNCwxLjEyNywxLjgzDQoJCQkJYzAsMC42MjktMC4xMjcsMS40OTMtMC4zOCwyLjU5MUMxNjAuOTE2LDI4LjQ4NiwxNjAuNzUxLDI5LjM1LDE2MC43MTMsMjkuODU2eiBNMTU4Ljk2OCwyNi41NDgNCgkJCQljLTAuMTY5LTAuMDE5LTAuNDA5LTAuMDI4LTAuNzE4LTAuMDI4Yy0xLjM3MSwwLTIuMDU2LDAuMzc1LTIuMDU2LDEuMTI3YzAsMC4yNTMsMC4wODksMC40NTMsMC4yNjgsMC41OTgNCgkJCQljMC4xNzgsMC4xNDYsMC4zOTksMC4yMTgsMC42NjIsMC4yMThjMC40OTcsMCwwLjkyLTAuMjAyLDEuMjY3LTAuNjA1QzE1OC43LDI3LjUxLDE1OC44OTMsMjcuMDczLDE1OC45NjgsMjYuNTQ4eiIvPg0KCQkJPHBhdGggZD0iTTE2Ny4zNDUsMjAuMTk4bC0wLjUyMSwyLjQyMWgxLjc4OGwtMC4zNjYsMS43MzJoLTEuNzg4Yy0wLjEzMSwwLjUyNC0wLjI2MywxLjA0My0wLjM5NCwxLjU1Nw0KCQkJCWMtMC4xNiwwLjY0Ni0wLjIzOSwxLjE3NC0wLjIzOSwxLjU4NWMwLDAuNDk2LDAuMjYzLDAuNzQ0LDAuNzg4LDAuNzQ0YzAuMjE2LDAsMC40OTMtMC4wNDIsMC44MzEtMC4xMjdsLTAuMzY2LDEuNzE5DQoJCQkJYy0wLjYwMSwwLjEwMi0xLjA2NiwwLjE1NC0xLjM5NCwwLjE1NGMtMC43MjMsMC0xLjI5LTAuMTgzLTEuNzA0LTAuNTQ4Yy0wLjQ0MS0wLjM4NC0wLjY2Mi0wLjkzMi0wLjY2Mi0xLjY0Mw0KCQkJCWMwLTAuNDY4LDAuMDgtMS4wNDQsMC4yMzktMS43MjdjMC4xMzEtMC41NzEsMC4yNjgtMS4xNDMsMC40MDgtMS43MTRoLTEuNDc5bDAuMzY2LTEuNzMyaDEuNDc5bDAuMzY2LTEuNzE4TDE2Ny4zNDUsMjAuMTk4eiIvPg0KCQkJPHBhdGggZD0iTTE3MC4xNjEsMjIuNjA1aDIuNDY0bC0xLjU3Nyw3LjI1MWgtMi40NjRMMTcwLjE2MSwyMi42MDV6IE0xNzAuNjY4LDIwLjA4NWgyLjQ3OGwtMC4yNTMsMS4yOTVoLTIuNDY0TDE3MC42NjgsMjAuMDg1eiINCgkJCQkvPg0KCQkJPHBhdGggZD0iTTE4MC4xMDIsMjAuMzFsLTAuMzgsMS4yOTVjLTAuMjUzLTAuMTEyLTAuNTA3LTAuMTY5LTAuNzYtMC4xNjljLTAuMzU3LDAtMC42MjksMC4xMTMtMC44MTcsMC4zMzgNCgkJCQljLTAuMTUsMC4xNjktMC4yNzIsMC40NTEtMC4zNjYsMC44NDVoMS44M2wtMC4zNjYsMS43NmgtMS44NDRsLTEuMTU1LDUuNDc3aC0yLjUwNmwxLjE2OS01LjQ3N2gtMS41MDZsMC4zOC0xLjc2aDEuNDkzDQoJCQkJYzAuMjgyLTEuNzU1LDEuMzU2LTIuNjMzLDMuMjI0LTIuNjMzQzE3OC45MzgsMTkuOTg2LDE3OS40NzIsMjAuMDk0LDE4MC4xMDIsMjAuMzF6Ii8+DQoJCQk8cGF0aCBkPSJNMjcuMDk2LDM0LjE2NWgyLjQ5MmwtMi4wNTYsOS43NzFIMjUuMjhsMC4yNjgtMS4yMTFjLTAuNzA0LDAuOTQ4LTEuNTg2LDEuNDIyLTIuNjQ3LDEuNDIyDQoJCQkJYy0wLjkxMSwwLTEuNjItMC4zMTQtMi4xMjYtMC45NDNjLTAuNDY5LTAuNTgyLTAuNzA0LTEuMzQyLTAuNzA0LTIuMjgxYzAtMS4yMjksMC4zMjgtMi4yNTcsMC45ODUtMy4wODMNCgkJCQljMC43MDQtMC44OTIsMS42NTctMS4zMzcsMi44NTgtMS4zMzdjMS4wODksMCwxLjg4MiwwLjQ3NCwyLjM3OSwxLjQyMkwyNy4wOTYsMzQuMTY1eiBNMjUuODI5LDM5Ljg1Mw0KCQkJCWMwLTAuNDEzLTAuMTIyLTAuNzYyLTAuMzY2LTEuMDQ5Yy0wLjI0NC0wLjI4Ni0wLjU3My0wLjQyOS0wLjk4Ni0wLjQyOWMtMC41NzMsMC0xLjAzMywwLjI4Ni0xLjM4LDAuODU5DQoJCQkJYy0wLjI5MSwwLjQ3OC0wLjQzNiwxLjAyMy0wLjQzNiwxLjYzM2MwLDAuMzk0LDAuMTEzLDAuNzI4LDAuMzM4LDFjMC4yMjYsMC4yNzIsMC41MywwLjQwOCwwLjkxNSwwLjQwOA0KCQkJCWMwLjU3MiwwLDEuMDQ2LTAuMjY4LDEuNDIyLTAuODAyQzI1LjY2NSw0MC45OTQsMjUuODI5LDQwLjQ1NCwyNS44MjksMzkuODUzeiIvPg0KCQkJPHBhdGggZD0iTTMwLjcxNCwzNi42OTloMi41MzVjLTAuMTY5LDAuNzIzLTAuMzQzLDEuNDUtMC41MjEsMi4xODNjLTAuMjE2LDAuOTM4LTAuMzI0LDEuNjYxLTAuMzI0LDIuMTY4DQoJCQkJYzAsMC43MjMsMC4zMTksMS4wODUsMC45NTgsMS4wODVjMC45NjYsMCwxLjYxOS0wLjc5MywxLjk1Ny0yLjM3OWwwLjY0Ny0zLjA1NmgyLjUzNWwtMS41NDksNy4yMzdoLTIuMjY3bDAuMjgyLTEuMjI1DQoJCQkJYy0wLjgyNiwwLjkzOS0xLjc0NiwxLjQwOC0yLjc2LDEuNDA4Yy0wLjc3LDAtMS4zNTctMC4yMjYtMS43Ni0wLjY3NmMtMC40MDMtMC40NTEtMC42MDUtMS4wNjUtMC42MDUtMS44NDUNCgkJCQljMC0wLjY2NywwLjEwMy0xLjQ5MywwLjMxLTIuNDc4QzMwLjMzOSwzOC4zMTQsMzAuNTI3LDM3LjUwNywzMC43MTQsMzYuNjk5eiIvPg0KCQkJPHBhdGggZD0iTTQ1LjM1NywzNC4xNzloMi41MDZsLTIuMTEyLDkuNzU3aC0yLjUwNkw0NS4zNTcsMzQuMTc5eiIvPg0KCQkJPHBhdGggZD0iTTUyLjgwNiwzNi41MDJjMS4xMjYsMCwyLjAyMywwLjI4MSwyLjY4OSwwLjg0NWMwLjcxMywwLjYxLDEuMDcsMS40NjQsMS4wNywyLjU2M2MwLDEuMzIzLTAuNDYsMi4zNy0xLjM3OSwzLjE0DQoJCQkJYy0wLjg1NCwwLjczMi0xLjk1OCwxLjA5OC0zLjMwOSwxLjA5OGMtMS4wOTgsMC0xLjk4LTAuMjcyLTIuNjQ3LTAuODE2Yy0wLjcxMy0wLjU5MS0xLjA3LTEuNDIyLTEuMDctMi40OTINCgkJCQljMC0xLjM2MSwwLjQ0MS0yLjQzMSwxLjMyNC0zLjIxMUM1MC4zMTgsMzYuODc4LDUxLjQyNiwzNi41MDIsNTIuODA2LDM2LjUwMnogTTU0LjAxNywzOS43OTdjMC0wLjQ2LTAuMTA4LTAuODM2LTAuMzI0LTEuMTI3DQoJCQkJYy0wLjI0NC0wLjMzOC0wLjU4Ny0wLjUwNy0xLjAyOC0wLjUwN2MtMC42MDEsMC0xLjA4OSwwLjMwMS0xLjQ2NCwwLjkwMWMtMC4zMTksMC41MjUtMC40NzksMS4xMDctMC40NzksMS43NDYNCgkJCQljMCwwLjQ0MSwwLjExNywwLjgxNywwLjM1MiwxLjEyN2MwLjI2MywwLjMzOCwwLjYxLDAuNTA3LDEuMDQyLDAuNTA3YzAuNiwwLDEuMDc5LTAuMzA1LDEuNDM2LTAuOTE1DQoJCQkJQzUzLjg2Miw0MS4wMTMsNTQuMDE3LDQwLjQzNSw1NC4wMTcsMzkuNzk3eiIvPg0KCQkJPHBhdGggZD0iTTY0LjA1NiwzNi42OTloMi41MDZsLTEuNTM1LDcuMjM3Yy0wLjQwNCwxLjkxNS0xLjg4MiwyLjg3Mi00LjQzNiwyLjg3MmMtMC45MjksMC0xLjg3Ny0wLjE2OS0yLjg0NC0wLjUwN2wwLjQ2NS0xLjg3Mw0KCQkJCWMwLjYzOCwwLjQxMywxLjM5NCwwLjYyLDIuMjY3LDAuNjJjMS41MjEsMCwyLjM5OC0wLjg1OSwyLjYzMy0yLjU3N2MtMC43NDIsMC45NzctMS42NDIsMS40NjQtMi43MDQsMS40NjQNCgkJCQljLTAuOTAxLDAtMS42MDUtMC4zMS0yLjExMi0wLjkyOWMtMC40NjktMC41NzMtMC43MDQtMS4zMTktMC43MDQtMi4yMzljMC0xLjE4MywwLjMzOC0yLjE3OCwxLjAxNC0yLjk4NQ0KCQkJCWMwLjcxMy0wLjg1NCwxLjY0Ny0xLjI4MSwyLjgwMi0xLjI4MWMxLjA4OSwwLDEuODgyLDAuNDc0LDIuMzc5LDEuNDIyTDY0LjA1NiwzNi42OTl6IE02My4zMjMsMzkuODUzDQoJCQkJYzAtMC40MTMtMC4xMjItMC43NjItMC4zNjYtMS4wNDljLTAuMjQ0LTAuMjg2LTAuNTczLTAuNDI5LTAuOTg2LTAuNDI5Yy0wLjU3MywwLTEuMDMzLDAuMjg2LTEuMzgsMC44NTkNCgkJCQljLTAuMjkxLDAuNDc4LTAuNDM3LDEuMDIzLTAuNDM3LDEuNjMzYzAsMC4zOTQsMC4xMTMsMC43MjgsMC4zMzgsMWMwLjIyNiwwLjI3MiwwLjUzLDAuNDA4LDAuOTE2LDAuNDA4DQoJCQkJYzAuNTcyLDAsMS4wNDYtMC4yNjgsMS40MjItMC44MDJDNjMuMTU5LDQwLjk5NCw2My4zMjMsNDAuNDU0LDYzLjMyMywzOS44NTN6Ii8+DQoJCQk8cGF0aCBkPSJNNzQuNjU4LDQwLjk2NWgtNS4xOTVjMC4wOTQsMS4wNDIsMC43MTMsMS41NjMsMS44NTgsMS41NjNjMC44MDcsMCwxLjYyOC0wLjE4MywyLjQ2NC0wLjU0OWwtMC4yODEsMS43ODgNCgkJCQljLTAuODczLDAuMjcyLTEuNzY1LDAuNDA4LTIuNjc1LDAuNDA4Yy0xLjA4OSwwLTEuOTU3LTAuMjkxLTIuNjA1LTAuODczYy0wLjY4NS0wLjYxLTEuMDI4LTEuNDUtMS4wMjgtMi41Mg0KCQkJCWMwLTEuMzE0LDAuNDMyLTIuMzcsMS4yOTYtMy4xNjhjMC44MjYtMC43NywxLjkwMS0xLjE1NSwzLjIyNC0xLjE1NWMwLjk5NSwwLDEuNzYyLDAuMjcyLDIuMzAyLDAuODE2DQoJCQkJYzAuNTQsMC41NDUsMC44MSwxLjMxNCwwLjgxLDIuMzFDNzQuODI3LDM5Ljk5OSw3NC43NzEsNDAuNDU4LDc0LjY1OCw0MC45NjV6IE03Mi43MjksMzkuNTcyDQoJCQkJYzAuMDE5LTAuMTQxLDAuMDI4LTAuMjU0LDAuMDI4LTAuMzM4YzAtMC4zOTUtMC4xMTItMC43MTItMC4zMzgtMC45NTFjLTAuMjI1LTAuMjM5LTAuNTM1LTAuMzU5LTAuOTI5LTAuMzU5DQoJCQkJYy0wLjQzMiwwLTAuODAzLDAuMTc0LTEuMTEyLDAuNTIxYy0wLjI3MiwwLjI5MS0wLjQ2OSwwLjY2Ny0wLjU5MSwxLjEyN0g3Mi43Mjl6Ii8+DQoJCQk8cGF0aCBkPSJNODcuMTA0LDQzLjkzN2gtMi40MDhjMC4xNzgtMC43NTEsMC4zNTYtMS41MDcsMC41MzUtMi4yNjdjMC4yMzQtMC45OTUsMC4zNTItMS43NSwwLjM1Mi0yLjI2Nw0KCQkJCWMwLTAuNTczLTAuMjUzLTAuODU5LTAuNzYxLTAuODU5Yy0wLjUyNSwwLTAuOTIsMC4yNzctMS4xODMsMC44MzFjLTAuMTEyLDAuMjM1LTAuMjQ5LDAuNzM3LTAuNDA4LDEuNTA2bC0wLjY0NywzLjA1NmgtMi41NjMNCgkJCQljMC4xODgtMC43NiwwLjM3Ni0xLjUyNSwwLjU2My0yLjI5NWMwLjIxNi0wLjk0OCwwLjMyNC0xLjcyMywwLjMyNC0yLjMyM2MwLTAuNTE2LTAuMjUzLTAuNzc0LTAuNzYtMC43NzQNCgkJCQljLTAuNzIzLDAtMS4yMTEsMC41OTYtMS40NjQsMS43ODhsLTAuNzc0LDMuNjA0aC0yLjU2M2wxLjU0OS03LjMwOGgyLjE2OGwtMC4yODIsMS4zMjRjMC43OTgtMC45NTgsMS42NDMtMS40MzcsMi41MzQtMS40MzcNCgkJCQljMS4wMjMsMCwxLjY4NSwwLjQ3NCwxLjk4NSwxLjQyMmMwLjc2OS0wLjk0OCwxLjYzMy0xLjQyMiwyLjU5MS0xLjQyMmMwLjY4NSwwLDEuMjI1LDAuMjA3LDEuNjE5LDAuNjINCgkJCQljMC4zOTQsMC40MTMsMC41OTEsMC45NjcsMC41OTEsMS42NjJjMCwwLjYzOC0wLjEyNiwxLjUwMi0wLjM4LDIuNTkxQzg3LjUxOCw0Mi4yMzMsODcuMzExLDQzLjA4Myw4Ny4xMDQsNDMuOTM3eiIvPg0KCQkJPHBhdGggZD0iTTk2LjcyMSw0MC45NjVoLTUuMTk2YzAuMDk0LDEuMDQyLDAuNzEzLDEuNTYzLDEuODU4LDEuNTYzYzAuODA4LDAsMS42MjgtMC4xODMsMi40NjQtMC41NDlsLTAuMjgyLDEuNzg4DQoJCQkJYy0wLjg3MywwLjI3Mi0xLjc2NSwwLjQwOC0yLjY3NSwwLjQwOGMtMS4wODksMC0xLjk1Ny0wLjI5MS0yLjYwNC0wLjg3M2MtMC42ODYtMC42MS0xLjAyOC0xLjQ1LTEuMDI4LTIuNTINCgkJCQljMC0xLjMxNCwwLjQzMi0yLjM3LDEuMjk1LTMuMTY4YzAuODI2LTAuNzcsMS45MDEtMS4xNTUsMy4yMjUtMS4xNTVjMC45OTUsMCwxLjc2MiwwLjI3MiwyLjMwMiwwLjgxNg0KCQkJCWMwLjU0LDAuNTQ1LDAuODEsMS4zMTQsMC44MSwyLjMxQzk2Ljg5LDM5Ljk5OSw5Ni44MzMsNDAuNDU4LDk2LjcyMSw0MC45NjV6IE05NC43OTIsMzkuNTcyDQoJCQkJYzAuMDE5LTAuMTQxLDAuMDI4LTAuMjU0LDAuMDI4LTAuMzM4YzAtMC4zOTUtMC4xMTMtMC43MTItMC4zMzgtMC45NTFjLTAuMjI2LTAuMjM5LTAuNTM1LTAuMzU5LTAuOTMtMC4zNTkNCgkJCQljLTAuNDMyLDAtMC44MDIsMC4xNzQtMS4xMTIsMC41MjFjLTAuMjcyLDAuMjkxLTAuNDY5LDAuNjY3LTAuNTkxLDEuMTI3SDk0Ljc5MnoiLz4NCgkJCTxwYXRoIGQ9Ik0xMDUuMjM5LDQzLjkzN2gtMi41MmMwLjE3OC0wLjcyMywwLjM1Mi0xLjQ0NSwwLjUyMS0yLjE2OGMwLjIxNi0wLjkyOSwwLjMyNC0xLjY1NywwLjMyNC0yLjE4Mg0KCQkJCWMwLTAuNzEzLTAuMzA1LTEuMDctMC45MTUtMS4wN2MtMC45OTUsMC0xLjY2MSwwLjc4OS0yLDIuMzY1bC0wLjY0NywzLjA1NmgtMi41MzRsMS41NDktNy4zMDhoMi4yNjdsLTAuMjgyLDEuMjk1DQoJCQkJYzAuODI2LTAuOTM4LDEuNzQ2LTEuNDA4LDIuNzYtMS40MDhjMC43NjksMCwxLjM1NiwwLjIyOCwxLjc2LDAuNjgzYzAuNDAzLDAuNDU2LDAuNjA1LDEuMDcyLDAuNjA1LDEuODUyDQoJCQkJYzAsMC42NjctMC4xMDgsMS40ODgtMC4zMjQsMi40NjRDMTA1LjYxNSw0Mi4zMjIsMTA1LjQyNyw0My4xMjksMTA1LjIzOSw0My45Mzd6Ii8+DQoJCQk8cGF0aCBkPSJNMTEyLjA4MiwzNC4yNzdsLTAuNTIxLDIuNDIyaDEuNzg4bC0wLjM2NiwxLjczMmgtMS43ODhjLTAuMTMxLDAuNTI0LTAuMjYzLDEuMDQzLTAuMzk0LDEuNTU3DQoJCQkJYy0wLjE2LDAuNjQ2LTAuMjM5LDEuMTc0LTAuMjM5LDEuNTg1YzAsMC40OTYsMC4yNjMsMC43NDQsMC43ODgsMC43NDRjMC4yMTYsMCwwLjQ5My0wLjA0MiwwLjgzMS0wLjEyN2wtMC4zNjYsMS43MTkNCgkJCQljLTAuNjAxLDAuMTAzLTEuMDY1LDAuMTU0LTEuMzk0LDAuMTU0Yy0wLjcyMywwLTEuMjktMC4xODMtMS43MDQtMC41NDhjLTAuNDQxLTAuMzgzLTAuNjYyLTAuOTMxLTAuNjYyLTEuNjQzDQoJCQkJYzAtMC40NjgsMC4wOC0xLjA0NCwwLjIzOS0xLjcyOGMwLjEzMS0wLjU3MSwwLjI2OC0xLjE0MiwwLjQwOC0xLjcxM2gtMS40NzhsMC4zNjYtMS43MzJoMS40NzhsMC4zNjYtMS43MThMMTEyLjA4MiwzNC4yNzd6Ii8+DQoJCTwvZz4NCgk8L2c+DQoJPGc+DQoJCTxnPg0KCQkJPGc+DQoJCQkJPHJlY3QgeD0iMTgyLjA5NyIgeT0iNDMuOTMiIGNsYXNzPSJzdDIiIHdpZHRoPSIyMC4xNjYiIGhlaWdodD0iMTIuMzYiLz4NCgkJCTwvZz4NCgkJPC9nPg0KCQk8cGF0aCBjbGFzcz0ic3QzIiBkPSJNMTkyLjE4MSw0NC41NzdjLTAuMTQ2LDAuMjcxLTAuNDc3LDAuNjYtMS4wMzEsMS4zNTZjLTAuNjQzLDAuODAyLTAuNTMzLDEuODc0LTAuMjI1LDIuNTA3DQoJCQljMC4zNDgsMC43MzEsMC41NTMsMS4zNCwwLjcxMSwxLjkxMmMwLjIyMSwwLjgzNiwwLjA3NCwxLjk1NSwwLjA5LDEuODU0aC0wLjU2MWMwLTEuMzY1LTAuNDI0LTIuNjQ4LTEuNDUzLTMuMjE3DQoJCQljLTEuNDYxLTAuODEzLTIuOTA0LDAuNTk0LTIuNDQ1LDIuMDUzYzAuMjQyLDAuNzY2LDAuNjc0LDEuMDI1LDAuNzkzLDEuMDI1YzAsMC0wLjE5OS0wLjg0NCwwLjQxMi0xLjI3NQ0KCQkJYzAuNTcyLTAuNDA0LDEuMjgxLTAuMTU4LDEuNjA3LDAuMzI0YzAuMzEzLDAuNDU5LDAuMzYxLDEuMDksMC4zNjEsMS4wOWgtMS4wNTF2MC43NzVoMi4xMTNjMCwwLTAuMDU5LDEuMDk4LTEuMjEzLDAuOTg4DQoJCQljMCwwLDAuMTQzLDAuODY5LDEuMjEzLDAuNDE2YzAsMC0wLjA1OSwwLjkwNiwwLjY3OCwxLjM1OWwwLDBsMCwwYzAuNzM0LTAuNDUzLDAuNjgtMS4zNTksMC42OC0xLjM1OQ0KCQkJYzEuMDcsMC40NTMsMS4yMTUtMC40MTYsMS4yMTUtMC40MTZjLTEuMTYsMC4xMDktMS4yMTUtMC45ODgtMS4yMTUtMC45ODhoMi4xMTF2LTAuNzc1aC0xLjA1MWMwLDAsMC4wNTEtMC42MzEsMC4zNTktMS4wOQ0KCQkJYzAuMzI4LTAuNDgzLDEuMDM5LTAuNzI5LDEuNjExLTAuMzI0YzAuNjA5LDAuNDMyLDAuNDEyLDEuMjc1LDAuNDEyLDEuMjc1YzAuMTIxLDAsMC41NDktMC4yNiwwLjc5MS0xLjAyNQ0KCQkJYzAuNDU5LTEuNDU5LTAuOTg0LTIuODY1LTIuNDQ1LTIuMDUzYy0xLjAyNywwLjU2OC0xLjQ1MywxLjg1Mi0xLjQ1MywzLjIxN2gtMC41NTljMC4wMTQsMC4xMDItMC4xMzMtMS4wMTgsMC4wOS0xLjg1NA0KCQkJYzAuMTU2LTAuNTcyLDAuMzYxLTEuMTgyLDAuNzA5LTEuOTEyYzAuMzA5LTAuNjMzLDAuNDItMS43MDUtMC4yMjUtMi41MDdDMTkyLjY2LDQ1LjIzNywxOTIuMzMsNDQuODQ4LDE5Mi4xODEsNDQuNTc3eiIvPg0KCQk8Zz4NCgkJCTxnPg0KCQkJCTxyZWN0IHg9IjIwOC4xMzgiIHk9IjQzLjkzIiBjbGFzcz0ic3QyIiB3aWR0aD0iMjAuMTcyIiBoZWlnaHQ9IjEyLjM2Ii8+DQoJCQk8L2c+DQoJCTwvZz4NCgkJPHBhdGggY2xhc3M9InN0MyIgZD0iTTIxOC4yMjIsNDQuNTc3Yy0wLjE1LDAuMjcxLTAuNDc3LDAuNjYtMS4wMzMsMS4zNTZjLTAuNjQ2LDAuODAyLTAuNTMxLDEuODc0LTAuMjI1LDIuNTA3DQoJCQljMC4zNSwwLjczMSwwLjU0OSwxLjM0LDAuNzA5LDEuOTEyYzAuMjIzLDAuODM2LDAuMDc2LDEuOTU1LDAuMDk0LDEuODU0aC0wLjU2MWMwLTEuMzY1LTAuNDI0LTIuNjQ4LTEuNDUzLTMuMjE3DQoJCQljLTEuNDYzLTAuODEzLTIuOTA2LDAuNTk0LTIuNDQ3LDIuMDUzYzAuMjQyLDAuNzY2LDAuNjcyLDEuMDI1LDAuNzk1LDEuMDI1YzAsMC0wLjIwMS0wLjg0NCwwLjQxLTEuMjc1DQoJCQljMC41Ny0wLjQwNCwxLjI3OS0wLjE1OCwxLjYwNywwLjMyNGMwLjMxMywwLjQ1OSwwLjM2MSwxLjA5LDAuMzYxLDEuMDloLTEuMDUxdjAuNzc1aDIuMTEzYzAsMC0wLjA1OSwxLjA5OC0xLjIxMywwLjk4OA0KCQkJYzAsMCwwLjEzOSwwLjg2OSwxLjIxMywwLjQxNmMwLDAtMC4wNTksMC45MDYsMC42OCwxLjM1OWwwLDBsMCwwYzAuNzMtMC40NTMsMC42NzQtMS4zNTksMC42NzQtMS4zNTkNCgkJCWMxLjA3NiwwLjQ1MywxLjIxOS0wLjQxNiwxLjIxOS0wLjQxNmMtMS4xNjIsMC4xMDktMS4yMTktMC45ODgtMS4yMTktMC45ODhoMi4xMTd2LTAuNzc1aC0xLjA1NWMwLDAsMC4wNTMtMC42MzEsMC4zNjEtMS4wOQ0KCQkJYzAuMzMtMC40ODMsMS4wNDEtMC43MjksMS42MTUtMC4zMjRjMC42MDQsMC40MzIsMC40MSwxLjI3NSwwLjQxLDEuMjc1YzAuMTE5LDAsMC41NDctMC4yNiwwLjc4Ny0xLjAyNQ0KCQkJYzAuNDU3LTEuNDU5LTAuOTg4LTIuODY1LTIuNDQ3LTIuMDUzYy0xLjAyNSwwLjU2OC0xLjQ1MSwxLjg1Mi0xLjQ1MSwzLjIxN2gtMC41NTdjMC4wMTYsMC4xMDItMC4xMzMtMS4wMTgsMC4wOS0xLjg1NA0KCQkJYzAuMTU2LTAuNTcyLDAuMzYxLTEuMTgyLDAuNzA5LTEuOTEyYzAuMzA1LTAuNjMzLDAuNDE4LTEuNzA1LTAuMjI1LTIuNTA3QzIxOC43MDEsNDUuMjM3LDIxOC4zNjcsNDQuODQ4LDIxOC4yMjIsNDQuNTc3eiIvPg0KCTwvZz4NCgk8Zz4NCgkJPGc+DQoJCQk8Zz4NCgkJCQk8cmVjdCB4PSIxODIuMDk3IiB5PSI2Mi4xNzUiIGNsYXNzPSJzdDIiIHdpZHRoPSIyMC4xNjYiIGhlaWdodD0iMTIuMzU3Ii8+DQoJCQk8L2c+DQoJCTwvZz4NCgkJPHBhdGggY2xhc3M9InN0MyIgZD0iTTE5Mi4xODEsNjIuODIzYy0wLjE0NiwwLjI2OS0wLjQ3NywwLjY2LTEuMDMxLDEuMzU1Yy0wLjY0MywwLjgwMy0wLjUzMywxLjg3MS0wLjIyNSwyLjUwOA0KCQkJYzAuMzQ4LDAuNzI3LDAuNTUzLDEuMzM2LDAuNzExLDEuOTEyYzAuMjIxLDAuODM0LDAuMDc0LDEuOTUxLDAuMDksMS44NWgtMC41NjFjMC0xLjM2MS0wLjQyNC0yLjY0OC0xLjQ1My0zLjIxNw0KCQkJYy0xLjQ2MS0wLjgxMi0yLjkwNCwwLjU5OC0yLjQ0NSwyLjA1N2MwLjI0MiwwLjc2MiwwLjY3NCwxLjAyMywwLjc5MywxLjAyM2MwLDAtMC4xOTktMC44NDQsMC40MTItMS4yNzcNCgkJCWMwLjU3Mi0wLjQsMS4yODEtMC4xNTgsMS42MDcsMC4zMjRjMC4zMTMsMC40NjEsMC4zNjEsMS4wOSwwLjM2MSwxLjA5aC0xLjA1MXYwLjc3OWwyLjExMy0wLjAwMmMwLDAtMC4wNTksMS4wOTYtMS4yMTMsMC45OQ0KCQkJYzAsMCwwLjE0MywwLjg2NSwxLjIxMywwLjQxMmMwLDAtMC4wNTksMC45MDYsMC42NzgsMS4zNTlsMCwwbDAsMGMwLjczNC0wLjQ1MywwLjY4LTEuMzU5LDAuNjgtMS4zNTkNCgkJCWMxLjA3LDAuNDUzLDEuMjE1LTAuNDEyLDEuMjE1LTAuNDEyYy0xLjE2LDAuMTA1LTEuMjE1LTAuOTktMS4yMTUtMC45OWwyLjExMSwwLjAwMnYtMC43NzloLTEuMDUxYzAsMCwwLjA1MS0wLjYyOSwwLjM1OS0xLjA5DQoJCQljMC4zMjgtMC40ODIsMS4wMzktMC43MjUsMS42MTEtMC4zMjRjMC42MDksMC40MzQsMC40MTIsMS4yNzcsMC40MTIsMS4yNzdjMC4xMjEsMCwwLjU0OS0wLjI2MiwwLjc5MS0xLjAyMw0KCQkJYzAuNDU5LTEuNDU5LTAuOTg0LTIuODY5LTIuNDQ1LTIuMDU3Yy0xLjAyNywwLjU2OC0xLjQ1MywxLjg1Ni0xLjQ1MywzLjIxN2gtMC41NTljMC4wMTQsMC4xMDItMC4xMzMtMS4wMTYsMC4wOS0xLjg1DQoJCQljMC4xNTYtMC41NzYsMC4zNjEtMS4xODYsMC43MDktMS45MTJjMC4zMDktMC42MzcsMC40Mi0xLjcwNS0wLjIyNS0yLjUwOEMxOTIuNjYsNjMuNDgzLDE5Mi4zMyw2My4wOTMsMTkyLjE4MSw2Mi44MjN6Ii8+DQoJCTxnPg0KCQkJPGc+DQoJCQkJPHJlY3QgeD0iMjA4LjEzOCIgeT0iNjIuMTc1IiBjbGFzcz0ic3QyIiB3aWR0aD0iMjAuMTcyIiBoZWlnaHQ9IjEyLjM1NyIvPg0KCQkJPC9nPg0KCQk8L2c+DQoJCTxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0yMTguMjIyLDYyLjgyM2MtMC4xNSwwLjI2OS0wLjQ3NywwLjY2LTEuMDMzLDEuMzU1Yy0wLjY0NiwwLjgwMy0wLjUzMSwxLjg3MS0wLjIyNSwyLjUwOA0KCQkJYzAuMzUsMC43MjcsMC41NDksMS4zMzYsMC43MDksMS45MTJjMC4yMjMsMC44MzQsMC4wNzYsMS45NTEsMC4wOTQsMS44NWgtMC41NjFjMC0xLjM2MS0wLjQyNC0yLjY0OC0xLjQ1My0zLjIxNw0KCQkJYy0xLjQ2My0wLjgxMi0yLjkwNiwwLjU5OC0yLjQ0NywyLjA1N2MwLjI0MiwwLjc2MiwwLjY3MiwxLjAyMywwLjc5NSwxLjAyM2MwLDAtMC4yMDEtMC44NDQsMC40MS0xLjI3Nw0KCQkJYzAuNTctMC40LDEuMjc5LTAuMTU4LDEuNjA3LDAuMzI0YzAuMzEzLDAuNDYxLDAuMzYxLDEuMDksMC4zNjEsMS4wOWgtMS4wNTF2MC43NzlsMi4xMTMtMC4wMDJjMCwwLTAuMDU5LDEuMDk2LTEuMjEzLDAuOTkNCgkJCWMwLDAsMC4xMzksMC44NjUsMS4yMTMsMC40MTJjMCwwLTAuMDU5LDAuOTA2LDAuNjgsMS4zNTlsMCwwbDAsMGMwLjczLTAuNDUzLDAuNjc0LTEuMzU5LDAuNjc0LTEuMzU5DQoJCQljMS4wNzYsMC40NTMsMS4yMTktMC40MTIsMS4yMTktMC40MTJjLTEuMTYyLDAuMTA1LTEuMjE5LTAuOTktMS4yMTktMC45OWwyLjExNywwLjAwMnYtMC43NzloLTEuMDU1YzAsMCwwLjA1My0wLjYyOSwwLjM2MS0xLjA5DQoJCQljMC4zMy0wLjQ4MiwxLjA0MS0wLjcyNSwxLjYxNS0wLjMyNGMwLjYwNCwwLjQzNCwwLjQxLDEuMjc3LDAuNDEsMS4yNzdjMC4xMTksMCwwLjU0Ny0wLjI2MiwwLjc4Ny0xLjAyMw0KCQkJYzAuNDU3LTEuNDU5LTAuOTg4LTIuODY5LTIuNDQ3LTIuMDU3Yy0xLjAyNSwwLjU2OC0xLjQ1MSwxLjg1Ni0xLjQ1MSwzLjIxN2gtMC41NTdjMC4wMTYsMC4xMDItMC4xMzMtMS4wMTYsMC4wOS0xLjg1DQoJCQljMC4xNTYtMC41NzYsMC4zNjEtMS4xODYsMC43MDktMS45MTJjMC4zMDUtMC42MzcsMC40MTgtMS43MDUtMC4yMjUtMi41MDhDMjE4LjcwMSw2My40ODMsMjE4LjM2Nyw2My4wOTMsMjE4LjIyMiw2Mi44MjN6Ii8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo="
+        #width et/ou height est nécessaire pour les svg. Sinon taille de 0x0.
+        width:
+          200
+        #height et/est width est nécessaire pour les svg. Sinon taille de 0x0.
+        height: 
+          76
+        alt: 
+          Logo du Tribunal administratif du logement du Québec
+        urlLien: 
+          fr: https://www.tal.gouv.qc.ca/fr
+          en: https://www.tal.gouv.qc.ca/en
+    nousJoindre:
+      actif: true
+      texte:
+        fr: Nous joindre
+        en: How to reach us
+      urlLien: 
+        fr: https://www.tal.gouv.qc.ca/fr/nous-joindre
+        en: https://www.tal.gouv.qc.ca/en/contact-us
+  enregistrement:
+    actif: true
+    afficherMessageIncitatif: false
+  postesCanada: 
+    cle: UX84-TU29-KU11-NC61
+  domaines: 
+    cooperativeLocataireNA:
+      cooperative:
+        label: 
+          fr: Coopérative
+          en: Cooperative
+      locataire:
+        label:
+          fr: Locataire  
+          en: Lessee         
+      na:
+        label:
+          fr: N/A
+          en: N/A  
+    nombrePieces:
+      un:
+        label:
+          fr: "1"
+      un-demi:
+        label:
+          fr: "1 ½"
+      deux:
+        label:
+          fr: "2"
+      deux-demi:
+        label:
+          fr: "2 ½"
+      trois:
+        label:
+          fr: "3"
+      trois-demi:
+        label:
+          fr: "3 ½"
+      quatre:
+        label:
+          fr: "4"
+      quatre-demi:
+        label:
+          fr: "4 ½"
+      cinq:
+        label:
+          fr: "5"
+      cinq-demi:
+        label:
+          fr: "5 ½"
+      six:
+        label:
+          fr: "6"
+      six-demi:
+        label:
+          fr: "6 ½"
+      sept:
+        label:
+          fr: "7"
+      sept-demi:
+        label:
+          fr: "7 ½"
+      autre:
+        label:
+          fr: "Autre"
+          en: "Other"
+
+form:
+  title:
+    fr: Bail d’un logement dans une coopérative
+    en: Lease of a dwelling in a cooperative
+
+  sectionsGroup:
+    - sectionGroup:
+        fr: Parties du bail
+        en: Parties of lease
+      classes: icone user
+      sections:
+        - section:
+            fr: Coopérative
+            en: Cooperative
+          id: infosCooperative
+          components:
+            - type: avis
+              classes: information
+              text:
+                fr: <p>Le nom indiqué au bail doit correspondre à celui que la coopérative peut légalement utiliser.</p>
+                    <p>Le terme « locateur » que l’on trouve au Code civil du Québec renvoie à la coopérative.</p>
+                en: "<p>The name indicated in the lease must be the one that the cooperative is legally authorized to use.</p>
+                     <p>The term “lessor” in the Civil Code of Québec generally refers to the cooperative.</p>"
+            - type: group
+              name: cooperative
+              label:
+                fr: Coopérative
+                en: Cooperative
+              components:
+                - type: text
+                  name: nom
+                  label:
+                    fr: Nom
+                    en: Name
+                - type: adresseInternationale
+                  name: adresse
+                  label:
+                    fr: Adresse
+                    en: Address
+                  additionals:                
+                    filtre-pays: CAN
+                    conserver-donnees-postes-canada: true
+                - type: tel
+                  name: noTelephone
+                  label: 
+                    fr: Numéro de téléphone
+                    en: Telephone number
+                  validations:
+                    optional: null
+                - type: tel
+                  name: autreNoTelephoneCell
+                  label: 
+                    fr: Autre numéro de téléphone (cellulaire)
+                    en: Other telephone number (cell phone)
+                  validations:
+                    optional: null
+                - type: email
+                  name: courriel
+                  label: 
+                    fr: Adresse de courriel
+                    en: Email address
+                  validations:
+                    email: null
+                    optional: null   
+                - type: radio
+                  name: questionRepresentant
+                  label:
+                    fr: Représenté par quelqu'un d'autre?
+                    en: Represented by someone else?
+                  options: yesno
+                - type: text
+                  name: representant
+                  label: 
+                    fr: Représenté par    
+                    en: Represented by
+                  v-if: val(`${name}.questionRepresentant`) === 'true'
+
+        - section:
+            fr: Locataire
+            en: Lessee
+          id: infosLocataire
+          components:
+            - type: avis
+              classes: information
+              text:
+                fr: "<p>Les noms indiqués au bail doivent correspondre à ceux que le locataire peut légalement utiliser.</p>"
+                en: "<p>The names indicated in the lease must be those that the lessee is legally authorized to use.</p>"
+            - type: repeatableGroup
+              repeatable: true
+              instanceLabel:
+                fr: Locataire
+                en: Lessee
+              addLabel:
+                fr: Ajouter un locataire
+                en: Add a lessee
+              removeLabel:
+                fr: Supprimer le locataire
+                en: Remove the lessee
+              name: locataires
+              label:
+                fr: Locataires
+                en: Lessees
+              components:
+                - type: text
+                  name: nom
+                  label:
+                    fr: Nom
+                    en: Name
+                - type: adresseInternationale
+                  name: adresse
+                  label:
+                    fr: Adresse
+                    en: Address
+                  additionals:                
+                    filtre-pays: CAN
+                    conserver-donnees-postes-canada: true
+                - type: tel
+                  name: noTelephone
+                  label: 
+                    fr: Numéro de téléphone
+                    en: Telephone number
+                  validations:
+                    optional: null
+                - type: tel
+                  name: autreNoTelephoneCell
+                  label: 
+                    fr: Autre numéro de téléphone (cellulaire)
+                    en: Other telephone number (cell phone)
+                  validations:
+                    optional: null
+                - type: email
+                  name: courriel
+                  label: 
+                    fr: Adresse de courriel
+                    en: Email address
+                  validations:
+                    email: null
+                    optional: null   
+                - type: radio
+                  name: questionRepresentant
+                  label:
+                    fr: Représenté par quelqu'un d'autre?
+                    en: Represented by someone else?
+                  options: yesno
+                - type: text
+                  name: representant
+                  label: 
+                    fr: Représenté par    
+                    en: Represented by
+                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
+
+    - sectionGroup:
+        fr: Description du logement
+        en: Description of the dwelling
+      classes: icone register
+      sections:
+        - section:
+            fr: Description du logement
+            en: Description of the dwelling
+          id: descriptionLogement
+          components:
+            - type: adresseInternationale
+              name: adresseLogement
+              label:
+                fr: Adresse du logement
+                en: Address of the dwelling
+              additionals:
+                filtre-pays: CAN
+                conserver-donnees-postes-canada: true
+            - type: listeDeroulante
+              options: nombrePieces
+              name: nbPieces
+              label: 
+                fr: Nombre de pièces
+                en: Number of rooms
+            - type: text
+              name: nbPiecesAutre
+              v-if: val('nbPieces') === 'autre'
+              label: 
+                fr: Préciser le nombre de pièces
+                en: Specify the number of rooms
+    
+    - sectionGroup:
+        fr: Accessoires et dépendances
+        en: Accessories and dependencies
+      classes: icone register
+      sections:
+        - section:
+            fr: Dépendances
+            en: Dependencies
+          id: dependances
+          components:
+          - name: dependancesIncluses
+            type: checkbox
+            label:
+              fr: Indiquer les dépendences incluses
+              en: Indicate the included dependencies
+            options:
+              StationnementExterieur:
+                fr: Stationnement extérieur
+                en: Outdoor parking
+              StationnementInterieur:
+                fr: Stationnement intérieur
+                en: Indoor parking
+              RemiseOuEspaceRangement:
+                fr: Remise ou espace de rangement
+                en: Shed or storage space
+            validations:
+              optional: null
+          - type: group
+            name: stationnementExterieur
+            label:
+              fr: Stationnement extérieur
+              en: Outdoor parking
+            v-if: val('dependancesIncluses').includes('StationnementExterieur')
+            components:
+              - name: nbPlaces
+                type: number
+                label: 
+                  fr: Nombre de places
+                  en: Number of places
+                outerClasses: sm
+              - name: emplacements
+                type: text
+                label: 
+                  fr: Emplacement(s)
+                  en: Location(s)
+          - type: group
+            name: stationnementInterieur
+            label:
+              fr: Stationnement intérieur
+              en: Indoor parking
+            v-if: val('dependancesIncluses').includes('StationnementInterieur')
+            components:
+              - name: nbPlaces
+                type: number
+                label: 
+                  fr: Nombre de places
+                  en: Number of places
+                outerClasses: sm
+              - name: emplacements
+                type: text
+                label: 
+                  fr: Emplacement(s)
+                  en: Location(s)
+          - name: precisionsRemiseEspaceRangement
+            type: text
+            label: 
+              fr: Précisions sur la remise ou l'espace de rangement inclus
+              en: Details of the included shed or storage space
+            v-if: val('dependancesIncluses').includes('RemiseOuEspaceRangement')
+            outerClasses: xxl
+          - name: autresAccessoiresDependances
+            type: text
+            label: 
+              fr: Autres
+              en: Others
+            placeholder:
+              fr: Préciser
+              en: Specify
+            outerClasses: xxl
+            validations:
+              optional: null
+
+    - sectionGroup:
+        fr: Durée du bail
+        en: Term of lease
+      classes: icone register
+      sections:
+        - section:
+            fr: Durée du bail
+            en: Term of lease
+          id: dureeBail
+          components:
+            - name: typeBail
+              type: radio
+              label:
+                fr: Type de bail
+                en: Type of lease
+              options:
+                dureeFixe:
+                  fr: Bail à durée fixe
+                  en: Fixed-term lease
+                dureeIndeterminee:
+                  fr: Durée indéterminée
+                  en: Indeterminate duration
+            - type: dynamic
+              tag: div
+              v-if: val('typeBail') === 'dureeFixe'
+              components:                
+              - type: text
+                name: nbSemainesMoisAnnees
+                label:
+                  fr: Ce bail a une durée de
+                  en: The term of lease is
+                help: 
+                  fr: Préciser le nombre de semaines, de mois ou d'années.
+                  en: Specify the number of weeks, months or years.
+                placeholder:
+                  fr: Ex. 1 an, 6 mois, etc.
+                  en: Ex. 1 year, 6 months, etc.
+                outerClasses: lg
+              - type: inline
+                components:
+                - name: dateDebutBail
+                  type: date
+                  label:
+                    fr: Date de début
+                    en: Start date
+                - name: dateFinBail
+                  type: date
+                  label:
+                    fr: Date de fin
+                    en: End date
+            - name: dateDebutBailDureeIndeterminee
+              type: date
+              v-if: val('typeBail') === 'dureeIndeterminee'
+              label:
+                fr: Date de début
+                en: Start date
+            - type: avis
+              classes: information
+              text:
+                fr: <p>Ni la coopérative ni le locataire ne peuvent mettre fin au bail unilatéralement, sauf pour les exceptions prévues à la loi (mentions 5, 9, 23, 24, 45 et 50).</p><p>Ils peuvent cependant y mettre fin de consentement.</p>
+                en: <p>Neither the cooperative nor the lessee can terminate the lease unilaterally, except for the exceptions provided for by law (items 5, 9, 23, 24, 45 and 50).</p><p>They can, however, terminate it by consent.</p>
+
+    - sectionGroup:
+        fr: Loyer
+        en: Rent
+      classes: icone cash-dollar
+      sections:
+        - section:
+            fr: Coût
+            en: Cost
+          id: cout
+          components:
+            - type: group
+              name: groupeCoutLoyer
+              label:
+                fr: Coût du loyer
+                en: Cost of rent
+              components:
+              - name: coutLoyer
+                type: montant
+                label:
+                  fr: Le loyer est de
+                  en: The rent is
+              - name: frequenceCoutLoyer
+                type: radio
+                label:
+                  fr: Fréquence
+                  en: Frequency
+                options:
+                  mois:
+                    fr: Par mois
+                    en: Per month
+                  semaine:
+                    fr: Par semaine
+                    en: Per week
+            - type: radio
+              name: bailIncluServices
+              label:
+                fr: Est-ce que le loyer inclu des services?
+                en: Does the rent include services?
+              options: yesno
+            - type: group            
+              name: groupeCoutServices
+              v-if: val('bailIncluServices') === 'true'
+              label:
+                fr: Coût total des services
+                en: Total cost of services
+              components:
+              - name: coutServices
+                type: montant
+                label:
+                  fr: Le coût total des services est de
+                  en: The total cost of services is
+              - name: frequenceCoutServices
+                type: radio
+                label:
+                  fr: Fréquence
+                  en: Frequency
+                options:
+                  mois:
+                    fr: Par mois
+                    en: Per month
+                  semaine:
+                    fr: Par semaine
+                    en: Per week
+            - type: group
+              name: groupeCoutLoyerTotal
+              label:
+                fr: Coût total du loyer
+                en: Total cost of rent
+              components:
+              - name: coutTotalLoyer
+                type: montant
+                label:
+                  fr: Le loyer total est de
+                  en: The total rent is
+              - name: frequenceCoutTotalLoyer
+                type: radio
+                label:
+                  fr: Fréquence
+                  en: Frequency
+                options:
+                  mois:
+                    fr: Par mois
+                    en: Per month
+                  semaine:
+                    fr: Par semaine
+                    en: Per week
+        - section:
+            fr: Paiement
+            en: Payment
+          id: paiement
+          components:
+            - name: termesPaiement
+              type: radio
+              label:
+                fr: Termes du paiement
+                en: Terms of payment
+              options:
+                premierTerme:
+                  fr: Premier terme (un seul paiement, une date)
+                  en: First term (one payment, one date)
+                permierJourMois:
+                  fr: Premier jour du mois
+                  en: First day of the month
+                permierJourSemaine:
+                  fr: Premier jour de la semaine
+                  en: First day of the week
+                autre:
+                  fr: Autre
+                  en: Other
+            - type: text
+              name: precisionAutresTermes    
+              v-if: val('termesPaiement') === 'autre'
+              label:
+                fr: Préciser les termes du paiement
+                en: Specify the terms of payment
+              placeholder:
+                fr: Ex. Premier lundi du mois, 15 de chaque mois, etc.
+                en: Ex. First Monday of the month, 15th of each month, etc.
+            - name: modePaiement
+              type: radio              
+              label:
+                fr: Le loyer est payable selon le mode de paiement suivant
+                en: The rent is payable in accordance with the following method of payment
+              options:
+                argentComptant:
+                  fr: Argent comptant
+                  en: Cash
+                cheque:
+                  fr: Chèque
+                  en: Check
+                virementBancaire:
+                  fr: Virement bancaire électronique
+                  en: Electronic bank transfer
+                autre:
+                  fr: Autre
+                  en: Other
+            - type: text
+              name: precisionAutresModePaiement
+              v-if: val('modePaiement') === 'autre'
+              label:
+                fr: Préciser le mode de paiement
+                en: Specify the payment method
+              placeholder:
+                fr: Ex. cryptomonnaie, troc, nature, etc.
+                en: Ex. cryptocurrency, barter, nature, etc.
+            - type: radio
+              name: locataireAccepteRemiseChequePostdates
+              v-if: val('modePaiement') === 'cheque'
+              label:
+                fr: Le locataire accepte de remettre des chèques postdatés au locateur pour la durée du bail
+                en: The lessee agrees to issue post-dated checks to the landlord for the duration of the lease
+              options: yesno
+            - type: text
+              name: lieuPaiement
+              label:
+                fr: Le loyer sera payable au
+                en: The rent will be payable at
+              help: 
+                fr: Lieu du paiement (indiquer si le paiement est effectué par la poste, le cas échéant)
+                en: Place of payment (indicate if payment is made by mail, if applicable)
+
+    - sectionGroup:
+        fr: Services et conditions
+        en: Services and conditions
+      classes: icone register
+      sections:
+        - section:
+            fr: Règlement de l'immeuble
+            en: By-laws of the immovable
+          id: reglementImmeuble
+          components:
+          - type: avis
+            classes: information
+            text:
+              fr: <p>Un exemplaire du règlement de l’immeuble doit être remis au locataire <strong>avant</strong> la conclusion du bail.</p>
+              en: <p>A copy of the building regulations must be given to the lessee <strong>before</strong> entering the lease.</p>             
+          - name: dateRemiseReglementImmeuble
+            type: date
+            label:
+              fr: Un exemplaire du règlement de l’immeuble a été remis au locataire le
+              en: A copy of the building regulations was given to the lessee on
+
+        - section:
+            fr: Travaux et réparations
+            en: Works and repairs
+          id: travauxEtReparations
+          components:            
+          - type: textarea
+            name: travauxReparationsAvantDelivrance
+            label:
+              fr: Travaux et réparations à exécuter par la coopérative avant la délivrance du logement
+              en: Work and repairs to be carried out by the cooperative before delivery of the dwelling
+            help:
+              fr: Indiquer les travaux à effectuer et leurs échéanciers.
+              en: Indicate the work to be carried out and its deadlines.
+            validations: 
+              optional: null
+              max: 200
+            additionals:
+              max-caracteres: 200
+              hauteur-automatique: true              
+          - type: textarea
+            name: travauxReparationsEnCoursBail
+            label:
+              fr: Travaux et réparations à exécuter par la coopérative en cours de bail
+              en: Work and repairs to be carried out by the cooperative during the lease
+            help:
+              fr: Indiquer les travaux à effectuer et leurs échéanciers.
+              en: Indicate the work to be carried out and its deadlines.
+            validations: 
+              optional: null
+              max: 200
+            additionals:
+              max-caracteres: 200
+              hauteur-automatique: true
+
+        - section:
+            fr: Services du concierge
+            en: Janitorial Services
+          id: servicesConcierge
+          components:
+            - type: text
+              name: precisionsServicesConcierge
+              label:
+                fr: Préciser les services du concierge
+                en: Specify janitor services
+              validations:
+                optional: null
+            - type: group
+              name: coordonneesConcierge
+              label:
+                fr: Coordonnées du concierge ou de la personne à contacter en cas de besoin
+                en: Contact details for the janitor or person to contact in case of need
+              components:
+                - name: nomConcierge
+                  type: text
+                  label: 
+                    fr: Nom
+                    en: Name
+                - name: noTelephone
+                  type: tel
+                  label: 
+                    fr: Numéro de téléphone
+                    en: Telephone number
+                - name: autreNoTelephoneCell
+                  type: tel
+                  label: 
+                    fr: Autre numéro de téléphone (cellulaire)
+                    en: Other phone number (cell phone)
+                  validations:
+                    optional: null
+                - name: adresseCourriel
+                  type: email
+                  label: 
+                    fr: Adresse de courriel
+                    en: Email address
+                  validations:
+                    optional: null
+
+        - section:
+            fr: Services taxes et coûts de consommation
+            en: Services, taxes and consumption costs
+          id: servicesTaxesCoutsConsommation
+          components:
+            - name: typeChauffageLogement
+              type: checkbox
+              label:
+                fr: Type de chauffage du logement
+                en: Type of heating of the dwelling
+              options:
+                electricite:
+                  fr: Électricité
+                  en: Electricity
+                gaz:
+                  fr: Gaz
+                  en: Gas
+                mazout:
+                  fr: Mazout
+                  en: Fuel oil
+            - type: group
+              name: responsabiliteServicesTaxesCoutsConsommation
+              label:
+                fr: Responsabilité des services, taxes et coûts de consommation
+                en: Responsibility for services, taxes and consumption costs
+              components:
+              - type: dynamic
+                tag: div
+                classes: mb-32
+                text:
+                  fr: <p>Pour chaque élément indiquer quel parti assume les coûts. Indiquer "N/A" si non applicable.</p>
+                  en: <p>For each item, indicate which party bears the costs. Indicate "N/A" if not applicable.</p>
+              - name: responsabiliteChauffage
+                type: radio
+                label:
+                  fr: Chauffage
+                  en: Heating
+                outerClasses: boutons-inline md
+                options: cooperativeLocataireNA
+              - name: responsabiliteGaz
+                help:
+                  fr: Autre usage que chauffage.
+                  en: Other use than heating.
+                type: radio
+                label:
+                  fr: Gaz
+                  en: Gas
+                outerClasses: boutons-inline md
+                options: cooperativeLocataireNA
+              - name: responsabiliteElectricite
+                help:
+                  fr: Autre usage que chauffage.
+                  en: Other use than heating.
+                type: radio
+                label:
+                  fr: Électricité
+                  en: Electricity
+                outerClasses: boutons-inline md
+                options: cooperativeLocataireNA
+              - name: responsabiliteChauffeEau
+                type: radio
+                label:
+                  fr: Chauffe-eau (location)
+                  en: Water heater (rental)
+                outerClasses: boutons-inline md
+                options: cooperativeLocataireNA
+              - name: responsabiliteEauChaude
+                type: radio
+                label:
+                  fr: Eau chaude (frais d'utilisation)
+                  en: Hot water (usage fee)
+                outerClasses: boutons-inline md
+                options: cooperativeLocataireNA
+              - name: responsabiliteTaxeConsommationEau
+                type: radio
+                label:
+                  fr: Taxe de consommation d’eau du logement
+                  en: Housing water consumption tax
+                outerClasses: boutons-inline md
+                options: cooperativeLocataireNA
+              - name: responsabiliteDeneigementStationnement
+                type: radio
+                label:
+                  fr: Déneigement et déglaçage (stationnement)
+                  en: Snow and ice removal (parking)
+                outerClasses: boutons-inline md
+                options: cooperativeLocataireNA
+              - name: responsabiliteDeneigementBalcon
+                type: radio
+                label:
+                  fr: Déneigement et déglaçage (balcon)
+                  en: Snow and ice removal (balcony)
+                outerClasses: boutons-inline md
+                options: cooperativeLocataireNA
+              - name: responsabiliteDeneigementEntree
+                type: radio
+                label:
+                  fr: Déneigement et déglaçage (entrée, trottoir, allée)
+                  en: Snow and ice removal (driveway, sidewalk, alley)
+                outerClasses: boutons-inline md
+                options: cooperativeLocataireNA
+              - name: responsabiliteDeneigementEscalier
+                type: radio
+                label:
+                  fr: Déneigement et déglaçage (escalier)
+                  en: Snow and ice removal (stairs)
+                outerClasses: boutons-inline md
+                options: cooperativeLocataireNA
+
+        - section:
+            fr: Conditions
+            en: Conditions
+          id: conditions
+          components:
+            - name: locatairePossedeDroitFumer
+              type: radio
+              label:
+                fr: Est-ce que le locataire a le droit de fumer?
+                en: Is the lessee allowed to smoke?
+              options: yesno
+            - name: precisionLocatairePossedeDroitFumer
+              type: text
+              label:
+                fr: Préciser le droit de fumer
+                en: Clarify the right to smoke
+              validations:
+                optional: null 
+            - name: locatairePossedeDroitAccesTerrain
+              type: radio
+              label:
+                fr: Est-ce que le locataire a un droit d’accès au terrain?
+                en: Does the lessee have a right of access to the land?
+              options: yesno
+            - name: precisionLocatairePossedeDroitAccesTerrain
+              type: text
+              label:
+                fr: Préciser le droit d’accès au terrain
+                en: Specify the right of access to the land
+              validations:
+                optional: null                           
+            - name: locatairePossedeDroitAnimaux
+              type: radio
+              label:
+                fr: Est-ce que le locataire a le droit de garder un ou des animaux?
+                en: Does the lessee have the right to keep one or more animals?
+              options: yesno
+            - name: precisionLocatairePossedeDroitAnimaux
+              type: text
+              label:
+                fr: Préciser le droit de garder un ou des animaux
+                en: Specify the right to keep one or more animals
+              validations:
+                optional: null
+
+        - section:
+            fr: Autres services, conditions et restrictions
+            en: Other Services, Conditions and Restrictions
+          id: autresServicesConditionsRestriction
+          components:
+            - name: possedeAutresServicesConditionsRestriction
+              type: radio
+              options: yesno
+              label:
+                fr: Est-ce qu'il y a d'autres services, conditions et restrictions qui n'ont pas été évoqués?
+                en: Are there any other services, conditions, and restrictions that have not been discussed?
+            - name: precisionAutresServicesConditionsRestriction
+              type: textarea
+              v-if: val('possedeAutresServicesConditionsRestriction') === 'true'
+              label:
+                fr: Préciser les autres services, conditions et restrictions
+                en: Specify other services, conditions and restrictions
+              validations: 
+                max: 300
+              additionals:
+                max-caracteres: 300
+                hauteur-automatique: true
+
+    - sectionGroup:
+        fr: Restrictions loyer et bail
+        en: Rent and lease restrictions
+      classes: icone register
+      sections:
+        - section:
+            fr: Restrictions au droit à la fixation du loyer et à la modification du bail
+            en: Restrictions on the right to set rent and modify the lease
+          id: restrictionsLoyerBail
+          components:
+            - type: radio
+              name: estLogementLoueMembre
+              label:
+                fr: Est-ce que le logement est loué à un membre?
+                en: Is the dwelling leased to a member?
+              options: yesno
+            - name: estLogementImmeubleMoins5ans
+              type: radio
+              v-if: val('estLogementLoueMembre') === 'false'          
+              label: 
+                fr: Est-ce que le logement est situé dans un immeuble construit depuis cinq ans ou moins?
+                en: Is the dwelling located in a building constructed five years or less?
+              options: yesno
+            - name: dateImmeublePretHabitation
+              type: date            
+              v-if: val('estLogementImmeubleMoins5ans') === 'true'
+              label: 
+                fr: Date à laquelle l'immeuble était prêt pour l'habitation 
+                en: Date the building was ready for habitation   
+            - name: estLogementImmeubleChangementAffectation5ans
+              type: radio    
+              v-if: val('estLogementImmeubleMoins5ans') === 'false'        
+              label: 
+                fr: Est-ce que le logement est situé dans un immeuble dont l’utilisation à des fins résidentielles résulte d’un changement d’affectation depuis cinq ans ou moins?
+                en: Is the dwelling located in a building whose residential use has resulted from a change of use for five years or less?
+              options: yesno
+            - name: dateImmeublePretHabitationAffectation
+              type: date            
+              v-if: val('estLogementImmeubleChangementAffectation5ans') === 'true'
+              label: 
+                fr: Date à laquelle l'immeuble était prêt pour l'habitation
+                en: Date the building was ready for habitation
+            - type: avis
+              classes: avertissement
+              v-if: val('estLogementLoueMembre') === 'true' || val('estLogementImmeubleMoins5ans') === 'true' || val('estLogementImmeubleChangementAffectation5ans') === 'true'
+              text:
+                fr: |
+                  <p>La coopérative et le locataire ne peuvent demander au Tribunal administratif du logement de fixer le loyer ou de modifier une autre condition du bail si l’une ou l’autre des situations mentionnées précédemment s’applique.</p>
+                  <p>Le tribunal peut toutefois statuer sur toute autre demande relative au bail (exemple : diminution de loyer).</p> 
+                en: |
+                  <p>The cooperative and the lessee cannot ask the Administrative Housing Tribunal to set the rent or modify another condition of the lease if one or other of the situations mentioned above applies.</p>
+                  <p>The court may, however, rule on any other request relating to the lease (example: reduction in rent).</p>
+
+    - sectionGroup:
+        fr: Finalisation du bail
+        en: Finalization of the lease
+      classes: icone clipboard-check
+      sections:
+        - section:
+            fr: Avis au nouveau locataire ou au sous-locataire
+            en: Notice to the new lessee or sublessee
+          id: avisNouveauLocataire
+          v-if: val('estLogementImmeubleMoins5ans') === 'true' || val('estLogementImmeubleChangementAffectation5ans') === 'true'
+          components:
+          - name: montantLoyerPlusBasPaye12Mois
+            type: montant            
+            label: 
+              fr: Montant du loyer le plus bas payé pour le logement au cours des douze mois précédent le début du bail, ou le loyer fixé par le Tribunal administratif du logement au cours de cette période
+              en: Amount of the lowest rent paid for the dwelling during the twelve months preceding the start of the lease, or the rent set by the Administrative Housing Tribunal during this period
+          - name: frequenceLoyerPlusBasPaye12Mois
+            type: radio
+            label:
+              fr: Fréquence du paiement
+              en: Frequency of payment
+            options: 
+              mois: 
+                fr: Par mois
+                en: Per month
+              semaine: 
+                fr: Par semaine
+                en: Per week
+              autre: 
+                fr: Autre
+                en: Other
+          - name: precisionAutreFrequencePlusBasLoyer
+            type: text
+            v-if: val('frequenceLoyerPlusBasPaye12Mois') === 'autre'
+            label: 
+              fr: Préciser la fréquence
+              en: Specify the frequency
+          - name: estMemeBienServicesConditions
+            type: radio            
+            label: 
+              fr: Est-ce que le bien loué, les services offerts par la coopérative et les conditions du bail sont les mêmes?
+              en: Are the property leased, the services offered by the cooperative and the conditions of the lease the same?
+            options: yesno              
+          - name: modificationsApporteesBienServicesConditions
+            type: textarea
+            v-if: val('estMemeBienServicesConditions') === 'false'
+            label:
+              fr: Indiquer les modifications apportées
+              en: Indicate the changes made
+            help:
+              fr: |
+                Exemples: ajout de services personnels, d'assistance personnelle et de soins infirmiers, stationnement, chauffage, etc.
+              en: |
+                Examples: adding personal services, personal assistance and nursing care, parking, heating, etc.
+            validations: 
+              max: 250
+            additionals:
+              max-caracteres: 250
+              hauteur-automatique: true
+
+        - section:
+            fr: Signatures
+            en: Signatures
+          id: signatures
+          components:
+            - type: dynamic
+              tag: div            
+              text:
+                fr: <p>Tout le processus de signature dois être réfléchi!<p><p>À suivre...<p>
+                en: <p>ToDo</p>
+
+        - section:
+            fr: Avis de résidence familiale
+            en: Notice of family residence
+          id: avisResidenceFamiliale
+          components:
+            - type: dynamic
+              tag: div            
+              text:
+                fr: <p>Puisque cette section est complétée par le locataire, elle doit être réfléchie!<p><p>À suivre...<p>
+                en: <p>ToDo</p>
+
+        - section: 
+            fr: Révision
+            en: Revision
+          id: revision
+          cacherTexteExplicatifChampsObligatoires: true
+          components:
+            - type: dynamic
+              tag: div
+              v-if: val('EtatRevision') === 'initial'
+              classes: texte-revision
+              text: 
+                fr: Vous devez cliquer sur le bouton « Valider » afin de vérifier que le formulaire est rempli correctement.
+                en: You must click on the Validate button to verify that the form has been properly filled out.
+            - type: dynamic
+              tag: div
+              v-if: val('EtatRevision') === 'sans-erreur'
+              classes: texte-revision
+              text: 
+                fr: Votre formulaire est validé. Vous pouvez cliquer sur le bouton « Soumettre ».
+                en: Your form has been validated. You can click on the Submit button.
