@@ -1,0 +1,25 @@
+# Action exécutée sur les pull_request et les push branches main et releases
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'releases/*'
+
+# Travaux
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Extraire le dépôt
+      uses: actions/checkout@master
+
+    - name: Upload dans FRW
+      uses: MTESSDev/github-action-mtess-frw-deploiement@main
+      with:
+        environnement: QA
+        repertoire: '${{ github.workspace }}'
+        noPublicSystemeAutorise: ${{ secrets.NOPUBLICSYSTEMEAUTORISE }}
+        apiKey: ${{ secrets.APIKEY }}
+        
