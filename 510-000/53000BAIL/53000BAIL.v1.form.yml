@@ -12,8 +12,8 @@ config:
   piv:
     entete:
       nomSiteMOLigne1: 
-        fr: TEST Tribunal administratif du logement
-        en: TEST Tribunal administratif du logement
+        fr: Tribunal administratif du logement
+        en: Tribunal administratif du logement
       nomSiteMOLigne2:
         fr: 
     piedPage:
