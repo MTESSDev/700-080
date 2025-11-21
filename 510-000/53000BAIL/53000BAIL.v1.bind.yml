@@ -8,27 +8,83 @@ config:
     pourcentageDepassementAnnexe: 20
     verrouillerChampsPdf: true
 bundles:
-  - nomSortie: 53000BAIL
-    templates:
-      - 01
-    estampille:
-      #positionX: 175
-      #positionY: 775
-      #tailleFont: 10
-      positionX: 25
-      positionY: 710
-      tailleFont: 7
-      lignes:
-        - 'Numéro de référence : {{NoConfirmation}}'
-        - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
-        - '{{^DonneesFormulaire.estampille.texteAuthentification}}Utilisateur Quebec.ca{{/DonneesFormulaire.estampille.texteAuthentification}}{{{DonneesFormulaire.estampille.texteAuthentification}}}'
+- nomSortie: 53000BAIL
+  templates: [01]
+  estampille:
+    positionX: 25
+    positionY: 710
+    tailleFont: 7
+    lignes:
+    - 'Numéro de référence : {{NoConfirmation}}'
+    - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
+    - '{{^DonneesFormulaire.estampille.texteAuthentification}}Utilisateur Quebec.ca{{/DonneesFormulaire.estampille.texteAuthentification}}{{{DonneesFormulaire.estampille.texteAuthentification}}}'
 templates:
 - id: 01
   name: 53000 - BAIL
-  gabarit:
+  pdf: &o0
     fr: 53000_BAIL
     en: 53000_BAIL_EN_VF_Dynamique
+  gabarit: *o0
+  toujoursProduire: false
 bind:
   01:
-    E1_Nom:
-      champs: [Enfants.0.Nom]
+    Nom_locateur_1:
+      champs: [locateurs.0.nom]
+    Numero_civique_locateur_1:
+      champs: [locateurs.adresse.0.NoCivique]
+    Rue_locateur_1:
+      champs: [locateurs.adresse.0.Rue]
+    App_locateur_1:
+      champs: [locateurs.adresse.0.Appartement]
+    Municipalite_locateur_1:
+      champs: [locateurs.adresse.0.Municipalite]
+    Code_postal_locateur_1:
+      champs: [locateurs.adresse.0.CodePostal]
+    Telephone_locateur_1:
+      champs: [locateurs.0.noTelephone]
+    Autre_telephone_locateur_1:
+      champs: [locateurs.0.autreNoTelephoneCell]
+    Adresse_courriel_locateur_1:
+      champs: [locateurs.0.courrielPrincipal]
+    Representant_locateur_1:
+      champs: [locateurs.0.representant]
+    Nom_locateur_2:
+      champs: [locateurs.1.nom]
+    Numero_civique_locateur_2:
+      champs: [locateurs.adresse.1.NoCivique]
+    Rue_locateur_2:
+      champs: [locateurs.adresse.1.Rue]
+    App_locateur_2:
+      champs: [locateurs.adresse.1.Appartement]
+    Municipalite_locateur_2:
+      champs: [locateurs.adresse.1.Municipalite]
+    Code_postal_locateur_2:
+      champs: [locateurs.adresse.1.CodePostal]
+    Telephone_locateur_2:
+      champs: [locateurs.1.noTelephone]
+    Autre_telephone_locateur_2:
+      champs: [locateurs.1.autreNoTelephoneCell]
+    Adresse_courriel_locateur_2:
+      champs: [locateurs.1.courriel]
+    Representant_locateur_2:
+      champs: [locateurs.1.representant]
+    Nom_locataire_1:
+      champs: [locataires.0.nom]
+    Numero_civique_locataire_1:
+      champs: [locataires.adresse.0.NoCivique]
+    Rue_locataire_1:
+      champs: [locataires.adresse.0.Rue]
+    App_locataire_1:
+      champs: [locataires.adresse.0.Appartement]
+    Municipalite_locataire_1:
+      champs: [locataires.adresse.0.Municipalite]
+    Code_postal_locataire_1:
+      champs: [locataires.adresse.0.CodePostal]
+    Telephone_locataire_1:
+      champs: [locataires.0.noTelephone]
+    Autre_Telephone_locataire_1:
+      champs: [locataires.0.autreNoTelephoneCell]
+    Adresse_courriel_locataire_1:
+      champs: [locataires.0.courriel]
+    Representant_locataire_1:
+      champs: [locataires.0.representant]
