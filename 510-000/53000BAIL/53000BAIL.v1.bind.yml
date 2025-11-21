@@ -1,6 +1,6 @@
 config:
   formulaire:
-    systeme: 510
+    systeme: 700080
     type: 53000BAIL
   pdf:
     rapetisserTexteTropLong: true
@@ -26,12 +26,7 @@ templates:
 - id: 01
   name: 53000 - BAIL
   gabarit:
-    fr: 53000_BAIL_FR_VF_Dynamique
-    en: 53000_BAIL_EN_VF_Dynamique
-- id: 02
-  name: 53000 - ANNEXE 6
-  gabarit:
-    fr: 53000_ANNEXE-6_FR_VF_Dynamique
+    fr: 53000_BAIL
     en: 53000_BAIL_EN_VF_Dynamique
 bind:
   01:
