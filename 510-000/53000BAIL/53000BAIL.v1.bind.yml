@@ -30,4 +30,5 @@ templates:
     en: 53000_BAIL_EN_VF_Dynamique
 bind:
   01:
-  02:
+    E1_Nom:
+      champs: [Enfants.0.Nom]
