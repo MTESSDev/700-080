@@ -1,7 +1,0 @@
-etapes:
-  - tache: genererPDF
-    options:
-      fichierBind: 53008BAIL.v1.bind.yml
-  - tache: ajouterEstampille   # utilise l'estampille définie dans le bundle (bind)
-  - tache: extraireQuestions   # utile pour retour JSON des réponses
-  - tache: conserverFichier    # conserve le PDF produit
