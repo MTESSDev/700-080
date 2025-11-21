@@ -3422,7 +3422,26 @@ form:
               - locataire: 1 
           sommaire: 
             inclureSections : 
-              - *inclureSectionsBailSaisiLocateur
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire         
               - locataire1engagementAvertisseursFumeeLocataire     
               - locataire1consentementChequesPostDatesLocataire
               - locataire1confirmationReglementImmeubleLocataire     
@@ -3439,7 +3458,26 @@ form:
               - locataire: 2 
           sommaire: 
             inclureSections : 
-              - *inclureSectionsBailSaisiLocateur
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire         
               - locataire2engagementAvertisseursFumeeLocataire     
               - locataire2consentementChequesPostDatesLocataire
               - locataire2confirmationReglementImmeubleLocataire     
@@ -3457,7 +3495,26 @@ form:
               - locataire: 3
           sommaire: 
             inclureSections : 
-              - *inclureSectionsBailSaisiLocateur
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire         
               - locataire3engagementAvertisseursFumeeLocataire     
               - locataire3consentementChequesPostDatesLocataire
               - locataire3confirmationReglementImmeubleLocataire     
@@ -3475,7 +3532,26 @@ form:
               - locataire: 4
           sommaire: 
             inclureSections : 
-              - *inclureSectionsBailSaisiLocateur
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire         
               - locataire4engagementAvertisseursFumeeLocataire     
               - locataire4consentementChequesPostDatesLocataire
               - locataire4confirmationReglementImmeubleLocataire     
