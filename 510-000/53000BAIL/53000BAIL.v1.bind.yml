@@ -7,6 +7,7 @@ config:
     redirigerAnnexeTexteTroplong: true
     pourcentageDepassementAnnexe: 20
     verrouillerChampsPdf: true
+    overrideTailleChampsAuto: 7
 bundles:
 - nomSortie: 53000BAIL
   templates: [01]
@@ -14,6 +15,8 @@ bundles:
     positionX: 25
     positionY: 710
     tailleFont: 7
+    rotation: 0
+    toutesPages: false
     lignes:
     - 'Numéro de référence : {{NoConfirmation}}'
     - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
@@ -23,7 +26,7 @@ templates:
   name: 53000 - BAIL
   pdf: &o0
     fr: 53000_BAIL
-    en: 53000_BAIL_EN_VF_Dynamique
+    en: 53001_BAIL_EN
   gabarit: *o0
   toujoursProduire: false
 bind:
@@ -31,35 +34,35 @@ bind:
     Nom_locateur_1:
       champs: [locateurs.0.nom]
     Numero_civique_locateur_1:
-      champs: [locateurs.adresse.0.NoCivique]
+      champs: [locateurs.0.adresse.0.NoCivique]
     Rue_locateur_1:
-      champs: [locateurs.adresse.0.Rue]
+      champs: [locateurs.0.adresse.0.Rue]
     App_locateur_1:
-      champs: [locateurs.adresse.0.Appartement]
+      champs: [locateurs.0.adresse.0.Appartement]
     Municipalite_locateur_1:
-      champs: [locateurs.adresse.0.Municipalite]
+      champs: [locateurs.0.adresse.0.Municipalite]
     Code_postal_locateur_1:
-      champs: [locateurs.adresse.0.CodePostal]
+      champs: [locateurs.0.adresse.0.CodePostal]
     Telephone_locateur_1:
       champs: [locateurs.0.noTelephone]
     Autre_telephone_locateur_1:
       champs: [locateurs.0.autreNoTelephoneCell]
     Adresse_courriel_locateur_1:
-      champs: [locateurs.0.courrielPrincipal]
+      champs: [locateurs.0.courriel]
     Representant_locateur_1:
       champs: [locateurs.0.representant]
     Nom_locateur_2:
       champs: [locateurs.1.nom]
     Numero_civique_locateur_2:
-      champs: [locateurs.adresse.1.NoCivique]
+      champs: [locateurs.1.adresse.0.NoCivique]
     Rue_locateur_2:
-      champs: [locateurs.adresse.1.Rue]
+      champs: [locateurs.1.adresse.0.Rue]
     App_locateur_2:
-      champs: [locateurs.adresse.1.Appartement]
+      champs: [locateurs.1.adresse.0.Appartement]
     Municipalite_locateur_2:
-      champs: [locateurs.adresse.1.Municipalite]
+      champs: [locateurs.1.adresse.0.Municipalite]
     Code_postal_locateur_2:
-      champs: [locateurs.adresse.1.CodePostal]
+      champs: [locateurs.1.adresse.0.CodePostal]
     Telephone_locateur_2:
       champs: [locateurs.1.noTelephone]
     Autre_telephone_locateur_2:
@@ -71,15 +74,15 @@ bind:
     Nom_locataire_1:
       champs: [locataires.0.nom]
     Numero_civique_locataire_1:
-      champs: [locataires.adresse.0.NoCivique]
+      champs: [locataires.0.adresse.0.NoCivique]
     Rue_locataire_1:
-      champs: [locataires.adresse.0.Rue]
+      champs: [locataires.0.adresse.0.Rue]
     App_locataire_1:
-      champs: [locataires.adresse.0.Appartement]
+      champs: [locataires.0.adresse.0.Appartement]
     Municipalite_locataire_1:
-      champs: [locataires.adresse.0.Municipalite]
+      champs: [locataires.0.adresse.0.Municipalite]
     Code_postal_locataire_1:
-      champs: [locataires.adresse.0.CodePostal]
+      champs: [locataires.0.adresse.0.CodePostal]
     Telephone_locataire_1:
       champs: [locataires.0.noTelephone]
     Autre_Telephone_locataire_1:
@@ -88,3 +91,332 @@ bind:
       champs: [locataires.0.courriel]
     Representant_locataire_1:
       champs: [locataires.0.representant]
+    Numero_civique_logement:
+      champs: [adresseLogement.0.NoCivique]
+    Rue_logement:
+      champs: [adresseLogement.0.Rue]
+    App_logement:
+      champs: [adresseLogement.0.Appartement]
+    Municipalite_logement:
+      champs: [adresseLogement.0.Municipalite]
+    Code_postal_logement:
+      champs: [adresseLogement.0.CodePostal]
+    Nombre_de_pieces:
+      champs: [nbPieces]
+    Fins_habitation_oui:
+      champs: [logementLoueFinsHabitation==true]
+    Fins_habitation_non:
+      champs: [logementLoueFinsHabitation==false]
+    Nom_locataire_2:
+      champs: [locataires.1.nom]
+    Stationnement_exterieur_oui:
+      champs: [dependancesIncluses==StationnementExterieur]
+    Stationnement_interieur_oui:
+      champs: [dependancesIncluses==StationnementInterieur]
+    Remise_rangement_oui:
+      champs: [dependancesIncluses==RemiseOuEspaceRangement]
+    Copropriete_oui:
+      champs: [logementCoproprieteDivise==true]
+    Copropriete_non:
+      champs: [logementCoproprieteDivise==false]
+    Nombre_de_places_exterieur:
+      champs: [stationnementExterieur.0.nbPlaces]
+    Nombre_de_places_interieur:
+      champs: [stationnementInterieur.0.nbPlaces]
+    Nombre_places_remise_rangement:
+      champs: [remiseEspaceRangement.0.nbPlaces]
+    Emplacement_exterieur:
+      champs: [stationnementExterieur.0.emplacements]
+    Emplacement_interieur:
+      champs: [stationnementInterieur.0.emplacements]
+    Emplacement_remise_rangement:
+      champs: [remiseEspaceRangement.0.emplacements]
+    Autres_Accessoires_dependances_Preciser:
+      champs: [autresAccessoiresDependances]
+    Meubles_inclus_oui:
+      champs: [meublesInclusLoyer==true]
+    Meubles_inclus_non:
+      champs: [meublesInclusLoyer==false]
+    Laveuse_oui:
+      champs: [listeAppareilsInclusLoyer==laveuse]
+    Cuisiniere_oui:
+      champs: [listeAppareilsInclusLoyer==cuisiniere]
+    Secheuse_oui:
+      champs: [listeAppareilsInclusLoyer==secheuse]
+    Commode_oui:
+      champs: [listeMeublesInclusLoyer==commodes]
+    Nombre_commodes:
+      champs: [nbCommodes]
+    Canape_oui:
+      champs: [listeMeublesInclusLoyer==canapes]
+    Nombre_canape:
+      champs: [nbCanapes]
+    Fauteuils_oui:
+      champs: [listeMeublesInclusLoyer==fauteuils]
+    Fauteuils:
+      champs: [nbFauteuils]
+    Lits_oui:
+      champs: [listeMeublesInclusLoyer==lits]
+    Nombre_lits:
+      champs: [nbLits]
+    Format_lits:
+      champs: [formatLits]
+    Micro-ondes_oui:
+      champs: [listeAppareilsInclusLoyer==fourMicroOndes]
+    Lave-vaisselle_oui:
+      champs: [listeAppareilsInclusLoyer==laveVaisselle]
+    Table_oui:
+      champs: [listeMeublesInclusLoyer==tables]
+    Nombre_Table:
+      champs: [nbTables]
+    Refrigerateur_oui:
+      champs: [listeAppareilsInclusLoyer==refrigerateur]
+    Chaise_oui:
+      champs: [listeMeublesInclusLoyer==chaises]
+    Nombre_chaises:
+      champs: [nbChaises]
+    Autre_meuble_oui:
+      champs:
+      - listeAppareilsInclusLoyer==autre
+      - listeMeublesInclusLoyer==autre
+      - <TOUS-VRAIS>
+    Numero_civique_locataire_2:
+      champs: [locataires.1.adresse.0.NoCivique]
+    Rue_locataire_2:
+      champs: [locataires.1.adresse.0.Rue]
+    App_locataire_2:
+      champs: [locataires.1.adresse.0.Appartement]
+    Municipalite_locataire_2:
+      champs: [locataires.1.adresse.0.Municipalite]
+    Code_postal_locataire_2:
+      champs: [locataires.1.adresse.0.CodePostal]
+    Telephone_locataire_2:
+      champs: [locataires.1.noTelephone]
+    Autre_telephone_locataire_2:
+      champs: [locataires.1.autreNoTelephoneCell]
+    Adresse_courriel_locataire_2:
+      champs: [locataires.1.courriel]
+    Representant_locataire_2:
+      champs: [locataires.1.representant]
+    Fins_mixtes_Preciser:
+      champs: [precisionLocationMixte]
+    Duree_du_bail:
+      champs: [nbSemainesMoisAnnees]
+    Date_debut_bail:
+      champs: [dateDebutBail]
+      formule: '{dateDebutBail:dd          MM          yyyy}'
+    Date_fin_bail:
+      champs: [dateFinBail]
+      formule: '{dateFinBail:dd          MM          yyyy}'
+    Date_debut_indeterminee:
+      champs: [dateDebutBailDureeIndeterminee]
+      formule: '{dateDebutBailDureeIndeterminee:dd          MM          yyyy}'
+    Loyer_mois:
+      champs: [frequenceCoutLoyer==mois]
+    Services_mois:
+      champs:
+      - frequenceCoutLoyer==mois
+      - bailIncluServices==true
+      - <TOUS-VRAIS>
+    Loyer_total_mois:
+      champs: [frequenceCoutLoyer==mois]
+    Loyer_semaine:
+      champs: [frequenceCoutLoyer==semaine]
+    Services_semaine:
+      champs:
+      - frequenceCoutLoyer==semaine
+      - bailIncluServices==true
+      - <TOUS-VRAIS>
+    Loyer_total_semaine:
+      champs: [frequenceCoutLoyer==semaine]
+    Loyer:
+      champs: [coutLoyer]
+    Loyer_total:
+      champs: [coutTotalLoyer]
+    Cout_services:
+      champs: [coutServices]
+    Subvention_oui:
+      champs: [subventionPaiementLoyer==true]
+    Subvention_non:
+      champs: [subventionPaiementLoyer==false]
+    Subvention_preciser:
+      champs: [preciserSubventionPaiementLoyer]
+    Date_premier_terme:
+      champs: [premierTermePaiement]
+      formule: '{premierTermePaiement:dd          MM          yyyy}'
+    Preciser_autre_terme_loyer:
+      champs: [precisionAutresTermes]
+    Autre_premier_mois:
+      champs: [termesPaiement==permierJourMois]
+    Autre_terme_semaine:
+      champs: [termesPaiement==permierJourSemaine]
+    Argent:
+      champs: [modePaiement==argentComptant]
+    Cheque:
+      champs: [modePaiement==cheque]
+    Cheque_postdate:
+      champs: [modePaiement==chequePostDate]
+    Virement:
+      champs: [modePaiement==virementBancaire]
+    Autre_mode:
+      champs: [modePaiement==autre]
+    Autre_mode_preciser:
+      champs: [precisionAutresModePaiement]
+    Lieu_du_paiement:
+      champs: [lieuPaiement]
+    Date_reglement:
+      champs: [dateRemiseReglementImmeuble]
+      formule: '{dateRemiseReglementImmeuble:dd          MM          yyyy}'
+    COPREG_date:
+      champs: [dateRemiseReglementCoproprieteDivise]
+      formule: '{dateRemiseReglementCoproprieteDivise:dd          MM          yyyy}'
+    Travaux_avant2:
+      champs: [travauxReparationsAvantDelivrance]
+    Travaux_en_cours2:
+      champs: [travauxReparationsEnCoursBail]
+    Concierge_preciser:
+      champs: [precisionsServicesConcierge]
+    Nom_concierge:
+      champs: [coordonneesConcierge.0.nomConcierge]
+    Telephone_concierge:
+      champs: [coordonneesConcierge.0.noTelephone]
+    Autre_telephone_concierge:
+      champs: [coordonneesConcierge.0.autreNoTelephoneCell]
+    Adresse_courriel_concierge:
+      champs: [coordonneesConcierge.0.adresseCourriel]
+    Chauffage_electricite:
+      champs: [typeChauffageLogement==electricite]
+    Chauffage_gaz:
+      champs: [typeChauffageLogement==gaz]
+    Chauffage_mazout:
+      champs: [typeChauffageLogement==mazout]
+    Fumee_oui:
+      champs: [locatairePossedeDroitFumer==false]
+      formuleAnglaise: '{locateurs.2.nom:exclude(undefined):true}'
+    Fumee_non:
+      champs: [locatairePossedeDroitFumer==true]
+    Fumee_preciser:
+      champs: [precisionLocatairePossedeDroitFumer]
+    Accepte_postdate_oui:
+      champs: [locateurAccepteRemiseChequePostdates]
+    Accepte_postdate_non:
+      champs: [locateurAccepteRemiseChequePostdates]
+      formule: '{locateurAccepteRemiseChequePostdates:true|false}'
+    Chauffage_locateur:
+      champs: [responsabiliteChauffage==locateur]
+    Chauffage_locataire:
+      champs: [responsabiliteChauffage==locataire]
+    Gaz_locateur:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteGaz==locateur]
+    Gaz_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteGaz==locataire]
+    Elect_locateur:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteElectricite==locateur]
+    Elect_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteElectricite==locataire]
+    Chauffe_eau_locateur:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteChauffeEau==locateur]
+    Chauffe_eau_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteChauffeEau==locataire]
+    Eau_chaude_locateur:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteEauChaude==locateur]
+    Eau_chaude_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteEauChaude==locataire]
+    Terrain_oui:
+      champs: [locatairePossedeDroitAccesTerrain==true]
+    Terrain_non:
+      champs: [locatairePossedeDroitAccesTerrain==false]
+    Terrain_preciser:
+      champs: [precisionLocatairePossedeDroitAccesTerrain]
+    Animaux_oui:
+      champs: [locatairePossedeDroitAnimaux==true]
+    Animaux_non:
+      champs: [locatairePossedeDroitAnimaux==false]
+    Animaux_preciser:
+      champs: [precisionLocatairePossedeDroitAnimaux]
+    Autres_services_conditions_restrictions1:
+      champs: [precisionAutresServicesConditionsRestriction]
+    Taxe_eau_locateur:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteTaxeConsommationEau==locateur]
+    Taxe_eau_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteTaxeConsommationEau==locataire]
+    Deneigement_stat_locateur:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementStationnement==locateur]
+    Deneigement_stat_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementStationnement==locataire]
+    Deneigement_balcon_locateur:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementBalcon==locateur]
+    Deneigement_balcon_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementBalcon==locataire]
+    Deneigement_entree_locateur:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementEntree==locateur]
+    Deneigement_entree_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementEntree==locataire]
+    Deneigement_escalier_locateur:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementEscalier==locateur]
+    Deneigement_escalier_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementEscalier==locataire]
+    Neuf_oui:
+      champs: [situationApplicableRestrictionsFixationLoyer==estLogementImmeubleMoins5ans]
+    Changement_AFF_oui:
+      champs: [situationApplicableRestrictionsFixationLoyer==estLogementImmeubleChangementAffectation5ans]
+    Date_pret_habitation:
+      champs: [dateImmeublePretHabitation]
+      formule: '{dateImmeublePretHabitation:dd          MM          yyyy}'
+    Date_changement_AFF:
+      champs: [dateImmeublePretHabitationAffectation]
+      formule: '{dateImmeublePretHabitationAffectation:dd          MM          yyyy}'
+    Loyer_maximal:
+      champs: [loyerMaximalImeublePretPourUsage]
+    Loyer_clauseG_1:
+      champs: [montantLoyerPlusBasPaye12Mois]
+    ClauseG_1_mois:
+      champs: [frequenceLoyerPlusBasPaye12Mois==mois]
+    ClauseG_1_semaine:
+      champs: [frequenceLoyerPlusBasPaye12Mois==semaine]
+    ClauseG_1_autre:
+      champs: [frequenceLoyerPlusBasPaye12Mois==autre]
+    ClauseG_1_autre_frequence:
+      champs: [precisionAutreFrequencePlusBasLoyer]
+    Autre_meuble_detail_1:
+      champs:
+      - autresAppareilsInclus
+      - autresMeublesInclus
+      formule: '{autresAppareilsInclus} {autresMeublesInclus}'
+    Nom_conjoint:
+      champs: [locataire1confirmationAvisResidenceFamiliale]
+    Clause_G_1:
+      champs: [situationApplicableAvisNouveauLocataire==loyer]
+    Clause_G_2:
+      champs: [situationApplicableAvisNouveauLocataire==aucunLoyer]
+    ClauseG_3:
+      champs: [situationApplicableAvisNouveauLocataire==residencePriveeAines]
+    Date_Clause_G_2:
+      champs: [dateDernierPaiementLoyer]
+      formule: '{dateDernierPaiementLoyer:dd          MM          yyyy}'
+    Loyer_clauseG_2:
+      champs: [montantDernierLoyerPaye]
+    ClauseG_2_mois:
+      champs: [frequenceDernierLoyer==mois]
+    ClauseG_2_semaine:
+      champs: [frequenceDernierLoyer==semaine]
+    ClauseG_2_autre:
+      champs: [frequenceDernierLoyer==autre]
+    ClauseG_2_autre_frequence:
+      champs: [precisionAutreFrequenceDernierLoyer]
+    Loyer_clauseG_3:
+      champs: [montantLoyerBailPrecedent]
+    ClauseG_3_mois:
+      champs: [frequenceLoyerBailPrecedent==mois]
+    ClauseG_3_semaine:
+      champs: [frequenceLoyerBailPrecedent==semaine]
+    ClauseG_3_autre:
+      champs: [frequenceLoyerBailPrecedent==autre]
+    ClauseG_3_autre_frequence:
+      champs: [precisionAutreFrequenceLoyerBailPrecedent]
+    ClauseG_conditions_oui:
+      champs: [estMemeBienServicesConditions==true]
+    ClauseG_conditions_non:
+      champs: [estMemeBienServicesConditions==false]
+    ClauseG_conditions_non_preciser:
+      champs: [modificationsApporteesBienServicesConditions]
