@@ -38,7 +38,7 @@ templates:
     fr: BAIL_AJOUT
     en: BAIL_AJOUT
   gabarit: *o1
-  conditionsEt: '{locateurs.Length:cond:>=3?true|false} {locataires.Length:cond:>=3?true|false}'
+  conditionsOu: '{locateurs.Length:cond:>=2?true|false} {locataires.Length:cond:>=3?true|false}'
   toujoursProduire: false
 bind:
   bail:
