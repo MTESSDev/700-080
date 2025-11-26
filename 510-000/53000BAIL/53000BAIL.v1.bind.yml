@@ -216,7 +216,7 @@ bind:
     Services_mois:
       champs:
       - frequenceCoutLoyer==mois
-      - bailIncluServices==true
+      - bailIncluServices
       - <TOUS-VRAIS>
     Loyer_total_mois:
       champs: [frequenceCoutLoyer==mois]
@@ -225,7 +225,7 @@ bind:
     Services_semaine:
       champs:
       - frequenceCoutLoyer==semaine
-      - bailIncluServices==true
+      - bailIncluServices
       - <TOUS-VRAIS>
     Loyer_total_semaine:
       champs: [frequenceCoutLoyer==semaine]
@@ -420,3 +420,93 @@ bind:
       champs: [estMemeBienServicesConditions==false]
     ClauseG_conditions_non_preciser:
       champs: [modificationsApporteesBienServicesConditions]
+    Avertisseur_Initiales_locataire1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire3.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+    REG_Initiales_locataire_1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire3.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+    Postdate_Initiales_locataire_1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire3.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+    COPREG_Initiales_locataire1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire3.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+    P2_Initiales_du_locataire_1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire3.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+    P1_Initiales_locataire_1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire3.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+    P3_Initiales_du_locataire1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire3.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+    Solidarite_Initiales_locataire1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire3.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+    P4_Initiales_du_locataire1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire3.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+    P4_Initiales_du_locataire2:
+      champs:
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+    Solidarite_Initiales_locataire2:
+      champs:
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+    P3_Initiales_du_locataire2:
+      champs:
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+    P2_Initiales_du_locataire_2:
+      champs:
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+    COPREG_Initiales_locataire_2:
+      champs:
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+    REG_Initiales_locataire_2:
+      champs:
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+    Postdate_Initiales_locataire_2:
+      champs:
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+    P1_Initiales_locataire_2:
+      champs:
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+    Avertisseur_Initiales_locataire2:
+      champs:
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
