@@ -10,7 +10,9 @@ config:
     overrideTailleChampsAuto: 7
 bundles:
 - nomSortie: Bail_de_logement.pdf
-  templates: [01]
+  templates:
+  - bail
+  - ajout
   estampille:
     positionX: 600
     positionY: 20
@@ -23,15 +25,23 @@ bundles:
     toutesPages: true
     lignes: ['{{NoConfirmation}}']
 templates:
-- id: 01
+- id: bail
   name: 53000 - BAIL
   pdf: &o0
     fr: 53000_BAIL
     en: 53001_BAIL_EN
   gabarit: *o0
   toujoursProduire: false
+- id: ajout
+  name: Ajout
+  pdf: &o1
+    fr: BAIL_AJOUT
+    en: BAIL_AJOUT
+  gabarit: *o1
+  conditionsEt: '{locateurs.Length:cond:>=3?true|false} {locataires.Length:cond:>=3?true|false}'
+  toujoursProduire: false
 bind:
-  01:
+  bail:
     Nom_locateur_1:
       champs: [locateurs.0.nom]
     Numero_civique_locateur_1:
@@ -385,7 +395,7 @@ bind:
       - autresMeublesInclus
       formule: '{autresAppareilsInclus} {autresMeublesInclus}'
     Nom_conjoint:
-      champs: [locataire1confirmationAvisResidenceFamiliale]
+      champs: [locataire1nomConjoint]
     Clause_G_1:
       champs: [situationApplicableAvisNouveauLocataire==loyer]
     Clause_G_2:
@@ -565,3 +575,112 @@ bind:
       champs: [estLocatairesEngagementSolidaire==true]
     Solidarite_non:
       champs: [estLocatairesEngagementSolidaire==false]
+  ajout:
+    Nom_locateur_1:
+      champs: [locateurs.2.nom]
+    Nom_locateur_2:
+      champs: [locateurs.3.nom]
+    Numero_civique_locateur_1:
+      champs: [locateurs.2.adresse.0.NoCivique]
+    Numero_civique_locateur_2:
+      champs: [locateurs.3.adresse.0.NoCivique]
+    Rue_locateur_1:
+      champs: [locateurs.2.adresse.0.Rue]
+    App_locateur_1:
+      champs: [locateurs.2.adresse.0.Appartement]
+    Municipalite_locateur_1:
+      champs: [locateurs.2.adresse.0.Municipalite]
+    Code_postal_locateur_1:
+      champs: [locateurs.2.adresse.0.CodePostal]
+    Telephone_locateur_1:
+      champs: [locateurs.2.noTelephone]
+    Autre_telephone_locateur_1:
+      champs: [locateurs.2.autreNoTelephoneCell]
+    Adresse_courriel_locateur_1:
+      champs: [locateurs.2.courriel]
+    Representant_locateur_1:
+      champs: [locateurs.2.representant]
+    Rue_locateur_2:
+      champs: [locateurs.3.adresse.0.Rue]
+    App_locateur_2:
+      champs: [locateurs.3.adresse.0.Appartement]
+    Municipalite_locateur_2:
+      champs: [locateurs.3.adresse.0.Municipalite]
+    Code_postal_locateur_2:
+      champs: [locateurs.3.adresse.0.CodePostal]
+    Telephone_locateur_2:
+      champs: [locateurs.3.noTelephone]
+    Autre_telephone_locateur_2:
+      champs: [locateurs.3.autreNoTelephoneCell]
+    Adresse_courriel_locateur_2:
+      champs: [locateurs.3.courriel]
+    Representant_locateur_2:
+      champs: [locateurs.3.representant]
+    Nom_locataire_1:
+      champs: [locataires.2.nom]
+    Numero_civique_locataire_1:
+      champs: [locataires.2.adresse.0.NoCivique]
+    Rue_locataire_1:
+      champs: [locataires.2.adresse.0.Rue]
+    App_locataire_1:
+      champs: [locataires.2.adresse.0.Appartement]
+    Municipalite_locataire_1:
+      champs: [locataires.2.adresse.0.Municipalite]
+    Code_postal_locataire_1:
+      champs: [locataires.2.adresse.0.CodePostal]
+    Telephone_locataire_1:
+      champs: [locataires.2.noTelephone]
+    Autre_Telephone_locataire_1:
+      champs: [locataires.2.autreNoTelephoneCell]
+    Adresse_courriel_locataire_1:
+      champs: [locataires.2.courriel]
+    Representant_locataire_1:
+      champs: [locataires.2.representant]
+    Nom_locataire_2:
+      champs: [locataires.3.nom]
+    Numero_civique_locataire_2:
+      champs: [locataires.3.adresse.0.NoCivique]
+    Rue_locataire_2:
+      champs: [locataires.3.adresse.0.Rue]
+    App_locataire_2:
+      champs: [locataires.3.adresse.0.Appartement]
+    Municipalite_locataire_2:
+      champs: [locataires.3.adresse.0.Municipalite]
+    Code_postal_locataire_2:
+      champs: [locataires.3.adresse.0.CodePostal]
+    Telephone_locataire_2:
+      champs: [locataires.3.noTelephone]
+    Autre_telephone_locataire_2:
+      champs: [locataires.3.autreNoTelephoneCell]
+    Adresse_courriel_locataire_2:
+      champs: [locataires.3.courriel]
+    Representant_locataire_2:
+      champs: [locataires.3.representant]
+    Numero_sequentiel:
+      champs: [<NULL>]
+    P1_Initiales_locateur_1:
+      champs:
+      - signatureLocateur2.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
+    P1_Initiales_locateur_2:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur3.0.Initiales
+      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P1_Initiales_locataire_1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire3.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+    P1_Initiales_locataire_2:
+      champs:
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+    Nom_du_conjoint1:
+      champs: [locataire2nomConjoint]
+    Nom_du_conjoint2:
+      champs: [locataire3nomConjoint]
+    Nom_du_conjoint3:
+      champs: [locataire4nomConjoint]
