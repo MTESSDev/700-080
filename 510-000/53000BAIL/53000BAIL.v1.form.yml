@@ -148,10 +148,10 @@ form:
     fr: Bail de logement
     en: Lease of a dwelling    
   sectionsGroup:
-    # Comment fonctionne le formulaire de bail électronique?
+    # Compléter votre formulaire de bail : étapes à suivre
     - sectionGroup:
-        fr: Comment fonctionne le formulaire de bail électronique?
-        en: TODO english Comment fonctionne le formulaire de bail électronique?
+        fr: "Compléter votre formulaire de bail : étapes à suivre"
+        en: "TODO english - Compléter votre formulaire de bail : étapes à suivre"
       classes: icone user
       filtreEtapes: 
         - initial: 
@@ -179,7 +179,7 @@ form:
               text:
                 fr: |
                   <h3>1. Remplissage du formulaire de bail électronique</h3>
-                  <p>À titre de <strong>locateur responsable, vous</strong> complétez le formulaire de bail en ligne.</p>
+                  <p>À titre de <strong>locateur responsable</strong>, vous complétez le formulaire de bail en ligne.</p>
                   <ul class="utd">
                     <li>
                       Les champs <b>obligatoires</b> sont identifiés par un astérisque (<span class="icone-champ-requis">*</span>).
@@ -519,7 +519,7 @@ form:
                 en: The dwelling is rented for mixed residential and
               help: 
                 fr: |
-                  Ex. commerciales. 
+                  P. ex. commerciales. 
                 en: |
                   E.g. commercial.
             - type: radio
@@ -671,8 +671,8 @@ form:
                 en: |
                   <p>TODO english - Dès lors que le locateur fournit des appareils, il doit en assurer l’entretien et les réparations, sauf pour les petites réparations d’usage. Il ne peut se dégager de cette responsabilité.</p>
             help:
-              fr: Ex. Cuisinière, laveuse, sécheuse, etc.
-              en: Ex. Stove, washer, dryer, etc.
+              fr: P. ex. Cuisinière, laveuse, sécheuse, etc.
+              en: E.g. Stove, washer, dryer, etc.
             options: yesno
 
           - name: listeAppareilsInclusLoyer
@@ -730,8 +730,8 @@ form:
               fr: Est-ce que des meubles sont loués et inclus dans le loyer?
               en: Is furniture included in the rent?
             help:
-              fr: Ex. Table, chaise, lit, commode, etc.
-              en: Ex. Table, chair, bed, chest of drawers, etc.
+              fr: P. ex. Table, chaise, lit, commode, etc.
+              en: E.g. Table, chair, bed, chest of drawers, etc.
             options: yesno
 
           - name: listeMeublesInclusLoyer
@@ -924,8 +924,8 @@ form:
                   fr: Veuillez préciser le nombre de semaines, de mois ou d'années.
                   en: Specify the number of weeks, months or years.
                 placeholder:
-                  fr: Ex. 1 an, 6 mois, etc.
-                  en: Ex. 1 year, 6 months, etc.
+                  fr: P. ex. 1 an, 6 mois, etc.
+                  en: E.g. 1 year, 6 months, etc.
                 outerClasses: lg
               - type: inline
                 components:
@@ -1078,8 +1078,8 @@ form:
               label:
                 fr: Veuillez préciser les termes de loyer
               placeholder:
-                fr: Ex. Premier lundi du mois, 15 de chaque mois, etc.
-                en: Ex. First Monday of the month, 15th of each month, etc.
+                fr: P. ex. Premier lundi du mois, 15 de chaque mois, etc.
+                en: E.g. First Monday of the month, 15th of each month, etc.
             - type: avis
               classes: information
               text:
@@ -1117,8 +1117,8 @@ form:
                 fr: Veuillez préciser le mode de paiement
                 en: Specify the payment method
               placeholder:
-                fr: Ex. prélèvement automatique
-                en: TODO english - Ex. prélèvement automatique
+                fr: P. ex. prélèvement automatique
+                en: TODO english - P. ex. prélèvement automatique
             - type: checkbox
               name: locateurAccepteRemiseChequePostdates
               v-if: val('modePaiement') === 'chequePostDate'
@@ -1446,7 +1446,7 @@ form:
               label:
                 fr: Veuillez apporter des précisions à ce sujet, si nécessaire.
               help:
-                fr: Ex. pas de cannabis.
+                fr: P. ex. pas de cannabis.
                 en: E.g., no cannabis.
               validations:
                 optional: null 
@@ -1462,7 +1462,7 @@ form:
               label:
                 fr: Veuillez apporter des précisions à ce sujet, si nécessaire.
               help:
-                fr: Ex. Accès à la cour arrière, accès exclusif ou partagé avec d’autres locataires, etc.
+                fr: P. ex. Accès à la cour arrière, accès exclusif ou partagé avec d’autres locataires, etc.
                 en: E.g., TODO english Accès à la cour arrière, accès exclusif ou partagé avec d’autres locataires, etc.
               validations:
                 optional: null                             
@@ -1478,7 +1478,7 @@ form:
               label:
                 fr: Veuillez apporter des précisions à ce sujet, si nécessaire.
               help:
-                fr: Ex. Nombre, taille, poids, etc.
+                fr: P. ex. Nombre, taille, poids, etc.
                 en: E.g., number, height, weight, etc.
               validations:
                 optional: null
@@ -1502,7 +1502,7 @@ form:
                 fr: Veuillez préciser les autres services, conditions et restrictions
                 en: Specify other services, conditions and restrictions
               help: 
-                fr: Ex. Antenne, barbecue, climatiseur, corde à linge, peinture, piscine, salle de lavage, etc.
+                fr: P. ex. Antenne, barbecue, climatiseur, corde à linge, peinture, piscine, salle de lavage, etc.
                 en: E.g., antenna, barbecue, air conditioner, clothesline, paint, pool, laundry room, etc.
               validations: 
                 max: 150
@@ -1525,8 +1525,8 @@ form:
               label:
                 fr: Veuillez préciser les documents que vous désirez joindre au bail
               help: 
-                fr: Ex. Contrat de cautionnement, document sur les conditions de vie en résidence privée pour aînés, consentement à la communication par courriel, etc.
-                en: TODO english - Ex. Contrat de cautionnement, document sur les conditions de vie en résidence privée pour aînés, consentement à la communication par courriel, etc.                
+                fr: P. ex. Contrat de cautionnement, document sur les conditions de vie en résidence privée pour aînés, consentement à la communication par courriel, etc.
+                en: TODO english - P. ex. Contrat de cautionnement, document sur les conditions de vie en résidence privée pour aînés, consentement à la communication par courriel, etc.                
               validations: 
                 max: 150
               additionals:
@@ -1804,7 +1804,6 @@ form:
         - initial:         
       sections:
         # Engagement solidaire
-
         - section:
             fr: Engagement solidaire
           id: engagementSolidaire
@@ -1862,7 +1861,7 @@ form:
                   label: 
                     fr: En quelle qualité cette personne doit signer le bail? 
                   help:
-                    fr: Ex. autre locataire, caution, etc. (mention 12)
+                    fr: P. ex. autre locataire, caution, etc. (mention 12)
                 - type: adresse
                   name: adresse
                   label:
@@ -2413,10 +2412,10 @@ form:
       classes: icone user
       sections: &sectionsLocataireEtAutreSignataire
 
-        # Fonctionnement bail locataires contribution
+        # Compléter votre formulaire de bail : étapes à suivre
         - section:
-            fr: Comment fonctionne le formulaire de bail électronique?
-            en: TODO english Comment fonctionne le formulaire de bail électronique?
+            fr: "Compléter votre formulaire de bail : étapes à suivre"
+            en: "TODO english - Compléter votre formulaire de bail : étapes à suivre"
           id: fonctionnementBailLocatairesContribution
           cacherTexteExplicatifChampsObligatoires: true          
           filtreEtapes: 
@@ -2444,8 +2443,8 @@ form:
 
         # Fonctionnement bail locataires consultation
         - section:
-            fr: Comment fonctionne le formulaire de bail électronique?
-            en: TODO english Comment fonctionne le formulaire de bail électronique?
+            fr: Suivi de l'évolution du formulaire de bail électronique
+            en: TODO english Suivi de l'évolution du formulaire de bail électronique
           id: fonctionnementBailLocatairesConsultation
           cacherTexteExplicatifChampsObligatoires: true          
           filtreEtapes: 
@@ -2455,12 +2454,10 @@ form:
               tag: div              
               text:
                 fr: |
-                  <h3>1. Remplissage du formulaire de bail électronique</h3>
-                  <p>TODO PAM - Vous avez déjà signé le bail.</p>
-                  <p>Vous devez attendre que le locateur principal signe à son tour le bail.</p>
-                  <hr>
-                  <h3>2. Finalisation du formulaire de bail électronique</h3>
-                  <p>Une fois que le locateur principal aura signé le bail, vous recevrez automatiquement un courriel. Dans ce courriel, vous y trouverez le formulaire de bail électronique final rempli et signé par toutes les parties ainsi que les documents joints par le locateur, le cas échéant (Ex. règlement de l’immeuble, contrat de cautionnement, etc.). Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>
+                  <p>Le formulaire de bail électronique a été transmis à toutes les parties concernées.</p>
+                  <p>Tant que le « statut » d’au moins un participant indique « non complété », le locateur responsable ne pourra pas signer le formulaire de bail électronique et ainsi terminer le processus.</p>
+                  <p>Lorsque toutes les parties concernées auront complété et signé le formulaire de bail électronique vous recevrez votre formulaire de bail électronique final par courriel ainsi que tous les documents joints (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p> 
+                  <p>Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>
             - type: suiviEtapesWF
               name: suiviEtapesWFSignaturesConsultationLocataires            
               label: 
@@ -2499,7 +2496,8 @@ form:
               - autresServicesConditionsRestriction
               - restrictionsLoyerBail
               - avisNouveauLocataire
-              - engagementSolidaire              
+              - engagementSolidaire          
+              - autresSignataires    
 
         # Engagement pour avertisseurs de fumée 
         - section:
@@ -2604,7 +2602,7 @@ form:
               type: checkbox              
               label:
                 fr: Je confirme que cette information est exacte
-                en: TODO Je consens à être engagé solidairement pour l’ensemble des obligations du bail
+                en: TODO Je confirme que cette information est exacte
 
         # Avis de résidence familiale
         - section:
@@ -2727,10 +2725,10 @@ form:
           - locateur: 1                 
       classes: icone user
       sections: &sectionsLocateur
-        # Comment fonctionne le formulaire de bail électronique? (Locateur signature)
+        # Compléter votre formulaire de bail : étapes à suivre (Locateur signature)
         - section:
-            fr: Comment fonctionne le formulaire de bail électronique?
-            en: TODO english Comment fonctionne le formulaire de bail électronique?
+            fr: "Compléter votre formulaire de bail : étapes à suivre"
+            en: "TODO english - Compléter votre formulaire de bail : étapes à suivre"
           id: fonctionnementBailLocateurSignature
           cacherTexteExplicatifChampsObligatoires: true          
           filtreEtapes: 
@@ -2743,12 +2741,12 @@ form:
                 fr: |
                   <p>Le formulaire de bail électronique a été complété par toutes les parties au bail.</p>
                   <p>Vous pouvez maintenant réviser le formulaire de bail électronique et le signer.</p>
-                  <p>Une fois toutes les signatures apposées, vous recevrez automatiquement un courriel. Dans ce courriel, vous y trouverez le formulaire de bail électronique final rempli et signé par toutes les parties ainsi que les documents joints par le locateur, le cas échéant (Ex. règlement de l’immeuble, contrat de cautionnement, etc.). Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>
+                  <p>Une fois toutes les signatures apposées, vous recevrez automatiquement un courriel. Dans ce courriel, vous y trouverez le formulaire de bail électronique final rempli et signé par toutes les parties ainsi que les documents joints par le locateur, le cas échéant (P. ex. règlement de l’immeuble, contrat de cautionnement, etc.). Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>
 
-        # Comment fonctionne le formulaire de bail électronique? (Locateur consultation)
+        # Compléter votre formulaire de bail : étapes à suivre (Locateur consultation)
         - section:
-            fr: Comment fonctionne le formulaire de bail électronique?
-            en: TODO english Comment fonctionne le formulaire de bail électronique?
+            fr: "Compléter votre formulaire de bail : étapes à suivre"
+            en: "TODO english - Compléter votre formulaire de bail : étapes à suivre"
           id: fonctionnementBailLocateurConsultation
           cacherTexteExplicatifChampsObligatoires: true          
           filtreEtapes: 
@@ -2764,7 +2762,7 @@ form:
                   <p>Vous devez attendre que le locateur principal signe à son tour le bail.</p>
                   <hr>
                   <h3>2. Finalisation du formulaire de bail électronique</h3>
-                  <p>Une fois que le locateur principal aura signé le bail, vous recevrez automatiquement un courriel. Dans ce courriel, vous y trouverez le formulaire de bail électronique final rempli et signé par toutes les parties ainsi que les documents joints par le locateur, le cas échéant (Ex. règlement de l’immeuble, contrat de cautionnement, etc.). Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>
+                  <p>Une fois que le locateur principal aura signé le bail, vous recevrez automatiquement un courriel. Dans ce courriel, vous y trouverez le formulaire de bail électronique final rempli et signé par toutes les parties ainsi que les documents joints par le locateur, le cas échéant (P. ex. règlement de l’immeuble, contrat de cautionnement, etc.). Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>
             - type: suiviEtapesWF
               name: suiviEtapesWFSignaturesConsultationLocateurs            
               label: 
@@ -2896,27 +2894,7 @@ form:
           id: apercuBailLocateurConsultation
           cacherTexteExplicatifChampsObligatoires: true          
           sommaire: 
-            inclureSections : &inclureSectionsBailSaisiLocateur
-              - infosLocateur
-              - infosLocataire
-              - descriptionLogement
-              - destinationLogement
-              - dependances
-              - appareilsInclus
-              - meublesInclus
-              - engagementAvertisseursFumeeLocateur1
-              - dureeBail
-              - cout
-              - paiement
-              - reglementImmeuble
-              - travauxEtReparations
-              - servicesConcierge
-              - servicesTaxesCoutsConsommation
-              - conditions
-              - autresServicesConditionsRestriction
-              - restrictionsLoyerBail
-              - avisNouveauLocataire
-              - engagementSolidaire              
+            inclureSections : *inclureSectionsBailSaisiLocateur
 
     # Transmission
     - sectionGroup:
@@ -3431,6 +3409,7 @@ form:
               - restrictionsLoyerBail
               - avisNouveauLocataire
               - engagementSolidaire         
+              - autresSignataires
               - locataire1engagementAvertisseursFumeeLocataire     
               - locataire1consentementChequesPostDatesLocataire
               - locataire1confirmationReglementImmeubleLocataire     
@@ -3477,7 +3456,8 @@ form:
               - autresServicesConditionsRestriction
               - restrictionsLoyerBail
               - avisNouveauLocataire
-              - engagementSolidaire         
+              - engagementSolidaire  
+              - autresSignataires       
               - locataire2engagementAvertisseursFumeeLocataire     
               - locataire2consentementChequesPostDatesLocataire
               - locataire2confirmationReglementImmeubleLocataire     
@@ -3524,7 +3504,8 @@ form:
               - autresServicesConditionsRestriction
               - restrictionsLoyerBail
               - avisNouveauLocataire
-              - engagementSolidaire         
+              - engagementSolidaire  
+              - autresSignataires       
               - locataire3engagementAvertisseursFumeeLocataire     
               - locataire3consentementChequesPostDatesLocataire
               - locataire3confirmationReglementImmeubleLocataire     
@@ -3571,7 +3552,8 @@ form:
               - autresServicesConditionsRestriction
               - restrictionsLoyerBail
               - avisNouveauLocataire
-              - engagementSolidaire         
+              - engagementSolidaire      
+              - autresSignataires   
               - locataire4engagementAvertisseursFumeeLocataire     
               - locataire4consentementChequesPostDatesLocataire
               - locataire4confirmationReglementImmeubleLocataire     
@@ -3619,6 +3601,7 @@ form:
               - restrictionsLoyerBail
               - avisNouveauLocataire
               - engagementSolidaire         
+              - autresSignataires
               - autreSignataire1engagementAvertisseursFumeeLocataire     
               - autreSignataire1consentementChequesPostDatesLocataire
               - autreSignataire1confirmationReglementImmeubleLocataire     
@@ -3666,6 +3649,7 @@ form:
               - restrictionsLoyerBail
               - avisNouveauLocataire
               - engagementSolidaire         
+              - autresSignataires
               - autreSignataire2engagementAvertisseursFumeeLocataire     
               - autreSignataire2consentementChequesPostDatesLocataire
               - autreSignataire2confirmationReglementImmeubleLocataire     
@@ -3713,6 +3697,7 @@ form:
               - restrictionsLoyerBail
               - avisNouveauLocataire
               - engagementSolidaire         
+              - autresSignataires
               - locateur1engagementAvertisseursFumeeLocateurs     
               - locateur1confirmationAvisNouveauLocataireParLocateur
 
@@ -3756,7 +3741,8 @@ form:
               - autresServicesConditionsRestriction
               - restrictionsLoyerBail
               - avisNouveauLocataire
-              - engagementSolidaire         
+              - engagementSolidaire   
+              - autresSignataires     
               - locateur2engagementAvertisseursFumeeLocateurs     
               - locateur2confirmationAvisNouveauLocataireParLocateur
 
@@ -3800,7 +3786,8 @@ form:
               - autresServicesConditionsRestriction
               - restrictionsLoyerBail
               - avisNouveauLocataire
-              - engagementSolidaire         
+              - engagementSolidaire    
+              - autresSignataires     
               - locateur3engagementAvertisseursFumeeLocateurs     
               - locateur3confirmationAvisNouveauLocataireParLocateur
 
@@ -3841,7 +3828,8 @@ form:
               - autresServicesConditionsRestriction
               - restrictionsLoyerBail
               - avisNouveauLocataire
-              - engagementSolidaire         
+              - engagementSolidaire      
+              - autresSignataires   
               - locataire1engagementAvertisseursFumeeLocataire     
               - locataire2engagementAvertisseursFumeeLocataire     
               - locataire3engagementAvertisseursFumeeLocataire                   
