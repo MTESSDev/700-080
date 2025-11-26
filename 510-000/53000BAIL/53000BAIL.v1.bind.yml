@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/bind
-
 config:
   formulaire:
     systeme: 700080
@@ -11,24 +9,25 @@ config:
     verrouillerChampsPdf: true
     overrideTailleChampsAuto: 7
 bundles:
-  - nomSortie: Bail_de_logement.pdf
-    templates:
-      - 01
-    estampille:
-      positionX: 600
-      positionY: 20
-      tailleFont: 12
-      rotation: 90
-      couleurRGBA: [255, 0, 0]
-      toutesPages: true
-      lignes:
-        - '{{NoConfirmation}}'
+- nomSortie: Bail_de_logement.pdf
+  templates: [01]
+  estampille:
+    positionX: 600
+    positionY: 20
+    tailleFont: 12
+    rotation: 90
+    couleurRGBA:
+    - 255
+    - 0
+    - 0
+    toutesPages: true
+    lignes: ['{{NoConfirmation}}']
 templates:
 - id: 01
   name: 53000 - BAIL
   pdf: &o0
-    fr: 53000_BAIL_FR_VF
-    en: 53001_BAIL_EN_VF
+    fr: 53000_BAIL
+    en: 53001_BAIL_EN
   gabarit: *o0
   toujoursProduire: false
 bind:
@@ -512,3 +511,53 @@ bind:
       - signatureLocataire2.0.Initiales
       - signatureLocataire4.0.Initiales
       formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+    Avertisseur_Initiales_locateur1:
+      champs:
+      - signatureLocateur2.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
+    Avertisseur_Initiales_locateur2:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur3.0.Initiales
+      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P2_Initiales_du_locateur_1:
+      champs:
+      - signatureLocateur2.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
+    P3_Initiales_du_locateur1:
+      champs:
+      - signatureLocateur2.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
+    P4_Initiales_du_locateur1:
+      champs:
+      - signatureLocateur2.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
+    P2_Initiales_du_locateur_2:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur3.0.Initiales
+      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P3_Initiales_du_locateur2:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur3.0.Initiales
+      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P4_Initiales_du_locateur2:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur3.0.Initiales
+      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P1_Initiales_locateur_1:
+      champs:
+      - signatureLocateur2.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
+    P1_Initiales_locateur_2:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur3.0.Initiales
+      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
