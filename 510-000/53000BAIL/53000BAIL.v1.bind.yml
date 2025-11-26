@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/bind
+
 config:
   formulaire:
     systeme: 700080
@@ -9,24 +11,24 @@ config:
     verrouillerChampsPdf: true
     overrideTailleChampsAuto: 7
 bundles:
-- nomSortie: 53000BAIL
-  templates: [01]
-  estampille:
-    positionX: 25
-    positionY: 710
-    tailleFont: 7
-    rotation: 0
-    toutesPages: false
-    lignes:
-    - 'Numéro de référence : {{NoConfirmation}}'
-    - 'Date de transmission : {{FormatterDate DateTransmission "yyyy-MM-dd HH:mm:ss"}}'
-    - '{{^DonneesFormulaire.estampille.texteAuthentification}}Utilisateur Quebec.ca{{/DonneesFormulaire.estampille.texteAuthentification}}{{{DonneesFormulaire.estampille.texteAuthentification}}}'
+  - nomSortie: Bail_de_logement
+    templates:
+      - 01
+    estampille:
+      positionX: 600
+      positionY: 20
+      tailleFont: 12
+      rotation: 90
+      couleurRGBA: [255, 0, 0]
+      toutesPages: true
+      lignes:
+        - '{{NoConfirmation}}'
 templates:
 - id: 01
   name: 53000 - BAIL
   pdf: &o0
-    fr: 53000_BAIL
-    en: 53001_BAIL_EN
+    fr: 53000_BAIL_FR_VF
+    en: 53001_BAIL_EN_VF
   gabarit: *o0
   toujoursProduire: false
 bind:

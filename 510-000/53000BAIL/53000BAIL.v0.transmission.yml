@@ -114,35 +114,23 @@ workflows:
             - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
               options: 
                   role: locateurPrincipal
-                  gabarit: confirmationBailLocateur
+                  gabarit: confirmationBailFinal
                   modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.
-                  filtresDocuments:
-                    - typeFiltre: tacheSource
-                      valeurs: genererPDF     
             - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
               options: 
                   role: locateur
-                  gabarit: confirmationBailLocateur
+                  gabarit: confirmationBailFinal
                   modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.
-                  filtresDocuments:
-                    - typeFiltre: tacheSource
-                      valeurs: genererPDF   
             - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
               options: 
                   role: locataire
-                  gabarit: confirmationBailLocataire
-                  modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.
-                  filtresDocuments:
-                    - typeFiltre: tacheSource
-                      valeurs: genererPDF                          
+                  gabarit: confirmationBailFinal
+                  modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.                     
             - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
               options: 
                   role: autreSignataire
-                  gabarit: confirmationBailLocataire
-                  modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.
-                  filtresDocuments:
-                    - typeFiltre: tacheSource
-                      valeurs: genererPDF                          
+                  gabarit: confirmationBailFinal
+                  modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.                     
 
 
 gabaritsCourriels:
@@ -152,7 +140,7 @@ gabaritsCourriels:
     #  tous: 
     #    - '{{participantCourrant.courriel}}'
     # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
-    nomExpediteur: Un gentil locateur
+    nomExpediteur: TAL
     # Permet de spécifier l'adresse de retour
     # L'objet du courriel peut contenir des parties variables
     objet: Formulaire de bail électronique à compléter et signer
@@ -180,7 +168,7 @@ gabaritsCourriels:
     #  tous: 
     #    - '{{participantCourrant.courriel}}'
     # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
-    nomExpediteur: De nouveaux locataires
+    nomExpediteur: TAL
     # Permet de spécifier l'adresse de retour
     # L'objet du courriel peut contenir des parties variables
     objet: Suivi de l'évolution du formulaire de bail électronique
@@ -209,7 +197,7 @@ gabaritsCourriels:
     #  tous: 
     #    - '{{participantCourrant.courriel}}'
     # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
-    nomExpediteur: Transmission
+    nomExpediteur: TAL
     # Permet de spécifier l'adresse de retour
     # L'objet du courriel peut contenir des parties variables
     objet: Signature du formulaire de bail électronique
@@ -230,39 +218,34 @@ gabaritsCourriels:
       <br><br>
       <p><i>Veuillez ne pas répondre à ce message, car il a été envoyé automatiquement.</i><p>
 
-  - id: confirmationBailLocateur
+  - id: confirmationBailFinal
     # Liste des destinataires (peut être une liste)
     #a:
     #  tous: 
     #    - '{{participantCourrant.courriel}}'
     # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
-    nomExpediteur: Confirmation de transmission
+    nomExpediteur: TAL
     # Permet de spécifier l'adresse de retour
     # L'objet du courriel peut contenir des parties variables
-    objet: Votre bail complété (locateur)
+    objet: Formulaire de bail électronique final
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
     corps: |
-        Bonjour, <br> Voici une copie du bail complété pour les locateurs.
-        <ul>
-          {{#listePJ}}
-        <li><a href="{{url}}">{{nomOriginal}}</a></li>
-          {{/listePJ}}
-        </ul>    
-  - id: confirmationBailLocataire
-    # Liste des destinataires (peut être une liste)
-    #a:
-    #  tous: 
-    #    - '{{participantCourrant.courriel}}'
-    # Nom de l'expéditeur (Par défaut, "Formulaires en ligne" ou "Online forms" selon la langue)
-    nomExpediteur: Confirmation de transmission
-    # Permet de spécifier l'adresse de retour
-    # L'objet du courriel peut contenir des parties variables
-    objet: Votre bail complété (locataires)
-    # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
-    corps: |
-        Bonjour, <br> Voici une copie du bail complété pour les locataires.
-        <ul>
-          {{#listePJ}}
-        <li><a href="{{url}}">{{nomOriginal}}</a></li>
-          {{/listePJ}}
-        </ul>    
+      <p>Bonjour,</p>
+      <p><b>Ce courriel concerne le logement situé au :</b><br>
+      {{donneesFormulaire.form.adresseLogement.0.adresseComplete}}</p>      
+      </p>
+      <p>Nous avons le plaisir de vous confirmer que <b>le formulaire de bail électronique est maintenant complété et final</b>. Il est joint au présent courriel ainsi que tous les documents qui l’accompagnent, le cas échéant.</p>
+      <p>Ces documents sont disponibles pour téléchargement et/ou impression pendant <b>90 jours. Une fois ce délai expiré, les documents ne seront plus disponibles.</b></p>
+      <p>Nous vous recommandons d’en garder une copie en lieu sûr pour référence future.</p>
+      <p>Merci pour votre contribution et votre efficacité – votre implication a vraiment facilité l’avancement de cette démarche.</p>
+      <p><b>Veuillez trouver ci-dessous le(s) document(s) :</b></p>
+      <ul>
+        {{#listePJ}}
+      <li><a href="{{url}}">{{nomOriginal}}</a></li>
+        {{/listePJ}}
+      </ul>    
+      <br>
+      <p>Cordialement,</p>
+      <p>Le Tribunal administratif du logement</p>
+      <br><br>
+      <p><i>Veuillez ne pas répondre à ce message, car il a été envoyé automatiquement.</i><p>
