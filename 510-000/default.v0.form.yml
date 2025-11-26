@@ -3,7 +3,6 @@
 config:
   securite: 
     accesAnonyme: true
-  formulaireUnilingue: true
   title:
     fr: Formulaires en ligne - Tribunal administratif du logement
   piv:
