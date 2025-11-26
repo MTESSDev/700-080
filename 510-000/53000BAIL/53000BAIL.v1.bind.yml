@@ -11,7 +11,7 @@ config:
     verrouillerChampsPdf: true
     overrideTailleChampsAuto: 7
 bundles:
-  - nomSortie: Bail_de_logement
+  - nomSortie: Bail_de_logement.pdf
     templates:
       - 01
     estampille:
