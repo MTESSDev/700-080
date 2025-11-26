@@ -561,3 +561,7 @@ bind:
       - signatureLocateur1.0.Initiales
       - signatureLocateur3.0.Initiales
       formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
+    Solidarite_oui:
+      champs: [estLocatairesEngagementSolidaire==true]
+    Solidarite_non:
+      champs: [estLocatairesEngagementSolidaire==false]
