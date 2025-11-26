@@ -59,7 +59,7 @@ workflows:
             - tache: interventionParticipant
               options: 
                   role: locateurPrincipal
-                  vers: transmission
+                  # vers: transmission
                   chargerCourrielsWorkflow: true
                   modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.  
 
