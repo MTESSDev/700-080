@@ -73,80 +73,12 @@ bind:
       champs: [adresseLogement.0.Municipalite]
     Code_postal_logement:
       champs: [adresseLogement.0.CodePostal]
-    Nombre_de_pieces:
-      champs:
-      - nbPieces
-      - nbPiecesAutre
-      formule: '{nbPieces:include(autre):{nbPiecesAutre}|{nbPieces}}'
     Nom_locataire_2:
       champs: [locataires.1.nom]
-    Remise_rangement_oui:
-      champs: [dependancesIncluses==RemiseOuEspaceRangement]
-    Copropriete_oui:
-      champs: [logementCoproprieteDivise==true]
-    Copropriete_non:
-      champs: [logementCoproprieteDivise==false]
     Nombre_de_places_exterieur:
       champs: [stationnementExterieur.0.nbPlaces]
-    Nombre_de_places_interieur:
-      champs: [stationnementInterieur.0.nbPlaces]
-    Nombre_places_remise_rangement:
-      champs: [remiseEspaceRangement.0.nbPlaces]
     Emplacement_exterieur:
       champs: [stationnementExterieur.0.emplacements]
-    Emplacement_interieur:
-      champs: [stationnementInterieur.0.emplacements]
-    Emplacement_remise_rangement:
-      champs: [remiseEspaceRangement.0.emplacements]
-    Autres_Accessoires_dependances_Preciser:
-      champs: [autresAccessoiresDependances]
-    Meubles_inclus_oui:
-      champs: [meublesInclusLoyer==true]
-    Meubles_inclus_non:
-      champs: [meublesInclusLoyer==false]
-    Laveuse_oui:
-      champs: [listeAppareilsInclusLoyer==laveuse]
-    Cuisiniere_oui:
-      champs: [listeAppareilsInclusLoyer==cuisiniere]
-    Secheuse_oui:
-      champs: [listeAppareilsInclusLoyer==secheuse]
-    Commode_oui:
-      champs: [listeMeublesInclusLoyer==commodes]
-    Nombre_commodes:
-      champs: [nbCommodes]
-    Canape_oui:
-      champs: [listeMeublesInclusLoyer==canapes]
-    Nombre_canape:
-      champs: [nbCanapes]
-    Fauteuils_oui:
-      champs: [listeMeublesInclusLoyer==fauteuils]
-    Fauteuils:
-      champs: [nbFauteuils]
-    Lits_oui:
-      champs: [listeMeublesInclusLoyer==lits]
-    Nombre_lits:
-      champs: [nbLits]
-    Format_lits:
-      champs: [formatLits]
-    Micro-ondes_oui:
-      champs: [listeAppareilsInclusLoyer==fourMicroOndes]
-    Lave-vaisselle_oui:
-      champs: [listeAppareilsInclusLoyer==laveVaisselle]
-    Table_oui:
-      champs: [listeMeublesInclusLoyer==tables]
-    Nombre_Table:
-      champs: [nbTables]
-    Refrigerateur_oui:
-      champs: [listeAppareilsInclusLoyer==refrigerateur]
-    Chaise_oui:
-      champs: [listeMeublesInclusLoyer==chaises]
-    Nombre_chaises:
-      champs: [nbChaises]
-    Autre_meuble_oui:
-      champs:
-      - listeAppareilsInclusLoyer==autre
-      - listeMeublesInclusLoyer==autre
-      - <TOUS-VRAIS>
     Numero_civique_locataire_2:
       champs: [locataires.1.adresse.0.NoCivique]
     Rue_locataire_2:
@@ -169,8 +101,6 @@ bind:
       formule: '{locataires.1.questionRepresentant:{locataires.1.courrielRepresentant}|{locataires.1.courrielLocataire}}'
     Representant_locataire_2:
       champs: [locataires.1.representant]
-    Fins_mixtes_Preciser:
-      champs: [precisionLocationMixte]
     Duree_du_bail:
       champs: [nbSemainesMoisAnnees]
     Date_debut_bail:
@@ -206,12 +136,6 @@ bind:
       champs: [coutTotalLoyer]
     Cout_services:
       champs: [coutServices]
-    Subvention_oui:
-      champs: [subventionPaiementLoyer==true]
-    Subvention_non:
-      champs: [subventionPaiementLoyer==false]
-    Subvention_preciser:
-      champs: [preciserSubventionPaiementLoyer]
     Date_premier_terme:
       champs: [premierTermePaiement]
       formule: '{premierTermePaiement:dd          MM          yyyy}'
@@ -238,29 +162,10 @@ bind:
     Date_reglement:
       champs: [dateRemiseReglementImmeuble]
       formule: '{dateRemiseReglementImmeuble:dd          MM          yyyy}'
-    COPREG_date:
-      champs: [dateRemiseReglementCoproprieteDivise]
-      formule: '{dateRemiseReglementCoproprieteDivise:dd          MM          yyyy}'
     Travaux_avant1:
       champs: [travauxReparationsAvantDelivrance]
     Travaux_en_cours1:
       champs: [travauxReparationsEnCoursBail]
-    Concierge_preciser:
-      champs: [precisionsServicesConcierge]
-    Nom_concierge:
-      champs: [coordonneesConcierge.0.nomConcierge]
-    Telephone_concierge:
-      champs: [coordonneesConcierge.0.noTelephone]
-    Autre_telephone_concierge:
-      champs: [coordonneesConcierge.0.autreNoTelephoneCell]
-    Adresse_courriel_concierge:
-      champs: [coordonneesConcierge.0.adresseCourriel]
-    Chauffage_electricite:
-      champs: [typeChauffageLogement==electricite]
-    Chauffage_gaz:
-      champs: [typeChauffageLogement==gaz]
-    Chauffage_mazout:
-      champs: [typeChauffageLogement==mazout]
     Fumee_oui:
       champs: [logementSansFumee==true]
     Fumee_non:
@@ -272,32 +177,6 @@ bind:
     Accepte_postdate_non:
       champs: [locateurAccepteRemiseChequePostdates]
       formule: '{locateurAccepteRemiseChequePostdates:false|true}'
-    Chauffage_locateur:
-      champs: [responsabiliteChauffage==locateur]
-    Chauffage_locataire:
-      champs: [responsabiliteChauffage==locataire]
-    Gaz_locateur:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteGaz==locateur]
-    Gaz_locataire:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteGaz==locataire]
-    Elect_locateur:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteElectricite==locateur]
-    Elect_locataire:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteElectricite==locataire]
-    Chauffe_eau_locateur:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteChauffeEau==locateur]
-    Chauffe_eau_locataire:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteChauffeEau==locataire]
-    Eau_chaude_locateur:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteEauChaude==locateur]
-    Eau_chaude_locataire:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteEauChaude==locataire]
-    Terrain_oui:
-      champs: [locatairePossedeDroitAccesTerrain==true]
-    Terrain_non:
-      champs: [locatairePossedeDroitAccesTerrain==false]
-    Terrain_preciser:
-      champs: [precisionLocatairePossedeDroitAccesTerrain]
     Animaux_oui:
       champs: [locatairePossedeDroitAnimaux==true]
     Animaux_non:
@@ -306,33 +185,10 @@ bind:
       champs: [precisionLocatairePossedeDroitAnimaux]
     Autres_services_conditions_restrictions1:
       champs: [precisionAutresServicesConditionsRestriction]
-    Taxe_eau_locateur:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteTaxeConsommationEau==locateur]
-    Taxe_eau_locataire:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteTaxeConsommationEau==locataire]
-    Deneigement_stat_locateur:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementStationnement==locateur]
-    Deneigement_stat_locataire:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementStationnement==locataire]
-    Deneigement_balcon_locateur:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementBalcon==locateur]
-    Deneigement_balcon_locataire:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementBalcon==locataire]
-    Deneigement_entree_locateur:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementEntree==locateur]
-    Deneigement_entree_locataire:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementEntree==locataire]
-    Deneigement_escalier_locateur:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementEscalier==locateur]
-    Deneigement_escalier_locataire:
-      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementEscalier==locataire]
     Neuf_oui:
       champs: [situationApplicableRestrictionsFixationLoyer==estLogementImmeubleMoins5ans]
     Changement_AFF_oui:
       champs: [situationApplicableRestrictionsFixationLoyer==estLogementImmeubleChangementAffectation5ans]
-    Date_pret_habitation:
-      champs: [dateImmeublePretHabitation]
-      formule: '{dateImmeublePretHabitation:dd          MM          yyyy}'
     Date_changement_AFF:
       champs: [dateImmeublePretHabitationAffectation]
       formule: '{dateImmeublePretHabitationAffectation:dd          MM          yyyy}'
@@ -348,29 +204,17 @@ bind:
       champs: [frequenceLoyerPlusBasPaye12Mois==autre]
     ClauseG_1_autre_frequence:
       champs: [precisionAutreFrequencePlusBasLoyer]
-    Autre_meuble_detail_1:
-      champs:
-      - autresAppareilsInclus
-      - autresMeublesInclus
-      formule: '{autresAppareilsInclus} {autresMeublesInclus}'
     Nom_conjoint:
       champs: [locataire1nomConjoint]
     Clause_G_1:
       champs: [situationApplicableAvisNouveauLocataire==loyer]
     Clause_G_2:
       champs: [situationApplicableAvisNouveauLocataire==aucunLoyer]
-    ClauseG_3:
-      champs: [situationApplicableAvisNouveauLocataire==residencePriveeAines]
     Date_Clause_G_2:
       champs: [dateDernierPaiementLoyer]
       formule: '{dateDernierPaiementLoyer:dd          MM          yyyy}'
     ClauseG_conditions_non_preciser:
       champs: [modificationsApporteesBienServicesConditions]
-    Avertisseur_Initiales_locataire1:
-      champs:
-      - signatureLocataire1.0.Initiales
-      - signatureLocataire3.0.Initiales
-      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
     REG_Initiales_locataire_1:
       champs:
       - logementCoproprieteDivise
@@ -382,12 +226,6 @@ bind:
       - signatureLocataire1.0.Initiales
       - signatureLocataire3.0.Initiales
       formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
-    COPREG_Initiales_locataire1:
-      champs:
-      - logementCoproprieteDivise
-      - signatureLocataire1.0.Initiales
-      - signatureLocataire3.0.Initiales
-      formule: '{logementCoproprieteDivise:include(true):{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}}'
     P2_Initiales_du_locataire_1:
       champs:
       - signatureLocataire1.0.Initiales
@@ -433,12 +271,6 @@ bind:
       - signatureLocataire2.0.Initiales
       - signatureLocataire4.0.Initiales
       formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
-    COPREG_Initiales_locataire_2:
-      champs:
-      - logementCoproprieteDivise
-      - signatureLocataire2.0.Initiales
-      - signatureLocataire4.0.Initiales
-      formule: '{logementCoproprieteDivise:include(true):{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}}'
     REG_Initiales_locataire_2:
       champs:
       - logementCoproprieteDivise
@@ -455,21 +287,6 @@ bind:
       - signatureLocataire2.0.Initiales
       - signatureLocataire4.0.Initiales
       formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
-    Avertisseur_Initiales_locataire2:
-      champs:
-      - signatureLocataire2.0.Initiales
-      - signatureLocataire4.0.Initiales
-      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
-    Avertisseur_Initiales_locateur1:
-      champs:
-      - signatureLocateur2.0.Initiales
-      - signatureLocateurPrincipal.0.Initiales
-      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
-    Avertisseur_Initiales_locateur2:
-      champs:
-      - signatureLocateur1.0.Initiales
-      - signatureLocateur3.0.Initiales
-      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
     P2_Initiales_du_locateur_1:
       champs:
       - signatureLocateur2.0.Initiales
@@ -485,31 +302,11 @@ bind:
       - signatureLocateur2.0.Initiales
       - signatureLocateurPrincipal.0.Initiales
       formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
-    P2_Initiales_du_locateur_2:
-      champs:
-      - signatureLocateur1.0.Initiales
-      - signatureLocateur3.0.Initiales
-      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
-    P3_Initiales_du_locateur2:
-      champs:
-      - signatureLocateur1.0.Initiales
-      - signatureLocateur3.0.Initiales
-      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
-    P4_Initiales_du_locateur2:
-      champs:
-      - signatureLocateur1.0.Initiales
-      - signatureLocateur3.0.Initiales
-      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
     P1_Initiales_locateur_1:
       champs:
       - signatureLocateur2.0.Initiales
       - signatureLocateurPrincipal.0.Initiales
       formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
-    P1_Initiales_locateur_2:
-      champs:
-      - signatureLocateur1.0.Initiales
-      - signatureLocateur3.0.Initiales
-      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
     Solidarite_oui:
       champs: [estLocatairesEngagementSolidaire==true]
     Solidarite_non:
@@ -520,15 +317,6 @@ bind:
     Date_signature_locateur1:
       champs: [signatureLocateurPrincipal.0.Date]
       formule: '{signatureLocateurPrincipal.0.Date:dd          MM          yyyy}'
-    ClauseG_Date_locateur1:
-      champs: [signatureLocateurPrincipal.0.Date]
-      formule: '{signatureLocateurPrincipal.0.Date:dd          MM          yyyy}'
-    Avertisseur_Date_locateur:
-      champs: [signatureLocateurPrincipal.0.Date]
-      formule: '{signatureLocateurPrincipal.0.Date:dd          MM          yyyy}'
-    Avertisseur_Date_locataire:
-      champs: [signatureLocataire1.0.Date]
-      formule: '{signatureLocataire1.0.Date:dd          MM          yyyy}'
     ClauseG_Date_locataire1:
       champs: [signatureLocataire1.0.Date]
       formule: '{signatureLocataire1.0.Date:dd          MM          yyyy}'
@@ -541,12 +329,6 @@ bind:
     ClauseG_Date_locataire2:
       champs: [signatureLocataire2.0.Date]
       formule: '{signatureLocataire2.0.Date:dd          MM          yyyy}'
-    ClauseG_Date_locateur2:
-      champs: [signatureLocateur1.0.Date]
-      formule: '{signatureLocateur1.0.Date:dd          MM          yyyy}'
-    Date_signature_locateur2:
-      champs: [signatureLocateur2.0.Date]
-      formule: '{signatureLocateur2.0.Date:dd          MM          yyyy}'
     Signature_conjoint:
       champs: [signatureLocataire1.0.NomComplet]
     Signature_locataire1:
@@ -561,10 +343,6 @@ bind:
       champs: [signatureLocateurPrincipal.0.NomComplet]
     Signature_locateur1:
       champs: [signatureLocateurPrincipal.0.NomComplet]
-    ClauseG_Signature_locateur2:
-      champs: [signatureLocateur1.0.NomComplet]
-    Signature_locateur2:
-      champs: [signatureLocateur1.0.NomComplet]
     Signature_autre_signataire1:
       champs: [signatureAutreSignataire1.0.NomComplet]
     Signature_autre_signataire2:
