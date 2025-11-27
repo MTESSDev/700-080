@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/bind
-
 config:
   formulaire:
     systeme: 700080
@@ -11,28 +9,44 @@ config:
     verrouillerChampsPdf: true
     overrideTailleChampsAuto: 7
 bundles:
-  - nomSortie: Bail_de_logement.pdf
-    templates:
-      - 01
-    estampille:
-      positionX: 600
-      positionY: 20
-      tailleFont: 12
-      rotation: 90
-      couleurRGBA: [255, 0, 0]
-      toutesPages: true
-      lignes:
-        - '{{NoConfirmation}}'
+- nomSortie: Bail_de_logement.pdf
+  templates:
+  - bail
+  - ajout
+  - annexe6
+  estampille:
+    positionX: 600
+    positionY: 20
+    tailleFont: 12
+    rotation: 90
+    couleurRGBA:
+    - 255
+    - 0
+    - 0
+    toutesPages: true
+    lignes: ['{{NoConfirmation}}']
 templates:
-- id: 01
+- id: bail
   name: 53000 - BAIL
-  pdf: &o0
+  gabarit:
     fr: 53000_BAIL_FR_VF
     en: 53001_BAIL_EN_VF
-  gabarit: *o0
+  toujoursProduire: false
+- id: ajout
+  name: Ajout
+  gabarit:
+    fr: BAIL_AJOUT
+    en: BAIL_AJOUT
+  conditionsOu: '{locateurs.Length:cond:>=2?true|false} {locataires.Length:cond:>=3?true|false}'
+  toujoursProduire: false
+- id: annexe6
+  name: Annexe 6
+  gabarit:
+    fr: 52002_Annexe 6_FR
+    en: 52003_Annexe 6_AN
   toujoursProduire: false
 bind:
-  01:
+  bail:
     Nom_locateur_1:
       champs: [locateurs.0.nom]
     Numero_civique_locateur_1:
@@ -104,7 +118,10 @@ bind:
     Code_postal_logement:
       champs: [adresseLogement.0.CodePostal]
     Nombre_de_pieces:
-      champs: [nbPieces]
+      champs:
+      - nbPieces
+      - nbPiecesAutre
+      formule: '{nbPieces:vaut(autre):{nbPiecesAutre}|{nbPieces}}'
     Fins_habitation_oui:
       champs: [logementLoueFinsHabitation==true]
     Fins_habitation_non:
@@ -272,9 +289,9 @@ bind:
     COPREG_date:
       champs: [dateRemiseReglementCoproprieteDivise]
       formule: '{dateRemiseReglementCoproprieteDivise:dd          MM          yyyy}'
-    Travaux_avant2:
+    Travaux_avant1:
       champs: [travauxReparationsAvantDelivrance]
-    Travaux_en_cours2:
+    Travaux_en_cours1:
       champs: [travauxReparationsEnCoursBail]
     Concierge_preciser:
       champs: [precisionsServicesConcierge]
@@ -293,17 +310,16 @@ bind:
     Chauffage_mazout:
       champs: [typeChauffageLogement==mazout]
     Fumee_oui:
-      champs: [locatairePossedeDroitFumer==false]
-      formuleAnglaise: '{locateurs.2.nom:exclude(undefined):true}'
+      champs: [logementSansFumee==true]
     Fumee_non:
-      champs: [locatairePossedeDroitFumer==true]
+      champs: [logementSansFumee==false]
     Fumee_preciser:
-      champs: [precisionLocatairePossedeDroitFumer]
+      champs: [precisionLogementSansFumee]
     Accepte_postdate_oui:
       champs: [locateurAccepteRemiseChequePostdates]
     Accepte_postdate_non:
       champs: [locateurAccepteRemiseChequePostdates]
-      formule: '{locateurAccepteRemiseChequePostdates:true|false}'
+      formule: '{locateurAccepteRemiseChequePostdates:false|true}'
     Chauffage_locateur:
       champs: [responsabiliteChauffage==locateur]
     Chauffage_locataire:
@@ -386,7 +402,7 @@ bind:
       - autresMeublesInclus
       formule: '{autresAppareilsInclus} {autresMeublesInclus}'
     Nom_conjoint:
-      champs: [locataire1confirmationAvisResidenceFamiliale]
+      champs: [locataire1nomConjoint]
     Clause_G_1:
       champs: [situationApplicableAvisNouveauLocataire==loyer]
     Clause_G_2:
@@ -512,3 +528,459 @@ bind:
       - signatureLocataire2.0.Initiales
       - signatureLocataire4.0.Initiales
       formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+    Avertisseur_Initiales_locateur1:
+      champs:
+      - signatureLocateur2.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
+    Avertisseur_Initiales_locateur2:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur3.0.Initiales
+      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P2_Initiales_du_locateur_1:
+      champs:
+      - signatureLocateur2.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
+    P3_Initiales_du_locateur1:
+      champs:
+      - signatureLocateur2.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
+    P4_Initiales_du_locateur1:
+      champs:
+      - signatureLocateur2.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
+    P2_Initiales_du_locateur_2:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur3.0.Initiales
+      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P3_Initiales_du_locateur2:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur3.0.Initiales
+      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P4_Initiales_du_locateur2:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur3.0.Initiales
+      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P1_Initiales_locateur_1:
+      champs:
+      - signatureLocateur2.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
+    P1_Initiales_locateur_2:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur3.0.Initiales
+      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
+    Solidarite_oui:
+      champs: [estLocatairesEngagementSolidaire==true]
+    Solidarite_non:
+      champs: [estLocatairesEngagementSolidaire==false]
+    Date_signature_conjoint:
+      champs: [signatureLocataire1.0.Date]
+      formule: '{signatureLocataire1.0.Date:dd          MM          yyyy}'
+    Date_signature_locateur1:
+      champs: [signatureLocateurPrincipal.0.Date]
+      formule: '{signatureLocateurPrincipal.0.Date:dd          MM          yyyy}'
+    ClauseG_Date_locateur1:
+      champs: [signatureLocateurPrincipal.0.Date]
+      formule: '{signatureLocateurPrincipal.0.Date:dd          MM          yyyy}'
+    Avertisseur_Date_locateur:
+      champs: [signatureLocateurPrincipal.0.Date]
+      formule: '{signatureLocateurPrincipal.0.Date:dd          MM          yyyy}'
+    Avertisseur_Date_locataire:
+      champs: [signatureLocataire1.0.Date]
+      formule: '{signatureLocataire1.0.Date:dd          MM          yyyy}'
+    ClauseG_Date_locataire1:
+      champs: [signatureLocataire1.0.Date]
+      formule: '{signatureLocataire1.0.Date:dd          MM          yyyy}'
+    Date_signature_locataire1:
+      champs: [signatureLocataire1.0.Date]
+      formule: '{signatureLocataire1.0.Date:dd          MM          yyyy}'
+    Date_signature_locataire2:
+      champs: [signatureLocataire2.0.Date]
+      formule: '{signatureLocataire2.0.Date:dd          MM          yyyy}'
+    ClauseG_Date_locataire2:
+      champs: [signatureLocataire2.0.Date]
+      formule: '{signatureLocataire2.0.Date:dd          MM          yyyy}'
+    ClauseG_Date_locateur2:
+      champs: [signatureLocateur1.0.Date]
+      formule: '{signatureLocateur1.0.Date:dd          MM          yyyy}'
+    Date_signature_locateur2:
+      champs: [signatureLocateur2.0.Date]
+      formule: '{signatureLocateur2.0.Date:dd          MM          yyyy}'
+    Signature_conjoint:
+      champs: [signatureLocataire1.0.NomComplet]
+    Signature_locataire1:
+      champs: [signatureLocataire1.0.NomComplet]
+    ClauseG_Signature_locataire1:
+      champs: [signatureLocataire1.0.NomComplet]
+    Signature_locataire2:
+      champs: [signatureLocataire2.0.NomComplet]
+    ClauseG_Signature_locataire2:
+      champs: [signatureLocataire2.0.NomComplet]
+    ClauseG_Signature_locateur1:
+      champs: [signatureLocateurPrincipal.0.NomComplet]
+    Signature_locateur1:
+      champs: [signatureLocateurPrincipal.0.NomComplet]
+    ClauseG_Signature_locateur2:
+      champs: [signatureLocateur1.0.NomComplet]
+    Signature_locateur2:
+      champs: [signatureLocateur1.0.NomComplet]
+    Signature_autre_signataire1:
+      champs: [signatureAutreSignataire1.0.NomComplet]
+    Signature_autre_signataire2:
+      champs: [signatureAutreSignataire2.0.NomComplet]
+    Qualite_autre_signataire1:
+      champs: [autresSignataires.0.qualite]
+    Qualite_autre_signataire2:
+      champs: [autresSignataires.1.qualite]
+    Date_autre_signataire1:
+      champs: [signatureAutreSignataire1.0.Date]
+      formule: '{signatureAutreSignataire1.0.Date:dd          MM          yyyy}'
+    Date_autre_signataire2:
+      champs: [signatureAutreSignataire2.0.Date]
+      formule: '{signatureAutreSignataire2.0.Date:dd          MM          yyyy}'
+    Nom_autre_signataire1:
+      champs: [autresSignataires.0.nom]
+    Adresse_autre_signataire1:
+      champs: [autresSignataires.0.adresse.0.AdresseComplete]
+    Nom_autre_signataire2:
+      champs: [autresSignataires.1.nom]
+    Adresse_autre_signataire2:
+      champs: [autresSignataires.1.adresse.0.AdresseComplete]
+  ajout:
+    Nom_locateur_1:
+      champs: [locateurs.2.nom]
+    Nom_locateur_2:
+      champs: [locateurs.3.nom]
+    Numero_civique_locateur_1:
+      champs: [locateurs.2.adresse.0.NoCivique]
+    Numero_civique_locateur_2:
+      champs: [locateurs.3.adresse.0.NoCivique]
+    Rue_locateur_1:
+      champs: [locateurs.2.adresse.0.Rue]
+    App_locateur_1:
+      champs: [locateurs.2.adresse.0.Appartement]
+    Municipalite_locateur_1:
+      champs: [locateurs.2.adresse.0.Municipalite]
+    Code_postal_locateur_1:
+      champs: [locateurs.2.adresse.0.CodePostal]
+    Telephone_locateur_1:
+      champs: [locateurs.2.noTelephone]
+    Autre_telephone_locateur_1:
+      champs: [locateurs.2.autreNoTelephoneCell]
+    Adresse_courriel_locateur_1:
+      champs: [locateurs.2.courriel]
+    Representant_locateur_1:
+      champs: [locateurs.2.representant]
+    Rue_locateur_2:
+      champs: [locateurs.3.adresse.0.Rue]
+    App_locateur_2:
+      champs: [locateurs.3.adresse.0.Appartement]
+    Municipalite_locateur_2:
+      champs: [locateurs.3.adresse.0.Municipalite]
+    Code_postal_locateur_2:
+      champs: [locateurs.3.adresse.0.CodePostal]
+    Telephone_locateur_2:
+      champs: [locateurs.3.noTelephone]
+    Autre_telephone_locateur_2:
+      champs: [locateurs.3.autreNoTelephoneCell]
+    Adresse_courriel_locateur_2:
+      champs: [locateurs.3.courriel]
+    Representant_locateur_2:
+      champs: [locateurs.3.representant]
+    Nom_locataire_1:
+      champs: [locataires.2.nom]
+    Numero_civique_locataire_1:
+      champs: [locataires.2.adresse.0.NoCivique]
+    Rue_locataire_1:
+      champs: [locataires.2.adresse.0.Rue]
+    App_locataire_1:
+      champs: [locataires.2.adresse.0.Appartement]
+    Municipalite_locataire_1:
+      champs: [locataires.2.adresse.0.Municipalite]
+    Code_postal_locataire_1:
+      champs: [locataires.2.adresse.0.CodePostal]
+    Telephone_locataire_1:
+      champs: [locataires.2.noTelephone]
+    Autre_Telephone_locataire_1:
+      champs: [locataires.2.autreNoTelephoneCell]
+    Adresse_courriel_locataire_1:
+      champs: [locataires.2.courriel]
+    Representant_locataire_1:
+      champs: [locataires.2.representant]
+    Nom_locataire_2:
+      champs: [locataires.3.nom]
+    Numero_civique_locataire_2:
+      champs: [locataires.3.adresse.0.NoCivique]
+    Rue_locataire_2:
+      champs: [locataires.3.adresse.0.Rue]
+    App_locataire_2:
+      champs: [locataires.3.adresse.0.Appartement]
+    Municipalite_locataire_2:
+      champs: [locataires.3.adresse.0.Municipalite]
+    Code_postal_locataire_2:
+      champs: [locataires.3.adresse.0.CodePostal]
+    Telephone_locataire_2:
+      champs: [locataires.3.noTelephone]
+    Autre_telephone_locataire_2:
+      champs: [locataires.3.autreNoTelephoneCell]
+    Adresse_courriel_locataire_2:
+      champs: [locataires.3.courriel]
+    Representant_locataire_2:
+      champs: [locataires.3.representant]
+    Numero_sequentiel:
+      champs: [<NULL>]
+    P1_Initiales_locateur_1:
+      champs:
+      - signatureLocateur2.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales} {signatureLocateur2.0.Initiales}'
+    P1_Initiales_locateur_2:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur3.0.Initiales
+      formule: '{signatureLocateur1.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P1_Initiales_locataire_1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire3.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+    P1_Initiales_locataire_2:
+      champs:
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+    Nom_du_conjoint1:
+      champs: [locataire2nomConjoint]
+    Nom_du_conjoint2:
+      champs: [locataire3nomConjoint]
+    Nom_du_conjoint3:
+      champs: [locataire4nomConjoint]
+    Signature_locataire1:
+      champs: [signatureLocataire2.0.NomComplet]
+    Signature_locataire2:
+      champs: [signatureLocataire3.0.NomComplet]
+    Signature_locataire3:
+      champs: [signatureLocataire4.0.NomComplet]
+    Date_signature_locataire1:
+      champs: [signatureLocataire2.0.Date]
+      formule: '{signatureLocataire2.0.Date:dd          MM          yyyy}'
+    Date_signature_locataire2:
+      champs: [signatureLocataire3.0.Date]
+      formule: '{signatureLocataire3.0.Date:dd          MM          yyyy}'
+    Date_signature_locataire3:
+      champs: [signatureLocataire4.0.Date]
+      formule: '{signatureLocataire4.0.Date:dd          MM          yyyy}'
+  annexe6:
+    Personne_autonome_oui:
+      champs: [annexe6TypeResidence.0.servicesDestinesA==personnesAutonomes]
+    Personnes_semiautonomes_oui:
+      champs: [annexe6TypeResidence.0.servicesDestinesA==personnesSemiIndependantes]
+    Autre_hebergement_preciser:
+      champs: [annexe6TypeResidence.0.precisionLieuHebergement]
+    Autre_hebergement_oui:
+      champs: [annexe6TypeResidence.0.typeResidence==autreLieuHebergement]
+    Nombre_pieces:
+      champs: [annexe6DescriptionLieux.0.nbPiecesLogement]
+    Nombre_pieces_oui:
+      champs: [annexe6DescriptionLieux.0.logementOuChambre==logement]
+    Chambre_privee_oui:
+      champs: [annexe6DescriptionLieux.0.logementOuChambre==chambrePrivee]
+    Chambre_commune_oui:
+      champs: [annexe6DescriptionLieux.0.logementOuChambre==chambreCommune]
+    Salle_bain_privee_oui:
+      champs: [annexe6DescriptionLieux.0.salleBain==privee]
+    Salle_bain_commune_oui:
+      champs: [annexe6DescriptionLieux.0.salleBain==commune]
+    Barre_salle_bain_oui:
+      champs: [annexe6DescriptionLieux.0.baresAppuiMainsCourantes==salleBain]
+    Barre_corridor_oui:
+      champs: [annexe6DescriptionLieux.0.baresAppuiMainsCourantes==corridor]
+    Chauffage_central_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Chauffage==central]
+    Chauffage_individuel_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Chauffage==individuel]
+    Climatisation_central_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Climatisation==central]
+    Climatisation_individuel_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Climatisation==individuel]
+    Climatisation_personnel_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Climatisation==autorise]
+    Climation_type:
+      champs: [annexe6DescriptionLieux.0.annexe6ClimatisationAutorise]
+    Communication_telephone_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Telecommunication==telephone]
+    Communication_cablodistribution_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Telecommunication==cablodistribution]
+    Communication_sans_fil_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Telecommunication==internetSansFil]
+    Communication_avec_fil_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Telecommunication==internet]
+    Communication_autres_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Telecommunication==autres]
+    Communication_autres_details1:
+      champs: [annexe6DescriptionLieux.0.annexe6AutresTelecom]
+    Appel_aide_fixe_lit:
+      champs: [annexe6DescriptionLieux.0.annexe6SystemeAppelAide==fixeLit]
+    Appel_aide_fixe_bain:
+      champs: [annexe6DescriptionLieux.0.annexe6SystemeAppelAide==fixeSalleBain]
+    Appel_aide_fixe_eau:
+      champs: [annexe6DescriptionLieux.0.annexe6SystemeAppelAide==fixeSalleEau]
+    Appel_aide_fixe_autres:
+      champs: [annexe6DescriptionLieux.0.annexe6SystemeAppelAide==autres]
+    Appel_aide_autres_details1:
+      champs: [annexe6DescriptionLieux.0.annexe6AutresSystemeAppelAide]
+    Appel_aide_mobile:
+      champs: [annexe6DescriptionLieux.0.annexe6SystemeAppelAide==mobile]
+    Logement_accessible_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6FauteuilRoulant==logementAccessible]
+    Appareils_electromenagers_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6MeublesAppareils==appareilsElectromenagers]
+    Appareils_electromenagers_preciser:
+      champs: [annexe6DescriptionLieux.0.annexe6PrecisionAppareilsElectromenagers]
+    Televiseur_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6MeublesAppareils==televiseur]
+    Meubles_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6MeublesAppareils==meubles]
+    Meubles_preciser1:
+      champs: [annexe6DescriptionLieux.0.annexe6PrecisionMeubles]
+    P1_Initiales_locateur_1:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur2.0.Initiales
+      - signatureLocateur3.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales}  {signatureLocateur1.0.Initiales} {signatureLocateur2.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P2_Initiales_locateur_1:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur2.0.Initiales
+      - signatureLocateur3.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales}  {signatureLocateur1.0.Initiales} {signatureLocateur2.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P3_Initiales_locateur_1:
+      champs:
+      - signatureLocateur1.0.Initiales
+      - signatureLocateur2.0.Initiales
+      - signatureLocateur3.0.Initiales
+      - signatureLocateurPrincipal.0.Initiales
+      formule: '{signatureLocateurPrincipal.0.Initiales}  {signatureLocateur1.0.Initiales} {signatureLocateur2.0.Initiales} {signatureLocateur3.0.Initiales}'
+    P3_Initiales_locataire_1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire3.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire2.0.Initiales} {signatureLocataire3.0.Initiales} {signatureLocataire4.0.Initiales} '
+    P2_Initiales_locataire_1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire3.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire2.0.Initiales} {signatureLocataire3.0.Initiales} {signatureLocataire4.0.Initiales} '
+    P1_Initiales_locataire_1:
+      champs:
+      - signatureLocataire1.0.Initiales
+      - signatureLocataire2.0.Initiales
+      - signatureLocataire3.0.Initiales
+      - signatureLocataire4.0.Initiales
+      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire2.0.Initiales} {signatureLocataire3.0.Initiales} {signatureLocataire4.0.Initiales} '
+    Balcon_prive_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Balcon==prive]
+    Balcon_commun_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Balcon==commun]
+    Rangement_emplacement:
+      champs: [annexe6DescriptionLieux.0.annexe6EspaceRangement]
+    Lavage_payable_non:
+      champs: [annexe6DescriptionLieux.0.annexe6SalleLavage==salleLavageCommuneGratuite]
+    Lavage_payable_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6SalleLavage==salleLavageCommunePayante]
+    Ascenseur_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6Ascenceur]
+    Bibliotheque_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==bibliotheque]
+    Cuisine_commune_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==cuisineCommune]
+    Espace_visiteurs_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==espacePriveVisiteurs]
+    Piscine_interieure_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==piscine]
+    Salle_entrainement_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salleEntrainementPhysique]
+    Salle_billard_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salleBillard]
+    Salle_cinema_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salleCinemaMaison]
+    Salle_loisirs_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salleLoisirsMultifonctionnelle]
+    Salle_quilles_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salleQuilles]
+    Salle_reception_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salleReception]
+    Cout_salle_reception:
+      champs: [annexe6ServicesLoisirs.0.annexe6CoutSalleReception]
+    Salon_internet_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salonInternet]
+    Espace_interieur_autres_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==autres]
+    Espace_interieur_autres1:
+      champs: [annexe6ServicesLoisirs.0.annexe6AutresEspacesCommunsInterieurs]
+    Activites_loisir_oui:
+      champs: [annexe6ServicesLoisirs.0.accesActivitesLoisirs]
+    Animateur_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6Animateur]
+    Aire_jeux_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsExterieur==aireJeux]
+    Aire_repos_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsExterieur==aireRepos]
+    Jardin_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsExterieur==jardin]
+    Piscine_exterieure_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsExterieur==piscine]
+    Espace_exterieur_autres_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsExterieur==autres]
+    Espace_exterieur_autres1:
+      champs: [annexe6ServicesLoisirs.0.annexe6AutresEspacesCommunsExterieur]
+    Activites_religieuses_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6ActivitesReligieuses]
+    Activites_religieuses_preciser:
+      champs: [annexe6AutresServicesOfferts.0.annexe6DetailsActivitesReligieuses]
+    Salle_manger_visiteur_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SalleAMangerVisiteurs]
+    Services_medicaux_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6ServicesMedicaux]
+    Personnel_infirmier_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==infirmiere]
+    Personnel_infirmier_auxiliaire_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==infirmiereAuxiliaire]
+    Personnel_prepose_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==prepose]
+    Personnel_gardien_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==gardien]
+    Personnel_receptionniste_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==receptionniste]
+    Personnel_autres_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==autres]
+    Personnel_autres_details1:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnelAutres]
+    Transport_navette_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6Transport==navette]
+    Transport_autre_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6Transport==autres]
+    Transport_payable_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6TransportPayantAutres==true]
+    Transport_payable_non:
+      champs: [annexe6AutresServicesOfferts.0.annexe6TransportPayantAutres==false]
+    Transport_autre_details:
+      champs: [annexe6AutresServicesOfferts.0.annexe6DetailsAutresTransport]
+    Autres_services1:
+      champs: [annexe6AutresServicesOfferts.0.annexe6AutresServices]
