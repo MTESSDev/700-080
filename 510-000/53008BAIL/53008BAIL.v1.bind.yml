@@ -30,6 +30,7 @@ templates:
   gabarit:
     fr: 53008_Bail-modique_VF
     en: 53009_Lease_low-rental_VF
+  toujoursProduire: false
 - id: annexe6
   name: Annexe 6
   gabarit:
@@ -38,53 +39,6 @@ templates:
   toujoursProduire: false
 bind:
   bail:
-    Nom_locateur_1:
-      champs: [locateurs.0.nom]
-    Numero_civique_locateur_1:
-      champs: [locateurs.0.adresse.0.NoCivique]
-    Rue_locateur_1:
-      champs: [locateurs.0.adresse.0.Rue]
-    App_locateur_1:
-      champs: [locateurs.0.adresse.0.Appartement]
-    Municipalite_locateur_1:
-      champs: [locateurs.0.adresse.0.Municipalite]
-    Code_postal_locateur_1:
-      champs: [locateurs.0.adresse.0.CodePostal]
-    Telephone_locateur_1:
-      champs: [locateurs.0.noTelephone]
-    Autre_telephone_locateur_1:
-      champs: [locateurs.0.autreNoTelephoneCell]
-    Adresse_courriel_locateur_1:
-      champs:
-      - locateurs.0.courrielLocateur
-      - locateurs.0.courrielRepresentant
-      formule: '{locateurs.0.questionRepresentant:{locateurs.0.courrielRepresentant}|{locateurs.0.courrielLocateur}}'
-    Representant_locateur_1:
-      champs: [locateurs.0.representant]
-    Nom_locateur_2:
-      champs: [locateurs.1.nom]
-    Numero_civique_locateur_2:
-      champs: [locateurs.1.adresse.0.NoCivique]
-    Rue_locateur_2:
-      champs: [locateurs.1.adresse.0.Rue]
-    App_locateur_2:
-      champs: [locateurs.1.adresse.0.Appartement]
-    Municipalite_locateur_2:
-      champs: [locateurs.1.adresse.0.Municipalite]
-    Code_postal_locateur_2:
-      champs: [locateurs.1.adresse.0.CodePostal]
-    Telephone_locateur_2:
-      champs: [locateurs.1.noTelephone]
-    Autre_telephone_locateur_2:
-      champs: [locateurs.1.autreNoTelephoneCell]
-    Adresse_courriel_locateur_2:
-      champs:
-      - locateurs.1.questionRepresentant
-      - locateurs.1.courrielLocateur
-      - locateurs.1.courrielRepresentant
-      formule: '{locateurs.1.questionRepresentant:{locateurs.1.courrielRepresentant}|{locateurs.1.courrielLocateur}}'
-    Representant_locateur_2:
-      champs: [locateurs.1.representant]
     Nom_locataire_1:
       champs: [locataires.0.nom]
     Numero_civique_locataire_1:
@@ -124,16 +78,8 @@ bind:
       - nbPieces
       - nbPiecesAutre
       formule: '{nbPieces:include(autre):{nbPiecesAutre}|{nbPieces}}'
-    Fins_habitation_oui:
-      champs: [logementLoueFinsHabitation==true]
-    Fins_habitation_non:
-      champs: [logementLoueFinsHabitation==false]
     Nom_locataire_2:
       champs: [locataires.1.nom]
-    Stationnement_exterieur_oui:
-      champs: [dependancesIncluses==StationnementExterieur]
-    Stationnement_interieur_oui:
-      champs: [dependancesIncluses==StationnementInterieur]
     Remise_rangement_oui:
       champs: [dependancesIncluses==RemiseOuEspaceRangement]
     Copropriete_oui:
@@ -418,30 +364,6 @@ bind:
     Date_Clause_G_2:
       champs: [dateDernierPaiementLoyer]
       formule: '{dateDernierPaiementLoyer:dd          MM          yyyy}'
-    Loyer_clauseG_2:
-      champs: [montantDernierLoyerPaye]
-    ClauseG_2_mois:
-      champs: [frequenceDernierLoyer==mois]
-    ClauseG_2_semaine:
-      champs: [frequenceDernierLoyer==semaine]
-    ClauseG_2_autre:
-      champs: [frequenceDernierLoyer==autre]
-    ClauseG_2_autre_frequence:
-      champs: [precisionAutreFrequenceDernierLoyer]
-    Loyer_clauseG_3:
-      champs: [montantLoyerBailPrecedent]
-    ClauseG_3_mois:
-      champs: [frequenceLoyerBailPrecedent==mois]
-    ClauseG_3_semaine:
-      champs: [frequenceLoyerBailPrecedent==semaine]
-    ClauseG_3_autre:
-      champs: [frequenceLoyerBailPrecedent==autre]
-    ClauseG_3_autre_frequence:
-      champs: [precisionAutreFrequenceLoyerBailPrecedent]
-    ClauseG_conditions_oui:
-      champs: [estMemeBienServicesConditions==true]
-    ClauseG_conditions_non:
-      champs: [estMemeBienServicesConditions==false]
     ClauseG_conditions_non_preciser:
       champs: [modificationsApporteesBienServicesConditions]
     Avertisseur_Initiales_locataire1:
@@ -665,4 +587,3 @@ bind:
       champs: [autresSignataires.1.nom]
     Adresse_autre_signataire2:
       champs: [autresSignataires.1.adresse.0.AdresseComplete]
-  
