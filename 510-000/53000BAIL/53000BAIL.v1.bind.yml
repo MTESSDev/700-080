@@ -121,7 +121,7 @@ bind:
       champs:
       - nbPieces
       - nbPiecesAutre
-      formule: '{nbPieces:vaut(autre):{nbPiecesAutre}|{nbPieces}}'
+      formule: '{nbPieces:include(autre):{nbPiecesAutre}|{nbPieces}}'
     Fins_habitation_oui:
       champs: [logementLoueFinsHabitation==true]
     Fins_habitation_non:
@@ -445,9 +445,10 @@ bind:
       formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
     REG_Initiales_locataire_1:
       champs:
+      - logementCoproprieteDivise
       - signatureLocataire1.0.Initiales
       - signatureLocataire3.0.Initiales
-      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+      formule: '{logementCoproprieteDivise:include(false):{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}}'
     Postdate_Initiales_locataire_1:
       champs:
       - signatureLocataire1.0.Initiales
@@ -455,9 +456,10 @@ bind:
       formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
     COPREG_Initiales_locataire1:
       champs:
+      - logementCoproprieteDivise
       - signatureLocataire1.0.Initiales
       - signatureLocataire3.0.Initiales
-      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+      formule: '{logementCoproprieteDivise:include(true):{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}}'
     P2_Initiales_du_locataire_1:
       champs:
       - signatureLocataire1.0.Initiales
@@ -505,14 +507,16 @@ bind:
       formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
     COPREG_Initiales_locataire_2:
       champs:
+      - logementCoproprieteDivise
       - signatureLocataire2.0.Initiales
       - signatureLocataire4.0.Initiales
-      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+      formule: '{logementCoproprieteDivise:include(true):{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}}'
     REG_Initiales_locataire_2:
       champs:
+      - logementCoproprieteDivise
       - signatureLocataire2.0.Initiales
       - signatureLocataire4.0.Initiales
-      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+      formule: '{logementCoproprieteDivise:include(false):{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}}'
     Postdate_Initiales_locataire_2:
       champs:
       - signatureLocataire2.0.Initiales
@@ -936,6 +940,7 @@ bind:
       champs: [annexe6ServicesLoisirs.0.annexe6AutresEspacesCommunsInterieurs]
     Activites_loisir_oui:
       champs: [annexe6ServicesLoisirs.0.accesActivitesLoisirs]
+      formule: '{annexe6ServicesLoisirs.0.accesActivitesLoisirs:isnullOrEmpty:false|true}'
     Animateur_oui:
       champs: [annexe6ServicesLoisirs.0.annexe6Animateur]
     Aire_jeux_oui:
@@ -984,3 +989,11 @@ bind:
       champs: [annexe6AutresServicesOfferts.0.annexe6DetailsAutresTransport]
     Autres_services1:
       champs: [annexe6AutresServicesOfferts.0.annexe6AutresServices]
+    Rangement_ferme_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6EspaceRangement]
+      formule: '{annexe6DescriptionLieux.0.annexe6EspaceRangement:isnullOrEmpty:false|true}'
+    Activites_loisir_preciser:
+      champs: [annexe6ServicesLoisirs.0.accesActivitesLoisirs]
+    Salle_lavage_commun_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6SalleLavage]
+      formule: '{annexe6DescriptionLieux.0.annexe6SalleLavage.Length:cond:>=1?true|false}'
