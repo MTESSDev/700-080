@@ -310,12 +310,12 @@ bind:
     Chauffage_mazout:
       champs: [typeChauffageLogement==mazout]
     Fumee_oui:
-      champs: [locatairePossedeDroitFumer==false]
+      champs: [logementSansFumee==true]
       formuleAnglaise: '{locateurs.2.nom:exclude(undefined):true}'
     Fumee_non:
-      champs: [locatairePossedeDroitFumer==true]
+      champs: [logementSansFumee==false]
     Fumee_preciser:
-      champs: [precisionLocatairePossedeDroitFumer]
+      champs: [precisionLogementSansFumee]
     Accepte_postdate_oui:
       champs: [locateurAccepteRemiseChequePostdates]
     Accepte_postdate_non:
