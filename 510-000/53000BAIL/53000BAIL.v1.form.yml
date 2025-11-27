@@ -39,13 +39,13 @@ config:
       urlLien: 
         fr: https://www.tal.gouv.qc.ca/fr/nous-joindre
         en: https://www.tal.gouv.qc.ca/en/contact-us
-#  paiement:
-#    actif: true
-#    fournisseur:
-#      type: moneris
-#      storeId: store1
-#      apiToken: yesguy1
-#      checkoutId: chkt9LQ5Store1
+  paiement:
+    actif: false
+    fournisseur:
+      type: moneris
+      storeId: store1
+      apiToken: yesguy1
+      checkoutId: chkt7TRLFtore1
   enregistrement:
     actif: true
     afficherMessageIncitatif: false
@@ -62,7 +62,7 @@ config:
       produitsMoneris:
         code: |
           (){
-            this.form.coutTotalLoyer = value.toFixed(2);
+            return 2.99
           }
 
     watch:
@@ -1434,14 +1434,14 @@ form:
             en: Conditions
           id: conditions
           components:
-            - name: locatairePossedeDroitFumer
+            - name: logementSansFumee
               type: radio
               label:
                 fr: Est-ce que le logement est sans fumée?
                 en: TODO english Est-ce que le logement est sans fumée?
               options: yesno
-            - name: precisionLocatairePossedeDroitFumer
-              v-if: val('locatairePossedeDroitFumer') === 'true'
+            - name: precisionLogementSansFumee
+              v-if: val('logementSansFumee') === 'true'
               type: text
               label:
                 fr: Veuillez apporter des précisions à ce sujet, si nécessaire.
@@ -1925,7 +1925,7 @@ form:
                   label:
                     fr: Résidence privée pour aînés offrant des services destinés à
                     en: Private seniors’ residence offering services for
-                  v-if: val('Annexe6TypeResidence.typeResidence') === 'residenceAines'                    
+                  v-if: val('annexe6TypeResidence.typeResidence') === 'residenceAines'                    
                   options:
                     personnesAutonomes:
                       fr: des personnes autonomes
@@ -2088,7 +2088,7 @@ form:
                   v-if: val('annexe6DescriptionLieux.annexe6MeublesAppareils').includes('appareilsElectromenagers')                    
                   label:
                     fr: Veuillez préciser les appareils électroménagers
-                - name: annexe6PrecisionAppareilsElectromenagers
+                - name: annexe6PrecisionMeubles
                   type: text
                   v-if: val('annexe6DescriptionLieux.annexe6MeublesAppareils').includes('meubles')                    
                   label:
@@ -2155,12 +2155,6 @@ form:
                     fr: Animateur disponible
                   validations:
                     optional: null
-
-                - name: annexe6AutresTelecom
-                  type: text
-                  v-if: val('annexe6DescriptionLieux.annexe6Telecommunication').includes('autres')                    
-                  label:
-                    fr: Veuillez préciser les autres services de télécommunication
 
                 - name: annexe6EspacesCommunsInterieurs
                   type: checkbox
@@ -3332,17 +3326,10 @@ form:
               text:
                 fr: |
                   <p>Le formulaire de bail sera créé automatiquement en format PDF.<p>                                    
-            - type: radio
+            - type: langue
               name: langueBail
               label:
                 fr: Dans quelle langue les parties veulent-elles que le formulaire de bail en format PDF soit créé et transmis?
-              options: 
-                francais: 
-                  fr: Français
-                  en: French
-                anglais:
-                  fr: Anglais
-                  en: English
         
         # Choix du mot de passe
         - section:
@@ -3915,8 +3902,6 @@ form:
                   <utd-avis type="avertissement">
                     <p>Veuillez noter que l’hyperlien pour <b>signer et conclure</b> le formulaire de bail électronique est valide pour <strong>36 heures</strong> à compter de sa transmission aux autres parties.</p>
                   </utd-avis>
-                en: |
-                  Your form has been validated. You can click on the Submit button.
             # Étape 'contributionSignature' (locataire, locateur, autre signataire)
             - type: dynamic
               tag: div
@@ -3929,14 +3914,14 @@ form:
                   <p>Si toutes les informations sont exactes, vous pouvez cliquer sur le bouton <b>« Soumettre »</b>. Le formulaire de bail sera automatiquement envoyé au locateur pour qu’il puisse signer à son tour.</p>  
                   <p>Lorsque toutes les parties concernées auront complété et signé le formulaire de bail électronique <b>vous recevrez votre formulaire de bail électronique final par courriel</b> ainsi que tous les documents joints (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p>  
                   <p>Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>  
-                en: |
-                  Your form has been validated. You can click on the Submit button.                  
-            # Affichage révision sans erreur et paiement moneris en cours (a-faire)
+            # Étape 'transmission' (locateur principal)
             - type: dynamic
               tag: div
-              v-if: val('EtatRevision') === 'sans-erreur' && val('paiement.etat') === 'a-faire'
+              v-if: val('EtatRevision') === 'sans-erreur' && this.wf.etape.nom === 'transmission' && val('paiement.etat') === 'a-faire'
               classes: texte-revision
               text: 
-                fr: Ici des instructions COURTES pour le paiement. Expliquer la préautorisation et ensuite soumission?
-                en: (en)Ici des instructions COURTES pour le paiement.
+                fr: |
+                  <p>Le formulaire de bail électronique est maintenant rempli et signé par toutes les parties. <b>Afin de finaliser la transaction, vous devez procéder au paiement de 2,99 $ (taxes en sus)</b>.</p>
+                  <p>Une fois le paiement effectué, <b>vous recevrez votre formulaire de bail électronique final par courriel ainsi que tous les documents joints</b> (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p>
+                  <p>Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>                  
 
