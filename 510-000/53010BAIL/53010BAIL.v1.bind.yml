@@ -413,3 +413,17 @@ bind:
     Date_amenage_habitation:
       champs: [dateTerrainPretUsageResidentiel]
       formule: '{dateTerrainPretUsageResidentiel:dd          MM          yyyy}'
+    Loyer_clauseG_2:
+      champs: [montantDernierLoyerPaye]
+    ClauseG_2_mois:
+      champs: [frequenceDernierLoyer==mois]
+    ClauseG_2_semaine:
+      champs: [frequenceDernierLoyer==semaine]
+    ClauseG_2_autre:
+      champs: [frequenceDernierLoyer==autre]
+    ClauseG_2_autre_frequence:
+      champs: [precisionAutreFrequenceDernierLoyer]
+    ClauseG_conditions_oui:
+      champs: [estMemeBienServicesConditions==true]
+    ClauseG_conditions_non:
+      champs: [estMemeBienServicesConditions==false]
