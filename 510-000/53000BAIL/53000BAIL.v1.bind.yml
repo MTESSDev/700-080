@@ -851,7 +851,7 @@ bind:
     Meubles_oui:
       champs: [annexe6DescriptionLieux.0.annexe6MeublesAppareils==meubles]
     Meubles_preciser1:
-      champs: [annexe6DescriptionLieux.0.annexe6PrecisionAppareilsElectromenagers]
+      champs: [annexe6DescriptionLieux.0.annexe6PrecisionMeubles]
     P1_Initiales_locateur_1:
       champs:
       - signatureLocateur1.0.Initiales
@@ -938,3 +938,49 @@ bind:
       champs: [annexe6ServicesLoisirs.0.accesActivitesLoisirs]
     Animateur_oui:
       champs: [annexe6ServicesLoisirs.0.annexe6Animateur]
+    Aire_jeux_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsExterieur==aireJeux]
+    Aire_repos_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsExterieur==aireRepos]
+    Jardin_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsExterieur==jardin]
+    Piscine_exterieure_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsExterieur==piscine]
+    Espace_exterieur_autres_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsExterieur==autres]
+    Espace_exterieur_autres1:
+      champs: [annexe6ServicesLoisirs.0.annexe6AutresEspacesCommunsExterieur]
+    Activites_religieuses_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6ActivitesReligieuses]
+    Activites_religieuses_preciser:
+      champs: [annexe6AutresServicesOfferts.0.annexe6DetailsActivitesReligieuses]
+    Salle_manger_visiteur_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SalleAMangerVisiteurs]
+    Services_medicaux_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6ServicesMedicaux]
+    Personnel_infirmier_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==infirmiere]
+    Personnel_infirmier_auxiliaire_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==infirmiereAuxiliaire]
+    Personnel_prepose_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==prepose]
+    Personnel_gardien_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==gardien]
+    Personnel_receptionniste_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==receptionniste]
+    Personnel_autres_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==autres]
+    Personnel_autres_details1:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnelAutres]
+    Transport_navette_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6Transport==navette]
+    Transport_autre_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6Transport==autres]
+    Transport_payable_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6TransportPayantAutres==true]
+    Transport_payable_non:
+      champs: [annexe6AutresServicesOfferts.0.annexe6TransportPayantAutres==false]
+    Transport_autre_details:
+      champs: [annexe6AutresServicesOfferts.0.annexe6DetailsAutresTransport]
+    Autres_services1:
+      champs: [annexe6AutresServicesOfferts.0.annexe6AutresServices]
