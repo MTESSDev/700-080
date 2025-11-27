@@ -641,6 +641,20 @@ bind:
       champs: [autresSignataires.0.qualite]
     Qualite_autre_signataire2:
       champs: [autresSignataires.1.qualite]
+    Date_autre_signataire1:
+      champs: [signatureAutreSignataire1.0.Date]
+      formule: '{signatureAutreSignataire1.0.Date:dd          MM          yyyy}'
+    Date_autre_signataire2:
+      champs: [signatureAutreSignataire2.0.Date]
+      formule: '{signatureAutreSignataire2.0.Date:dd          MM          yyyy}'
+    Nom_autre_signataire1:
+      champs: [autresSignataires.0.nom]
+    Adresse_autre_signataire1:
+      champs: [autresSignataires.0.adresse.0.AdresseComplete]
+    Nom_autre_signataire2:
+      champs: [autresSignataires.1.nom]
+    Adresse_autre_signataire2:
+      champs: [autresSignataires.1.adresse.0.AdresseComplete]
   ajout:
     Nom_locateur_1:
       champs: [locateurs.2.nom]
@@ -892,3 +906,35 @@ bind:
       champs: [annexe6DescriptionLieux.0.annexe6SalleLavage==salleLavageCommunePayante]
     Ascenseur_oui:
       champs: [annexe6DescriptionLieux.0.annexe6Ascenceur]
+    Bibliotheque_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==bibliotheque]
+    Cuisine_commune_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==cuisineCommune]
+    Espace_visiteurs_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==espacePriveVisiteurs]
+    Piscine_interieure_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==piscine]
+    Salle_entrainement_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salleEntrainementPhysique]
+    Salle_billard_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salleBillard]
+    Salle_cinema_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salleCinemaMaison]
+    Salle_loisirs_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salleLoisirsMultifonctionnelle]
+    Salle_quilles_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salleQuilles]
+    Salle_reception_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salleReception]
+    Cout_salle_reception:
+      champs: [annexe6ServicesLoisirs.0.annexe6CoutSalleReception]
+    Salon_internet_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==salonInternet]
+    Espace_interieur_autres_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6EspacesCommunsInterieurs==autres]
+    Espace_interieur_autres1:
+      champs: [annexe6ServicesLoisirs.0.annexe6AutresEspacesCommunsInterieurs]
+    Activites_loisir_oui:
+      champs: [annexe6ServicesLoisirs.0.accesActivitesLoisirs]
+    Animateur_oui:
+      champs: [annexe6ServicesLoisirs.0.annexe6Animateur]
