@@ -1,0 +1,8 @@
+etapes:
+- tache: genererPdf
+  options:
+    fichierBind: 53010BAIL.v1.bind.yml
+- tache: traiterDocumentsSoumis
+- tache: ajouterEstampille
+- tache: extraireQuestions   # utile pour retour JSON des réponses
+- tache: conserverFichier    # conserve le PDF produit

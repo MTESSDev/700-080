@@ -64,7 +64,10 @@ bind:
     Autre_telephone_locateur_1:
       champs: [locateurs.0.autreNoTelephoneCell]
     Adresse_courriel_locateur_1:
-      champs: [locateurs.0.courriel]
+      champs:
+      - locateurs.0.courrielLocateur
+      - locateurs.0.courrielRepresentant
+      formule: '{locateurs.0.questionRepresentant:{locateurs.0.courrielRepresentant}|{locateurs.0.courrielLocateur}}'
     Representant_locateur_1:
       champs: [locateurs.0.representant]
     Nom_locateur_2:
@@ -84,7 +87,11 @@ bind:
     Autre_telephone_locateur_2:
       champs: [locateurs.1.autreNoTelephoneCell]
     Adresse_courriel_locateur_2:
-      champs: [locateurs.1.courriel]
+      champs:
+      - locateurs.1.questionRepresentant
+      - locateurs.1.courrielLocateur
+      - locateurs.1.courrielRepresentant
+      formule: '{locateurs.1.questionRepresentant:{locateurs.1.courrielRepresentant}|{locateurs.1.courrielLocateur}}'
     Representant_locateur_2:
       champs: [locateurs.1.representant]
     Nom_locataire_1:
@@ -104,7 +111,11 @@ bind:
     Autre_Telephone_locataire_1:
       champs: [locataires.0.autreNoTelephoneCell]
     Adresse_courriel_locataire_1:
-      champs: [locataires.0.courriel]
+      champs:
+      - locataires.0.questionRepresentant
+      - locataires.0.courrielLocataire
+      - locataires.0.courrielRepresentant
+      formule: '{locataires.0.questionRepresentant:{locataires.0.courrielRepresentant}|{locataires.0.courrielLocataire}}'
     Representant_locataire_1:
       champs: [locataires.0.representant]
     Numero_civique_logement:
@@ -121,7 +132,7 @@ bind:
       champs:
       - nbPieces
       - nbPiecesAutre
-      formule: '{nbPieces:vaut(autre):{nbPiecesAutre}|{nbPieces}}'
+      formule: '{nbPieces:include(autre):{nbPiecesAutre}|{nbPieces}}'
     Fins_habitation_oui:
       champs: [logementLoueFinsHabitation==true]
     Fins_habitation_non:
@@ -214,7 +225,11 @@ bind:
     Autre_telephone_locataire_2:
       champs: [locataires.1.autreNoTelephoneCell]
     Adresse_courriel_locataire_2:
-      champs: [locataires.1.courriel]
+      champs:
+      - locataires.1.questionRepresentant
+      - locataires.1.courrielLocataire
+      - locataires.1.courrielRepresentant
+      formule: '{locataires.1.questionRepresentant:{locataires.1.courrielRepresentant}|{locataires.1.courrielLocataire}}'
     Representant_locataire_2:
       champs: [locataires.1.representant]
     Fins_mixtes_Preciser:
@@ -445,9 +460,10 @@ bind:
       formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
     REG_Initiales_locataire_1:
       champs:
+      - logementCoproprieteDivise
       - signatureLocataire1.0.Initiales
       - signatureLocataire3.0.Initiales
-      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+      formule: '{logementCoproprieteDivise:include(false):{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}}'
     Postdate_Initiales_locataire_1:
       champs:
       - signatureLocataire1.0.Initiales
@@ -455,9 +471,10 @@ bind:
       formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
     COPREG_Initiales_locataire1:
       champs:
+      - logementCoproprieteDivise
       - signatureLocataire1.0.Initiales
       - signatureLocataire3.0.Initiales
-      formule: '{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}'
+      formule: '{logementCoproprieteDivise:include(true):{signatureLocataire1.0.Initiales} {signatureLocataire3.0.Initiales}}'
     P2_Initiales_du_locataire_1:
       champs:
       - signatureLocataire1.0.Initiales
@@ -505,14 +522,16 @@ bind:
       formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
     COPREG_Initiales_locataire_2:
       champs:
+      - logementCoproprieteDivise
       - signatureLocataire2.0.Initiales
       - signatureLocataire4.0.Initiales
-      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+      formule: '{logementCoproprieteDivise:include(true):{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}}'
     REG_Initiales_locataire_2:
       champs:
+      - logementCoproprieteDivise
       - signatureLocataire2.0.Initiales
       - signatureLocataire4.0.Initiales
-      formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
+      formule: '{logementCoproprieteDivise:include(false):{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}}'
     Postdate_Initiales_locataire_2:
       champs:
       - signatureLocataire2.0.Initiales
@@ -613,8 +632,8 @@ bind:
       champs: [signatureLocateur1.0.Date]
       formule: '{signatureLocateur1.0.Date:dd          MM          yyyy}'
     Date_signature_locateur2:
-      champs: [signatureLocateur2.0.Date]
-      formule: '{signatureLocateur2.0.Date:dd          MM          yyyy}'
+      champs: [signatureLocateur1.0.Date]
+      formule: '{signatureLocateur1.0.Date:dd          MM          yyyy}'
     Signature_conjoint:
       champs: [signatureLocataire1.0.NomComplet]
     Signature_locataire1:
@@ -677,7 +696,11 @@ bind:
     Autre_telephone_locateur_1:
       champs: [locateurs.2.autreNoTelephoneCell]
     Adresse_courriel_locateur_1:
-      champs: [locateurs.2.courriel]
+      champs:
+      - locateurs.2.questionRepresentant
+      - locateurs.2.courrielLocateur
+      - locateurs.2.courrielRepresentant
+      formule: '{locateurs.2.questionRepresentant:{locateurs.2.courrielRepresentant}|{locateurs.2.courrielLocateur}}'
     Representant_locateur_1:
       champs: [locateurs.2.representant]
     Rue_locateur_2:
@@ -693,7 +716,11 @@ bind:
     Autre_telephone_locateur_2:
       champs: [locateurs.3.autreNoTelephoneCell]
     Adresse_courriel_locateur_2:
-      champs: [locateurs.3.courriel]
+      champs:
+      - locateurs.3.questionRepresentant
+      - locateurs.3.courrielLocateur
+      - locateurs.3.courrielRepresentant
+      formule: '{locateurs.3.questionRepresentant:{locateurs.3.courrielRepresentant}|{locateurs.3.courrielLocateur}}'
     Representant_locateur_2:
       champs: [locateurs.3.representant]
     Nom_locataire_1:
@@ -713,7 +740,11 @@ bind:
     Autre_Telephone_locataire_1:
       champs: [locataires.2.autreNoTelephoneCell]
     Adresse_courriel_locataire_1:
-      champs: [locataires.2.courriel]
+      champs:
+      - locataires.2.questionRepresentant
+      - locataires.2.courrielLocataire
+      - locataires.2.courrielRepresentant
+      formule: '{locataires.2.questionRepresentant:{locataires.2.courrielRepresentant}|{locataires.2.courrielLocataire}}'
     Representant_locataire_1:
       champs: [locataires.2.representant]
     Nom_locataire_2:
@@ -733,7 +764,11 @@ bind:
     Autre_telephone_locataire_2:
       champs: [locataires.3.autreNoTelephoneCell]
     Adresse_courriel_locataire_2:
-      champs: [locataires.3.courriel]
+      champs:
+      - locataires.3.questionRepresentant
+      - locataires.3.courrielLocataire
+      - locataires.3.courrielRepresentant
+      formule: '{locataires.3.questionRepresentant:{locataires.3.courrielRepresentant}|{locataires.3.courrielLocataire}}'
     Representant_locataire_2:
       champs: [locataires.3.representant]
     Numero_sequentiel:
@@ -936,6 +971,7 @@ bind:
       champs: [annexe6ServicesLoisirs.0.annexe6AutresEspacesCommunsInterieurs]
     Activites_loisir_oui:
       champs: [annexe6ServicesLoisirs.0.accesActivitesLoisirs]
+      formule: '{annexe6ServicesLoisirs.0.accesActivitesLoisirs:isnullOrEmpty:false|true}'
     Animateur_oui:
       champs: [annexe6ServicesLoisirs.0.annexe6Animateur]
     Aire_jeux_oui:
@@ -958,6 +994,7 @@ bind:
       champs: [annexe6AutresServicesOfferts.0.annexe6SalleAMangerVisiteurs]
     Services_medicaux_oui:
       champs: [annexe6AutresServicesOfferts.0.annexe6ServicesMedicaux]
+      formule: '{annexe6AutresServicesOfferts.0.annexe6ServicesMedicaux:isnullOrEmpty:false|true}'
     Personnel_infirmier_oui:
       champs: [annexe6AutresServicesOfferts.0.annexe6SecuritePersonnel==infirmiere]
     Personnel_infirmier_auxiliaire_oui:
@@ -984,3 +1021,35 @@ bind:
       champs: [annexe6AutresServicesOfferts.0.annexe6DetailsAutresTransport]
     Autres_services1:
       champs: [annexe6AutresServicesOfferts.0.annexe6AutresServices]
+    Rangement_ferme_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6EspaceRangement]
+      formule: '{annexe6DescriptionLieux.0.annexe6EspaceRangement:isnullOrEmpty:false|true}'
+    Activites_loisir_preciser:
+      champs: [annexe6ServicesLoisirs.0.accesActivitesLoisirs]
+    Salle_lavage_commun_oui:
+      champs: [annexe6DescriptionLieux.0.annexe6SalleLavage]
+      formule: '{annexe6DescriptionLieux.0.annexe6SalleLavage.Length:cond:>=1?true|false}'
+    Services_medicaux_preciser1:
+      champs: [annexe6AutresServicesOfferts.0.annexe6ServicesMedicaux]
+    Infirmier_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6Infirmiere]
+    Infirmier_preciser:
+      champs: [annexe6AutresServicesOfferts.0.annexe6DetailsInfirmiere]
+    Infirmier_horaire:
+      champs: [annexe6AutresServicesOfferts.0.annexe6HoraireInfirmiere]
+    Infirmier_auxiliaire_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6InfirmiereAuxiliaire]
+    Infirmier_auxiliaire_preciser:
+      champs: [annexe6AutresServicesOfferts.0.annexe6DetailsInfirmiereAuxiliaire]
+    Infirmier_auxiliaire_horaire:
+      champs: [annexe6AutresServicesOfferts.0.annexe6HoraireInfirmiereAuxiliaire]
+    Prepose_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6Prepose]
+    Prepose_preciser:
+      champs: [annexe6AutresServicesOfferts.0.annexe6DetailsPrepose]
+    Prepose_horaire:
+      champs: [annexe6AutresServicesOfferts.0.annexe6HorairePrepose]
+    Securite_oui:
+      champs: [annexe6AutresServicesOfferts.0.annexe6Securite]
+    Securite_horaire:
+      champs: [annexe6AutresServicesOfferts.0.annexe6SecuriteHoraire]

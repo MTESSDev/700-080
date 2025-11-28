@@ -1,0 +1,1281 @@
+# yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/form
+# debug: langue=auto, showAll=false
+config:
+  securite:
+    accesAnonyme: true
+  title:
+    fr: Formulaires en ligne - Tribunal administratif du logement
+    en: Formulaires en ligne - Tribunal administratif du logement
+  piv:
+    entete:
+      nomSiteMOLigne1: 
+        fr: Tribunal administratif du logement
+        en: Tribunal administratif du logement
+      nomSiteMOLigne2:
+        fr: 
+    piedPage:
+      logo:
+        base64: 
+          fr: "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iU2lnbmF0dXJlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDI0OC40NDUgOTQuNjU5IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNDguNDQ1IDk0LjY1OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6bm9uZTt9DQoJLnN0MXtmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDt9DQoJLnN0MntmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOiMwOTU3OTc7fQ0KCS5zdDN7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojRkZGRkZGO30NCjwvc3R5bGU+DQo8Zz4NCgk8Zz4NCgkJPHJlY3QgY2xhc3M9InN0MCIgd2lkdGg9IjI0OC40NDUiIGhlaWdodD0iOTQuNjU5Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQoJPGc+DQoJCTxnPg0KCQkJPHBhdGggZD0iTTEwMi45ODEsNzAuNjE2VjU3LjUwN2gtMC4xYy0wLjQ2NiwwLjQyNi0yLjE4OCwwLjQ2NS0yLjkyLDAuNDY1aC0xLjI2OHYwLjEwNWMxLjQ2NSwwLjg5NiwxLjI2NCwyLjIyNSwxLjI2NCwzLjg3Nw0KCQkJCWwwLjAwNCw1LjU0N2MwLDIuNzc1LTIuNzI3LDQuNzIzLTQuOTIyLDQuNzIzYy0yLjg5MywwLTQuMDk2LTIuMDU3LTQuMDk2LTUuMzY5di05LjM0OGgtMC4wOTgNCgkJCQljLTAuNDY3LDAuNDI2LTIuMjAxLDAuNDY1LTIuOTMzLDAuNDY1aC0xLjI1NXYwLjEwNWMxLjQ2NSwwLjg5NiwxLjI2NCwyLjIyNSwxLjI2NCwzLjg3N3Y1LjUyOWMwLDUuMDYzLDIuMTk1LDcuNDY5LDYuMTIxLDcuNDY5DQoJCQkJYzIuMzI3LDAsNC43MTktMC44MjYsNS45MTgtMi44MDN2Mi4zOTVoNC4yODR2LTAuMTA5QzEwMi43ODQsNzMuNjA4LDEwMi45ODEsNzIuMjcyLDEwMi45ODEsNzAuNjE2eiIvPg0KCQkJPHBhdGggZD0iTTEwOS42MjYsNjMuNjA2YzAuNDAxLTIuMjU0LDIuMDY0LTMuNjg0LDQuMjk1LTMuNjg0YzIuMzk2LDAsMy45MjYsMS4xOCw0LjI5MSwzLjY4NEgxMDkuNjI2eiBNMTIxLjcwOCw2NS42OTQNCgkJCQljMC4xMzItNC42MjctMi45NjMtOC4xMjEtNy40ODgtOC4xMjFjLTQuOTU5LDAtOC4zMTgsMy42LTguMzE4LDguNTkyYzAsNS4wMjcsMy44OTEsOC44NTcsOS41NDksOC44NTcNCgkJCQljMS41NjQsMCwzLjE2Mi0wLjI1LDQuNTk0LTAuODkxbDEuNjY0LTMuMzc1aC0wLjFjLTEuNTMxLDEuMzAxLTMuNDYsMS45Mi01LjQ1OSwxLjkyYy0zLjc2LDAtNi41ODgtMi41Ny02LjY1NC02Ljk4MkgxMjEuNzA4eiINCgkJCQkvPg0KCQkJPHBhdGggZD0iTTEyNC4zNDksNDkuODg4YzAuNzk3LDAsMi40MjItMC4wNDksMi45MTQtMC41MzNoMC4xdjIyLjcwN2MwLjg5NSwwLjI1LDEuODE4LDAuNDMsMi43NDIsMC40Mw0KCQkJCWMzLjYzOSwwLDUuNzIxLTIuNTQzLDUuNzIxLTYuMDljMC0zLjQ3My0xLjYyMS02LjE2LTQuOTU5LTYuMTZjLTEuMDU5LDAtMS44ODUsMC4yODUtMi43NzcsMC43ODlsMS43ODctMy4wNTkNCgkJCQljMC43NTgtMC4yODksMS41NTMtMC4zOTgsMi4zNDYtMC4zOThjMy43NzEsMCw2Ljk3NywzLjI3Nyw2Ljk3Nyw4LjE4NWMwLDUuNjIxLTMuODAzLDkuMjU2LTkuODIsOS4yNTYNCgkJCQljLTIuMjQ2LDAtNC40MDYtMC4zOTYtNi4wMzYtMC42NDZ2LTAuMTA5YzEuMDk4LTAuNTA2LDAuOTk4LTEuNjk1LDAuOTk4LTIuODc5VjU0Ljg3NGMwLTEuNjU2LDAuMTk5LTMuOTc3LTEuMjMtNC44Nzd2LTAuMTA5DQoJCQkJSDEyNC4zNDl6Ii8+DQoJCQk8cGF0aCBkPSJNMTQ1LjEwNyw2My42MDZjMC4zOTgtMi4yNTQsMi4wNjQtMy42ODQsNC4yOTEtMy42ODRjMi4zOTYsMCwzLjkyOCwxLjE4LDQuMjk1LDMuNjg0SDE0NS4xMDd6IE0xNTcuMTg1LDY1LjY5NA0KCQkJCWMwLjEzNS00LjYyNy0yLjk2MS04LjEyMS03LjQ4OC04LjEyMWMtNC45NTUsMC04LjMxNCwzLjYtOC4zMTQsOC41OTJjMCw1LjAyNywzLjg5MSw4Ljg1Nyw5LjU0Nyw4Ljg1Nw0KCQkJCWMxLjU2NCwwLDMuMTYyLTAuMjUsNC41OTItMC44OTFsMS42NjQtMy4zNzVoLTAuMDk4Yy0xLjUzMywxLjMwMS0zLjQ2MywxLjkyLTUuNDU5LDEuOTJjLTMuNzYsMC02LjU4Ni0yLjU3LTYuNjU0LTYuOTgySDE1Ny4xODUNCgkJCQl6Ii8+DQoJCQk8cGF0aCBkPSJNMTcyLjA3LDYxLjY5aC0wLjFjLTAuOTY3LTEuMTkxLTIuNTY0LTEuNzY4LTQuMDYzLTEuNzY4Yy0zLjIyNywwLTUuNTU1LDIuNDQ5LTUuNTU1LDUuODcxDQoJCQkJYzAsNC4xNDQsMy4yMjksNi44ODMsNi45Miw2Ljg4M2MxLjY5NywwLDMuNTYxLTAuNzIxLDQuODU5LTEuNzY4aDAuMTAybC0xLjczMiwzLjQwMmMtMS4zOTgsMC41Ny0yLjkyOCwwLjcxMS00LjM5NSwwLjcxMQ0KCQkJCWMtNS4xMjMsMC05LjEyOS0zLjYwNy05LjEyOS04LjI5MWMwLTYuMTkzLDQuNDczLTkuMTU4LDkuNDk2LTkuMTU4YzEuMTk5LDAsMi40MywwLjE0NCwzLjU5NiwwLjQzVjYxLjY5eiIvPg0KCQkJPHBhdGggY2xhc3M9InN0MSIgZD0iTTExNy41NTYsNTQuNjAyYzAtMS42NzQsMC0zLjYwMywwLTMuNjAzYy0yLjE4MiwwLjk4LTQuMjA2LDIuODA5LTUuNTU4LDQuNTg4djEuNDAyDQoJCQkJQzExNS4yMzMsNTQuODA4LDExNy41NTYsNTQuNzA0LDExNy41NTYsNTQuNjAyeiIvPg0KCQkJPHBhdGggZD0iTTcyLjk2Niw3Mi41NDZjLTUuMDI1LDAtOC41MjEtNS42Ny04LjUyMS0xMC40ODZjMC0wLjA0OSwwLTAuNDk2LDAuMDAyLTAuNTQxYzAuMDYxLTQuNjY2LDMuMDgtOS4wNDMsOC4zNTMtOS4wNDMNCgkJCQljNS41NDYsMCw4LjQwNyw1LjI1LDguNDUzLDEwLjIxN2MwLDAuMDQzLDAsMC40NzksMCwwLjUyQzgxLjI1Miw2OC41MTEsNzcuOTU4LDcyLjU0Niw3Mi45NjYsNzIuNTQ2eiBNOTAuMTg4LDc4LjA1Ng0KCQkJCWMtMy43MDksMC42MDctNy4yNzctMC41NjMtMTEuMDY2LTQuODk2YzMuNjYxLTEuODQsNS45MjYtNi40MTYsNS45MjYtMTAuNjY4YzAtMC4wNDUtMC4wMDItMC40ODQtMC4wMDItMC41MjkNCgkJCQljLTAuMDY1LTcuMjc1LTUuNTMxLTEyLjA4LTEyLjA0OS0xMi4wOGMtNi41MjgsMC0xMi4yOTcsNS4wMDItMTIuMzQ3LDEyLjMzNmMwLDAuMDMxLDAsMC40NTcsMCwwLjQ4OA0KCQkJCWMwLDcuMTM3LDUuMjkzLDEyLjQzMiwxMS43OCwxMi40MzJjMC45MzQsMCwxLjgzMi0wLjE0NSwyLjczMS0wLjM1OWM0LjI1LDMuOTg0LDguMDQxLDUuNjc2LDExLjMxMSw1LjI4MQ0KCQkJCWMxLjU1NC0wLjE4NiwzLjE5Ni0wLjgwMSw0LjE4MS0yLjA4NEw5MC4xODgsNzguMDU2eiIvPg0KCQk8L2c+DQoJPC9nPg0KCTxnPg0KCQk8Zz4NCgkJCTxwYXRoIGQ9Ik0yMS4wMTQsMjAuMDg1aDcuNTYxbC0wLjQwOCwxLjg4N2gtMi40OTJsLTEuNjc1LDcuODg1aC0yLjYzM2wxLjY3Ni03Ljg4NWgtMi40MjJMMjEuMDE0LDIwLjA4NXoiLz4NCgkJCTxwYXRoIGQ9Ik0zNC40NDYsMjIuNTc3bC0wLjU2MywyLjExMmMtMC40NjktMC4xMzEtMC44MzYtMC4xOTctMS4wOTgtMC4xOTdjLTAuNjEsMC0xLjA4LDAuMjMtMS40MDgsMC42OQ0KCQkJCWMtMC4yMzUsMC4zMjktMC40MjcsMC44NDUtMC41NzgsMS41NDhsLTAuNjc2LDMuMTI2aC0yLjUzNGwxLjQ3OS03LjI2NWgyLjI5NWwtMC4yNjcsMS4zMjNjMC42OTQtMC45OTUsMS40OTItMS40OTIsMi4zOTMtMS40OTINCgkJCQlDMzMuNzcsMjIuNDIyLDM0LjA4OSwyMi40NzQsMzQuNDQ2LDIyLjU3N3oiLz4NCgkJCTxwYXRoIGQ9Ik0zNS42NywyMi42MDVoMi40NjRsLTEuNTc3LDcuMjUxaC0yLjQ2NEwzNS42NywyMi42MDV6IE0zNi4xNzcsMjAuMDg1aDIuNDc5bC0wLjI1MywxLjI5NWgtMi40NjRMMzYuMTc3LDIwLjA4NXoiLz4NCgkJCTxwYXRoIGQ9Ik00MC42MTMsMjAuMDg1aDIuNTA2bC0wLjc2LDMuNDVjMC42NzYtMC43NTEsMS40NzktMS4xMjYsMi40MDgtMS4xMjZjMC45MTEsMCwxLjYxOSwwLjMxOSwyLjEyNiwwLjk1OA0KCQkJCWMwLjQ2LDAuNTkxLDAuNjksMS4zNTIsMC42OSwyLjI4MWMwLDEuMjMtMC4zMjQsMi4yNTMtMC45NzEsMy4wNjljLTAuNzE0LDAuODkyLTEuNjY3LDEuMzM4LTIuODU4LDEuMzM4DQoJCQkJYy0xLjE0NiwwLTEuOTk1LTAuNTU0LTIuNTQ4LTEuNjYybC0wLjM1MiwxLjQ2NGgtMi4yODFMNDAuNjEzLDIwLjA4NXogTTQ0Ljk5MiwyNS43NDVjMC0wLjQxMy0wLjEwOC0wLjc1OC0wLjMyNC0xLjAzNQ0KCQkJCWMtMC4yMTYtMC4yNzYtMC41MjYtMC40MTUtMC45MjktMC40MTVjLTAuNTU0LDAtMS4wMTgsMC4yNjMtMS4zOTQsMC43ODljLTAuMzM4LDAuNDY5LTAuNTA3LDAuOTk1LTAuNTA3LDEuNTc3DQoJCQkJYzAsMC40NDEsMC4xMTcsMC44MDgsMC4zNTIsMS4wOThjMC4yMzQsMC4yOTIsMC41NjMsMC40MzcsMC45ODYsMC40MzdjMC41NjMsMCwxLjAxOC0wLjI3NiwxLjM2Ni0wLjgzMQ0KCQkJCUM0NC44NDEsMjYuODc2LDQ0Ljk5MiwyNi4zMzYsNDQuOTkyLDI1Ljc0NXoiLz4NCgkJCTxwYXRoIGQ9Ik00OS4zOTgsMjIuNjE5aDIuNTM0Yy0wLjE2OSwwLjcyMy0wLjM0MiwxLjQ1LTAuNTIxLDIuMTgzYy0wLjIxNiwwLjkzOS0wLjMyNCwxLjY2Mi0wLjMyNCwyLjE2OQ0KCQkJCWMwLDAuNzIzLDAuMzE5LDEuMDg0LDAuOTU4LDEuMDg0YzAuOTY3LDAsMS42MTktMC43OTMsMS45NTctMi4zNzlsMC42NDgtMy4wNTZoMi41MzRsLTEuNTQ5LDcuMjM3aC0yLjI2N2wwLjI4MS0xLjIyNQ0KCQkJCWMtMC44MjYsMC45MzktMS43NDYsMS40MDgtMi43NTksMS40MDhjLTAuNzcsMC0xLjM1Ny0wLjIyNi0xLjc2LTAuNjc2Yy0wLjQwNC0wLjQ1MS0wLjYwNS0xLjA2Ni0wLjYwNS0xLjg0NQ0KCQkJCWMwLTAuNjY2LDAuMTA0LTEuNDkyLDAuMzEtMi40NzhDNDkuMDIzLDI0LjIzNCw0OS4yMSwyMy40MjcsNDkuMzk4LDIyLjYxOXoiLz4NCgkJCTxwYXRoIGQ9Ik02NS4xNTQsMjkuODU2aC0yLjUyMWMwLjE3OC0wLjcyMywwLjM1Mi0xLjQ0NSwwLjUyMS0yLjE2OGMwLjIxNi0wLjkyOSwwLjMyNC0xLjY1NiwwLjMyNC0yLjE4Mg0KCQkJCWMwLTAuNzEzLTAuMzA1LTEuMDctMC45MTYtMS4wN2MtMC45OTUsMC0xLjY2MSwwLjc4OS0xLjk5OSwyLjM2NmwtMC42NDgsMy4wNTVoLTIuNTM0bDEuNTQ5LTcuMzA4aDIuMjY3bC0wLjI4MiwxLjI5NQ0KCQkJCWMwLjgyNi0wLjkzOSwxLjc0Ni0xLjQwOCwyLjc2LTEuNDA4YzAuNzcsMCwxLjM1NywwLjIyOCwxLjc2LDAuNjgzYzAuNDAzLDAuNDU2LDAuNjA1LDEuMDczLDAuNjA1LDEuODUyDQoJCQkJYzAsMC42NjctMC4xMDgsMS40ODgtMC4zMjQsMi40NjRDNjUuNTI5LDI4LjI0Miw2NS4zNDEsMjkuMDQ5LDY1LjE1NCwyOS44NTZ6Ii8+DQoJCQk8cGF0aCBkPSJNNzMuODI3LDI5Ljg1NmgtMi4wOThsMC4xNDEtMS4wOThjLTAuNTYzLDAuODM1LTEuMzk5LDEuMjUzLTIuNTA2LDEuMjUzYy0wLjY5NSwwLTEuMjYzLTAuMTgzLTEuNzA0LTAuNTQ5DQoJCQkJYy0wLjQ3OS0wLjM5NC0wLjcxOC0wLjkzLTAuNzE4LTEuNjA1YzAtMC45NjYsMC40OC0xLjY3LDEuNDQtMi4xMTJjMC43MjUtMC4zMzgsMS42NzUtMC41MDcsMi44NTItMC41MDcNCgkJCQljMC4zODYsMCwwLjc3MSwwLjAxOSwxLjE1NywwLjA1NnYtMC4yMzljMC4wNDctMC43NTEtMC40MTgtMS4xMjYtMS4zOTQtMS4xMjZjLTAuODQ1LDAtMS42MzMsMC4xODMtMi4zNjYsMC41NDlsMC4yOTYtMS42OQ0KCQkJCWMwLjc4OS0wLjI4MSwxLjU5MS0wLjQyMiwyLjQwOC0wLjQyMmMwLjkwMSwwLDEuNjQ3LDAuMTYsMi4yMzksMC40NzljMC43NSwwLjM5NCwxLjEyNiwxLjAwNCwxLjEyNiwxLjgzDQoJCQkJYzAsMC42MjktMC4xMjcsMS40OTMtMC4zOCwyLjU5MUM3NC4wMjksMjguNDg2LDczLjg2NCwyOS4zNSw3My44MjcsMjkuODU2eiBNNzIuMDgxLDI2LjU0OA0KCQkJCWMtMC4xNjktMC4wMTktMC40MDgtMC4wMjgtMC43MTgtMC4wMjhjLTEuMzcxLDAtMi4wNTYsMC4zNzUtMi4wNTYsMS4xMjdjMCwwLjI1MywwLjA4OSwwLjQ1MywwLjI2OCwwLjU5OA0KCQkJCWMwLjE3OCwwLjE0NiwwLjM5OSwwLjIxOCwwLjY2MiwwLjIxOGMwLjQ5NywwLDAuOTE5LTAuMjAyLDEuMjY3LTAuNjA1QzcxLjgxMywyNy41MSw3Mi4wMDYsMjcuMDczLDcyLjA4MSwyNi41NDh6Ii8+DQoJCQk8cGF0aCBkPSJNNzcuNTQ0LDIwLjA5OWgyLjUwNmwtMi4xMTIsOS43NTdoLTIuNTA2TDc3LjU0NCwyMC4wOTl6Ii8+DQoJCQk8cGF0aCBkPSJNOTEuMjE1LDI5Ljg1NmgtMi4wOThsMC4xNDEtMS4wOThjLTAuNTYzLDAuODM1LTEuMzk4LDEuMjUzLTIuNTA2LDEuMjUzYy0wLjY5NCwwLTEuMjYyLTAuMTgzLTEuNzA0LTAuNTQ5DQoJCQkJYy0wLjQ3OS0wLjM5NC0wLjcxOC0wLjkzLTAuNzE4LTEuNjA1YzAtMC45NjYsMC40NzktMS42NywxLjQ0LTIuMTEyYzAuNzI1LTAuMzM4LDEuNjc1LTAuNTA3LDIuODUxLTAuNTA3DQoJCQkJYzAuMzg2LDAsMC43NzIsMC4wMTksMS4xNTgsMC4wNTZ2LTAuMjM5YzAuMDQ3LTAuNzUxLTAuNDE3LTEuMTI2LTEuMzk0LTEuMTI2Yy0wLjg0NSwwLTEuNjMzLDAuMTgzLTIuMzY1LDAuNTQ5bDAuMjk2LTEuNjkNCgkJCQljMC43ODgtMC4yODEsMS41OTEtMC40MjIsMi40MDctMC40MjJjMC45MDEsMCwxLjY0NywwLjE2LDIuMjM5LDAuNDc5YzAuNzUxLDAuMzk0LDEuMTI2LDEuMDA0LDEuMTI2LDEuODMNCgkJCQljMCwwLjYyOS0wLjEyNiwxLjQ5My0wLjM4LDIuNTkxQzkxLjQxNywyOC40ODYsOTEuMjUzLDI5LjM1LDkxLjIxNSwyOS44NTZ6IE04OS40NywyNi41NDhjLTAuMTY5LTAuMDE5LTAuNDA4LTAuMDI4LTAuNzE4LTAuMDI4DQoJCQkJYy0xLjM3MSwwLTIuMDU2LDAuMzc1LTIuMDU2LDEuMTI3YzAsMC4yNTMsMC4wODksMC40NTMsMC4yNjgsMC41OThjMC4xNzgsMC4xNDYsMC4zOTksMC4yMTgsMC42NjIsMC4yMTgNCgkJCQljMC40OTgsMCwwLjkyLTAuMjAyLDEuMjY4LTAuNjA1Qzg5LjIwMiwyNy41MSw4OS4zOTUsMjcuMDczLDg5LjQ3LDI2LjU0OHoiLz4NCgkJCTxwYXRoIGQ9Ik0xMDAuMSwyMC4wODVoMi40OTJsLTIuMDU2LDkuNzcxaC0yLjI1M2wwLjI2OC0xLjIxMWMtMC43MDQsMC45NDgtMS41ODYsMS40MjItMi42NDcsMS40MjINCgkJCQljLTAuOTExLDAtMS42Mi0wLjMxNS0yLjEyNi0wLjk0M2MtMC40NjktMC41ODItMC43MDQtMS4zNDItMC43MDQtMi4yODFjMC0xLjIyOSwwLjMyOC0yLjI1NywwLjk4NS0zLjA4Mw0KCQkJCWMwLjcwNC0wLjg5MiwxLjY1Ny0xLjMzNywyLjg1OC0xLjMzN2MxLjA4OSwwLDEuODgyLDAuNDc0LDIuMzc5LDEuNDIyTDEwMC4xLDIwLjA4NXogTTk4LjgzMywyNS43NzMNCgkJCQljMC0wLjQxMy0wLjEyMi0wLjc2My0wLjM2Ni0xLjA0OWMtMC4yNDQtMC4yODYtMC41NzMtMC40MjktMC45ODYtMC40MjljLTAuNTczLDAtMS4wMzMsMC4yODYtMS4zOCwwLjg1OQ0KCQkJCWMtMC4yOTEsMC40NzktMC40MzcsMS4wMjMtMC40MzcsMS42MzNjMCwwLjM5NCwwLjExMywwLjcyNywwLjMzOCwxYzAuMjI2LDAuMjcyLDAuNTMsMC40MDgsMC45MTYsMC40MDgNCgkJCQljMC41NzIsMCwxLjA0Ni0wLjI2OCwxLjQyMi0wLjgwMkM5OC42NjgsMjYuOTE0LDk4LjgzMywyNi4zNzQsOTguODMzLDI1Ljc3M3oiLz4NCgkJCTxwYXRoIGQ9Ik0xMTMuOTU1LDI5Ljg1NmgtMi40MDhjMC4xNzgtMC43NTEsMC4zNTYtMS41MDYsMC41MzUtMi4yNjdjMC4yMzQtMC45OTUsMC4zNTItMS43NSwwLjM1Mi0yLjI2Nw0KCQkJCWMwLTAuNTcyLTAuMjUzLTAuODU5LTAuNzYtMC44NTljLTAuNTI2LDAtMC45MiwwLjI3Ny0xLjE4MywwLjgzYy0wLjExMiwwLjIzNS0wLjI0OSwwLjczNy0wLjQwOCwxLjUwN2wtMC42NDcsMy4wNTVoLTIuNTYzDQoJCQkJYzAuMTg4LTAuNzYsMC4zNzUtMS41MjUsMC41NjMtMi4yOTVjMC4yMTYtMC45NDgsMC4zMjQtMS43MjMsMC4zMjQtMi4zMjNjMC0wLjUxNi0wLjI1My0wLjc3NC0wLjc2LTAuNzc0DQoJCQkJYy0wLjcyMywwLTEuMjExLDAuNTk2LTEuNDY0LDEuNzg4bC0wLjc3NCwzLjYwNGgtMi41NjJsMS41NDktNy4zMDhoMi4xNjlsLTAuMjgyLDEuMzI0YzAuNzk4LTAuOTU4LDEuNjQzLTEuNDM2LDIuNTM0LTEuNDM2DQoJCQkJYzEuMDIzLDAsMS42ODUsMC40NzQsMS45ODUsMS40MjJjMC43NjktMC45NDgsMS42MzMtMS40MjIsMi41OTEtMS40MjJjMC42ODUsMCwxLjIyNSwwLjIwNywxLjYxOSwwLjYxOQ0KCQkJCWMwLjM5NSwwLjQxMywwLjU5MSwwLjk2NywwLjU5MSwxLjY2MmMwLDAuNjM4LTAuMTI2LDEuNTAyLTAuMzgsMi41OTFDMTE0LjM2OCwyOC4xNTMsMTE0LjE2MSwyOS4wMDIsMTEzLjk1NSwyOS44NTZ6Ii8+DQoJCQk8cGF0aCBkPSJNMTE3LjQ3NSwyMi42MDVoMi40NjRsLTEuNTc3LDcuMjUxaC0yLjQ2NEwxMTcuNDc1LDIyLjYwNXogTTExNy45ODEsMjAuMDg1aDIuNDc4bC0wLjI1MywxLjI5NWgtMi40NjRMMTE3Ljk4MSwyMC4wODV6Ig0KCQkJCS8+DQoJCQk8cGF0aCBkPSJNMTI4LjAwNiwyOS44NTZoLTIuNTIxYzAuMTc4LTAuNzIzLDAuMzUyLTEuNDQ1LDAuNTIxLTIuMTY4YzAuMjE2LTAuOTI5LDAuMzI0LTEuNjU2LDAuMzI0LTIuMTgyDQoJCQkJYzAtMC43MTMtMC4zMDUtMS4wNy0wLjkxNS0xLjA3Yy0wLjk5NSwwLTEuNjYyLDAuNzg5LTEuOTk5LDIuMzY2bC0wLjY0NywzLjA1NWgtMi41MzVsMS41NDktNy4zMDhoMi4yNjdsLTAuMjgyLDEuMjk1DQoJCQkJYzAuODI2LTAuOTM5LDEuNzQ2LTEuNDA4LDIuNzYtMS40MDhjMC43NywwLDEuMzU2LDAuMjI4LDEuNzYsMC42ODNjMC40MDMsMC40NTYsMC42MDUsMS4wNzMsMC42MDUsMS44NTINCgkJCQljMCwwLjY2Ny0wLjEwOCwxLjQ4OC0wLjMyNCwyLjQ2NEMxMjguMzgxLDI4LjI0MiwxMjguMTk0LDI5LjA0OSwxMjguMDA2LDI5Ljg1NnoiLz4NCgkJCTxwYXRoIGQ9Ik0xMzEuNDQxLDIyLjYwNWgyLjQ2NGwtMS41NzcsNy4yNTFoLTIuNDY0TDEzMS40NDEsMjIuNjA1eiBNMTMxLjk0OSwyMC4wODVoMi40NzhsLTAuMjUzLDEuMjk1aC0yLjQ2NEwxMzEuOTQ5LDIwLjA4NXoiDQoJCQkJLz4NCgkJCTxwYXRoIGQ9Ik0xNDEuMDQ0LDIyLjg0NWwtMC41NDksMS41OTFjLTAuODE3LTAuMjcyLTEuNDU1LTAuNDA4LTEuOTE1LTAuNDA4Yy0wLjc1MSwwLTEuMTI2LDAuMjIxLTEuMTI2LDAuNjYyDQoJCQkJYzAsMC4yNDQsMC4yNTgsMC40NywwLjc3NSwwLjY3NmMwLjc3OSwwLjMxLDEuMjUzLDAuNTIxLDEuNDIyLDAuNjM0YzAuNTE2LDAuMzQ3LDAuNzc0LDAuODIxLDAuNzc0LDEuNDIyDQoJCQkJYzAsMC44ODMtMC4zNjYsMS41NTktMS4wOTksMi4wMjhjLTAuNjE5LDAuNDA0LTEuMzk0LDAuNjA2LTIuMzIzLDAuNjA2Yy0xLjAyMywwLTEuOTg1LTAuMTU1LTIuODg2LTAuNDY1bDAuNTIxLTEuNzQ2DQoJCQkJYzAuNjY3LDAuMzI5LDEuMzQyLDAuNDkzLDIuMDI3LDAuNDkzYzAuODQ1LDAsMS4yNjgtMC4yMTYsMS4yNjgtMC42NDhjMC0wLjI4MS0wLjI0OS0wLjUzLTAuNzQ3LTAuNzQ2DQoJCQkJYy0wLjc3LTAuMzI5LTEuMjI5LTAuNTQ5LTEuMzgtMC42NjJjLTAuNDk4LTAuMzU3LTAuNzQ2LTAuODU0LTAuNzQ2LTEuNDkzYzAtMC44MDcsMC4zOS0xLjQyNywxLjE2OS0xLjg1OA0KCQkJCWMwLjYzOS0wLjM0NywxLjM5NC0wLjUyMSwyLjI2Ny0wLjUyMUMxMzkuMjY1LDIyLjQwOCwxNDAuMTE1LDIyLjU1NCwxNDEuMDQ0LDIyLjg0NXoiLz4NCgkJCTxwYXRoIGQ9Ik0xNDYuMzM4LDIwLjE5OGwtMC41MjEsMi40MjFoMS43ODhsLTAuMzY2LDEuNzMyaC0xLjc4OGMtMC4xMzIsMC41MjQtMC4yNjMsMS4wNDMtMC4zOTUsMS41NTcNCgkJCQljLTAuMTYsMC42NDYtMC4yMzksMS4xNzQtMC4yMzksMS41ODVjMCwwLjQ5NiwwLjI2MywwLjc0NCwwLjc4OSwwLjc0NGMwLjIxNiwwLDAuNDkzLTAuMDQyLDAuODMxLTAuMTI3bC0wLjM2NiwxLjcxOQ0KCQkJCWMtMC42MDEsMC4xMDItMS4wNjUsMC4xNTQtMS4zOTQsMC4xNTRjLTAuNzIzLDAtMS4yOTEtMC4xODMtMS43MDQtMC41NDhjLTAuNDQxLTAuMzg0LTAuNjYyLTAuOTMyLTAuNjYyLTEuNjQzDQoJCQkJYzAtMC40NjgsMC4wNzktMS4wNDQsMC4yMzktMS43MjdjMC4xMzEtMC41NzEsMC4yNjgtMS4xNDMsMC40MDgtMS43MTRoLTEuNDc5bDAuMzY2LTEuNzMyaDEuNDc5bDAuMzY2LTEuNzE4TDE0Ni4zMzgsMjAuMTk4eiIvPg0KCQkJPHBhdGggZD0iTTE1NC4yNTEsMjIuNTc3bC0wLjU2MywyLjExMmMtMC40NjktMC4xMzEtMC44MzUtMC4xOTctMS4wOTgtMC4xOTdjLTAuNjEsMC0xLjA4LDAuMjMtMS40MDgsMC42OQ0KCQkJCWMtMC4yMzUsMC4zMjktMC40MjcsMC44NDUtMC41NzgsMS41NDhsLTAuNjc2LDMuMTI2aC0yLjUzNGwxLjQ3OS03LjI2NWgyLjI5NWwtMC4yNjgsMS4zMjNjMC42OTQtMC45OTUsMS40OTMtMS40OTIsMi4zOTQtMS40OTINCgkJCQlDMTUzLjU3NSwyMi40MjIsMTUzLjg5NCwyMi40NzQsMTU0LjI1MSwyMi41Nzd6Ii8+DQoJCQk8cGF0aCBkPSJNMTYwLjcxMywyOS44NTZoLTIuMDk4bDAuMTQxLTEuMDk4Yy0wLjU2MywwLjgzNS0xLjM5OCwxLjI1My0yLjUwNiwxLjI1M2MtMC42OTQsMC0xLjI2Mi0wLjE4My0xLjcwNC0wLjU0OQ0KCQkJCWMtMC40NzktMC4zOTQtMC43MTgtMC45My0wLjcxOC0xLjYwNWMwLTAuOTY2LDAuNDc5LTEuNjcsMS40NC0yLjExMmMwLjcyNS0wLjMzOCwxLjY3NS0wLjUwNywyLjg1MS0wLjUwNw0KCQkJCWMwLjM4NiwwLDAuNzcyLDAuMDE5LDEuMTU4LDAuMDU2di0wLjIzOWMwLjA0Ny0wLjc1MS0wLjQxOC0xLjEyNi0xLjM5NC0xLjEyNmMtMC44NDUsMC0xLjYzMywwLjE4My0yLjM2NSwwLjU0OWwwLjI5NS0xLjY5DQoJCQkJYzAuNzg5LTAuMjgxLDEuNTkxLTAuNDIyLDIuNDA4LTAuNDIyYzAuOTAxLDAsMS42NDgsMC4xNiwyLjIzOSwwLjQ3OWMwLjc1MSwwLjM5NCwxLjEyNywxLjAwNCwxLjEyNywxLjgzDQoJCQkJYzAsMC42MjktMC4xMjcsMS40OTMtMC4zOCwyLjU5MUMxNjAuOTE2LDI4LjQ4NiwxNjAuNzUxLDI5LjM1LDE2MC43MTMsMjkuODU2eiBNMTU4Ljk2OCwyNi41NDgNCgkJCQljLTAuMTY5LTAuMDE5LTAuNDA5LTAuMDI4LTAuNzE4LTAuMDI4Yy0xLjM3MSwwLTIuMDU2LDAuMzc1LTIuMDU2LDEuMTI3YzAsMC4yNTMsMC4wODksMC40NTMsMC4yNjgsMC41OTgNCgkJCQljMC4xNzgsMC4xNDYsMC4zOTksMC4yMTgsMC42NjIsMC4yMThjMC40OTcsMCwwLjkyLTAuMjAyLDEuMjY3LTAuNjA1QzE1OC43LDI3LjUxLDE1OC44OTMsMjcuMDczLDE1OC45NjgsMjYuNTQ4eiIvPg0KCQkJPHBhdGggZD0iTTE2Ny4zNDUsMjAuMTk4bC0wLjUyMSwyLjQyMWgxLjc4OGwtMC4zNjYsMS43MzJoLTEuNzg4Yy0wLjEzMSwwLjUyNC0wLjI2MywxLjA0My0wLjM5NCwxLjU1Nw0KCQkJCWMtMC4xNiwwLjY0Ni0wLjIzOSwxLjE3NC0wLjIzOSwxLjU4NWMwLDAuNDk2LDAuMjYzLDAuNzQ0LDAuNzg4LDAuNzQ0YzAuMjE2LDAsMC40OTMtMC4wNDIsMC44MzEtMC4xMjdsLTAuMzY2LDEuNzE5DQoJCQkJYy0wLjYwMSwwLjEwMi0xLjA2NiwwLjE1NC0xLjM5NCwwLjE1NGMtMC43MjMsMC0xLjI5LTAuMTgzLTEuNzA0LTAuNTQ4Yy0wLjQ0MS0wLjM4NC0wLjY2Mi0wLjkzMi0wLjY2Mi0xLjY0Mw0KCQkJCWMwLTAuNDY4LDAuMDgtMS4wNDQsMC4yMzktMS43MjdjMC4xMzEtMC41NzEsMC4yNjgtMS4xNDMsMC40MDgtMS43MTRoLTEuNDc5bDAuMzY2LTEuNzMyaDEuNDc5bDAuMzY2LTEuNzE4TDE2Ny4zNDUsMjAuMTk4eiIvPg0KCQkJPHBhdGggZD0iTTE3MC4xNjEsMjIuNjA1aDIuNDY0bC0xLjU3Nyw3LjI1MWgtMi40NjRMMTcwLjE2MSwyMi42MDV6IE0xNzAuNjY4LDIwLjA4NWgyLjQ3OGwtMC4yNTMsMS4yOTVoLTIuNDY0TDE3MC42NjgsMjAuMDg1eiINCgkJCQkvPg0KCQkJPHBhdGggZD0iTTE4MC4xMDIsMjAuMzFsLTAuMzgsMS4yOTVjLTAuMjUzLTAuMTEyLTAuNTA3LTAuMTY5LTAuNzYtMC4xNjljLTAuMzU3LDAtMC42MjksMC4xMTMtMC44MTcsMC4zMzgNCgkJCQljLTAuMTUsMC4xNjktMC4yNzIsMC40NTEtMC4zNjYsMC44NDVoMS44M2wtMC4zNjYsMS43NmgtMS44NDRsLTEuMTU1LDUuNDc3aC0yLjUwNmwxLjE2OS01LjQ3N2gtMS41MDZsMC4zOC0xLjc2aDEuNDkzDQoJCQkJYzAuMjgyLTEuNzU1LDEuMzU2LTIuNjMzLDMuMjI0LTIuNjMzQzE3OC45MzgsMTkuOTg2LDE3OS40NzIsMjAuMDk0LDE4MC4xMDIsMjAuMzF6Ii8+DQoJCQk8cGF0aCBkPSJNMjcuMDk2LDM0LjE2NWgyLjQ5MmwtMi4wNTYsOS43NzFIMjUuMjhsMC4yNjgtMS4yMTFjLTAuNzA0LDAuOTQ4LTEuNTg2LDEuNDIyLTIuNjQ3LDEuNDIyDQoJCQkJYy0wLjkxMSwwLTEuNjItMC4zMTQtMi4xMjYtMC45NDNjLTAuNDY5LTAuNTgyLTAuNzA0LTEuMzQyLTAuNzA0LTIuMjgxYzAtMS4yMjksMC4zMjgtMi4yNTcsMC45ODUtMy4wODMNCgkJCQljMC43MDQtMC44OTIsMS42NTctMS4zMzcsMi44NTgtMS4zMzdjMS4wODksMCwxLjg4MiwwLjQ3NCwyLjM3OSwxLjQyMkwyNy4wOTYsMzQuMTY1eiBNMjUuODI5LDM5Ljg1Mw0KCQkJCWMwLTAuNDEzLTAuMTIyLTAuNzYyLTAuMzY2LTEuMDQ5Yy0wLjI0NC0wLjI4Ni0wLjU3My0wLjQyOS0wLjk4Ni0wLjQyOWMtMC41NzMsMC0xLjAzMywwLjI4Ni0xLjM4LDAuODU5DQoJCQkJYy0wLjI5MSwwLjQ3OC0wLjQzNiwxLjAyMy0wLjQzNiwxLjYzM2MwLDAuMzk0LDAuMTEzLDAuNzI4LDAuMzM4LDFjMC4yMjYsMC4yNzIsMC41MywwLjQwOCwwLjkxNSwwLjQwOA0KCQkJCWMwLjU3MiwwLDEuMDQ2LTAuMjY4LDEuNDIyLTAuODAyQzI1LjY2NSw0MC45OTQsMjUuODI5LDQwLjQ1NCwyNS44MjksMzkuODUzeiIvPg0KCQkJPHBhdGggZD0iTTMwLjcxNCwzNi42OTloMi41MzVjLTAuMTY5LDAuNzIzLTAuMzQzLDEuNDUtMC41MjEsMi4xODNjLTAuMjE2LDAuOTM4LTAuMzI0LDEuNjYxLTAuMzI0LDIuMTY4DQoJCQkJYzAsMC43MjMsMC4zMTksMS4wODUsMC45NTgsMS4wODVjMC45NjYsMCwxLjYxOS0wLjc5MywxLjk1Ny0yLjM3OWwwLjY0Ny0zLjA1NmgyLjUzNWwtMS41NDksNy4yMzdoLTIuMjY3bDAuMjgyLTEuMjI1DQoJCQkJYy0wLjgyNiwwLjkzOS0xLjc0NiwxLjQwOC0yLjc2LDEuNDA4Yy0wLjc3LDAtMS4zNTctMC4yMjYtMS43Ni0wLjY3NmMtMC40MDMtMC40NTEtMC42MDUtMS4wNjUtMC42MDUtMS44NDUNCgkJCQljMC0wLjY2NywwLjEwMy0xLjQ5MywwLjMxLTIuNDc4QzMwLjMzOSwzOC4zMTQsMzAuNTI3LDM3LjUwNywzMC43MTQsMzYuNjk5eiIvPg0KCQkJPHBhdGggZD0iTTQ1LjM1NywzNC4xNzloMi41MDZsLTIuMTEyLDkuNzU3aC0yLjUwNkw0NS4zNTcsMzQuMTc5eiIvPg0KCQkJPHBhdGggZD0iTTUyLjgwNiwzNi41MDJjMS4xMjYsMCwyLjAyMywwLjI4MSwyLjY4OSwwLjg0NWMwLjcxMywwLjYxLDEuMDcsMS40NjQsMS4wNywyLjU2M2MwLDEuMzIzLTAuNDYsMi4zNy0xLjM3OSwzLjE0DQoJCQkJYy0wLjg1NCwwLjczMi0xLjk1OCwxLjA5OC0zLjMwOSwxLjA5OGMtMS4wOTgsMC0xLjk4LTAuMjcyLTIuNjQ3LTAuODE2Yy0wLjcxMy0wLjU5MS0xLjA3LTEuNDIyLTEuMDctMi40OTINCgkJCQljMC0xLjM2MSwwLjQ0MS0yLjQzMSwxLjMyNC0zLjIxMUM1MC4zMTgsMzYuODc4LDUxLjQyNiwzNi41MDIsNTIuODA2LDM2LjUwMnogTTU0LjAxNywzOS43OTdjMC0wLjQ2LTAuMTA4LTAuODM2LTAuMzI0LTEuMTI3DQoJCQkJYy0wLjI0NC0wLjMzOC0wLjU4Ny0wLjUwNy0xLjAyOC0wLjUwN2MtMC42MDEsMC0xLjA4OSwwLjMwMS0xLjQ2NCwwLjkwMWMtMC4zMTksMC41MjUtMC40NzksMS4xMDctMC40NzksMS43NDYNCgkJCQljMCwwLjQ0MSwwLjExNywwLjgxNywwLjM1MiwxLjEyN2MwLjI2MywwLjMzOCwwLjYxLDAuNTA3LDEuMDQyLDAuNTA3YzAuNiwwLDEuMDc5LTAuMzA1LDEuNDM2LTAuOTE1DQoJCQkJQzUzLjg2Miw0MS4wMTMsNTQuMDE3LDQwLjQzNSw1NC4wMTcsMzkuNzk3eiIvPg0KCQkJPHBhdGggZD0iTTY0LjA1NiwzNi42OTloMi41MDZsLTEuNTM1LDcuMjM3Yy0wLjQwNCwxLjkxNS0xLjg4MiwyLjg3Mi00LjQzNiwyLjg3MmMtMC45MjksMC0xLjg3Ny0wLjE2OS0yLjg0NC0wLjUwN2wwLjQ2NS0xLjg3Mw0KCQkJCWMwLjYzOCwwLjQxMywxLjM5NCwwLjYyLDIuMjY3LDAuNjJjMS41MjEsMCwyLjM5OC0wLjg1OSwyLjYzMy0yLjU3N2MtMC43NDIsMC45NzctMS42NDIsMS40NjQtMi43MDQsMS40NjQNCgkJCQljLTAuOTAxLDAtMS42MDUtMC4zMS0yLjExMi0wLjkyOWMtMC40NjktMC41NzMtMC43MDQtMS4zMTktMC43MDQtMi4yMzljMC0xLjE4MywwLjMzOC0yLjE3OCwxLjAxNC0yLjk4NQ0KCQkJCWMwLjcxMy0wLjg1NCwxLjY0Ny0xLjI4MSwyLjgwMi0xLjI4MWMxLjA4OSwwLDEuODgyLDAuNDc0LDIuMzc5LDEuNDIyTDY0LjA1NiwzNi42OTl6IE02My4zMjMsMzkuODUzDQoJCQkJYzAtMC40MTMtMC4xMjItMC43NjItMC4zNjYtMS4wNDljLTAuMjQ0LTAuMjg2LTAuNTczLTAuNDI5LTAuOTg2LTAuNDI5Yy0wLjU3MywwLTEuMDMzLDAuMjg2LTEuMzgsMC44NTkNCgkJCQljLTAuMjkxLDAuNDc4LTAuNDM3LDEuMDIzLTAuNDM3LDEuNjMzYzAsMC4zOTQsMC4xMTMsMC43MjgsMC4zMzgsMWMwLjIyNiwwLjI3MiwwLjUzLDAuNDA4LDAuOTE2LDAuNDA4DQoJCQkJYzAuNTcyLDAsMS4wNDYtMC4yNjgsMS40MjItMC44MDJDNjMuMTU5LDQwLjk5NCw2My4zMjMsNDAuNDU0LDYzLjMyMywzOS44NTN6Ii8+DQoJCQk8cGF0aCBkPSJNNzQuNjU4LDQwLjk2NWgtNS4xOTVjMC4wOTQsMS4wNDIsMC43MTMsMS41NjMsMS44NTgsMS41NjNjMC44MDcsMCwxLjYyOC0wLjE4MywyLjQ2NC0wLjU0OWwtMC4yODEsMS43ODgNCgkJCQljLTAuODczLDAuMjcyLTEuNzY1LDAuNDA4LTIuNjc1LDAuNDA4Yy0xLjA4OSwwLTEuOTU3LTAuMjkxLTIuNjA1LTAuODczYy0wLjY4NS0wLjYxLTEuMDI4LTEuNDUtMS4wMjgtMi41Mg0KCQkJCWMwLTEuMzE0LDAuNDMyLTIuMzcsMS4yOTYtMy4xNjhjMC44MjYtMC43NywxLjkwMS0xLjE1NSwzLjIyNC0xLjE1NWMwLjk5NSwwLDEuNzYyLDAuMjcyLDIuMzAyLDAuODE2DQoJCQkJYzAuNTQsMC41NDUsMC44MSwxLjMxNCwwLjgxLDIuMzFDNzQuODI3LDM5Ljk5OSw3NC43NzEsNDAuNDU4LDc0LjY1OCw0MC45NjV6IE03Mi43MjksMzkuNTcyDQoJCQkJYzAuMDE5LTAuMTQxLDAuMDI4LTAuMjU0LDAuMDI4LTAuMzM4YzAtMC4zOTUtMC4xMTItMC43MTItMC4zMzgtMC45NTFjLTAuMjI1LTAuMjM5LTAuNTM1LTAuMzU5LTAuOTI5LTAuMzU5DQoJCQkJYy0wLjQzMiwwLTAuODAzLDAuMTc0LTEuMTEyLDAuNTIxYy0wLjI3MiwwLjI5MS0wLjQ2OSwwLjY2Ny0wLjU5MSwxLjEyN0g3Mi43Mjl6Ii8+DQoJCQk8cGF0aCBkPSJNODcuMTA0LDQzLjkzN2gtMi40MDhjMC4xNzgtMC43NTEsMC4zNTYtMS41MDcsMC41MzUtMi4yNjdjMC4yMzQtMC45OTUsMC4zNTItMS43NSwwLjM1Mi0yLjI2Nw0KCQkJCWMwLTAuNTczLTAuMjUzLTAuODU5LTAuNzYxLTAuODU5Yy0wLjUyNSwwLTAuOTIsMC4yNzctMS4xODMsMC44MzFjLTAuMTEyLDAuMjM1LTAuMjQ5LDAuNzM3LTAuNDA4LDEuNTA2bC0wLjY0NywzLjA1NmgtMi41NjMNCgkJCQljMC4xODgtMC43NiwwLjM3Ni0xLjUyNSwwLjU2My0yLjI5NWMwLjIxNi0wLjk0OCwwLjMyNC0xLjcyMywwLjMyNC0yLjMyM2MwLTAuNTE2LTAuMjUzLTAuNzc0LTAuNzYtMC43NzQNCgkJCQljLTAuNzIzLDAtMS4yMTEsMC41OTYtMS40NjQsMS43ODhsLTAuNzc0LDMuNjA0aC0yLjU2M2wxLjU0OS03LjMwOGgyLjE2OGwtMC4yODIsMS4zMjRjMC43OTgtMC45NTgsMS42NDMtMS40MzcsMi41MzQtMS40MzcNCgkJCQljMS4wMjMsMCwxLjY4NSwwLjQ3NCwxLjk4NSwxLjQyMmMwLjc2OS0wLjk0OCwxLjYzMy0xLjQyMiwyLjU5MS0xLjQyMmMwLjY4NSwwLDEuMjI1LDAuMjA3LDEuNjE5LDAuNjINCgkJCQljMC4zOTQsMC40MTMsMC41OTEsMC45NjcsMC41OTEsMS42NjJjMCwwLjYzOC0wLjEyNiwxLjUwMi0wLjM4LDIuNTkxQzg3LjUxOCw0Mi4yMzMsODcuMzExLDQzLjA4Myw4Ny4xMDQsNDMuOTM3eiIvPg0KCQkJPHBhdGggZD0iTTk2LjcyMSw0MC45NjVoLTUuMTk2YzAuMDk0LDEuMDQyLDAuNzEzLDEuNTYzLDEuODU4LDEuNTYzYzAuODA4LDAsMS42MjgtMC4xODMsMi40NjQtMC41NDlsLTAuMjgyLDEuNzg4DQoJCQkJYy0wLjg3MywwLjI3Mi0xLjc2NSwwLjQwOC0yLjY3NSwwLjQwOGMtMS4wODksMC0xLjk1Ny0wLjI5MS0yLjYwNC0wLjg3M2MtMC42ODYtMC42MS0xLjAyOC0xLjQ1LTEuMDI4LTIuNTINCgkJCQljMC0xLjMxNCwwLjQzMi0yLjM3LDEuMjk1LTMuMTY4YzAuODI2LTAuNzcsMS45MDEtMS4xNTUsMy4yMjUtMS4xNTVjMC45OTUsMCwxLjc2MiwwLjI3MiwyLjMwMiwwLjgxNg0KCQkJCWMwLjU0LDAuNTQ1LDAuODEsMS4zMTQsMC44MSwyLjMxQzk2Ljg5LDM5Ljk5OSw5Ni44MzMsNDAuNDU4LDk2LjcyMSw0MC45NjV6IE05NC43OTIsMzkuNTcyDQoJCQkJYzAuMDE5LTAuMTQxLDAuMDI4LTAuMjU0LDAuMDI4LTAuMzM4YzAtMC4zOTUtMC4xMTMtMC43MTItMC4zMzgtMC45NTFjLTAuMjI2LTAuMjM5LTAuNTM1LTAuMzU5LTAuOTMtMC4zNTkNCgkJCQljLTAuNDMyLDAtMC44MDIsMC4xNzQtMS4xMTIsMC41MjFjLTAuMjcyLDAuMjkxLTAuNDY5LDAuNjY3LTAuNTkxLDEuMTI3SDk0Ljc5MnoiLz4NCgkJCTxwYXRoIGQ9Ik0xMDUuMjM5LDQzLjkzN2gtMi41MmMwLjE3OC0wLjcyMywwLjM1Mi0xLjQ0NSwwLjUyMS0yLjE2OGMwLjIxNi0wLjkyOSwwLjMyNC0xLjY1NywwLjMyNC0yLjE4Mg0KCQkJCWMwLTAuNzEzLTAuMzA1LTEuMDctMC45MTUtMS4wN2MtMC45OTUsMC0xLjY2MSwwLjc4OS0yLDIuMzY1bC0wLjY0NywzLjA1NmgtMi41MzRsMS41NDktNy4zMDhoMi4yNjdsLTAuMjgyLDEuMjk1DQoJCQkJYzAuODI2LTAuOTM4LDEuNzQ2LTEuNDA4LDIuNzYtMS40MDhjMC43NjksMCwxLjM1NiwwLjIyOCwxLjc2LDAuNjgzYzAuNDAzLDAuNDU2LDAuNjA1LDEuMDcyLDAuNjA1LDEuODUyDQoJCQkJYzAsMC42NjctMC4xMDgsMS40ODgtMC4zMjQsMi40NjRDMTA1LjYxNSw0Mi4zMjIsMTA1LjQyNyw0My4xMjksMTA1LjIzOSw0My45Mzd6Ii8+DQoJCQk8cGF0aCBkPSJNMTEyLjA4MiwzNC4yNzdsLTAuNTIxLDIuNDIyaDEuNzg4bC0wLjM2NiwxLjczMmgtMS43ODhjLTAuMTMxLDAuNTI0LTAuMjYzLDEuMDQzLTAuMzk0LDEuNTU3DQoJCQkJYy0wLjE2LDAuNjQ2LTAuMjM5LDEuMTc0LTAuMjM5LDEuNTg1YzAsMC40OTYsMC4yNjMsMC43NDQsMC43ODgsMC43NDRjMC4yMTYsMCwwLjQ5My0wLjA0MiwwLjgzMS0wLjEyN2wtMC4zNjYsMS43MTkNCgkJCQljLTAuNjAxLDAuMTAzLTEuMDY1LDAuMTU0LTEuMzk0LDAuMTU0Yy0wLjcyMywwLTEuMjktMC4xODMtMS43MDQtMC41NDhjLTAuNDQxLTAuMzgzLTAuNjYyLTAuOTMxLTAuNjYyLTEuNjQzDQoJCQkJYzAtMC40NjgsMC4wOC0xLjA0NCwwLjIzOS0xLjcyOGMwLjEzMS0wLjU3MSwwLjI2OC0xLjE0MiwwLjQwOC0xLjcxM2gtMS40NzhsMC4zNjYtMS43MzJoMS40NzhsMC4zNjYtMS43MThMMTEyLjA4MiwzNC4yNzd6Ii8+DQoJCTwvZz4NCgk8L2c+DQoJPGc+DQoJCTxnPg0KCQkJPGc+DQoJCQkJPHJlY3QgeD0iMTgyLjA5NyIgeT0iNDMuOTMiIGNsYXNzPSJzdDIiIHdpZHRoPSIyMC4xNjYiIGhlaWdodD0iMTIuMzYiLz4NCgkJCTwvZz4NCgkJPC9nPg0KCQk8cGF0aCBjbGFzcz0ic3QzIiBkPSJNMTkyLjE4MSw0NC41NzdjLTAuMTQ2LDAuMjcxLTAuNDc3LDAuNjYtMS4wMzEsMS4zNTZjLTAuNjQzLDAuODAyLTAuNTMzLDEuODc0LTAuMjI1LDIuNTA3DQoJCQljMC4zNDgsMC43MzEsMC41NTMsMS4zNCwwLjcxMSwxLjkxMmMwLjIyMSwwLjgzNiwwLjA3NCwxLjk1NSwwLjA5LDEuODU0aC0wLjU2MWMwLTEuMzY1LTAuNDI0LTIuNjQ4LTEuNDUzLTMuMjE3DQoJCQljLTEuNDYxLTAuODEzLTIuOTA0LDAuNTk0LTIuNDQ1LDIuMDUzYzAuMjQyLDAuNzY2LDAuNjc0LDEuMDI1LDAuNzkzLDEuMDI1YzAsMC0wLjE5OS0wLjg0NCwwLjQxMi0xLjI3NQ0KCQkJYzAuNTcyLTAuNDA0LDEuMjgxLTAuMTU4LDEuNjA3LDAuMzI0YzAuMzEzLDAuNDU5LDAuMzYxLDEuMDksMC4zNjEsMS4wOWgtMS4wNTF2MC43NzVoMi4xMTNjMCwwLTAuMDU5LDEuMDk4LTEuMjEzLDAuOTg4DQoJCQljMCwwLDAuMTQzLDAuODY5LDEuMjEzLDAuNDE2YzAsMC0wLjA1OSwwLjkwNiwwLjY3OCwxLjM1OWwwLDBsMCwwYzAuNzM0LTAuNDUzLDAuNjgtMS4zNTksMC42OC0xLjM1OQ0KCQkJYzEuMDcsMC40NTMsMS4yMTUtMC40MTYsMS4yMTUtMC40MTZjLTEuMTYsMC4xMDktMS4yMTUtMC45ODgtMS4yMTUtMC45ODhoMi4xMTF2LTAuNzc1aC0xLjA1MWMwLDAsMC4wNTEtMC42MzEsMC4zNTktMS4wOQ0KCQkJYzAuMzI4LTAuNDgzLDEuMDM5LTAuNzI5LDEuNjExLTAuMzI0YzAuNjA5LDAuNDMyLDAuNDEyLDEuMjc1LDAuNDEyLDEuMjc1YzAuMTIxLDAsMC41NDktMC4yNiwwLjc5MS0xLjAyNQ0KCQkJYzAuNDU5LTEuNDU5LTAuOTg0LTIuODY1LTIuNDQ1LTIuMDUzYy0xLjAyNywwLjU2OC0xLjQ1MywxLjg1Mi0xLjQ1MywzLjIxN2gtMC41NTljMC4wMTQsMC4xMDItMC4xMzMtMS4wMTgsMC4wOS0xLjg1NA0KCQkJYzAuMTU2LTAuNTcyLDAuMzYxLTEuMTgyLDAuNzA5LTEuOTEyYzAuMzA5LTAuNjMzLDAuNDItMS43MDUtMC4yMjUtMi41MDdDMTkyLjY2LDQ1LjIzNywxOTIuMzMsNDQuODQ4LDE5Mi4xODEsNDQuNTc3eiIvPg0KCQk8Zz4NCgkJCTxnPg0KCQkJCTxyZWN0IHg9IjIwOC4xMzgiIHk9IjQzLjkzIiBjbGFzcz0ic3QyIiB3aWR0aD0iMjAuMTcyIiBoZWlnaHQ9IjEyLjM2Ii8+DQoJCQk8L2c+DQoJCTwvZz4NCgkJPHBhdGggY2xhc3M9InN0MyIgZD0iTTIxOC4yMjIsNDQuNTc3Yy0wLjE1LDAuMjcxLTAuNDc3LDAuNjYtMS4wMzMsMS4zNTZjLTAuNjQ2LDAuODAyLTAuNTMxLDEuODc0LTAuMjI1LDIuNTA3DQoJCQljMC4zNSwwLjczMSwwLjU0OSwxLjM0LDAuNzA5LDEuOTEyYzAuMjIzLDAuODM2LDAuMDc2LDEuOTU1LDAuMDk0LDEuODU0aC0wLjU2MWMwLTEuMzY1LTAuNDI0LTIuNjQ4LTEuNDUzLTMuMjE3DQoJCQljLTEuNDYzLTAuODEzLTIuOTA2LDAuNTk0LTIuNDQ3LDIuMDUzYzAuMjQyLDAuNzY2LDAuNjcyLDEuMDI1LDAuNzk1LDEuMDI1YzAsMC0wLjIwMS0wLjg0NCwwLjQxLTEuMjc1DQoJCQljMC41Ny0wLjQwNCwxLjI3OS0wLjE1OCwxLjYwNywwLjMyNGMwLjMxMywwLjQ1OSwwLjM2MSwxLjA5LDAuMzYxLDEuMDloLTEuMDUxdjAuNzc1aDIuMTEzYzAsMC0wLjA1OSwxLjA5OC0xLjIxMywwLjk4OA0KCQkJYzAsMCwwLjEzOSwwLjg2OSwxLjIxMywwLjQxNmMwLDAtMC4wNTksMC45MDYsMC42OCwxLjM1OWwwLDBsMCwwYzAuNzMtMC40NTMsMC42NzQtMS4zNTksMC42NzQtMS4zNTkNCgkJCWMxLjA3NiwwLjQ1MywxLjIxOS0wLjQxNiwxLjIxOS0wLjQxNmMtMS4xNjIsMC4xMDktMS4yMTktMC45ODgtMS4yMTktMC45ODhoMi4xMTd2LTAuNzc1aC0xLjA1NWMwLDAsMC4wNTMtMC42MzEsMC4zNjEtMS4wOQ0KCQkJYzAuMzMtMC40ODMsMS4wNDEtMC43MjksMS42MTUtMC4zMjRjMC42MDQsMC40MzIsMC40MSwxLjI3NSwwLjQxLDEuMjc1YzAuMTE5LDAsMC41NDctMC4yNiwwLjc4Ny0xLjAyNQ0KCQkJYzAuNDU3LTEuNDU5LTAuOTg4LTIuODY1LTIuNDQ3LTIuMDUzYy0xLjAyNSwwLjU2OC0xLjQ1MSwxLjg1Mi0xLjQ1MSwzLjIxN2gtMC41NTdjMC4wMTYsMC4xMDItMC4xMzMtMS4wMTgsMC4wOS0xLjg1NA0KCQkJYzAuMTU2LTAuNTcyLDAuMzYxLTEuMTgyLDAuNzA5LTEuOTEyYzAuMzA1LTAuNjMzLDAuNDE4LTEuNzA1LTAuMjI1LTIuNTA3QzIxOC43MDEsNDUuMjM3LDIxOC4zNjcsNDQuODQ4LDIxOC4yMjIsNDQuNTc3eiIvPg0KCTwvZz4NCgk8Zz4NCgkJPGc+DQoJCQk8Zz4NCgkJCQk8cmVjdCB4PSIxODIuMDk3IiB5PSI2Mi4xNzUiIGNsYXNzPSJzdDIiIHdpZHRoPSIyMC4xNjYiIGhlaWdodD0iMTIuMzU3Ii8+DQoJCQk8L2c+DQoJCTwvZz4NCgkJPHBhdGggY2xhc3M9InN0MyIgZD0iTTE5Mi4xODEsNjIuODIzYy0wLjE0NiwwLjI2OS0wLjQ3NywwLjY2LTEuMDMxLDEuMzU1Yy0wLjY0MywwLjgwMy0wLjUzMywxLjg3MS0wLjIyNSwyLjUwOA0KCQkJYzAuMzQ4LDAuNzI3LDAuNTUzLDEuMzM2LDAuNzExLDEuOTEyYzAuMjIxLDAuODM0LDAuMDc0LDEuOTUxLDAuMDksMS44NWgtMC41NjFjMC0xLjM2MS0wLjQyNC0yLjY0OC0xLjQ1My0zLjIxNw0KCQkJYy0xLjQ2MS0wLjgxMi0yLjkwNCwwLjU5OC0yLjQ0NSwyLjA1N2MwLjI0MiwwLjc2MiwwLjY3NCwxLjAyMywwLjc5MywxLjAyM2MwLDAtMC4xOTktMC44NDQsMC40MTItMS4yNzcNCgkJCWMwLjU3Mi0wLjQsMS4yODEtMC4xNTgsMS42MDcsMC4zMjRjMC4zMTMsMC40NjEsMC4zNjEsMS4wOSwwLjM2MSwxLjA5aC0xLjA1MXYwLjc3OWwyLjExMy0wLjAwMmMwLDAtMC4wNTksMS4wOTYtMS4yMTMsMC45OQ0KCQkJYzAsMCwwLjE0MywwLjg2NSwxLjIxMywwLjQxMmMwLDAtMC4wNTksMC45MDYsMC42NzgsMS4zNTlsMCwwbDAsMGMwLjczNC0wLjQ1MywwLjY4LTEuMzU5LDAuNjgtMS4zNTkNCgkJCWMxLjA3LDAuNDUzLDEuMjE1LTAuNDEyLDEuMjE1LTAuNDEyYy0xLjE2LDAuMTA1LTEuMjE1LTAuOTktMS4yMTUtMC45OWwyLjExMSwwLjAwMnYtMC43NzloLTEuMDUxYzAsMCwwLjA1MS0wLjYyOSwwLjM1OS0xLjA5DQoJCQljMC4zMjgtMC40ODIsMS4wMzktMC43MjUsMS42MTEtMC4zMjRjMC42MDksMC40MzQsMC40MTIsMS4yNzcsMC40MTIsMS4yNzdjMC4xMjEsMCwwLjU0OS0wLjI2MiwwLjc5MS0xLjAyMw0KCQkJYzAuNDU5LTEuNDU5LTAuOTg0LTIuODY5LTIuNDQ1LTIuMDU3Yy0xLjAyNywwLjU2OC0xLjQ1MywxLjg1Ni0xLjQ1MywzLjIxN2gtMC41NTljMC4wMTQsMC4xMDItMC4xMzMtMS4wMTYsMC4wOS0xLjg1DQoJCQljMC4xNTYtMC41NzYsMC4zNjEtMS4xODYsMC43MDktMS45MTJjMC4zMDktMC42MzcsMC40Mi0xLjcwNS0wLjIyNS0yLjUwOEMxOTIuNjYsNjMuNDgzLDE5Mi4zMyw2My4wOTMsMTkyLjE4MSw2Mi44MjN6Ii8+DQoJCTxnPg0KCQkJPGc+DQoJCQkJPHJlY3QgeD0iMjA4LjEzOCIgeT0iNjIuMTc1IiBjbGFzcz0ic3QyIiB3aWR0aD0iMjAuMTcyIiBoZWlnaHQ9IjEyLjM1NyIvPg0KCQkJPC9nPg0KCQk8L2c+DQoJCTxwYXRoIGNsYXNzPSJzdDMiIGQ9Ik0yMTguMjIyLDYyLjgyM2MtMC4xNSwwLjI2OS0wLjQ3NywwLjY2LTEuMDMzLDEuMzU1Yy0wLjY0NiwwLjgwMy0wLjUzMSwxLjg3MS0wLjIyNSwyLjUwOA0KCQkJYzAuMzUsMC43MjcsMC41NDksMS4zMzYsMC43MDksMS45MTJjMC4yMjMsMC44MzQsMC4wNzYsMS45NTEsMC4wOTQsMS44NWgtMC41NjFjMC0xLjM2MS0wLjQyNC0yLjY0OC0xLjQ1My0zLjIxNw0KCQkJYy0xLjQ2My0wLjgxMi0yLjkwNiwwLjU5OC0yLjQ0NywyLjA1N2MwLjI0MiwwLjc2MiwwLjY3MiwxLjAyMywwLjc5NSwxLjAyM2MwLDAtMC4yMDEtMC44NDQsMC40MS0xLjI3Nw0KCQkJYzAuNTctMC40LDEuMjc5LTAuMTU4LDEuNjA3LDAuMzI0YzAuMzEzLDAuNDYxLDAuMzYxLDEuMDksMC4zNjEsMS4wOWgtMS4wNTF2MC43NzlsMi4xMTMtMC4wMDJjMCwwLTAuMDU5LDEuMDk2LTEuMjEzLDAuOTkNCgkJCWMwLDAsMC4xMzksMC44NjUsMS4yMTMsMC40MTJjMCwwLTAuMDU5LDAuOTA2LDAuNjgsMS4zNTlsMCwwbDAsMGMwLjczLTAuNDUzLDAuNjc0LTEuMzU5LDAuNjc0LTEuMzU5DQoJCQljMS4wNzYsMC40NTMsMS4yMTktMC40MTIsMS4yMTktMC40MTJjLTEuMTYyLDAuMTA1LTEuMjE5LTAuOTktMS4yMTktMC45OWwyLjExNywwLjAwMnYtMC43NzloLTEuMDU1YzAsMCwwLjA1My0wLjYyOSwwLjM2MS0xLjA5DQoJCQljMC4zMy0wLjQ4MiwxLjA0MS0wLjcyNSwxLjYxNS0wLjMyNGMwLjYwNCwwLjQzNCwwLjQxLDEuMjc3LDAuNDEsMS4yNzdjMC4xMTksMCwwLjU0Ny0wLjI2MiwwLjc4Ny0xLjAyMw0KCQkJYzAuNDU3LTEuNDU5LTAuOTg4LTIuODY5LTIuNDQ3LTIuMDU3Yy0xLjAyNSwwLjU2OC0xLjQ1MSwxLjg1Ni0xLjQ1MSwzLjIxN2gtMC41NTdjMC4wMTYsMC4xMDItMC4xMzMtMS4wMTYsMC4wOS0xLjg1DQoJCQljMC4xNTYtMC41NzYsMC4zNjEtMS4xODYsMC43MDktMS45MTJjMC4zMDUtMC42MzcsMC40MTgtMS43MDUtMC4yMjUtMi41MDhDMjE4LjcwMSw2My40ODMsMjE4LjM2Nyw2My4wOTMsMjE4LjIyMiw2Mi44MjN6Ii8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo="
+        #width et/ou height est nécessaire pour les svg. Sinon taille de 0x0.
+        width:
+          200
+        #height et/est width est nécessaire pour les svg. Sinon taille de 0x0.
+        height: 
+          76
+        alt: 
+          Logo du Tribunal administratif du logement du Québec
+        urlLien: 
+          fr: https://www.tal.gouv.qc.ca/fr
+          en: https://www.tal.gouv.qc.ca/en
+    nousJoindre:
+      actif: true
+      texte:
+        fr: Nous joindre
+        en: How to reach us
+      urlLien: 
+        fr: https://www.tal.gouv.qc.ca/fr/nous-joindre
+        en: https://www.tal.gouv.qc.ca/en/contact-us
+  enregistrement:
+    actif: true
+    afficherMessageIncitatif: false
+  postesCanada: 
+    cle: UX84-TU29-KU11-NC61
+  injecterJs: 
+    computed:
+      coutTotalLoyerComputed:
+        code: |
+          (){ 
+            const champ1 = this.val('coutServices') * 100;                              
+            const champ2 = this.val('coutLoyer') * 100;
+
+            return (champ1 + champ2) / 100;
+          }
+      produitsMoneris:
+        code: |
+          (){
+            return 2;
+          }
+    watch:
+      coutTotalLoyerComputed:
+        code: |
+          (value){  
+            this.form.coutTotalLoyer = value.toFixed(2);
+          }    
+  domaines:
+    nombrePieces:
+      un:
+        label:
+          fr: "1"
+      un-demi:
+        label:
+          fr: "1 ½"
+      deux:
+        label:
+          fr: "2"
+      deux-demi:
+        label:
+          fr: "2 ½"
+      trois:
+        label:
+          fr: "3"
+      trois-demi:
+        label:
+          fr: "3 ½"
+      quatre:
+        label:
+          fr: "4"
+      quatre-demi:
+        label:
+          fr: "4 ½"
+      cinq:
+        label:
+          fr: "5"
+      cinq-demi:
+        label:
+          fr: "5 ½"
+      six:
+        label:
+          fr: "6"
+      six-demi:
+        label:
+          fr: "6 ½"
+      sept:
+        label:
+          fr: "7"
+      sept-demi:
+        label:
+          fr: "7 ½"
+      autre:
+        label:
+          fr: "Autre"
+          en: "Other"
+
+form:
+  title:
+    fr: Bail d’un logement à loyer modique
+    en: Lease for a Dwelling in Low-Rental Housing
+  sectionsGroup:
+
+    # Compléter votre formulaire de bail : étapes à suivre
+    - sectionGroup:
+        fr: "Compléter votre formulaire de bail : étapes à suivre"
+        en: "TODO english - Compléter votre formulaire de bail : étapes à suivre"
+      classes: icone user
+      filtreEtapes: 
+        - initial: 
+      sections:
+        - section:
+            fr: Informations sur le processus
+            en: TODO english Informations sur le processus
+          id: fonctionnementBailElectronique
+          cacherTexteExplicatifChampsObligatoires: true              
+          components:
+            - type: avis
+              classes: avertissement
+              text: 
+                fr: |
+                  <p><b>Avant d’utiliser le service de bail électronique, vous devez vous assurer que toutes les parties signataires possèdent une adresse de courriel valide.</b><p>
+                  <p>À défaut, un formulaire de bail en version papier est en vente dans les bureaux du Tribunal administratif du logement, dans les librairies et aux Publications du Québec (1 800 463-2100). Il est également possible d’acheter le formulaire de bail en ligne sur le site web des <a href="https://boutique.publicationsduquebec.gouv.qc.ca/recherche/bail" target="_blank">Publications du Québec</a>.</p> 
+                  <p>Si vous utilisez un formulaire de bail en version papier, veuillez noter que le Tribunal administratif du logement met à la disposition de sa clientèle, sur son site web, une trousse comprenant l’ensemble des informations à jour concernant les droits et obligations des parties et ce, jusqu’à ce que le formulaire en version papier intègre l’ensemble des modifications légales.</p>
+                en: |
+                  <p>TODO english - <b>Avant d’utiliser le service de bail électronique, vous devez vous assurer que toutes les parties signataires possèdent une adresse de courriel valide.</b><p>
+                  <p>À défaut, un formulaire de bail en version papier est en vente dans les bureaux du Tribunal administratif du logement, dans les librairies et aux Publications du Québec (1 800 463-2100). Il est également possible d’acheter le formulaire de bail en ligne sur le site web des <a href="https://boutique.publicationsduquebec.gouv.qc.ca/recherche/bail" target="_blank">Publications du Québec</a>.</p> 
+                  <p>En ce cas, veuillez noter que le Tribunal administratif du logement met à la disposition de sa clientèle, sur son site web, une trousse comprenant l’ensemble des informations à jour concernant les droits et obligations des parties et ce, jusqu’à ce que le formulaire en version papier intègre l’ensemble des modifications légales.</p>
+
+            - type: dynamic
+              tag: div              
+              text:
+                fr: |
+                  <h3>1. Remplissage du formulaire de bail électronique</h3>
+                  <p>À titre de <strong>locateur responsable</strong>, vous complétez le formulaire de bail en ligne.</p>
+                  <ul class="utd">
+                    <li>
+                      Les champs <b>obligatoires</b> sont identifiés par un astérisque (<span class="icone-champ-requis">*</span>).
+                    </li>
+                    <li>
+                      Une fois le formulaire de bail électronique complété, il est automatiquement <b>transmis à toutes les
+                      personnes concernées</b>, par exemple : le(s) autre(s) locateur(s), le(s) locataire(s) et le(s) caution(s).
+                    </li>
+                  </ul>
+                  <p>Pour que chaque partie puisse recevoir le document, il est <b>nécessaire d’indiquer une adresse de courriel valide</b>.</p>
+                  <utd-avis type="avertissement">
+                    <p>Seul le locateur responsable peut modifier le contenu du formulaire de bail électronique. Si une erreur est constatée par une autre partie, <strong>celle-ci doit communiquer avec vous</strong> pour que vous y apportiez les corrections.</p>
+                  </utd-avis>
+                  <h4>Enregistrement du formulaire de bail électronique</h4>
+                  <p>Si vous le souhaitez, vous pouvez enregistrer le formulaire de bail électronique et ainsi poursuivre la saisie des informations demandées à un autre moment. Pour ce faire, vous recevrez, à votre adresse de courriel, un message contenant un lien pour y accéder.</p>
+                  <p>L’accès sera protégé par un mot de passe que vous aurez fourni. Si vous oubliez ou perdez ce mot de passe, vous devrez recommencer votre demande.</p>                
+                  <hr>
+                  <h3>2. Validation et signature</h3>
+                  <p>Chaque partie reçoit un <b>lien personnalisé</b> lui permettant de :</p>
+                  <ul class="utd">
+                    <li>consulter le formulaire de bail électronique;</li>
+                    <li>valider les informations;</li>
+                    <li>apposer sa <b>signature électronique</b>.</li>
+                  </ul>
+                  <p>L’hyperlien pour <b>signer et conclure</b> le formulaire de bail électronique est valide pour <b>36 heures</b> à compter de sa transmission aux autres parties.</p>
+                  <p>Pour des raisons de sécurité, un <b>mot de passe</b> est exigé.</p>
+                  <p>Vous devrez choisir un mot de passe et le <b>transmettre aux parties</b> par le moyen de votre choix (p. ex : téléphone, message texte, courriel, etc.).</p>        
+                  <hr>
+                  <h3>3. Finalisation du formulaire de bail électronique</h3>
+                  <p>Une fois <b>toutes les signatures apposées, et le paiement effectué</b>, le formulaire de bail électronique est :</p>
+                  <ul class="utd">
+                    <li><b>verrouillé</b> (plus aucune modification n'est possible via la plateforme);</li>
+                    <li><b>généré automatiquement au format PDF</b>;</li>
+                    <li><b>accessible à toutes les parties</b> pour téléchargement ou impression.</li>
+                  </ul>
+                  <p>Après la finalisation et le paiement du formulaire de bail électronique, <b>aucune modification ne peut être effectuée</b> dans le service en ligne.</p>                            
+
+    # A- Parties du bail    
+    - sectionGroup:
+        fr: A - Identification du locateur et du locataire
+        en: TODO english A - Identification du locateur et du locataire
+      classes: icone user
+      sections:
+
+        # Locateur
+        - section:
+            fr: Locateur
+            en: Lessor
+          id: infosLocateur
+          components:          
+            - type: avis
+              classes: information
+              text:
+                fr: <p>Les noms indiqués dans le bail doivent correspondre à ceux que le locateur et le locataire peuvent légalement utiliser.</p>
+                    <p>Le terme « locateur » que l’on trouve au Code civil du Québec renvoie généralement au propriétaire de l’immeuble.</p>
+                en: <p>The names indicated in the lease must be those that the lessor is legally authorized to use.</p>
+                      <p>The term “lessor” in the Civil Code of Québec generally refers to the owner of the immovable.</p>
+            - type: repeatableGroup
+              repeatable: true
+              limit: 1
+              instanceLabel:
+                fr: Locateur
+                en: Lessor
+              addLabel:
+                fr: Ajouter un locateur
+                en: Add a lessor
+              removeLabel:
+                fr: Supprimer le locateur
+                en: Remove the lessor
+              name: locateurs
+              label:
+                fr: Locateur(s)
+                en: Lessor(s)
+              tooltip:
+                title: 
+                  fr: Locateur
+                  en: Lessor
+                text:
+                  fr: Le locateur est la personne qui loue un logement à un locataire.
+                  en: TODO english - Le locateur est la personne qui loue un logement à un locataire.
+              components:
+                - name: nom
+                  type: text
+                  label: 
+                    fr: Nom
+                    en: Name                  
+                - type: adresse
+                  name: adresse
+                  label:
+                    fr: Adresse
+                    en: Address
+                - type: tel
+                  name: noTelephone
+                  label: 
+                    fr: Numéro de téléphone
+                    en: Telephone number
+                  validations:
+                      optional: null
+                - type: tel
+                  name: autreNoTelephoneCell
+                  label: 
+                    fr: Autre numéro de téléphone (cellulaire)
+                    en: Other telephone number (cell phone)
+                  validations:
+                    optional: null
+                - type: courrielWorkflow
+                  v-if: index === 0
+                  role: locateurPrincipal
+                  motDePasse: val('motPasseWF')
+                  name: courrielPrincipal
+                  label: 
+                    fr: Adresse de courriel
+                    en: Email address
+                  help:
+                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
+                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
+                - type: courrielWorkflow
+                  v-if: index > 0              
+                  role: locateur
+                  motDePasse: val('motPasseWF')
+                  name: courriel
+                  label: 
+                    fr: Adresse de courriel
+                    en: Email address
+                  help:
+                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
+                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
+                - type: radio
+                  name: questionRepresentant
+                  label:
+                    fr: Serez-vous représenté par quelqu’un pour la signature du bail?
+                    en: TODO English Serez-vous représenté par quelqu’un pour la signature du bail?
+                  tooltip:
+                    title:
+                      fr: Le représentant
+                      en: TODO - Le représentant
+                    text:
+                      fr: |
+                        <p>Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locateur est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
+                      en: |
+                        <p>TODO english - Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locateur est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
+                  options: yesno
+                - type: text
+                  name: representant            
+                  label: 
+                    fr: Représenté par
+                    en: Represented by
+                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
+
+        # Locataire
+        - section:
+            fr: Locataire
+            en: Lessee
+          id: infosLocataire
+          components:
+            - type: avis
+              classes: information
+              text:
+                fr: <p>Les noms indiqués dans le bail doivent correspondre à ceux que le locateur et le locataire peuvent légalement utiliser.</p>
+                en: <p>The names indicated in the lease must be those that the lessee is legally authorized to use.</p>
+            - type: repeatableGroup
+              repeatable: true
+              limit: 4
+              instanceLabel:
+                fr: Locataire
+                en: Lessee
+              addLabel:
+                fr: Ajouter un locataire
+                en: Add a lessee
+              removeLabel:
+                fr: Supprimer le locataire
+                en: Remove the lessee
+              name: locataires
+              label:
+                fr: Locataires
+                en: Lessees
+              tooltip:
+                title: 
+                  fr: Locataire
+                  en: Lessee
+                text:
+                  fr: Le locataire est la personne qui loue un logement à un locateur, généralement le propriétaire de l’immeuble où se situe le logement.
+                  en: TODO english - Le locataire est la personne qui loue un logement à un locateur, généralement le propriétaire de l’immeuble où se situe le logement.                
+              components: 
+                - type: text
+                  name: nom
+                  label:
+                    fr: Nom
+                    en: Name
+                  tooltip:
+                    title:
+                      fr: Nom
+                      en: Name
+                    text:
+                      fr: <p>Afin de s’assurer de l’identité de l'aspirant locataire, le locateur peut demander que lui soit présentée une pièce d’identité, avec ou sans photo, comme un permis de conduire, une carte d’assurance maladie ou sociale ou un passeport. Toutefois, le locateur ne peut recueillir les informations contenues sur cette pièce. Il ne peut donc pas faire une photocopie de cette pièce, ni la prendre en photo, ni la conserver dans le dossier de location.</p>
+                      en: <p>TODO english</p>     
+                - type: adresse
+                  name: adresse
+                  label:
+                    fr: Adresse
+                    en: Address
+                  help: 
+                    fr: Veuillez inscrire l'adresse actuelle du locataire.
+                    en: TODO english
+                  additionals:                
+                    filtre-pays: CAN
+                    conserver-donnees-postes-canada: true
+                - type: tel
+                  name: noTelephone
+                  label: 
+                    fr: Numéro de téléphone
+                    en: Telephone number
+                  validations:
+                    optional: null
+                - type: tel
+                  name: autreNoTelephoneCell
+                  label: 
+                    fr: Autre numéro de téléphone (cellulaire)
+                    en: Other telephone number (cell phone)
+                  validations:
+                    optional: null
+                - type: email
+                  name: courriel
+                  label: 
+                    fr: Adresse de courriel
+                    en: Email address
+                  help:
+                    fr: C'est à cette adresse qu'un lien sera envoyé pour compléter et signer le bail.
+                    en: TODO (EN) C'est à cette adresse qu'un lien sera envoyé pour compléter et signer le bail.
+                  tooltip:
+                    title:
+                      fr: Adresse de courriel
+                      en: Email adress
+                    text:
+                      fr: <p>L’adresse de courriel du locataire peut être pratique pour communiquer avec lui. Toutefois, il est préférable d’obtenir un consentement libre et éclairé du locataire pour procéder ainsi. Vous pourrez joindre son consentement en le téléchargeant à la “Section services et conditions”.</p>
+                      en: <p>TODO english</p>
+                - type: radio
+                  name: questionRepresentant
+                  label:
+                    fr: Serez-vous représenté par quelqu’un pour la signature du bail?
+                    en: TODO English Serez-vous représenté par quelqu’un pour la signature du bail?
+                  tooltip:
+                    title:
+                      fr: Le représentant
+                      en: TODO - Le représentant
+                    text:
+                      fr: |
+                        <p>Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locateur est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
+                      en: |
+                        <p>TODO english - Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locateur est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
+                  options: yesno
+                - type: text
+                  name: representant
+                  label: 
+                    fr: Représenté par    
+                    en: Represented by
+                  v-if: val(`${name}.questionRepresentant`) === 'true'
+    # B - Description du logement loué
+    - sectionGroup:
+        fr: B - Description du logement loué
+        en: B - Description of the dwelling
+      classes: icone register
+      sections:
+        - section:
+            fr: Description du logement
+            en: Description of the dwelling
+          id: descriptionLogement
+          components:
+            - type: avis
+              classes: information
+              text:
+                fr: <p>Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892' target='_blank'>1892 C.c.Q.</a></p>
+                en: <p>Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892' target='_blank'>1892 C.c.Q.</a></p>
+            - type: adresse
+              name: adresseLogement
+              label:
+                fr: Adresse du logement
+                en: Address of the dwelling
+            - type: listeDeroulante
+              options: nombrePieces
+              additionals:
+                largeur: md
+              name: nbPieces
+              tooltip:
+                title:
+                  fr: Nombre de pièces
+                text:
+                  fr: <p>Si vous louez seulement une chambre dans un logement, indiquez "1" comme nombre de pièces.</p>
+                  en: <p>TODO english</p>
+              label: 
+                fr: Nombre de pièces
+                en: Number of rooms
+            - type: text
+              name: nbPiecesAutre
+              v-if: val('nbPieces') === 'autre'
+              label: 
+                fr: Préciser le nombre de pièces
+                en: Specify the number of rooms
+    # C - Durée du bail                
+    - sectionGroup:
+        fr: C - Durée du bail
+        en: Term of lease
+      classes: icone register
+      sections:
+        - section:
+            fr: Durée du bail
+            en: Term of lease
+          id: dureeBail
+          components:
+            - type: avis
+              classes: information
+              text:
+                fr: Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1851' target='_blank'>1851 C.c.Q.</a>
+                en: TODO english Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1851' target='_blank'>1851 C.c.Q.</a>
+            - type: text
+              name: nbSemainesMoisAnnees
+              label:
+                fr: Ce bail a une durée de
+                en: This lease has a duration of
+              help: 
+                  fr: Veuillez préciser le nombre de semaines, de mois ou d'années.
+                  en: Specify the number of weeks, months or years.
+              placeholder:
+                fr: Ex. 1 an, 6 mois, etc.
+                en: Ex. 1 year, 6 months, etc.
+              outerClasses: lg
+            - type: inline
+              components:
+                - name: dateDebutBail
+                  type: date
+                  label:
+                    fr: Date de début
+                    en: Start date
+                - name: dateFinBail
+                  type: date
+                  label:
+                    fr: Date de fin
+                    en: End date
+    # D - Loyer                    
+    - sectionGroup:
+        fr: D - Loyer
+        en: Rent
+      classes: icone cash-dollar
+      sections:
+        - section:
+            fr: Coût
+            en: Cost
+          id: cout
+          components:
+            - type: avis
+              classes: information
+              text:
+                fr: |
+                  <p><strong>Loyer :</strong> Le loyer est payable par versements égaux ne dépassant pas un mois de loyer, sauf le dernier versement, qui peut être moins élevé.</p>
+                  <p>Le bail d’une durée de plus de douze mois peut faire l’objet d’un seul réajustement du loyer au cours de chaque période de douze mois. Il ne peut varier au cours des douze premiers mois (art. <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1906' target='_blank'>1906</a> C.c.Q.).</p>
+                  <p><strong>Le locateur ne peut exiger aucune autre somme d’argent du locataire (exemple: dépôt pour les clés).</strong></p>
+                  <p>Pour plus de précisions, veuillez consulter les articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1855' target='_blank'>1855</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1903' target='_blank'>1903</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1904' target='_blank'>1904</a> C.c.Q.</p>
+                en: "<p>TODO english</p>"
+            - name: coutLoyer
+              type: montant
+              label:
+                fr: Le loyer est de
+                en: The rent is
+            - name: frequenceCoutLoyer
+              type: radio
+              label:
+                fr: Fréquence du loyer
+                en: Rent frequency
+              options:
+                mois:
+                  fr: Par mois
+                  en: Per month
+                semaine:
+                  fr: Par semaine
+                  en: Per week
+            - type: radio
+              name: bailIncluServices
+              label:
+                fr: Est-ce que le loyer inclut des services?
+                en: Does the rent include services?
+              options: yesno
+            - type: avis
+              text:
+                fr: |
+                  <p>Lorsqu’un locateur offre des services additionnels à ceux indiqués au bail, incluant des services qui se rattachent à la personne même du locataire, il doit, conformément aux articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892_1' target='_blank'>1892.1</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1895_1' target='_blank'>1895.1</a> C.c.Q., compléter l’Annexe 6 au bail : services offerts au locataire par le locateur.</p>
+                en: |
+                  <p>TODO english - Lorsqu’un locateur offre des services additionnels à ceux indiqués au bail, incluant des services qui se rattachent à la personne même du locataire, il doit, conformément aux articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892_1' target='_blank'>1892.1</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1895_1' target='_blank'>1895.1</a> C.c.Q., compléter l’Annexe 6 au bail : services offerts au locataire par le locateur.</p>
+
+            - name: coutServices
+              type: montant
+              v-if: val('bailIncluServices') === 'true'
+              label:
+                fr: Le coût total des services est de
+                en: The total cost of services is
+            - name: coutTotalLoyer
+              additionals:
+                readonly: true
+              type: montant
+              label:
+                fr: Le loyer total est de
+                en: The total rent is
+              validations:
+                optional:
+        #Paiement                
+        - section:
+            fr: Paiement
+            en: Payment
+          id: paiement
+          components:
+            - type: avis
+              classes: information
+              text:
+                fr: |
+                  <p><b>Paiement du premier terme de loyer :</b> Lors de la conclusion du bail, le locateur ne peut exiger d’avance que le paiement du premier terme de loyer (exemples : le premier mois, la première semaine). Cette avance ne peut dépasser un mois de loyer.</p>
+                  <p><b>Paiement des autres termes :</b> Le loyer est payable le premier jour de chaque terme (exemples : mois, semaine), sauf entente contraire.</p>
+                en: |
+                  <p><b>Payment of rent for the first payment period:</b> At the time of entering into the lease, the lessor may require advance payment of the rent only for the first payment period (e.g. the first month, the first week). The advance payment may not exceed one month’s rent.</p>
+                  <p><b>Payment of rent for the other payment periods:</b> The rent is payable on the first day of each payment period (e.g. month, week), unless otherwise agreed.</p>
+            - name: premierTermePaiement
+              type: date
+              label:
+                fr: Le paiement du premier terme de loyer sera le
+                en: TODO - English
+            - name: termesPaiement
+              type: radio
+              label:
+                fr: Le paiement des autres termes de loyer se fera le
+                en: TODO english - Le paiement des autres termes de loyer se fera le
+              options:
+                permierJourMois:
+                  fr: Premier jour du mois
+                  en: First day of the month
+                permierJourSemaine:
+                  fr: Premier jour de la semaine
+                  en: First day of the week
+                autre:
+                  fr: Autre
+                  en: Other
+            - type: text
+              name: precisionAutresTermes    
+              v-if: val('termesPaiement') === 'autre'
+              label:
+                fr: Préciser les termes du paiement
+                en: Specify the terms of payment
+              placeholder:
+                fr: Ex. Premier lundi du mois, 15 de chaque mois, etc.
+                en: Ex. First Monday of the month, 15th of each month, etc.
+            - type: avis
+              classes: information
+              text:
+                fr: |
+                  <p><b>Mode de paiement :</b> Le locateur ne peut exiger la remise d’un chèque ou d’un autre effet postdaté, sauf entente contraire.</p>
+                  <p><b>Preuve de paiement :</b> Le locataire a droit à un reçu pour le paiement de son loyer en argent comptant (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1564' target='_blank'>1564</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1568' target='_blank'>1568</a> C.c.Q.).</p>
+                en: |
+                  <p><b>Method of payment:</b> The lessor may not require payment by means of a postdated cheque or any other postdated instrument, unless otherwise agreed.</p>
+                  <p><b>Proof of payment:</b> The lessee is entitled to a receipt for the payment of the rent in cash (art. <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991?langCont=fr#se:1564' target='_blank'>1564</a> and <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1568' target='_blank'>1568</a> C.C.Q.).</p>
+            - name: modePaiement
+              type: radio              
+              label:
+                fr: Le loyer est payable selon le mode de paiement suivant
+                en: The rent is payable in accordance with the following method of payment
+              options:
+                argentComptant:
+                  fr: Argent comptant
+                  en: Cash
+                cheque:
+                  fr: Chèque
+                  en: Cheque
+                chequePostDate:
+                  fr: Chèque postdaté
+                  en: Postdated cheque
+                virementBancaire:
+                  fr: Virement bancaire électronique
+                  en: Electronic bank transfer
+                autre:
+                  fr: Autre
+                  en: Other
+            - type: text
+              name: precisionAutresModePaiement
+              v-if: val('modePaiement') === 'autre'
+              label:
+                fr: Veuillez préciser le mode de paiement
+                en: Specify the payment method
+              placeholder:
+                fr: Ex. prélèvement automatique
+                en: TODO english - Ex. prélèvement automatique
+            - type: checkbox
+              name: locataireAccepteRemiseChequePostdates
+              v-if: val('modePaiement') === 'chequePostDate'
+              label:
+                fr: Le locataire accepte de remettre des chèques postdatés au locateur pour la durée du bail
+                en: The lessee agrees to issue post-dated checks to the landlord for the duration of the lease
+            - type: avis
+              classes: avertissement
+              v-if: val('locataireAccepteRemiseChequePostdates')
+              text:
+                fr: |
+                  <p>Le locataire devra consentir au mode de paiement par chèque postdaté lors de la signature du bail.</p>
+                en: |
+                  <p>TODO english </p>
+            - type: avis
+              classes: information
+              text:
+                fr: |
+                  <p><b>Lieu du paiement:</b> Le loyer est payable au domicile du locataire, sauf entente contraire (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1566' target='_blank'>1566</a> C.c.Q.).</p>
+                en: |
+                  <p><b>Place of payment:</b> The rent is payable at the lessee’s domicile, unless otherwise agreed (art. <a href='https://www.legisquebec.gouv.qc.ca/en/document/lc/ccq-1991#se:1566' target='_blank'>1566</a> C.C.Q.).</p>
+            - type: text
+              name: lieuPaiement
+              label:
+                fr: Veuillez indiquer le lieu du paiement du loyer
+                en: TODO english - Veuillez indiquer le lieu du paiement du loyer
+              help: 
+                fr: Indiquer si le paiement est effectué par la poste, le cas échéant.
+                en: TODO english - Indiquer si le paiement est effectué par la poste, le cas échéant.
+              tooltip:
+                title:
+                  fr: Lieu du paiement
+                  en: TODO english - Lieu du paiement
+                text:
+                  fr: |
+                    <p>À titre d'exemple, il est possible de prévoir que le loyer est payable au domicile du locateur, bureau du locateur, domicile du locataire, etc.</p>
+                    <p>Dans tous les cas, veuillez préciser l'adresse complète du lieu.</p>
+                  en: |
+                    <p>TODO english - À titre d'exemple, il est possible de prévoir que le loyer est payable au domicile du locateur, bureau du locateur, domicile du locataire, etc.</p>
+                    <p>Dans tous les cas, veuillez préciser l'adresse complète du lieu.</p>
+
+
+    # E - Accessoires, dépendances, services et conditions
+    - sectionGroup:
+        fr: E - Accessoires, dépendances, services et conditions
+        en: Accessories, dependencies, services and conditions
+      classes: icone register
+      sections:
+
+        # Règlement de l'immeuble
+        - section:
+            fr: Règlement de l'immeuble
+            en: By-laws of the immovable
+          id: reglementImmeuble
+          components:
+          - type: avis
+            classes: information
+            text:
+              fr: |
+                <p><b>Règlement de l’immeuble :</b> Le règlement de l’immeuble établit les règles à observer dans l’immeuble. Il porte sur la jouissance, l’usage et l’entretien du logement et des lieux d’usage commun.</p>
+                <p><b>S’il existe</b> un tel règlement, le locateur <b>doit</b> en remettre un exemplaire au locataire <b>avant</b> la conclusion du bail pour qu’il en fasse partie (art. <a href="https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1894" target="_blank">1894</a> C.c.Q.).</p>
+                <p><b>Un règlement ne peut contredire le bail ou contrevenir à la loi.</b></p>
+              en: |
+                <p>By-laws of the immovable: The rules to be observed in the immovable are established by by-laws. The by-laws pertain to the enjoyment, use and maintenance of the dwelling and of the common premises.</p>
+                <p>If such by-laws exist, the lessor must give a copy of them to the lessee before entering into the lease so that the by-laws form part of the lease (art. <a href="https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1894" target="_blank">1894</a>1894 C.C.Q.).</p>
+                <p>The by-laws may not contradict the lease or violate the law.</p>            
+                          
+          - name: possedeReglementImmeubleJointBail
+            type: radio
+            options: yesno
+            label:
+              fr: Souhaitez-vous joindre un exemplaire du règlement de l'immeuble au bail?
+              en: TODO english - Souhaitez-vous joindre un exemplaire du règlement de l'immeuble au bail?
+
+          - name: reglementImmeubleJointBail
+            type: customfile
+            v-if: val('possedeReglementImmeubleJointBail') === 'true'
+            additionals:
+                multiple: true
+            label:
+              fr: Exemplaire du règlement de l’immeuble à joindre au bail 
+              en: TODO english - Exemplaire du règlement de l’immeuble à joindre au bail              
+
+        # Conditions
+        - section:
+            fr: Conditions
+            en: Conditions
+          id: conditions
+          components:
+            - name: locatairePossedeDroitFumer
+              type: radio
+              label:
+                fr: Est-ce que le logement est sans fumée?
+                en: TODO english Est-ce que le logement est sans fumée?
+              options: yesno
+            - name: precisionLocatairePossedeDroitFumer
+              v-if: val('locatairePossedeDroitFumer') === 'true'
+              type: text
+              label:
+                fr: Veuillez apporter des précisions à ce sujet, si nécessaire.
+              help:
+                fr: Ex. pas de cannabis.
+                en: E.g., no cannabis.
+              validations:
+                optional: null 
+            - name: locatairePossedeDroitAccesTerrain
+              type: radio
+              label:
+                fr: Est-ce que le locataire a un droit d’accès au terrain?
+                en: Does the lessee have a right of access to the land?
+              options: yesno
+            - name: precisionLocatairePossedeDroitAccesTerrain
+              type: text
+              v-if: val('locatairePossedeDroitAccesTerrain') === 'true'
+              label:
+                fr: Veuillez apporter des précisions à ce sujet, si nécessaire.
+              help:
+                fr: Ex. Accès à la cour arrière, accès exclusif ou partagé avec d’autres locataires, etc.
+                en: E.g., TODO english Accès à la cour arrière, accès exclusif ou partagé avec d’autres locataires, etc.
+              validations:
+                optional: null                             
+            - name: locatairePossedeDroitAnimaux
+              type: radio
+              label:
+                fr: Est-ce que le locataire a le droit de garder un ou des animaux?
+                en: Does the lessee have the right to keep one or more animals?
+              options: yesno
+            - name: precisionLocatairePossedeDroitAnimaux
+              type: text
+              v-if: val('locatairePossedeDroitAnimaux') === 'true'
+              label:
+                fr: Veuillez apporter des précisions à ce sujet, si nécessaire.
+              help:
+                fr: Ex. Nombre, taille, poids, etc.
+                en: E.g., number, height, weight, etc.
+              validations:
+                optional: null
+
+        # Autres accessoires, dépendances, services et conditions
+        - section:
+            fr: Autres accessoires, dépendances, services et conditions
+            en: TODO english - Autres accessoires, dépendances, services et conditions
+          id: autresAccesoiresDependancesServicesConditions
+          components:
+            - name: possedeAutresServicesConditionsRestriction
+              type: radio
+              options: yesno
+              label:
+                fr: Est-ce qu'il y a des accessoires, dépendances, services et conditions autres que ceux prévus dans les conditions de location établies par la réglementation?
+                en: Are there any accessories, dependencies, services and conditions other than those provided for in the rental conditions established by the regulations?
+            - name: precisionAutresServicesConditionsRestriction
+              type: textarea
+              v-if: val('possedeAutresServicesConditionsRestriction') === 'true'
+              label:
+                fr: Veuillez préciser les autres accessoires, dépendances, services et conditions
+                en: Specify other accessories, dependencies, services and conditions
+              validations: 
+                max: 150
+              additionals:
+                max-caracteres: 300
+                hauteur-automatique: true
+
+            - name: possedeDocumentsJoindreBail
+              type: radio
+              options: yesno
+              label:
+                fr: Souhaitez-vous joindre des documents au bail?
+                en: TODO english - Souhaitez-vous joindre des documents au bail?
+              help: 
+                fr: Excluant le règlement de l’immeuble, celui-ci doit être joint dans la section "E – Services et conditions, Règlement de l’immeuble".
+                en: TODO english - Excluant le règlement de l’immeuble, celui-ci doit être joint dans la section "E – Services et conditions, Règlement de l’immeuble".
+            - name: DescriptionDocumentsJointsBail
+              type: textarea
+              v-if: val('possedeDocumentsJoindreBail') === 'true'
+              label:
+                fr: Veuillez préciser les documents que vous désirez joindre au bail
+              help: 
+                fr: P. ex. Contrat de cautionnement, document sur les conditions de vie en résidence privée pour aînés, consentement à la communication par courriel, etc.
+                en: TODO english - P. ex. Contrat de cautionnement, document sur les conditions de vie en résidence privée pour aînés, consentement à la communication par courriel, etc.                
+              validations: 
+                max: 150
+              additionals:
+                max-caracteres: 150
+                hauteur-automatique: true
+
+            - name: possedeServicesAdditionnelsBail
+              type: radio
+              options: yesno
+              label:
+                fr: Offrez-vous des services additionnels à ceux indiqués dans le présent formulaire, dont des services qui se rattachent à la personne même du locataire?
+                en: TODO english - Offrez-vous des services additionnels à ceux indiqués dans le présent formulaire, dont des services qui se rattachent à la personne même du locataire?
+            - type: avis        
+              classes: avertissement            
+              v-if: val('possedeServicesAdditionnelsBail') === 'true'
+              text:
+                fr: |
+                  <p>Conformément aux articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892_1' target='_blank'>1892.1</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1895_1' target='_blank'>1895.1</a> C.c.Q., vous devez compléter l’Annexe 6 au bail : services offerts au locataire par le locateur.</p>
+                en: |
+                  <p>TODO english - Conformément aux articles <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1892_1' target='_blank'>1892.1</a> et <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1895_1' target='_blank'>1895.1</a> C.c.Q., vous devez compléter l’Annexe 6 au bail : services offerts au locataire par le locateur.</p>
+
+          
+
+        # Engagement pour avertisseurs de fumée
+        - section:
+            fr: Engagement pour avertisseurs de fumée
+            en: TODO english Engagement pour avertisseurs de fumée
+          id: engagementAvertisseursFumeeLocateur1
+          components:
+            - type: avis
+              classes: avertissement
+              text:
+                fr: |
+                  <p>Le locateur doit s’engager à respecter la réglementation relative à la présence et au bon fonctionnement des avertisseurs de fumée dans le logement et dans l’immeuble. Le locataire devra également s’engager à cette fin lors de la signature du bail.</p>
+                en: |
+                  <p>TODO english Le locateur doit s’engager à respecter la réglementation relative à la présence et au bon fonctionnement des avertisseurs de fumée dans le logement et dans l’immeuble. Le locataire devra également s’engager à cette fin lors de la signature du bail.</p>
+            - name: engagementAvertisseursFumeeLocateur
+              type: checkbox
+              label:
+                fr: Je m’engage, conformément à mes responsabilités, à respecter la réglementation relative à la présence et au bon fonctionnement des avertisseurs de fumée dans le logement et dans l’immeuble
+                en: TODO english Je m’engage, conformément à mes responsabilités, à respecter la réglementation relative à la présence et au bon fonctionnement des avertisseurs de fumée dans le logement et dans l’immeuble
+
+    # Annexes
+    - sectionGroup:
+        fr: F - Annexes
+        en: F - Schedules
+      classes: icone register
+      sections:
+        - section:
+            fr: Annexes
+            en: Schedules
+          id: annexes
+          components:
+            - type: radio
+              name: bailPossedeAnnexes     
+              label:
+                fr: Y a t-il des annexes à ce bail?
+                en: Are there any schedules to this lease?
+              options: yesno
+            - type: textarea
+              name: champAnnexes        
+              label:
+                fr: Annexes
+                en: Schedules
+              v-if: val('bailPossedeAnnexes') === 'true'
+              validations:
+                optional: null
+
+
+    # Mentions légales
+    - sectionGroup:
+        fr: Mentions légales
+        en: TODO english Particulars
+      classes: icone clipboard-check
+      sections:
+        # Mentions légales
+        - section:
+            fr: Mentions légales
+            en: TODO anglais Particulars
+          id: mentionsLegales
+          cacherTexteExplicatifChampsObligatoires: true               
+          components:
+            - type: avis
+              classes: avertissement
+              text:
+                fr: |
+                  <p>En cas de divergence entre le présent document et les lois applicables au logement, ces lois ont priorité.</p>
+            - type: dynamic
+              tag: div
+              classes: mb-32
+              text:
+                fr: |
+                    <hr>
+                    <h3>RENSEIGNEMENTS GÉNÉRAUX</h3>
+                    <p>Les présentes mentions décrivent la plupart des droits et obligations des locateurs et des locataires. Elles résument l’essentiel de la loi sur le contrat de bail, soit les articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1851' target='_blank'>1851</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1978_4' target='_blank'>1978.4</a> du Code civil du Québec (C.c.Q.) et les règles spécifiques au logement à loyer modique contenues aux articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1984' target='_blank'>1984</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1995' target='_blank'>1995</a> C.c.Q.</p>
+                    <p>Les exemples donnés dans les mentions ont une valeur informative et servent à illustrer une règle. Pour connaître d’autres obligations auxquelles peuvent être astreintes les parties à un contrat de bail, on peut se reporter par le Code civil du Québec. Aucun droit ne peut être exercé en vue de nuire à autrui ou d’une manière excessive et déraisonnable, allant ainsi à l’encontre des exigences de la bonne foi (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:6' target='_blank'>6</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:7' target='_blank'>7</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1375' target='_blank'>1375</a> C.c.Q.).</p>
+                    <p>Les mentions s’appliquent à tout lieu loué à des fins d’habitation ainsi qu’aux services, aux accessoires et aux dépendances du logement, qu’ils soient inclus dans le bail du logement ou dans un autre bail. Des exceptions s’appliquent (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892' target='_blank'>1892</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892_1' target='_blank'>1892.1</a> C.c.Q.).</p>
+                    <p>Sauf si les dimensions du logement le justifient, un locateur ne peut refuser de consentir un bail à une personne, refuser de la maintenir dans ses droits ou lui imposer des conditions plus onéreuses pour le seul motif qu’elle est enceinte ou qu’elle a un ou des enfants. Il ne peut non plus agir ainsi pour le seul motif qu’une personne a exercé un droit qui lui est accordé en vertu du chapitre sur le louage du Code civil du Québec ou en vertu de la Loi sur le Tribunal administratif du logement (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1899' target='_blank'>1899</a> C.c.Q.).</p>
+                    <p>Nul ne peut harceler un locataire de manière à restreindre son droit à la jouissance paisible des lieux ou à obtenir qu’il quitte son logement. En cas de violation, des dommages punitifs peuvent être réclamés (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1902' target='_blank'>1902</a> C.c.Q.).</p>
+                    <p>L’inexécution d’une obligation par une partie donne le droit à l’autre partie d’exercer certains recours devant un tribunal, généralement le Tribunal administratif du logement. Ces recours concernent notamment l’exécution d’une obligation, la diminution du loyer, la résiliation du bail, des dommages-intérêts et, dans certains cas, des dommages punitifs.</p>
+                    <utd-accordeon titre="Charte des droits et libertés de la personne" tag="h4" reduit="false">
+                    <p>Ces droits et obligations doivent s’exercer dans le respect des droits reconnus par la Charte qui prescrit, entre autres choses, que toute personne a droit au respect de sa vie privée, à la jouissance paisible et à la libre disposition de ses biens, sauf dans la mesure prévue par la loi, et que la demeure est inviolable.</p>
+                    <p>La Charte interdit aussi toute discrimination et tout harcèlement fondés sur la race, la couleur, le sexe, l’identité ou l’expression de genre, la grossesse, l’orientation sexuelle, l’état civil, l’âge sauf dans la mesure prévue par la loi, la religion, les convictions politiques, la langue, l’origine ethnique ou nationale, la condition sociale, le handicap ou l’utilisation d’un moyen pour pallier ce handicap. La Charte protège également la personne âgée ou handicapée contre toute forme d’exploitation.</p>
+                    <p>Toute personne victime de discrimination ou de harcèlement pour l’un de ces motifs peut porter plainte</p>
+                    <p>auprès de la Commission des droits de la personne et des droits de la jeunesse.</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="Accès aux documents et protection" tag="h4" reduit="false">
+                    <p>des renseignements personnels</p>
+                    <p>Le locateur, s’il est un organisme public, doit respecter les prescriptions de la Loi sur l’accès aux documents des organismes publics et sur la protection des renseignements personnels. Sinon, il doit respecter les prescriptions de la Loi sur la protection des renseignements personnels dans le secteur privé.</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="Annexe 6" tag="h4" reduit="false">
+                    <p>Si le bail comprend des services additionnels à ceux indiqués dans le présent formulaire, dont des services qui se rattachent à la personne même du locataire, l’Annexe 6 au bail : services offerts au locataire par le locateur doit être remplie.</p>
+                    </utd-accordeon>
+
+                    <hr>
+                    <h3>LA CONCLUSION DU BAIL</h3>
+                    <utd-accordeon titre="La langue du bail et du règlement de l’immeuble" tag="h4" reduit="false">
+                    <p><strong>1.</strong> Le bail et le règlement de l’immeuble doivent être rédigés en français. Toutefois, le locateur et le locataire peuvent s’entendre expressément pour utiliser une autre langue (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1897' target='_blank'>1897</a> C.c.Q.).</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="Les clauses du bail" tag="h4" reduit="false">
+                    <p><strong>2.</strong> Le locateur et le locataire peuvent s’entendre sur différentes clauses, mais ils ne peuvent déroger par une clause du bail aux dispositions d’ordre public de la loi ni à celles des règlements de la Société d’habitation du Québec.</p>
+                    <p>Les règles de droit contenues dans les mentions 18, 19 et 54 à 56 sont supplétives, c’est-à-dire qu’elles s’appliquent si les parties n’en conviennent pas autrement.</p>
+                    <p><strong>3.</strong> En vertu de l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1893' target='_blank'>1893</a> C.c.Q., les clauses qui dérogent aux articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1854' target='_blank'>1854 al. 2</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1856' target='_blank'>1856</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1858' target='_blank'>1858</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1860' target='_blank'>1860</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1863' target='_blank'>1863</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1865' target='_blank'>1865</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1866' target='_blank'>1866</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1868' target='_blank'>1868</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1872' target='_blank'>1872</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1875' target='_blank'>1875</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1876' target='_blank'>1876</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1883' target='_blank'>1883</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892' target='_blank'>1892</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:2000' target='_blank'>2000</a> C.c.Q. sont sans effet.</p>
+                    <p>Par exemple :</p>
+                    <ul>
+                    <li>le locataire ne peut renoncer dans le bail à son droit au maintien dans les lieux (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1936' target='_blank'>1936</a> C.c.Q.) ;</li>
+                    <li>Les parties ne peuvent convenir que le locataire pourra sous-louer son logement ou céder son bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1995' target='_blank'>1995</a> C.c.Q.).</li>
+                    </ul>
+                    <p>On ne peut non plus se dégager de son obligation de donner un avis (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1898' target='_blank'>1898</a> C.c.Q.).</p>
+                    <p>Sont aussi sans effet :</p>
+                    <ul>
+                    <li>une clause qui limite la responsabilité du locateur ou le libère d’une obligation (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1900' target='_blank'>1900</a> C.c.Q.) ;</li>
+                    <li>une clause qui rend le locataire responsable d’un dommage causé sans sa faute (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1900' target='_blank'>1900</a> C.c.Q.) ;</li>
+                    <li>une clause qui modifie les droits du locataire à la suite d’une augmentation du nombre des occupants, sauf si les dimensions du logement le justifient (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1900' target='_blank'>1900</a> C.c.Q.) ;</li>
+                    <li>une clause par laquelle un locataire reconnaît que le logement est en bon état d’habitabilité (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1910' target='_blank'>1910</a> C.c.Q.) ;</li>
+                    <li>une clause qui prévoit le paiement total du loyer si le locataire fait défaut d’effectuer un versement
+                    (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1905' target='_blank'>1905</a> C.c.Q.) ;</li>
+                    <li>une clause qui limite le droit du locataire d’acheter des biens ou d’obtenir des services des personnes de son choix, suivant les modalités dont lui-même convient (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1900' target='_blank'>1900</a> C.c.Q.).</li>
+                    </ul>
+                    <p><strong>4.</strong> Le locataire peut s’adresser au Tribunal administratif du logement pour faire apprécier le caractère abusif d’une clause du bail, laquelle peut être annulée ou l’obligation qui en découle réduite (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1901' target='_blank'>1901</a> C.c.Q.).</p>
+                    </utd-accordeon>
+
+                    <hr>
+                    <h3>LE DROIT AU MAINTIEN DANS LES LIEUX</h3>
+                    <p><strong>5.</strong> Sous réserve du droit du locateur de le reloger, le locataire a un droit personnel de demeurer dans son logement (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1936' target='_blank'>1936</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1990' target='_blank'>1990</a> C.c.Q.).</p>
+                    <p><strong>6.</strong> Il ne peut en être expulsé que dans certains cas prévus par la loi, dont la résiliation du bail pour défaut d’exécuter ses obligations (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1863' target='_blank'>1863</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1971' target='_blank'>1971</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1973' target='_blank'>1973</a> C.c.Q.).</p>
+                    <p>La cessation de cohabitation ou le décès d’un colocataire ne porte pas atteinte au droit au maintien dans les lieux des autres colocataires.</p>
+                    <p>Le droit au maintien dans les lieux peut aussi s’étendre à certaines personnes lorsque cesse la cohabitation avec le locataire ou en cas de décès du locataire, à condition qu’elles respectent les formalités prévues par la loi (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1938' target='_blank'>1938</a> C.c.Q.). Mais ces personnes n’ont pas droit à la reconduction du bail si elles ne satisfont plus aux conditions d’attribution prévues par les règlements. Le locateur peut alors résilier le bail en donnant un avis de trois mois avant la fin du bail. La résiliation peut être contestée en s’adressant au Tribunal administratif du logement dans un délai d’un mois à compter de la réception de l’avis, sinon le locataire est réputé l’avoir acceptée (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1991' target='_blank'>1991</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1993' target='_blank'>1993</a> C.c.Q.).</p>
+                    <p><strong>7.</strong> Lorsqu’un logement à loyer modique est attribué à la suite d’une fausse déclaration du locataire, le</p>
+                    <p>locateur peut, dans un délai de deux mois à compter de la connaissance de la fausse déclaration, demander au Tribunal administratif du logement la résiliation du bail ou la modification de certaines conditions du bail si, sans cela, il n’aurait pas attribué le logement au locataire ou l’aurait fait à des conditions différentes (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1988' target='_blank'>1988</a> C.c.Q.).</p>
+                    <utd-accordeon titre="Le nouveau locateur" tag="h4" reduit="false">
+                    <p><strong>8.</strong> Le nouveau locateur d’un immeuble est tenu de respecter le bail du locataire. Ce bail est continué et peut être reconduit comme tout autre bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1937' target='_blank'>1937</a> C.c.Q.).</p>
+                    <p><strong>9.</strong> Lorsque le locataire n’a pas été personnellement avisé du nom et de l’adresse du nouveau locateur ou de la personne à qui il doit payer le loyer, il peut, avec l’autorisation du Tribunal administratif du logement, y déposer son loyer (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1908' target='_blank'>1908</a> C.c.Q.).</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="Le décès" tag="h4" reduit="false">
+                    <p><strong>10.</strong> Le décès du locataire ne met pas fin au bail</p>
+                    <p>(art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1884' target='_blank'>1884</a> C.c.Q.).</p>
+                    <p>Lors du décès d’un locataire, la personne qui cohabitait avec lui peut devenir locataire, si elle continue d’occuper le logement et remet au locateur un avis écrit dans les deux mois suivant le décès. Sinon, le liquidateur de la succession, ou à défaut un héritier, peut, dans le mois qui suit l’expiration de ce délai de deux mois, mettre fin au bail s’il remet au locateur un avis de résiliation d’un mois.</p>
+                    <p>Si personne n’habitait avec le locataire au moment de son décès, le liquidateur de la succession ou, à défaut, un héritier, peut résilier le bail en donnant au locateur, dans les six mois du décès, un avis de deux mois. La résiliation prend effet avant l’expiration de ce dernier délai, si le liquidateur ou l’héritier et le locateur en conviennent autrement ou lorsque le logement est reloué par le locateur durant ce même délai.</p>
+                    <p>Dans tous les cas, lorsque le locataire recevait des services se rattachant à sa personne même, qu’il ait habité seul ou non, le liquidateur, l’héritier ou, le cas échéant, la personne qui occupait le logement avec le locataire n’aura à payer la partie du loyer relative à ces services qu’à l’égard de ceux qui ont été fournis au locataire de son vivant (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1938' target='_blank'>1938</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1939' target='_blank'>1939</a> C.c.Q.).</p>
+                    <p>Le locateur peut éviter la reconduction du bail dans certaines circonstances (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1944' target='_blank'>1944 al. 2</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1991' target='_blank'>1991</a> C.c.Q.).</p>
+                    </utd-accordeon>
+
+                    <hr>
+                    <h3>LA REMISE DU LOGEMENT AU DÉBUT DU BAIL</h3>
+                    <p><strong>11.</strong> Le locateur doit, à la date prévue pour la remise du logement, le délivrer en bon état de réparation de toute espèce. Cependant, le locateur et le locataire peuvent convenir autrement et s’entendre sur les travaux et l’échéancier de leur exécution (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1854' target='_blank'>1854 al. 1</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1893' target='_blank'>1893</a> C.c.Q.).</p>
+                    <p>Toutefois, le locateur ne peut se dégager de son obligation de livrer le logement, ses accessoires et dépendances en bon état de propreté, de les livrer et de les maintenir en bon état d’habitabilité (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892' target='_blank'>1892</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1893' target='_blank'>1893</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1910' target='_blank'>1910</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1911' target='_blank'>1911</a> C.c.Q.).</p>
+                    <p><strong>12.</strong> Le locateur ne peut offrir un logement impropre à l’habitation, c’est-à-dire dont l’état constitue une</p>
+                    <p>menace sérieuse pour la santé ou la sécurité des occupants ou du public. Le locataire peut refuser de prendre possession d’un tel logement. Dans ce cas, le bail est résilié automatiquement (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1913' target='_blank'>1913</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1914' target='_blank'>1914</a> C.c.Q.).</p>
+
+                    <hr>
+                    <h3>LE LOYER</h3>
+                    <utd-accordeon titre="La détermination du loyer" tag="h4" reduit="false">
+                    <p><strong>13.</strong> Si le loyer n’est pas déterminé conformément</p>
+                    <p>aux règlements de la Société d’habitation du Québec relatifs aux conditions de location, le locataire peut, dans les deux mois à compter de sa détermination, s’adresser au Tribunal administratif du logement pour le faire réviser (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1992' target='_blank'>1992</a> C.c.Q.).</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="La réduction du loyer en cours de bail" tag="h4" reduit="false">
+                    <p><strong>14.</strong> En cours de bail, le locateur doit, à la demande du locataire qui a subi une diminution de revenu ou un changement dans la composition du ménage, réduire le loyer conformément aux règlements de la Société d’habitation du Québec. Si le locateur refuse ou néglige de le faire, le locataire peut s’adresser au Tribunal administratif du logement pour le faire réduire.</p>
+                    <p>Si le revenu du locataire redevient égal ou supérieur à ce qu’il était, le loyer antérieur est rétabli ; le locataire a un mois à compter du rétablissement du loyer pour s’adresser au Tribunal administratif du logement pour contester ce rétablissement (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1994' target='_blank'>1994</a> C.c.Q.).</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="Le non-paiement du loyer" tag="h4" reduit="false">
+                    <p><strong>15.</strong> Le non-paiement du loyer confère au locateur le droit de demander au tribunal la condamnation du</p>
+                    <p>locataire au paiement du loyer. Si le locataire est en retard de plus de trois semaines pour le paiement du loyer, le locateur peut obtenir la résiliation du bail et l’expulsion du locataire.</p>
+                    <p>Les retards fréquents à payer le loyer peuvent aussi justifier la résiliation du bail si le locateur en subit un préjudice sérieux (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1863' target='_blank'>1863</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1971' target='_blank'>1971</a> C.c.Q.).</p>
+                    </utd-accordeon>
+
+                    <hr>
+                    <h3>LA RESPONSABILITÉ DES CONJOINTS ET DES COLOCATAIRES</h3>
+                    <utd-accordeon titre="La responsabilité des personnes mariées ou unies civilement" tag="h4" reduit="false">
+                    <p><strong>16.</strong> Le conjoint, marié ou uni civilement, qui loue un logement pour les besoins courants de la famille engage aussi pour le tout son conjoint non séparé de corps, à moins que ce dernier n’ait préalablement informé le locateur de sa volonté de ne pas être tenu à cette dette (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:397' target='_blank'>397</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:521_6' target='_blank'>521.6</a> C.c.Q.).</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="La responsabilité des colocataires" tag="h4" reduit="false">
+                    <p><strong>17.</strong> Si le bail est signé par plus d’un locataire, la responsabilité quant aux obligations découlant du bail est conjointe, c’est-à-dire que chacun des locataires n’est tenu que pour sa part (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1518' target='_blank'>1518</a> C.c.Q.).</p>
+                    <p>Toutefois, les colocataires et le locateur peuvent convenir que la responsabilité sera solidaire. En pareil cas, chacun des locataires peut être contraint d’assumer la totalité des obligations du bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1523' target='_blank'>1523</a> C.c.Q.).</p>
+                    <p>La solidarité des colocataires ne se présume pas. Elle n’existe que si elle est expressément stipulée au bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1525' target='_blank'>1525</a> C.c.Q.).</p>
+                    </utd-accordeon>
+
+                    <hr>
+                    <h3>LA JOUISSANCE DES LIEUX</h3>
+                    <p><strong>18.</strong> Le locateur doit procurer au locataire la jouissance paisible du bien loué pendant toute la durée du bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1854' target='_blank'>1854</a> al. 1 C.c.Q.).</p>
+                    <p><strong>19.</strong> Le locataire doit, pendant toute la durée du bail, user du bien loué avec « prudence et diligence », c’est-à-dire qu’il doit en faire un usage raisonnable (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1855' target='_blank'>1855</a> C.c.Q.).</p>
+                    <p><strong>20.</strong> Le locataire ne peut, sans le consentement du</p>
+                    <p>locateur, employer ou conserver dans le logement une substance qui constitue un risque d’incendie ou</p>
+                    <p>d’explosion et qui aurait pour effet d’augmenter les primes d’assurance du locateur (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1919' target='_blank'>1919</a> C.c.Q.).</p>
+                    <p><strong>21.</strong> Le nombre d’occupants d’un logement doit être tel qu’il permet à chacun de vivre dans des conditions normales de confort et de salubrité (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1920' target='_blank'>1920</a> C.c.Q.).</p>
+                    <p><strong>22.</strong> Le locataire et les personnes à qui il permet l’usage de son logement ou l’accès à celui-ci doivent se conduire de façon à ne pas troubler la jouissance normale des autres locataires (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1860' target='_blank'>1860</a> C.c.Q.).</p>
+                    <p><strong>23.</strong> En cours de bail, le locateur et le locataire ne peuvent changer la forme ou la destination du logement (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1856' target='_blank'>1856</a> C.c.Q.).</p>
+
+                    <hr>
+                    <h3>L’ENTRETIEN DU LOGEMENT ET LES RÉPARATIONS</h3>
+                    <utd-accordeon titre="L’obligation d’entretien" tag="h4" reduit="false">
+                    <p><strong>24.</strong> Le locateur a l’obligation de garantir au locataire que le logement peut servir à l’usage pour lequel il est loué et de l’entretenir à cette fin pendant toute la durée du bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1854' target='_blank'>1854 al. 2</a> C.c.Q.).</p>
+                    <p><strong>25.</strong> Le locataire doit maintenir le logement en bon état de propreté. Le locateur qui y effectue des travaux doit le remettre en bon état de propreté (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1911' target='_blank'>1911</a> C.c.Q.).</p>
+                    <p><strong>26.</strong> Le locataire qui a connaissance d’une défectuosité ou d’une détérioration substantielles du logement doit en aviser le locateur dans un délai raisonnable (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1866' target='_blank'>1866</a> C.c.Q.).</p>
+                    <p><strong>27.</strong> La loi et les règlements concernant la sécurité, la salubrité, l’entretien ou l’habitabilité d’un immeuble doivent être considérés comme des obligations du bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1912' target='_blank'>1912</a> C.c.Q.).</p>
+                    <p><strong>28.</strong> Le locataire peut abandonner son logement si celui-ci devient impropre à l’habitation. Il doit alors aviser son locateur de l’état du logement, avant l’abandon ou dans les dix jours qui suivent (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1915' target='_blank'>1915</a> C.c.Q.).</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="Les réparations urgentes et nécessaires" tag="h4" reduit="false">
+                    <p><strong>29.</strong> Le locataire doit subir les réparations urgentes et nécessaires pour assurer la conservation ou la jouissance du bien loué, mais il conserve, selon les circonstances, des recours, dont le droit à une indemnité en cas d’évacuation temporaire.</p>
+                    <p>Dans le cas de réparations urgentes, le locateur peut exiger une évacuation temporaire, sans avis ni autorisation du Tribunal administratif du logement (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1865' target='_blank'>1865</a> C.c.Q.).</p>
+                    <p><strong>30.</strong> Le locataire peut, sans l’autorisation du Tribunal administratif du logement, entreprendre une réparation ou engager une dépense urgente et nécessaire à la conservation ou à la jouissance du bien loué. Toutefois, il ne peut agir ainsi que s’il a informé ou tenté d’informer son locateur de la situation et si ce dernier n’a pas agi en temps utile.</p>
+                    <p>Le locateur peut intervenir à tout moment pour poursuivre les travaux.</p>
+                    <p>Le locataire doit rendre compte au locateur des réparations entreprises et des dépenses engagées, et lui remettre les factures. Il peut retenir sur son loyer le montant des dépenses raisonnables qu’il a effectuées (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1868' target='_blank'>1868</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1869' target='_blank'>1869</a> C.c.Q.).</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="Les travaux majeurs non urgents" tag="h4" reduit="false">
+                    <p>(art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1922' target='_blank'>1922</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1929' target='_blank'>1929</a> C.c.Q.)</p>
+                    <p><strong>31.</strong> Le locateur doit aviser le locataire avant d’entreprendre dans le logement des améliorations ou des réparations majeures qui ne sont pas urgentes. Si une évacuation temporaire est nécessaire, il doit lui offrir une indemnité égale aux dépenses raisonnables que le locataire devra assumer durant les travaux. Cette indemnité est payable au locataire à la date de l’évacuation.</p>
+                    <p>L’avis doit indiquer la nature des travaux, la date à</p>
+                    <p>laquelle ils débuteront, l’estimation de leur durée et, s’il y a lieu, la période d’évacuation nécessaire, l’indemnité offerte ainsi que toutes les autres conditions dans lesquelles s’effectueront les travaux, si elles sont susceptibles de diminuer substantiellement la jouissance des lieux du locataire.</p>
+                    <p>L’avis doit être donné au moins dix jours avant la date prévue du début des travaux, sauf si le locataire doit évacuer le logement pour plus d’une semaine. Dans ce cas, l’avis est d’au moins trois mois.</p>
+                    <p>Si le locataire ne répond pas dans les dix jours de la réception de l’avis qui prévoit une évacuation temporaire, il est réputé avoir refusé de quitter les lieux. Si le locataire refuse d’évacuer ou ne répond pas, le locateur peut, dans les dix jours du refus, demander au Tribunal administratif du logement de se prononcer sur l’évacuation.</p>
+                    <p>Par contre, lorsque l’avis ne prévoit pas d’évacuation temporaire ou si le locataire accepte l’évacuation</p>
+                    <p>demandée, celui-ci peut, dans les dix jours de la réception de l’avis, demander au Tribunal administratif du logement de modifier ou de supprimer une condition de réalisation des travaux qu’il considère comme abusive.</p>
+                    <p>Le Tribunal administratif du logement peut être appelé à se prononcer sur le caractère raisonnable des travaux, leurs conditions de réalisation, la nécessité de l’évacuation et l’indemnité, s’il y a lieu.</p>
+                    </utd-accordeon>
+
+                    <hr>
+                    <h3>L’ACCÈS ET LA VISITE DU LOGEMENT</h3>
+                    <p><strong>32.</strong> Pour l’exercice des droits d’accès au logement, le locateur et le locataire doivent agir selon les règles de la bonne foi :</p>
+                    <ul>
+                    <li>le locataire, en facilitant l’accès et en ne le refusant pas de façon injustifiée ;</li>
+                    <li>le locateur, en n’abusant pas de ses droits et en les exerçant de façon raisonnable dans le respect de la vie privée (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:3' target='_blank'>3</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:6' target='_blank'>6</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:7' target='_blank'>7</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1375' target='_blank'>1375</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1857' target='_blank'>1857</a> C.c.Q.).</li>
+                    </ul>
+                    <p><strong>33.</strong> Le locateur peut, en cours de bail, avoir accès au logement pour :</p>
+                    <ul>
+                    <li>en vérifier l’état entre 9 h et 21 h ;</li>
+                    <li>le faire visiter par un acheteur éventuel entre 9 h</li>
+                    <li>et 21 h ;</li>
+                    <li>y effectuer des travaux entre 7 h et 19 h.</li>
+                    </ul>
+                    <p>Dans ces trois cas, le locateur doit donner au locataire un avis verbal de vingt-quatre heures. En cas de travaux majeurs, le délai d’avis diffère (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1898' target='_blank'>1898</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1931' target='_blank'>1931</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1932' target='_blank'>1932</a> C.c.Q.).</p>
+                    <p><strong>34.</strong> Le locataire qui avise le locateur de son intention de quitter le logement doit, dès ce moment, permettre au locateur de le faire visiter par un locataire éventuel entre 9 h et 21 h, et lui permettre d’afficher le logement à louer (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1930' target='_blank'>1930</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1932' target='_blank'>1932</a> C.c.Q.).</p>
+                    <p>Le locateur n’est pas obligé d’aviser le locataire de la visite d’un locataire éventuel vingt-quatre heures à l’avance.</p>
+                    <p><strong>35.</strong> Le locataire peut exiger la présence du locateur ou de son représentant lors d’une visite du logement ou de sa vérification (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1932' target='_blank'>1932</a> C.c.Q.).</p>
+                    <p><strong>36.</strong> Sauf s’il y a urgence, le locataire peut refuser</p>
+                    <p>l’accès à son logement si les conditions fixées par la loi ne sont pas respectées.</p>
+                    <p>Si le locataire n’autorise pas l’accès au logement pour un motif autre que ceux qui sont prévus par la loi, le</p>
+                    <p>locateur peut introduire au Tribunal administratif du logement une demande d’ordonnance d’accès.</p>
+                    <p>L’abus du droit d’accès par le locateur ou le refus injustifié du locataire peuvent aussi, selon les circonstances, permettre l’exercice de certains recours, tels que l’introduction d’une demande en dommages-intérêts ou en dommages punitifs (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1863' target='_blank'>1863</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1902' target='_blank'>1902</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1931' target='_blank'>1931</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1933' target='_blank'>1933</a> C.c.Q. et art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:49' target='_blank'>49</a> de la Charte).</p>
+                    <p><strong>37.</strong> Une serrure ou un mécanisme qui restreint l’accès au logement ne peut être posé ou remplacé qu’avec le consentement du locateur et du locataire (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1934' target='_blank'>1934</a> C.c.Q.).</p>
+                    <p><strong>38.</strong> Le locateur ne peut interdire l’accès à l’immeuble ou au logement à un candidat à une élection provinciale, fédérale, municipale ou scolaire, à un délégué officiel nommé par un comité national ou à leur représentant autorisé, à des fins de propagande électorale ou de consultation populaire en vertu d’une loi (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1935' target='_blank'>1935</a> C.c.Q.).</p>
+                    
+                    <hr>
+                    <h3>LES AVIS</h3>
+                    <p><strong>39.</strong> Tout avis concernant le bail, donné par le locateur (exemple : avis de modification des conditions du bail) ou par le locataire (exemple : avis de résiliation du bail), doit être écrit et rédigé dans la même langue que celle du bail. Il doit être donné à l’adresse indiquée au bail ou à une nouvelle adresse communiquée depuis</p>
+                    <p>(art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1898' target='_blank'>1898</a> C.c.Q.).</p>
+                    <p>Exception : Seul l’avis donné par le locateur pour avoir accès au logement peut être verbal.</p>
+                    <p><strong>40.</strong> Si un avis ne respecte pas les exigences relatives à l’écrit, à l’adresse ou à la langue, celui-ci n’est valide que si preuve est faite, par celui qui l’a donné, que le destinataire n’en subit aucun préjudice.</p>
+
+                    <hr>
+                    <h3>LA RECONDUCTION ET LA MODIFICATION DU BAIL</h3>
+                    <utd-accordeon titre="La reconduction du bail" tag="h4" reduit="false">
+                    <p><strong>41.</strong> Le bail à durée fixe est renouvelé à son terme aux mêmes conditions. On dit que le bail est « reconduit de plein droit » (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1941' target='_blank'>1941</a> C.c.Q.).</p>
+                    <p>Le locateur ne peut empêcher la reconduction du bail que dans certains cas (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1944' target='_blank'>1944 al. 2</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1991' target='_blank'>1991</a> C.c.Q.). Il peut cependant pour cette reconduction, modifier les conditions du bail. Pour cela, il doit, notamment dans le cas d’un bail de douze mois, donner un avis de modification au locataire entre trois et six mois avant la fin du bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1942' target='_blank'>1942</a> C.c.Q.) et, si le bail est de moins de douze mois, le locateur doit donner un tel avis entre un et deux mois avant la fin du bail.</p>
+                    <p><strong>42.</strong> Dans cet avis de modification, le locateur doit indiquer au locataire :</p>
+                    <ul>
+                    <li>son intention de modifier le loyer (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1992' target='_blank'>1992</a> C.c.Q.) ;</li>
+                    <li>toute autre modification demandée (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1942' target='_blank'>1942</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1993' target='_blank'>1993</a> C.c.Q.) ;</li>
+                    <li>les options de réponse du locataire.</li>
+                    </ul>
+                    <p>Sauf lorsqu’il s’agit d’un avis d’intention de modifier le loyer, le locateur doit aussi indiquer le délai accordé au locataire pour refuser la modification demandée (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1943' target='_blank'>1943</a> C.c.Q.) et reproduire le texte contenu à l’annexe I du Règlement sur le contenu obligatoire de l’avis de modification du bail d’un logement, RLRQ, c. T-15.01, r. 1.1.</p>
+                    <p><strong>43.</strong> Le locataire doit fournir au locateur le nom des personnes qui habitent avec lui et les preuves requises pour l’attestation des revenus. Ces renseignements doivent être fournis dans un délai d’un mois de la demande du locateur (réglementation de la Société d’habitation du Québec relative aux conditions de location).</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="La non-reconduction du bail par le locataire" tag="h4" reduit="false">
+                    <p><strong>44.</strong> Le locataire qui n’a pas reçu un avis de modification d’une condition du bail ou d’intention de modifier le loyer peut aviser le locateur qu’il entend quitter le logement à la fin du bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1946' target='_blank'>1946</a> C.c.Q.).</p>
+                    <p>Cet avis de non-reconduction est donné dans les mêmes délais que ceux qui sont prévus par le Code civil du Québec pour modifier le bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1942' target='_blank'>1942</a> C.c.Q.).</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="La contestation de l’avis de modification" tag="h4" reduit="false">
+                    <p><strong>45.</strong> Le locataire qui a reçu un avis de modification d’une condition du bail autre que le loyer a un mois à compter de la réception de l’avis pour demander au Tribunal administratif du logement de se prononcer sur le bienfondé de cette modification, sinon il est réputé avoir accepté les nouvelles conditions (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1993' target='_blank'>1993</a> C.c.Q.).</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="La détermination du loyer" tag="h4" reduit="false">
+                    <p><strong>46.</strong> Si le loyer n’est pas déterminé conformément aux règlements de la Société d’habitation du Québec, le locataire a deux mois à compter de la détermination du loyer pour s’adresser au Tribunal administratif du logement pour le faire réviser (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1956' target='_blank'>1956</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1992' target='_blank'>1992</a> C.c.Q.).</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="L’entente sur les modifications" tag="h4" reduit="false">
+                    <p><strong>47.</strong> Lorsque le locateur et le locataire se sont entendus sur les modifications à apporter au bail (exemples : loyer, autres conditions), le locateur doit remettre au locataire, avant le début du bail à reconduire, un document décrivant ces modifications (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1895' target='_blank'>1895</a> C.c.Q.).</p>
+                    </utd-accordeon>
+
+                    <hr>
+                    <h3>LA RÉSILIATION DU BAIL PAR LE LOCATAIRE</h3>
+                    <p><strong>48.</strong> Le locataire d’un logement à loyer modique peut résilier son bail en tout temps en donnant un avis préalable de trois mois (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1995' target='_blank'>1995 al. 2</a> C.c.Q.).</p>
+                    <p>Selon l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974' target='_blank'>1974</a> C.c.Q., un locataire peut</p>
+                    <p>notamment résilier son bail :</p>
+                    <ul>
+                    <li>soit il lui est attribué un autre logement à loyer</li>
+                    <li>modique ;</li>
+                    <li>soit il est relogé dans un logement équivalent qui correspond à ses besoins, à la suite d’une décision du tribunal ;</li>
+                    <li>soit il ne peut plus occuper son logement en raison d’un handicap ;</li>
+                    <li>soit il est une personne âgée admise de façon permanente dans un centre d’hébergement et de soins de longue durée (CHSLD), dans une ressource intermédiaire, dans une résidence privée pour aînés où lui sont offerts les soins infirmiers ou les services d’assistance personnelle que nécessite son état de santé ou dans tout autre lieu d’hébergement, quelle qu’en soit l’appellation, où lui sont offerts de tels soins ou services, qu’elle réside ou non dans un tel endroit au moment de son admission.</li>
+                    </ul>
+                    <p><strong>49.</strong> Selon l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974_1' target='_blank'>1974.1</a> C.c.Q., un locataire peut aussi résilier son bail :</p>
+                    <ul>
+                    <li>si, en raison de violence conjugale ou de violence sexuelle, ou de violence envers un enfant qui habite le logement visé par le bail, sa sécurité ou celle de l’enfant est menacée.</li>
+                    </ul>
+                    <utd-accordeon titre="Les avis" tag="h4" reduit="false">
+                    <p>-Article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974' target='_blank'>1974</a> C.c.Q.</p>
+                    <p>La résiliation prend effet deux mois après l’envoi d’un avis au locateur ou un mois après cet avis, lorsque le bail est à durée indéterminée ou de moins de douze mois, ou avant l’expiration de ce délai si les parties en conviennent ou si le logement étant libéré par le locataire est reloué durant ce délai.</p>
+                    <p>L’avis doit être accompagné d’une attestation de l’autorité concernée.</p>
+                    <p>Dans le cas d’une personne âgée, un certificat d’une personne autorisée certifiant que les conditions relatives à l’admission sont remplies doit aussi être joint à l’avis de résiliation.</p>
+                    <p>-Article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974_1' target='_blank'>1974.1</a> C.c.Q.</p>
+                    <p>La résiliation prend effet deux mois après l’envoi d’un avis au locateur ou un mois après cet avis, lorsque le bail est à durée indéterminée ou de moins de douze mois, ou avant l’expiration de ce délai si les parties en conviennent ou si le logement étant libéré par le locataire est reloué durant ce délai.</p>
+                    <p>L’avis doit être accompagné d’une attestation d’un fonctionnaire ou d’un officier public désigné par le ministre de la Justice, qui, sur le vu de la déclaration sous serment du locataire selon laquelle il existe une situation de violence et sur le vu d’autres éléments de faits ou de documents provenant de personnes en contact avec les victimes et appuyant cette déclaration, considère que la résiliation du bail, pour le locataire, est une mesure de nature à assurer la sécurité de ce dernier ou celle d’un enfant qui habite avec lui. Le fonctionnaire ou l’officier public doit agir avec célérité.</p>
+                    </utd-accordeon>
+                    <utd-accordeon titre="Les services" tag="h4" reduit="false">
+                    <p>(art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974' target='_blank'>1974</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974_1' target='_blank'>1974.1</a> C.c.Q.)</p>
+                    <p>Si le loyer inclut des services qui se rattachent au locataire lui-même ou à son enfant, le cas échéant, le locataire n’est tenu de payer que pour les services fournis avant le départ du logement, que ces services aient ou non été offerts en vertu d’un contrat distinct du bail.</p>
+                    </utd-accordeon>
+                    
+                    <hr>
+                    <h3>LA CESSION ET LA SOUS-LOCATION</h3>
+                    <p><strong>50.</strong> Le locataire d’un logement à loyer modique ne peut sous-louer son logement ou céder son bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1995' target='_blank'>1995 al. 1</a> C.c.Q.).</p>
+                    
+                    <hr>
+                    <h3>LE RELOGEMENT DU LOCATAIRE</h3>
+                    <p><strong>51.</strong> Le locataire qui occupe un logement d’une catégorie autre que celle à laquelle il a droit peut s’adresser au locateur afin d’être réinscrit sur la liste d’admissibilité (réglementation sur l’attribution d’un logement à loyer modique).</p>
+                    <p>Si le locateur refuse de réinscrire le locataire ou l’inscrit dans une catégorie autre que celle à laquelle il a droit, ce dernier a un mois à compter de la réception de l’avis de refus du locateur ou de l’attribution du logement pour s’adresser au</p>
+                    <p>Tribunal administratif du logement pour contester la décision du locateur (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1989' target='_blank'>1989</a> C.c.Q.).</p>
+                    <p><strong>52.</strong> Si le locataire occupe un logement d’une catégorie autre que celle à laquelle il a droit, le locateur peut, en tout temps, le reloger dans un logement approprié s’il lui donne un avis de trois mois.</p>
+                    <p>Le locataire a un mois à compter de la réception de l’avis du locateur pour demander au Tribunal administratif du logement de réviser cette décision (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1990' target='_blank'>1990</a> C.c.Q.).</p>
+                    <p><strong>53.</strong> Le demandeur inscrit sur la liste d’admissibilité et qui réside déjà dans un logement à loyer modique peut être relogé, notamment si sa sécurité ou sa santé ou, le cas échéant, celles d’un membre de son ménage, le requièrent, en conformité avec les critères prévus par un règlement du locateur et la réglementation sur l’attribution d’un logement à loyer modique.</p>
+                    
+                    <hr>
+                    <h3>LA REMISE DU LOGEMENT À LA FIN DU BAIL</h3>
+                    <p><strong>54.</strong> Le locataire doit quitter son logement à la fin du bail, aucun délai de grâce n’étant prévu par la loi.</p>
+                    <p>Le locataire doit, lorsqu’il quitte son logement, enlever tout meuble ou objet autre que ceux appartenant au locateur (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1890' target='_blank'>1890</a> C.c.Q.).</p>
+                    <p><strong>55.</strong> À la fin du bail, le locataire doit remettre le logement dans l’état où il l’a reçu, à l’exception des changements résultant du vieillissement, de l’usure normale ou d’un cas de force majeure.</p>
+                    <p>L’état du logement peut être constaté par la description ou les photographies qu’en ont faites les parties, sinon le locataire est présumé l’avoir reçu en bon état (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1890' target='_blank'>1890</a> C.c.Q.).</p>
+                    <p><strong>56.</strong> À la fin du bail, le locataire doit enlever les constructions, ouvrages ou plantations qu’il a faits. S’ils ne peuvent être enlevés sans détériorer le logement, le locateur peut les conserver en en payant la valeur ou obliger le locataire à les enlever et à remettre le logement dans l’état où il l’a reçu.</p>
+                    <p>Lorsqu’il est impossible de remettre le logement dans l’état où il a été reçu, le locateur peut les conserver sans verser d’indemnité au locataire (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1891' target='_blank'>1891</a> C.c.Q.).</p>
+
+
+
+  # Finalisation du bail
+    - sectionGroup:
+        fr: Finalisation du bail
+        en: Finalization of the lease
+      classes: icone clipboard-check
+      sections:
+        # Choix de la langue du bail
+        - section:
+            fr: Choix de la langue du bail
+          id: choixLangueBail          
+          filtreEtapes: 
+            - initial: 
+          components:
+            - type: avis
+              text:
+                fr: | 
+                  <p>Le bail, ainsi que le règlement de l’immeuble, doivent être rédigés en français. Ils peuvent cependant être rédigés dans une autre langue si telle est la volonté expresse des parties (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1897' target='_blank'>1897</a> C.c.Q.).</p>
+                en: | 
+                  <p>TODO english - Le bail, ainsi que le règlement de l’immeuble, doivent être rédigés en français. Ils peuvent cependant être rédigés dans une autre langue si telle est la volonté expresse des parties (art. <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1897' target='_blank'>1897</a> C.c.Q.).</p>
+
+            - type: dynamic
+              tag: div
+              classes: mb-32
+              text:
+                fr: |
+                  <p>Le formulaire de bail sera créé automatiquement en format PDF.<p>                                    
+            - type: radio
+              name: langueBail
+              label:
+                fr: Dans quelle langue les parties veulent-elles que le formulaire de bail en format PDF soit créé et transmis?
+              options: 
+                francais: 
+                  fr: Français
+                  en: French
+                anglais:
+                  fr: Anglais
+                  en: English
+        
+        # Choix du mot de passe
+        - section:
+            fr: Choix du mot de passe
+          id: choixMotPasseBail          
+          filtreEtapes: 
+            - initial: 
+          components:
+            - type: dynamic
+              tag: div
+              classes: mb-32
+              text:
+                fr: |
+                  <div class="utd-page-texte">
+                    <p>Le mot de passe protège l'accès au formulaire de bail électronique. Il est requis par toutes les parties (autres locateurs, locataires et cautions, s'il y a lieu) pour accéder au bail, valider les informations qui s’y trouvent et y apposer leurs initiales et leurs signatures.</p>
+                    <p>Le locateur principal doit choisir un mot de passe et le <b>communiquer en toute sécurité à tous les autres signataires concernés</b> en toute sécurité.</p>
+                  </div>
+            - name: motPasseWF
+              type: text            
+              label: 
+                fr: Mot de passe
+                en: Password
+              outerClasses: lg
+
+        # Aperçu du bail
+        - section:
+            fr: Aperçu du bail
+          id: apercuBailLocateur
+          filtreEtapes: 
+            - initial: 
+          sommaire: 
+            inclureSections : 
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire              
+        # Révision
+        - section: 
+            fr: Révision
+            en: Revision
+          id: revision
+          cacherTexteExplicatifChampsObligatoires: true
+          components:
+            - type: dynamic
+              tag: div
+              v-if: val('EtatRevision') === 'initial'
+              classes: texte-revision
+              text: 
+                fr: Vous devez cliquer sur le bouton « Valider » afin de vérifier que le formulaire est rempli correctement.
+                en: You must click on the Validate button to verify that the form has been properly filled out.
+            - type: dynamic
+              tag: div
+              v-if: val('EtatRevision') === 'sans-erreur'
+              classes: texte-revision
+              text: 
+                fr: |
+                  <p>Votre formulaire est validé et ne contient aucune erreur.</p>
+                  <p>Vous pouvez le revérifier en cliquant sur le bouton "Précédent" au bas de la page ou en accédant directement à la page nommée "Aperçu du bail" dans le menu de navigation.</p>
+                  <p>Lorsque tout est correct, vous pouvez cliquer sur le bouton « Soumettre » afin de transmettre le bail aux participants du processus de signature électronique.</p>
+                en: |
+                  Your form has been validated. You can click on the Submit button.
