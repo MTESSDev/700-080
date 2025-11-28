@@ -395,7 +395,7 @@ form:
                 en: <p>The names indicated in the lease must be those that the lessee is legally authorized to use.</p>
             - type: repeatableGroup
               repeatable: true
-              limit: 1
+              limit: 4
               instanceLabel:
                 fr: Locataire
                 en: Lessee
