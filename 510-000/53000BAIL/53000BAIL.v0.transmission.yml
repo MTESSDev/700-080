@@ -16,6 +16,9 @@ workflows:
       - id: autreSignataire
         label: 
           fr: "Autre signataire"
+      - id: mandant
+        label: 
+          fr: "Mandant"
 
     # Étapes du WF
     etapes:
@@ -38,44 +41,61 @@ workflows:
           en: Initial      
         evenements:
           quandQuelqunTransmet:
+            - tache: genererPdf
+              langue: langueBail
             - tache: interventionParticipant
+              langue: fr
               options: 
                   role: locataire
                   vers: contributionSignature
                   chargerCourrielsWorkflow: true   
                   modeBoutonTesterTransmission: simuler
             - tache: interventionParticipant
+              langue: fr
               options: 
                   role: locateur
                   vers: contributionSignature
                   chargerCourrielsWorkflow: true   
                   modeBoutonTesterTransmission: simuler
             - tache: interventionParticipant
+              langue: fr
               options: 
                   role: autreSignataire
                   vers: contributionSignature
                   chargerCourrielsWorkflow: true   
                   modeBoutonTesterTransmission: simuler
             - tache: interventionParticipant
+              langue: fr
               options: 
                   role: locateurPrincipal
                   # vers: transmission
                   chargerCourrielsWorkflow: true
                   modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.  
 
+            - tache: interventionParticipant
+              langue: fr
+              options: 
+                  role: mandant
+                  chargerCourrielsWorkflow: true
+                  modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.  
+
             - tache: envoyerCourrielParticipant
+              langue: fr
               options: 
                   role: locataire
                   gabarit: demandeContributionSignature
             - tache: envoyerCourrielParticipant
+              langue: fr
               options: 
                   role: locateur
                   gabarit: demandeContributionSignature
             - tache: envoyerCourrielParticipant
+              langue: fr
               options: 
                   role: autreSignataire
                   gabarit: demandeContributionSignature
             - tache: envoyerCourrielParticipant
+              langue: fr
               options: 
                   role: locateurPrincipal
                   gabarit: suiviBail
@@ -88,6 +108,7 @@ workflows:
         evenements:
           quandLeDernierTransmet:
             - tache: interventionParticipant
+              langue: fr
               options: 
                   role: locateurPrincipal
                   vers: transmission
@@ -95,6 +116,7 @@ workflows:
                   modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.  
 
             - tache: envoyerCourrielParticipant
+              langue: fr
               options: 
                   role: locateurPrincipal
                   gabarit: demandeTransmission
@@ -108,27 +130,40 @@ workflows:
           en: TODO english Transmission
         evenements:
           quandQuelqunTransmet:
-            - tache: genererPDF
+            - tache: genererPdf
+              langue: langueBail
             - tache: traiterDocumentsSoumis
+              langue: fr
             - tache: ajouterEstampille
+              langue: fr
             - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
+              langue: fr
               options: 
                   role: locateurPrincipal
                   gabarit: confirmationBailFinal
                   modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.
             - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
+              langue: fr
               options: 
                   role: locateur
                   gabarit: confirmationBailFinal
                   modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.
             - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
+              langue: fr
               options: 
                   role: locataire
                   gabarit: confirmationBailFinal
                   modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.                     
             - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
+              langue: fr
               options: 
                   role: autreSignataire
+                  gabarit: confirmationBailFinal
+                  modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.                     
+            - tache: envoyerCourrielParticipant # remplacer par un envoyerCourrielParticipant pour chaque rôle
+              langue: fr
+              options: 
+                  role: mandant
                   gabarit: confirmationBailFinal
                   modeBoutonTesterTransmission: simuler #ignorer tâche skippée au complet #simuler ça fait comme si mais ça le fait pas mais ça le montre # pas d'option = execute pour vrai.                     
 
