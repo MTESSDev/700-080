@@ -240,7 +240,7 @@ form:
                     <p>The term “lessor” in the Civil Code of Québec generally refers to the owner of the immovable.</p>
             - type: repeatableGroup
               repeatable: true
-              limit: 4
+              limit: 1
               instanceLabel:
                 fr: Locateur
                 en: Lessor
@@ -395,7 +395,7 @@ form:
                 en: <p>The names indicated in the lease must be those that the lessee is legally authorized to use.</p>
             - type: repeatableGroup
               repeatable: true
-              limit: 4
+              limit: 1
               instanceLabel:
                 fr: Locataire
                 en: Lessee
