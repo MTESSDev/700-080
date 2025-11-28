@@ -186,12 +186,12 @@ bind:
     Autres_services_conditions_restrictions1:
       champs: [precisionAutresServicesConditionsRestriction]
     Neuf_oui:
-      champs: [situationApplicableRestrictionsFixationLoyer==estTerrainAmenageMoins5ans]
+      champs: [situationApplicableRestrictionsFixationLoyer==estLogementImmeubleMoins5ans]
     Changement_AFF_oui:
-      champs: [situationApplicableRestrictionsFixationLoyer==estChangementAffectationMoins5ans]
+      champs: [situationApplicableRestrictionsFixationLoyer==estLogementImmeubleChangementAffectation5ans]
     Date_changement_AFF:
-      champs: [dateTerrainPretUsageResidentielAffectation]
-      formule: '{dateTerrainPretUsageResidentielAffectation:dd          MM          yyyy}'
+      champs: [dateImmeublePretHabitationAffectation]
+      formule: '{dateImmeublePretHabitationAffectation:dd          MM          yyyy}'
     Loyer_maximal:
       champs: [loyerMaximalImeublePretPourUsage]
     Loyer_clauseG_1:
@@ -362,6 +362,7 @@ bind:
       champs: [dependancesIncluses==StationnementExterieur]
     Loyer_clauseG_2:
       champs: [montantDernierLoyerPaye]
+      formule: '{montantDernierLoyerPaye:forcerNombre(decimales)}'
     ClauseG_2_mois:
       champs: [frequenceDernierLoyer==mois]
     ClauseG_2_semaine:
@@ -462,3 +463,42 @@ bind:
       champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteTaxeConsommationEau==cooperative]
     Taxe_eau_locataire:
       champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteTaxeConsommationEau==locataire]
+    Deneigement_stat_cooperative:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementStationnement==cooperative]
+    Deneigement_stat_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementStationnement==locataire]
+    Deneigement_balcon_cooperative:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementBalcon==cooperative]
+    Deneigement_balcon_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementBalcon==locataire]
+    Deneigement_entree_cooperative:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementEntree==cooperative]
+    Deneigement_entree_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementEntree==locataire]
+    Deneigement_escalier_cooperative:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementEscalier==cooperative]
+    Deneigement_escalier_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteDeneigementEscalier==locataire]
+    Terrain_oui:
+      champs: [locatairePossedeDroitAccesTerrain==true]
+    Terrain_non:
+      champs: [locatairePossedeDroitAccesTerrain==false]
+    Terrain_preciser:
+      champs: [precisionLocatairePossedeDroitAccesTerrain]
+    Loue_membre_oui:
+      champs: [estLogementLoueMembre==true]
+    Date_pret_habitation:
+      champs: [dateImmeublePretHabitation]
+      formule: '{dateImmeublePretHabitation:dd          MM          yyyy}'
+    ClauseG_3:
+      champs: [situationApplicableAvisNouveauLocataire==residencePriveeAines]
+    Loyer_clauseG_3:
+      champs: [montantLoyerBailPrecedent]
+    ClauseG_3_mois:
+      champs: [frequenceLoyerBailPrecedent==mois]
+    ClauseG_3_semaine:
+      champs: [frequenceLoyerBailPrecedent==semaine]
+    ClauseG_3_autre:
+      champs: [frequenceLoyerBailPrecedent==autre]
+    ClauseG_3_autre_frequence:
+      champs: [precisionAutreFrequenceLoyerBailPrecedent]
