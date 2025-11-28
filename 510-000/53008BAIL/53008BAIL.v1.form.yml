@@ -1,6 +1,10 @@
 # yaml-language-server: $schema=https://formulaires.it.mtess.gouv.qc.ca/api/v1/SIS/ObtenirSchema/form
 # debug: langue=auto, showAll=false
 config:
+  aiguillage:
+    choix:
+      - mode: workflow
+        Workflow: bail53000
   securite:
     accesAnonyme: true
   title:
@@ -36,11 +40,16 @@ config:
       urlLien: 
         fr: https://www.tal.gouv.qc.ca/fr/nous-joindre
         en: https://www.tal.gouv.qc.ca/en/contact-us
+  paiement:
+    actif: false
+    fournisseur:
+      type: moneris
+      storeId: store1
+      apiToken: yesguy1
+      checkoutId: chkt7TRLFtore1
   enregistrement:
     actif: true
     afficherMessageIncitatif: false
-  postesCanada: 
-    cle: UX84-TU29-KU11-NC61
   injecterJs: 
     computed:
       coutTotalLoyerComputed:
@@ -54,69 +63,91 @@ config:
       produitsMoneris:
         code: |
           (){
-            return 2;
+            return 2.99
           }
     watch:
       coutTotalLoyerComputed:
         code: |
           (value){  
-            this.form.coutTotalLoyer = value.toFixed(2);
-          }    
-  domaines:
-    nombrePieces:
-      un:
-        label:
-          fr: "1"
-      un-demi:
-        label:
-          fr: "1 ½"
-      deux:
-        label:
-          fr: "2"
-      deux-demi:
-        label:
-          fr: "2 ½"
-      trois:
-        label:
-          fr: "3"
-      trois-demi:
-        label:
-          fr: "3 ½"
-      quatre:
-        label:
-          fr: "4"
-      quatre-demi:
-        label:
-          fr: "4 ½"
-      cinq:
-        label:
-          fr: "5"
-      cinq-demi:
-        label:
-          fr: "5 ½"
-      six:
-        label:
-          fr: "6"
-      six-demi:
-        label:
-          fr: "6 ½"
-      sept:
-        label:
-          fr: "7"
-      sept-demi:
-        label:
-          fr: "7 ½"
-      autre:
-        label:
-          fr: "Autre"
-          en: "Other"
+             this.form.coutTotalLoyer = value; 
+          }
 
+  domaines: 
+      locateurLocataireNA:
+        locateur:
+          label: 
+            fr: Locateur
+            en: Lessor
+        locataire:
+          label:
+            fr: Locataire   
+            en: Lessee
+        na:
+          label:
+            fr: Ne s'applique pas
+            en: Does not apply
+      locateurLocataire:
+        locateur:
+          label: 
+            fr: Locateur
+            en: Lessor
+        locataire:
+          label:
+            fr: Locataire   
+            en: Lessee
+
+      nombrePieces:
+        un:
+          label:
+            fr: "1"
+        un-demi:
+          label:
+            fr: "1 ½"
+        deux:
+          label:
+            fr: "2"
+        deux-demi:
+          label:
+            fr: "2 ½"
+        trois:
+          label:
+            fr: "3"
+        trois-demi:
+          label:
+            fr: "3 ½"
+        quatre:
+          label:
+            fr: "4"
+        quatre-demi:
+          label:
+            fr: "4 ½"
+        cinq:
+          label:
+            fr: "5"
+        cinq-demi:
+          label:
+            fr: "5 ½"
+        six:
+          label:
+            fr: "6"
+        six-demi:
+          label:
+            fr: "6 ½"
+        sept:
+          label:
+            fr: "7"
+        sept-demi:
+          label:
+            fr: "7 ½"
+        autre:
+          label:
+            fr: "Autre"
+            en: "Other"
 form:
   title:
     fr: Bail d’un logement à loyer modique
     en: Lease for a Dwelling in Low-Rental Housing
   sectionsGroup:
-
     # Compléter votre formulaire de bail : étapes à suivre
     - sectionGroup:
         fr: "Compléter votre formulaire de bail : étapes à suivre"
@@ -186,29 +217,30 @@ form:
                   </ul>
                   <p>Après la finalisation et le paiement du formulaire de bail électronique, <b>aucune modification ne peut être effectuée</b> dans le service en ligne.</p>                            
 
-    # A- Parties du bail    
+    # A- Parties du bail
     - sectionGroup:
         fr: A - Identification du locateur et du locataire
-        en: TODO english A - Identification du locateur et du locataire
+        en: TODO english A- Identification du locateur et du locataire
       classes: icone user
+      filtreEtapes: 
+        - initial:
       sections:
-
         # Locateur
         - section:
             fr: Locateur
             en: Lessor
           id: infosLocateur
-          components:          
+          components:
             - type: avis
               classes: information
               text:
                 fr: <p>Les noms indiqués dans le bail doivent correspondre à ceux que le locateur et le locataire peuvent légalement utiliser.</p>
                     <p>Le terme « locateur » que l’on trouve au Code civil du Québec renvoie généralement au propriétaire de l’immeuble.</p>
                 en: <p>The names indicated in the lease must be those that the lessor is legally authorized to use.</p>
-                      <p>The term “lessor” in the Civil Code of Québec generally refers to the owner of the immovable.</p>
+                    <p>The term “lessor” in the Civil Code of Québec generally refers to the owner of the immovable.</p>
             - type: repeatableGroup
               repeatable: true
-              limit: 1
+              limit: 4
               instanceLabel:
                 fr: Locateur
                 en: Lessor
@@ -254,28 +286,6 @@ form:
                     en: Other telephone number (cell phone)
                   validations:
                     optional: null
-                - type: courrielWorkflow
-                  v-if: index === 0
-                  role: locateurPrincipal
-                  motDePasse: val('motPasseWF')
-                  name: courrielPrincipal
-                  label: 
-                    fr: Adresse de courriel
-                    en: Email address
-                  help:
-                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
-                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
-                - type: courrielWorkflow
-                  v-if: index > 0              
-                  role: locateur
-                  motDePasse: val('motPasseWF')
-                  name: courriel
-                  label: 
-                    fr: Adresse de courriel
-                    en: Email address
-                  help:
-                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
-                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
                 - type: radio
                   name: questionRepresentant
                   label:
@@ -291,12 +301,86 @@ form:
                       en: |
                         <p>TODO english - Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locateur est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
                   options: yesno
+
+                - type: avis
+                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
+                  text:
+                    fr: |
+                      <p>Les parties (locateur(s) et locataire(s)) doivent prendre certains engagements avant de signer le formulaire de bail électronique.</p>
+                      <p>Lorsqu’une partie choisit d’être représentée pour la conclusion du bail, <b>elle autorise le représentant à s’engager en son nom</b>.</p>
+                      <p>Le représentant recevra par courriel un hyperlien pour <b>valider les informations saisies, prendre les engagements requis et signer le formulaire de bail électronique au nom de la partie qu’il représente</b>.</p>                  
+                      
                 - type: text
                   name: representant            
                   label: 
                     fr: Représenté par
                     en: Represented by
                   v-if: val(`${name}.questionRepresentant`, index) === 'true'
+
+                # Courriel du locateur principal
+                - type: courrielWorkflow
+                  v-if: index === 0 && val(`${name}.questionRepresentant`, index) === 'false'
+                  role: locateurPrincipal
+                  motDePasse: val('motPasseWF')
+                  name: courrielLocateur
+                  label: 
+                    fr: Adresse de courriel
+                    en: Email address
+                  help:
+                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
+                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
+
+                # Courriel autre locateur
+                - type: courrielWorkflow
+                  v-if: index > 0 && val(`${name}.questionRepresentant`, index) === 'false'             
+                  role: locateur
+                  motDePasse: val('motPasseWF')
+                  name: courrielLocateur
+                  label: 
+                    fr: Adresse de courriel
+                    en: Email address
+                  help:
+                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
+                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
+                
+                # Courriel du représentant locateur principal
+                - type: courrielWorkflow
+                  v-if: index === 0 && val(`${name}.questionRepresentant`, index) === 'true'
+                  role: locateurPrincipal
+                  motDePasse: val('motPasseWF')
+                  name: courrielRepresentant
+                  label: 
+                    fr: Adresse de courriel du représentant
+                    en: Email address
+                  help:
+                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
+                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
+
+                # Courriel du représentant autre locateur 
+                - type: courrielWorkflow
+                  v-if: index > 0 && val(`${name}.questionRepresentant`, index) === 'true'             
+                  role: locateur
+                  motDePasse: val('motPasseWF')
+                  name: courrielRepresentant
+                  label: 
+                    fr: Adresse de courriel du représentant
+                    en: Email address
+                  help:
+                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
+                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
+
+                # Courriel du locateur mandant
+                - type: courrielWorkflow
+                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
+                  role: mandant
+                  motDePasse: val('motPasseWF')
+                  name: courrielMandant
+                  label: 
+                    fr: Adresse de courriel du locateur
+                  help:
+                    fr: Une adresse de courriel valide est requise pour recevoir une copie du bail final.
+                  validations:
+                    optional:
 
         # Locataire
         - section:
@@ -323,19 +407,19 @@ form:
                 en: Remove the lessee
               name: locataires
               label:
-                fr: Locataires
-                en: Lessees
+                fr: Locataire(s)
+                en: Lessee(s)
               tooltip:
                 title: 
                   fr: Locataire
                   en: Lessee
                 text:
                   fr: Le locataire est la personne qui loue un logement à un locateur, généralement le propriétaire de l’immeuble où se situe le logement.
-                  en: TODO english - Le locataire est la personne qui loue un logement à un locateur, généralement le propriétaire de l’immeuble où se situe le logement.                
-              components: 
-                - type: text
-                  name: nom
-                  label:
+                  en: TODO english - Le locataire est la personne qui loue un logement à un locateur, généralement le propriétaire de l’immeuble où se situe le logement.
+              components:
+                - name: nom
+                  type: text
+                  label: 
                     fr: Nom
                     en: Name
                   tooltip:
@@ -344,7 +428,7 @@ form:
                       en: Name
                     text:
                       fr: <p>Afin de s’assurer de l’identité de l'aspirant locataire, le locateur peut demander que lui soit présentée une pièce d’identité, avec ou sans photo, comme un permis de conduire, une carte d’assurance maladie ou sociale ou un passeport. Toutefois, le locateur ne peut recueillir les informations contenues sur cette pièce. Il ne peut donc pas faire une photocopie de cette pièce, ni la prendre en photo, ni la conserver dans le dossier de location.</p>
-                      en: <p>TODO english</p>     
+                      en: <p>TODO english</p>
                 - type: adresse
                   name: adresse
                   label:
@@ -353,9 +437,6 @@ form:
                   help: 
                     fr: Veuillez inscrire l'adresse actuelle du locataire.
                     en: TODO english
-                  additionals:                
-                    filtre-pays: CAN
-                    conserver-donnees-postes-canada: true
                 - type: tel
                   name: noTelephone
                   label: 
@@ -370,8 +451,42 @@ form:
                     en: Other telephone number (cell phone)
                   validations:
                     optional: null
-                - type: email
-                  name: courriel
+                - type: radio
+                  name: questionRepresentant
+                  label:
+                    fr: Serez-vous représenté par quelqu’un pour la signature du bail?
+                    en: TODO English Serez-vous représenté par quelqu’un pour la signature du bail?
+                  options: yesno
+                  tooltip:
+                    title:
+                      fr: Le représentant
+                      en: TODO - Le représentant
+                    text:
+                      fr: |
+                        <p>Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locataire est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
+                      en: |
+                        <p>TODO english - Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locataire est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
+                - type: avis
+                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
+                  text:
+                    fr: |
+                      <p>Les parties (locateur(s) et locataire(s)) doivent prendre certains engagements avant de signer le formulaire de bail électronique.</p>
+                      <p>Lorsqu’une partie choisit d’être représentée pour la conclusion du bail, <b>elle autorise le représentant à s’engager en son nom</b>.</p>
+                      <p>Le représentant recevra par courriel un hyperlien pour <b>valider les informations saisies, prendre les engagements requis et signer le formulaire de bail électronique au nom de la partie qu’il représente</b>.</p>                  
+
+                - type: text
+                  name: representant            
+                  label: 
+                    fr: Représenté par
+                    en: Represented by
+                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
+
+
+                - type: courrielWorkflow
+                  role: locataire
+                  motDePasse: val('motPasseWF')
+                  name: courrielLocataire
+                  v-if: val(`${name}.questionRepresentant`, index) === 'false'                
                   label: 
                     fr: Adresse de courriel
                     en: Email address
@@ -385,33 +500,42 @@ form:
                     text:
                       fr: <p>L’adresse de courriel du locataire peut être pratique pour communiquer avec lui. Toutefois, il est préférable d’obtenir un consentement libre et éclairé du locataire pour procéder ainsi. Vous pourrez joindre son consentement en le téléchargeant à la “Section services et conditions”.</p>
                       en: <p>TODO english</p>
-                - type: radio
-                  name: questionRepresentant
-                  label:
-                    fr: Serez-vous représenté par quelqu’un pour la signature du bail?
-                    en: TODO English Serez-vous représenté par quelqu’un pour la signature du bail?
-                  tooltip:
-                    title:
-                      fr: Le représentant
-                      en: TODO - Le représentant
-                    text:
-                      fr: |
-                        <p>Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locateur est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
-                      en: |
-                        <p>TODO english - Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locateur est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
-                  options: yesno
-                - type: text
-                  name: representant
+
+
+                # Courriel du représentant locataire
+                - type: courrielWorkflow
+                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
+                  role: locataire
+                  motDePasse: val('motPasseWF')
+                  name: courrielRepresentant
                   label: 
-                    fr: Représenté par    
-                    en: Represented by
-                  v-if: val(`${name}.questionRepresentant`) === 'true'
+                    fr: Adresse de courriel du représentant
+                    en: Email address
+                  help:
+                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
+                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
+
+                # Courriel du locataire mandant
+                - type: courrielWorkflow
+                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
+                  role: mandant
+                  motDePasse: val('motPasseWF')
+                  name: courrielMandant
+                  label: 
+                    fr: Adresse de courriel du locataire
+                  help:
+                    fr: Une adresse de courriel valide est requise pour recevoir une copie du bail final.
+                  validations:
+                    optional:
     # B - Description du logement loué
     - sectionGroup:
         fr: B - Description du logement loué
         en: B - Description of the dwelling
       classes: icone register
-      sections:
+      filtreEtapes: 
+        - initial: 
+      sections:        
+        # Description du logement
         - section:
             fr: Description du logement
             en: Description of the dwelling
@@ -420,13 +544,17 @@ form:
             - type: avis
               classes: information
               text:
-                fr: <p>Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892' target='_blank'>1892 C.c.Q.</a></p>
-                en: <p>Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892' target='_blank'>1892 C.c.Q.</a></p>
+                fr: |
+                  <p>Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892' target='_blank'>1892</a> C.c.Q.</p>
+                en: |                  
+                  <p>TODO english Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1892' target='_blank'>1892</a> C.C.Q.</p>
             - type: adresse
               name: adresseLogement
               label:
                 fr: Adresse du logement
                 en: Address of the dwelling
+              additionals:
+                quebec-seulement: true
             - type: listeDeroulante
               options: nombrePieces
               additionals:
@@ -437,7 +565,7 @@ form:
                   fr: Nombre de pièces
                 text:
                   fr: <p>Si vous louez seulement une chambre dans un logement, indiquez "1" comme nombre de pièces.</p>
-                  en: <p>TODO english</p>
+                  en: <p>TODO english Si vous louez seulement une chambre dans un logement, indiquez "1" comme nombre de pièces.</p>
               label: 
                 fr: Nombre de pièces
                 en: Number of rooms
@@ -445,14 +573,17 @@ form:
               name: nbPiecesAutre
               v-if: val('nbPieces') === 'autre'
               label: 
-                fr: Préciser le nombre de pièces
+                fr: Veuillez préciser le nombre de pièces
                 en: Specify the number of rooms
-    # C - Durée du bail                
+    # C - Durée du bail
     - sectionGroup:
         fr: C - Durée du bail
-        en: Term of lease
+        en: C - Term of lease
       classes: icone register
+      filtreEtapes: 
+        - initial: 
       sections:
+        # Durée du bail                
         - section:
             fr: Durée du bail
             en: Term of lease
@@ -461,19 +592,21 @@ form:
             - type: avis
               classes: information
               text:
-                fr: Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1851' target='_blank'>1851 C.c.Q.</a>
-                en: TODO english Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1851' target='_blank'>1851 C.c.Q.</a>
+                fr: |
+                  <p>Pour plus de précisions, veuillez consulter l'article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1851' target='_blank'>1851</a> C.c.Q.</p>                
+                en: |                  
+                  <p>Art. <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1851' target='_blank'>1851</a> C.C.Q.</p>                  
             - type: text
               name: nbSemainesMoisAnnees
               label:
                 fr: Ce bail a une durée de
                 en: This lease has a duration of
               help: 
-                  fr: Veuillez préciser le nombre de semaines, de mois ou d'années.
-                  en: Specify the number of weeks, months or years.
+                fr: Veuillez préciser le nombre de semaines ou de mois.
+                en: Specify the number of weeks or months.
               placeholder:
-                fr: Ex. 1 an, 6 mois, etc.
-                en: Ex. 1 year, 6 months, etc.
+                fr: P. ex. 1 an, 6 mois, etc.
+                en: E.g. 1 year, 6 months, etc.
               outerClasses: lg
             - type: inline
               components:
@@ -487,10 +620,12 @@ form:
                   label:
                     fr: Date de fin
                     en: End date
-    # D - Loyer                    
+    # D - Loyer
     - sectionGroup:
         fr: D - Loyer
-        en: Rent
+        en: D - Rent
+      filtreEtapes: 
+        - initial: 
       classes: icone cash-dollar
       sections:
         - section:
@@ -502,8 +637,7 @@ form:
               classes: information
               text:
                 fr: |
-                  <p><strong>Loyer :</strong> Le loyer est payable par versements égaux ne dépassant pas un mois de loyer, sauf le dernier versement, qui peut être moins élevé.</p>
-                  <p>Le bail d’une durée de plus de douze mois peut faire l’objet d’un seul réajustement du loyer au cours de chaque période de douze mois. Il ne peut varier au cours des douze premiers mois (art. <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1906' target='_blank'>1906</a> C.c.Q.).</p>
+                  <p><strong>Loyer :</strong> Le loyer est payable par versements égaux ne dépassant pas un mois de loyer, sauf le dernier versement, qui peut être moins élevé. Toutefois, il peut varier en cours de bail conformément aux articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1992' target='_blank'>1992</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1994' target='_blank'>1994</a> C.c.Q. (mentions 13 et 14).</p>
                   <p><strong>Le locateur ne peut exiger aucune autre somme d’argent du locataire (exemple: dépôt pour les clés).</strong></p>
                   <p>Pour plus de précisions, veuillez consulter les articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1855' target='_blank'>1855</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1903' target='_blank'>1903</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1904' target='_blank'>1904</a> C.c.Q.</p>
                 en: "<p>TODO english</p>"
@@ -524,6 +658,11 @@ form:
                 semaine:
                   fr: Par semaine
                   en: Per week
+            - type: avis
+              classes: information
+              text:
+                fr: |
+                  <p>Ce loyer est le résultat de l’application de la réglementation relative aux conditions de location des logements à loyer modique.</p>
             - type: radio
               name: bailIncluServices
               label:
@@ -682,6 +821,8 @@ form:
         fr: E - Accessoires, dépendances, services et conditions
         en: Accessories, dependencies, services and conditions
       classes: icone register
+      filtreEtapes: 
+        - initial:
       sections:
 
         # Règlement de l'immeuble
@@ -700,7 +841,7 @@ form:
               en: |
                 <p>By-laws of the immovable: The rules to be observed in the immovable are established by by-laws. The by-laws pertain to the enjoyment, use and maintenance of the dwelling and of the common premises.</p>
                 <p>If such by-laws exist, the lessor must give a copy of them to the lessee before entering into the lease so that the by-laws form part of the lease (art. <a href="https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1894" target="_blank">1894</a>1894 C.C.Q.).</p>
-                <p>The by-laws may not contradict the lease or violate the law.</p>            
+                <p>The by-laws may not contradict the lease or violate the law.</p>
                           
           - name: possedeReglementImmeubleJointBail
             type: radio
@@ -716,7 +857,69 @@ form:
                 multiple: true
             label:
               fr: Exemplaire du règlement de l’immeuble à joindre au bail 
-              en: TODO english - Exemplaire du règlement de l’immeuble à joindre au bail              
+              en: TODO english - Exemplaire du règlement de l’immeuble à joindre au bail
+
+        # Accessoires, dépendances, services et conditions
+        - section:
+            fr: Accessoires, dépendances, services et conditions
+            en: Accessories, dependencies, services and conditions
+          id: autresAccesoiresDependancesServicesConditions
+          components:
+            - name: possedeAutresServicesConditionsRestriction
+              type: radio
+              options: yesno
+              label:
+                fr: Est-ce qu'il y a des accessoires, dépendances, services et conditions autres que ceux prévus dans les conditions de location établies par la réglementation?
+                en: Are there any accessories, dependencies, services and conditions other than those provided for in the rental conditions established by the regulations?
+            - name: precisionAutresServicesConditionsRestriction
+              type: textarea
+              v-if: val('possedeAutresServicesConditionsRestriction') === 'true'
+              label:
+                fr: Veuillez préciser les autres accessoires, dépendances, services et conditions
+                en: Specify other accessories, dependencies, services and conditions
+              validations: 
+                max: 150
+              additionals:
+                max-caracteres: 300
+                hauteur-automatique: true
+
+            - name: possedeDocumentsJoindreBail
+              type: radio
+              options: yesno
+              label:
+                fr: Souhaitez-vous joindre des documents au bail?
+                en: TODO english - Souhaitez-vous joindre des documents au bail?
+              help: 
+                fr: Excluant le règlement de l’immeuble, celui-ci doit être joint dans la section "E – Accessoires, dépendances, services et conditions, Règlement de l’immeuble".
+                en: TODO english - Excluant le règlement de l’immeuble, celui-ci doit être joint dans la section "E – Services et conditions, Règlement de l’immeuble".
+            - name: DescriptionDocumentsJointsBail
+              type: textarea
+              v-if: val('possedeDocumentsJoindreBail') === 'true'
+              label:
+                fr: Veuillez préciser les documents que vous désirez joindre au bail
+              help: 
+                fr: P. ex. Contrat de cautionnement, document sur les conditions de vie en résidence privée pour aînés, consentement à la communication par courriel, etc.
+                en: TODO english - P. ex. Contrat de cautionnement, document sur les conditions de vie en résidence privée pour aînés, consentement à la communication par courriel, etc.                
+              validations: 
+                max: 150
+              additionals:
+                max-caracteres: 150
+                hauteur-automatique: true
+
+            - name: possedeServicesAdditionnelsBail
+              type: radio
+              options: yesno
+              label:
+                fr: Offrez-vous des services additionnels à ceux indiqués dans le présent formulaire, dont des services qui se rattachent à la personne même du locataire?
+                en: TODO english - Offrez-vous des services additionnels à ceux indiqués dans le présent formulaire, dont des services qui se rattachent à la personne même du locataire?
+            - type: avis        
+              classes: avertissement            
+              v-if: val('possedeServicesAdditionnelsBail') === 'true'
+              text:
+                fr: |
+                  <p>Conformément aux articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892_1' target='_blank'>1892.1</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1895_1' target='_blank'>1895.1</a> C.c.Q., vous devez compléter l’Annexe 6 au bail : services offerts au locataire par le locateur.</p>
+                en: |
+                  <p>TODO english - Conformément aux articles <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1892_1' target='_blank'>1892.1</a> et <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1895_1' target='_blank'>1895.1</a> C.c.Q., vous devez compléter l’Annexe 6 au bail : services offerts au locataire par le locateur.</p>
 
         # Conditions
         - section:
@@ -771,71 +974,7 @@ form:
                 fr: Ex. Nombre, taille, poids, etc.
                 en: E.g., number, height, weight, etc.
               validations:
-                optional: null
-
-        # Autres accessoires, dépendances, services et conditions
-        - section:
-            fr: Autres accessoires, dépendances, services et conditions
-            en: TODO english - Autres accessoires, dépendances, services et conditions
-          id: autresAccesoiresDependancesServicesConditions
-          components:
-            - name: possedeAutresServicesConditionsRestriction
-              type: radio
-              options: yesno
-              label:
-                fr: Est-ce qu'il y a des accessoires, dépendances, services et conditions autres que ceux prévus dans les conditions de location établies par la réglementation?
-                en: Are there any accessories, dependencies, services and conditions other than those provided for in the rental conditions established by the regulations?
-            - name: precisionAutresServicesConditionsRestriction
-              type: textarea
-              v-if: val('possedeAutresServicesConditionsRestriction') === 'true'
-              label:
-                fr: Veuillez préciser les autres accessoires, dépendances, services et conditions
-                en: Specify other accessories, dependencies, services and conditions
-              validations: 
-                max: 150
-              additionals:
-                max-caracteres: 300
-                hauteur-automatique: true
-
-            - name: possedeDocumentsJoindreBail
-              type: radio
-              options: yesno
-              label:
-                fr: Souhaitez-vous joindre des documents au bail?
-                en: TODO english - Souhaitez-vous joindre des documents au bail?
-              help: 
-                fr: Excluant le règlement de l’immeuble, celui-ci doit être joint dans la section "E – Services et conditions, Règlement de l’immeuble".
-                en: TODO english - Excluant le règlement de l’immeuble, celui-ci doit être joint dans la section "E – Services et conditions, Règlement de l’immeuble".
-            - name: DescriptionDocumentsJointsBail
-              type: textarea
-              v-if: val('possedeDocumentsJoindreBail') === 'true'
-              label:
-                fr: Veuillez préciser les documents que vous désirez joindre au bail
-              help: 
-                fr: P. ex. Contrat de cautionnement, document sur les conditions de vie en résidence privée pour aînés, consentement à la communication par courriel, etc.
-                en: TODO english - P. ex. Contrat de cautionnement, document sur les conditions de vie en résidence privée pour aînés, consentement à la communication par courriel, etc.                
-              validations: 
-                max: 150
-              additionals:
-                max-caracteres: 150
-                hauteur-automatique: true
-
-            - name: possedeServicesAdditionnelsBail
-              type: radio
-              options: yesno
-              label:
-                fr: Offrez-vous des services additionnels à ceux indiqués dans le présent formulaire, dont des services qui se rattachent à la personne même du locataire?
-                en: TODO english - Offrez-vous des services additionnels à ceux indiqués dans le présent formulaire, dont des services qui se rattachent à la personne même du locataire?
-            - type: avis        
-              classes: avertissement            
-              v-if: val('possedeServicesAdditionnelsBail') === 'true'
-              text:
-                fr: |
-                  <p>Conformément aux articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892_1' target='_blank'>1892.1</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1895_1' target='_blank'>1895.1</a> C.c.Q., vous devez compléter l’Annexe 6 au bail : services offerts au locataire par le locateur.</p>
-                en: |
-                  <p>TODO english - Conformément aux articles <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1892_1' target='_blank'>1892.1</a> et <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1895_1' target='_blank'>1895.1</a> C.c.Q., vous devez compléter l’Annexe 6 au bail : services offerts au locataire par le locateur.</p>
-
-          
+                optional: null          
 
         # Engagement pour avertisseurs de fumée
         - section:
@@ -861,6 +1000,8 @@ form:
         fr: F - Annexes
         en: F - Schedules
       classes: icone register
+      filtreEtapes: 
+        - initial:
       sections:
         - section:
             fr: Annexes
@@ -870,8 +1011,8 @@ form:
             - type: radio
               name: bailPossedeAnnexes     
               label:
-                fr: Y a t-il des annexes à ce bail?
-                en: Are there any schedules to this lease?
+                fr: Ce bail est-il complété par des annexes qui en font partie intégrante?
+                en: Are there any schedules forming an integral part of the lease?
               options: yesno
             - type: textarea
               name: champAnnexes        
@@ -882,6 +1023,7 @@ form:
               validations:
                 optional: null
 
+# rendu ici ... à rajouter les sections passées l'étape initiale... 
 
     # Mentions légales
     - sectionGroup:
@@ -900,6 +1042,7 @@ form:
               classes: avertissement
               text:
                 fr: |
+                  <p>TODO section à compléter... comporte plusieurs différences avec les mentions légales du bail 53000. </p>
                   <p>En cas de divergence entre le présent document et les lois applicables au logement, ces lois ont priorité.</p>
             - type: dynamic
               tag: div
@@ -907,262 +1050,9 @@ form:
               text:
                 fr: |
                     <hr>
-                    <h3>RENSEIGNEMENTS GÉNÉRAUX</h3>
-                    <p>Les présentes mentions décrivent la plupart des droits et obligations des locateurs et des locataires. Elles résument l’essentiel de la loi sur le contrat de bail, soit les articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1851' target='_blank'>1851</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1978_4' target='_blank'>1978.4</a> du Code civil du Québec (C.c.Q.) et les règles spécifiques au logement à loyer modique contenues aux articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1984' target='_blank'>1984</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1995' target='_blank'>1995</a> C.c.Q.</p>
-                    <p>Les exemples donnés dans les mentions ont une valeur informative et servent à illustrer une règle. Pour connaître d’autres obligations auxquelles peuvent être astreintes les parties à un contrat de bail, on peut se reporter par le Code civil du Québec. Aucun droit ne peut être exercé en vue de nuire à autrui ou d’une manière excessive et déraisonnable, allant ainsi à l’encontre des exigences de la bonne foi (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:6' target='_blank'>6</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:7' target='_blank'>7</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1375' target='_blank'>1375</a> C.c.Q.).</p>
-                    <p>Les mentions s’appliquent à tout lieu loué à des fins d’habitation ainsi qu’aux services, aux accessoires et aux dépendances du logement, qu’ils soient inclus dans le bail du logement ou dans un autre bail. Des exceptions s’appliquent (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892' target='_blank'>1892</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892_1' target='_blank'>1892.1</a> C.c.Q.).</p>
-                    <p>Sauf si les dimensions du logement le justifient, un locateur ne peut refuser de consentir un bail à une personne, refuser de la maintenir dans ses droits ou lui imposer des conditions plus onéreuses pour le seul motif qu’elle est enceinte ou qu’elle a un ou des enfants. Il ne peut non plus agir ainsi pour le seul motif qu’une personne a exercé un droit qui lui est accordé en vertu du chapitre sur le louage du Code civil du Québec ou en vertu de la Loi sur le Tribunal administratif du logement (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1899' target='_blank'>1899</a> C.c.Q.).</p>
-                    <p>Nul ne peut harceler un locataire de manière à restreindre son droit à la jouissance paisible des lieux ou à obtenir qu’il quitte son logement. En cas de violation, des dommages punitifs peuvent être réclamés (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1902' target='_blank'>1902</a> C.c.Q.).</p>
-                    <p>L’inexécution d’une obligation par une partie donne le droit à l’autre partie d’exercer certains recours devant un tribunal, généralement le Tribunal administratif du logement. Ces recours concernent notamment l’exécution d’une obligation, la diminution du loyer, la résiliation du bail, des dommages-intérêts et, dans certains cas, des dommages punitifs.</p>
-                    <utd-accordeon titre="Charte des droits et libertés de la personne" tag="h4" reduit="false">
-                    <p>Ces droits et obligations doivent s’exercer dans le respect des droits reconnus par la Charte qui prescrit, entre autres choses, que toute personne a droit au respect de sa vie privée, à la jouissance paisible et à la libre disposition de ses biens, sauf dans la mesure prévue par la loi, et que la demeure est inviolable.</p>
-                    <p>La Charte interdit aussi toute discrimination et tout harcèlement fondés sur la race, la couleur, le sexe, l’identité ou l’expression de genre, la grossesse, l’orientation sexuelle, l’état civil, l’âge sauf dans la mesure prévue par la loi, la religion, les convictions politiques, la langue, l’origine ethnique ou nationale, la condition sociale, le handicap ou l’utilisation d’un moyen pour pallier ce handicap. La Charte protège également la personne âgée ou handicapée contre toute forme d’exploitation.</p>
-                    <p>Toute personne victime de discrimination ou de harcèlement pour l’un de ces motifs peut porter plainte</p>
-                    <p>auprès de la Commission des droits de la personne et des droits de la jeunesse.</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="Accès aux documents et protection" tag="h4" reduit="false">
-                    <p>des renseignements personnels</p>
-                    <p>Le locateur, s’il est un organisme public, doit respecter les prescriptions de la Loi sur l’accès aux documents des organismes publics et sur la protection des renseignements personnels. Sinon, il doit respecter les prescriptions de la Loi sur la protection des renseignements personnels dans le secteur privé.</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="Annexe 6" tag="h4" reduit="false">
-                    <p>Si le bail comprend des services additionnels à ceux indiqués dans le présent formulaire, dont des services qui se rattachent à la personne même du locataire, l’Annexe 6 au bail : services offerts au locataire par le locateur doit être remplie.</p>
-                    </utd-accordeon>
-
-                    <hr>
-                    <h3>LA CONCLUSION DU BAIL</h3>
-                    <utd-accordeon titre="La langue du bail et du règlement de l’immeuble" tag="h4" reduit="false">
-                    <p><strong>1.</strong> Le bail et le règlement de l’immeuble doivent être rédigés en français. Toutefois, le locateur et le locataire peuvent s’entendre expressément pour utiliser une autre langue (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1897' target='_blank'>1897</a> C.c.Q.).</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="Les clauses du bail" tag="h4" reduit="false">
-                    <p><strong>2.</strong> Le locateur et le locataire peuvent s’entendre sur différentes clauses, mais ils ne peuvent déroger par une clause du bail aux dispositions d’ordre public de la loi ni à celles des règlements de la Société d’habitation du Québec.</p>
-                    <p>Les règles de droit contenues dans les mentions 18, 19 et 54 à 56 sont supplétives, c’est-à-dire qu’elles s’appliquent si les parties n’en conviennent pas autrement.</p>
-                    <p><strong>3.</strong> En vertu de l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1893' target='_blank'>1893</a> C.c.Q., les clauses qui dérogent aux articles <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1854' target='_blank'>1854 al. 2</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1856' target='_blank'>1856</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1858' target='_blank'>1858</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1860' target='_blank'>1860</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1863' target='_blank'>1863</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1865' target='_blank'>1865</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1866' target='_blank'>1866</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1868' target='_blank'>1868</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1872' target='_blank'>1872</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1875' target='_blank'>1875</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1876' target='_blank'>1876</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1883' target='_blank'>1883</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892' target='_blank'>1892</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:2000' target='_blank'>2000</a> C.c.Q. sont sans effet.</p>
-                    <p>Par exemple :</p>
-                    <ul>
-                    <li>le locataire ne peut renoncer dans le bail à son droit au maintien dans les lieux (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1936' target='_blank'>1936</a> C.c.Q.) ;</li>
-                    <li>Les parties ne peuvent convenir que le locataire pourra sous-louer son logement ou céder son bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1995' target='_blank'>1995</a> C.c.Q.).</li>
-                    </ul>
-                    <p>On ne peut non plus se dégager de son obligation de donner un avis (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1898' target='_blank'>1898</a> C.c.Q.).</p>
-                    <p>Sont aussi sans effet :</p>
-                    <ul>
-                    <li>une clause qui limite la responsabilité du locateur ou le libère d’une obligation (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1900' target='_blank'>1900</a> C.c.Q.) ;</li>
-                    <li>une clause qui rend le locataire responsable d’un dommage causé sans sa faute (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1900' target='_blank'>1900</a> C.c.Q.) ;</li>
-                    <li>une clause qui modifie les droits du locataire à la suite d’une augmentation du nombre des occupants, sauf si les dimensions du logement le justifient (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1900' target='_blank'>1900</a> C.c.Q.) ;</li>
-                    <li>une clause par laquelle un locataire reconnaît que le logement est en bon état d’habitabilité (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1910' target='_blank'>1910</a> C.c.Q.) ;</li>
-                    <li>une clause qui prévoit le paiement total du loyer si le locataire fait défaut d’effectuer un versement
-                    (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1905' target='_blank'>1905</a> C.c.Q.) ;</li>
-                    <li>une clause qui limite le droit du locataire d’acheter des biens ou d’obtenir des services des personnes de son choix, suivant les modalités dont lui-même convient (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1900' target='_blank'>1900</a> C.c.Q.).</li>
-                    </ul>
-                    <p><strong>4.</strong> Le locataire peut s’adresser au Tribunal administratif du logement pour faire apprécier le caractère abusif d’une clause du bail, laquelle peut être annulée ou l’obligation qui en découle réduite (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1901' target='_blank'>1901</a> C.c.Q.).</p>
-                    </utd-accordeon>
-
-                    <hr>
-                    <h3>LE DROIT AU MAINTIEN DANS LES LIEUX</h3>
-                    <p><strong>5.</strong> Sous réserve du droit du locateur de le reloger, le locataire a un droit personnel de demeurer dans son logement (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1936' target='_blank'>1936</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1990' target='_blank'>1990</a> C.c.Q.).</p>
-                    <p><strong>6.</strong> Il ne peut en être expulsé que dans certains cas prévus par la loi, dont la résiliation du bail pour défaut d’exécuter ses obligations (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1863' target='_blank'>1863</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1971' target='_blank'>1971</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1973' target='_blank'>1973</a> C.c.Q.).</p>
-                    <p>La cessation de cohabitation ou le décès d’un colocataire ne porte pas atteinte au droit au maintien dans les lieux des autres colocataires.</p>
-                    <p>Le droit au maintien dans les lieux peut aussi s’étendre à certaines personnes lorsque cesse la cohabitation avec le locataire ou en cas de décès du locataire, à condition qu’elles respectent les formalités prévues par la loi (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1938' target='_blank'>1938</a> C.c.Q.). Mais ces personnes n’ont pas droit à la reconduction du bail si elles ne satisfont plus aux conditions d’attribution prévues par les règlements. Le locateur peut alors résilier le bail en donnant un avis de trois mois avant la fin du bail. La résiliation peut être contestée en s’adressant au Tribunal administratif du logement dans un délai d’un mois à compter de la réception de l’avis, sinon le locataire est réputé l’avoir acceptée (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1991' target='_blank'>1991</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1993' target='_blank'>1993</a> C.c.Q.).</p>
-                    <p><strong>7.</strong> Lorsqu’un logement à loyer modique est attribué à la suite d’une fausse déclaration du locataire, le</p>
-                    <p>locateur peut, dans un délai de deux mois à compter de la connaissance de la fausse déclaration, demander au Tribunal administratif du logement la résiliation du bail ou la modification de certaines conditions du bail si, sans cela, il n’aurait pas attribué le logement au locataire ou l’aurait fait à des conditions différentes (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1988' target='_blank'>1988</a> C.c.Q.).</p>
-                    <utd-accordeon titre="Le nouveau locateur" tag="h4" reduit="false">
-                    <p><strong>8.</strong> Le nouveau locateur d’un immeuble est tenu de respecter le bail du locataire. Ce bail est continué et peut être reconduit comme tout autre bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1937' target='_blank'>1937</a> C.c.Q.).</p>
-                    <p><strong>9.</strong> Lorsque le locataire n’a pas été personnellement avisé du nom et de l’adresse du nouveau locateur ou de la personne à qui il doit payer le loyer, il peut, avec l’autorisation du Tribunal administratif du logement, y déposer son loyer (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1908' target='_blank'>1908</a> C.c.Q.).</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="Le décès" tag="h4" reduit="false">
-                    <p><strong>10.</strong> Le décès du locataire ne met pas fin au bail</p>
-                    <p>(art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1884' target='_blank'>1884</a> C.c.Q.).</p>
-                    <p>Lors du décès d’un locataire, la personne qui cohabitait avec lui peut devenir locataire, si elle continue d’occuper le logement et remet au locateur un avis écrit dans les deux mois suivant le décès. Sinon, le liquidateur de la succession, ou à défaut un héritier, peut, dans le mois qui suit l’expiration de ce délai de deux mois, mettre fin au bail s’il remet au locateur un avis de résiliation d’un mois.</p>
-                    <p>Si personne n’habitait avec le locataire au moment de son décès, le liquidateur de la succession ou, à défaut, un héritier, peut résilier le bail en donnant au locateur, dans les six mois du décès, un avis de deux mois. La résiliation prend effet avant l’expiration de ce dernier délai, si le liquidateur ou l’héritier et le locateur en conviennent autrement ou lorsque le logement est reloué par le locateur durant ce même délai.</p>
-                    <p>Dans tous les cas, lorsque le locataire recevait des services se rattachant à sa personne même, qu’il ait habité seul ou non, le liquidateur, l’héritier ou, le cas échéant, la personne qui occupait le logement avec le locataire n’aura à payer la partie du loyer relative à ces services qu’à l’égard de ceux qui ont été fournis au locataire de son vivant (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1938' target='_blank'>1938</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1939' target='_blank'>1939</a> C.c.Q.).</p>
-                    <p>Le locateur peut éviter la reconduction du bail dans certaines circonstances (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1944' target='_blank'>1944 al. 2</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1991' target='_blank'>1991</a> C.c.Q.).</p>
-                    </utd-accordeon>
-
-                    <hr>
-                    <h3>LA REMISE DU LOGEMENT AU DÉBUT DU BAIL</h3>
-                    <p><strong>11.</strong> Le locateur doit, à la date prévue pour la remise du logement, le délivrer en bon état de réparation de toute espèce. Cependant, le locateur et le locataire peuvent convenir autrement et s’entendre sur les travaux et l’échéancier de leur exécution (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1854' target='_blank'>1854 al. 1</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1893' target='_blank'>1893</a> C.c.Q.).</p>
-                    <p>Toutefois, le locateur ne peut se dégager de son obligation de livrer le logement, ses accessoires et dépendances en bon état de propreté, de les livrer et de les maintenir en bon état d’habitabilité (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892' target='_blank'>1892</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1893' target='_blank'>1893</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1910' target='_blank'>1910</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1911' target='_blank'>1911</a> C.c.Q.).</p>
-                    <p><strong>12.</strong> Le locateur ne peut offrir un logement impropre à l’habitation, c’est-à-dire dont l’état constitue une</p>
-                    <p>menace sérieuse pour la santé ou la sécurité des occupants ou du public. Le locataire peut refuser de prendre possession d’un tel logement. Dans ce cas, le bail est résilié automatiquement (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1913' target='_blank'>1913</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1914' target='_blank'>1914</a> C.c.Q.).</p>
-
-                    <hr>
-                    <h3>LE LOYER</h3>
-                    <utd-accordeon titre="La détermination du loyer" tag="h4" reduit="false">
-                    <p><strong>13.</strong> Si le loyer n’est pas déterminé conformément</p>
-                    <p>aux règlements de la Société d’habitation du Québec relatifs aux conditions de location, le locataire peut, dans les deux mois à compter de sa détermination, s’adresser au Tribunal administratif du logement pour le faire réviser (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1992' target='_blank'>1992</a> C.c.Q.).</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="La réduction du loyer en cours de bail" tag="h4" reduit="false">
-                    <p><strong>14.</strong> En cours de bail, le locateur doit, à la demande du locataire qui a subi une diminution de revenu ou un changement dans la composition du ménage, réduire le loyer conformément aux règlements de la Société d’habitation du Québec. Si le locateur refuse ou néglige de le faire, le locataire peut s’adresser au Tribunal administratif du logement pour le faire réduire.</p>
-                    <p>Si le revenu du locataire redevient égal ou supérieur à ce qu’il était, le loyer antérieur est rétabli ; le locataire a un mois à compter du rétablissement du loyer pour s’adresser au Tribunal administratif du logement pour contester ce rétablissement (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1994' target='_blank'>1994</a> C.c.Q.).</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="Le non-paiement du loyer" tag="h4" reduit="false">
-                    <p><strong>15.</strong> Le non-paiement du loyer confère au locateur le droit de demander au tribunal la condamnation du</p>
-                    <p>locataire au paiement du loyer. Si le locataire est en retard de plus de trois semaines pour le paiement du loyer, le locateur peut obtenir la résiliation du bail et l’expulsion du locataire.</p>
-                    <p>Les retards fréquents à payer le loyer peuvent aussi justifier la résiliation du bail si le locateur en subit un préjudice sérieux (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1863' target='_blank'>1863</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1971' target='_blank'>1971</a> C.c.Q.).</p>
-                    </utd-accordeon>
-
-                    <hr>
-                    <h3>LA RESPONSABILITÉ DES CONJOINTS ET DES COLOCATAIRES</h3>
-                    <utd-accordeon titre="La responsabilité des personnes mariées ou unies civilement" tag="h4" reduit="false">
-                    <p><strong>16.</strong> Le conjoint, marié ou uni civilement, qui loue un logement pour les besoins courants de la famille engage aussi pour le tout son conjoint non séparé de corps, à moins que ce dernier n’ait préalablement informé le locateur de sa volonté de ne pas être tenu à cette dette (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:397' target='_blank'>397</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:521_6' target='_blank'>521.6</a> C.c.Q.).</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="La responsabilité des colocataires" tag="h4" reduit="false">
-                    <p><strong>17.</strong> Si le bail est signé par plus d’un locataire, la responsabilité quant aux obligations découlant du bail est conjointe, c’est-à-dire que chacun des locataires n’est tenu que pour sa part (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1518' target='_blank'>1518</a> C.c.Q.).</p>
-                    <p>Toutefois, les colocataires et le locateur peuvent convenir que la responsabilité sera solidaire. En pareil cas, chacun des locataires peut être contraint d’assumer la totalité des obligations du bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1523' target='_blank'>1523</a> C.c.Q.).</p>
-                    <p>La solidarité des colocataires ne se présume pas. Elle n’existe que si elle est expressément stipulée au bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1525' target='_blank'>1525</a> C.c.Q.).</p>
-                    </utd-accordeon>
-
-                    <hr>
-                    <h3>LA JOUISSANCE DES LIEUX</h3>
-                    <p><strong>18.</strong> Le locateur doit procurer au locataire la jouissance paisible du bien loué pendant toute la durée du bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1854' target='_blank'>1854</a> al. 1 C.c.Q.).</p>
-                    <p><strong>19.</strong> Le locataire doit, pendant toute la durée du bail, user du bien loué avec « prudence et diligence », c’est-à-dire qu’il doit en faire un usage raisonnable (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1855' target='_blank'>1855</a> C.c.Q.).</p>
-                    <p><strong>20.</strong> Le locataire ne peut, sans le consentement du</p>
-                    <p>locateur, employer ou conserver dans le logement une substance qui constitue un risque d’incendie ou</p>
-                    <p>d’explosion et qui aurait pour effet d’augmenter les primes d’assurance du locateur (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1919' target='_blank'>1919</a> C.c.Q.).</p>
-                    <p><strong>21.</strong> Le nombre d’occupants d’un logement doit être tel qu’il permet à chacun de vivre dans des conditions normales de confort et de salubrité (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1920' target='_blank'>1920</a> C.c.Q.).</p>
-                    <p><strong>22.</strong> Le locataire et les personnes à qui il permet l’usage de son logement ou l’accès à celui-ci doivent se conduire de façon à ne pas troubler la jouissance normale des autres locataires (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1860' target='_blank'>1860</a> C.c.Q.).</p>
-                    <p><strong>23.</strong> En cours de bail, le locateur et le locataire ne peuvent changer la forme ou la destination du logement (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1856' target='_blank'>1856</a> C.c.Q.).</p>
-
-                    <hr>
-                    <h3>L’ENTRETIEN DU LOGEMENT ET LES RÉPARATIONS</h3>
-                    <utd-accordeon titre="L’obligation d’entretien" tag="h4" reduit="false">
-                    <p><strong>24.</strong> Le locateur a l’obligation de garantir au locataire que le logement peut servir à l’usage pour lequel il est loué et de l’entretenir à cette fin pendant toute la durée du bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1854' target='_blank'>1854 al. 2</a> C.c.Q.).</p>
-                    <p><strong>25.</strong> Le locataire doit maintenir le logement en bon état de propreté. Le locateur qui y effectue des travaux doit le remettre en bon état de propreté (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1911' target='_blank'>1911</a> C.c.Q.).</p>
-                    <p><strong>26.</strong> Le locataire qui a connaissance d’une défectuosité ou d’une détérioration substantielles du logement doit en aviser le locateur dans un délai raisonnable (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1866' target='_blank'>1866</a> C.c.Q.).</p>
-                    <p><strong>27.</strong> La loi et les règlements concernant la sécurité, la salubrité, l’entretien ou l’habitabilité d’un immeuble doivent être considérés comme des obligations du bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1912' target='_blank'>1912</a> C.c.Q.).</p>
-                    <p><strong>28.</strong> Le locataire peut abandonner son logement si celui-ci devient impropre à l’habitation. Il doit alors aviser son locateur de l’état du logement, avant l’abandon ou dans les dix jours qui suivent (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1915' target='_blank'>1915</a> C.c.Q.).</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="Les réparations urgentes et nécessaires" tag="h4" reduit="false">
-                    <p><strong>29.</strong> Le locataire doit subir les réparations urgentes et nécessaires pour assurer la conservation ou la jouissance du bien loué, mais il conserve, selon les circonstances, des recours, dont le droit à une indemnité en cas d’évacuation temporaire.</p>
-                    <p>Dans le cas de réparations urgentes, le locateur peut exiger une évacuation temporaire, sans avis ni autorisation du Tribunal administratif du logement (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1865' target='_blank'>1865</a> C.c.Q.).</p>
-                    <p><strong>30.</strong> Le locataire peut, sans l’autorisation du Tribunal administratif du logement, entreprendre une réparation ou engager une dépense urgente et nécessaire à la conservation ou à la jouissance du bien loué. Toutefois, il ne peut agir ainsi que s’il a informé ou tenté d’informer son locateur de la situation et si ce dernier n’a pas agi en temps utile.</p>
-                    <p>Le locateur peut intervenir à tout moment pour poursuivre les travaux.</p>
-                    <p>Le locataire doit rendre compte au locateur des réparations entreprises et des dépenses engagées, et lui remettre les factures. Il peut retenir sur son loyer le montant des dépenses raisonnables qu’il a effectuées (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1868' target='_blank'>1868</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1869' target='_blank'>1869</a> C.c.Q.).</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="Les travaux majeurs non urgents" tag="h4" reduit="false">
-                    <p>(art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1922' target='_blank'>1922</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1929' target='_blank'>1929</a> C.c.Q.)</p>
-                    <p><strong>31.</strong> Le locateur doit aviser le locataire avant d’entreprendre dans le logement des améliorations ou des réparations majeures qui ne sont pas urgentes. Si une évacuation temporaire est nécessaire, il doit lui offrir une indemnité égale aux dépenses raisonnables que le locataire devra assumer durant les travaux. Cette indemnité est payable au locataire à la date de l’évacuation.</p>
-                    <p>L’avis doit indiquer la nature des travaux, la date à</p>
-                    <p>laquelle ils débuteront, l’estimation de leur durée et, s’il y a lieu, la période d’évacuation nécessaire, l’indemnité offerte ainsi que toutes les autres conditions dans lesquelles s’effectueront les travaux, si elles sont susceptibles de diminuer substantiellement la jouissance des lieux du locataire.</p>
-                    <p>L’avis doit être donné au moins dix jours avant la date prévue du début des travaux, sauf si le locataire doit évacuer le logement pour plus d’une semaine. Dans ce cas, l’avis est d’au moins trois mois.</p>
-                    <p>Si le locataire ne répond pas dans les dix jours de la réception de l’avis qui prévoit une évacuation temporaire, il est réputé avoir refusé de quitter les lieux. Si le locataire refuse d’évacuer ou ne répond pas, le locateur peut, dans les dix jours du refus, demander au Tribunal administratif du logement de se prononcer sur l’évacuation.</p>
-                    <p>Par contre, lorsque l’avis ne prévoit pas d’évacuation temporaire ou si le locataire accepte l’évacuation</p>
-                    <p>demandée, celui-ci peut, dans les dix jours de la réception de l’avis, demander au Tribunal administratif du logement de modifier ou de supprimer une condition de réalisation des travaux qu’il considère comme abusive.</p>
-                    <p>Le Tribunal administratif du logement peut être appelé à se prononcer sur le caractère raisonnable des travaux, leurs conditions de réalisation, la nécessité de l’évacuation et l’indemnité, s’il y a lieu.</p>
-                    </utd-accordeon>
-
-                    <hr>
-                    <h3>L’ACCÈS ET LA VISITE DU LOGEMENT</h3>
-                    <p><strong>32.</strong> Pour l’exercice des droits d’accès au logement, le locateur et le locataire doivent agir selon les règles de la bonne foi :</p>
-                    <ul>
-                    <li>le locataire, en facilitant l’accès et en ne le refusant pas de façon injustifiée ;</li>
-                    <li>le locateur, en n’abusant pas de ses droits et en les exerçant de façon raisonnable dans le respect de la vie privée (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:3' target='_blank'>3</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:6' target='_blank'>6</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:7' target='_blank'>7</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1375' target='_blank'>1375</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1857' target='_blank'>1857</a> C.c.Q.).</li>
-                    </ul>
-                    <p><strong>33.</strong> Le locateur peut, en cours de bail, avoir accès au logement pour :</p>
-                    <ul>
-                    <li>en vérifier l’état entre 9 h et 21 h ;</li>
-                    <li>le faire visiter par un acheteur éventuel entre 9 h</li>
-                    <li>et 21 h ;</li>
-                    <li>y effectuer des travaux entre 7 h et 19 h.</li>
-                    </ul>
-                    <p>Dans ces trois cas, le locateur doit donner au locataire un avis verbal de vingt-quatre heures. En cas de travaux majeurs, le délai d’avis diffère (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1898' target='_blank'>1898</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1931' target='_blank'>1931</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1932' target='_blank'>1932</a> C.c.Q.).</p>
-                    <p><strong>34.</strong> Le locataire qui avise le locateur de son intention de quitter le logement doit, dès ce moment, permettre au locateur de le faire visiter par un locataire éventuel entre 9 h et 21 h, et lui permettre d’afficher le logement à louer (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1930' target='_blank'>1930</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1932' target='_blank'>1932</a> C.c.Q.).</p>
-                    <p>Le locateur n’est pas obligé d’aviser le locataire de la visite d’un locataire éventuel vingt-quatre heures à l’avance.</p>
-                    <p><strong>35.</strong> Le locataire peut exiger la présence du locateur ou de son représentant lors d’une visite du logement ou de sa vérification (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1932' target='_blank'>1932</a> C.c.Q.).</p>
-                    <p><strong>36.</strong> Sauf s’il y a urgence, le locataire peut refuser</p>
-                    <p>l’accès à son logement si les conditions fixées par la loi ne sont pas respectées.</p>
-                    <p>Si le locataire n’autorise pas l’accès au logement pour un motif autre que ceux qui sont prévus par la loi, le</p>
-                    <p>locateur peut introduire au Tribunal administratif du logement une demande d’ordonnance d’accès.</p>
-                    <p>L’abus du droit d’accès par le locateur ou le refus injustifié du locataire peuvent aussi, selon les circonstances, permettre l’exercice de certains recours, tels que l’introduction d’une demande en dommages-intérêts ou en dommages punitifs (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1863' target='_blank'>1863</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1902' target='_blank'>1902</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1931' target='_blank'>1931</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1933' target='_blank'>1933</a> C.c.Q. et art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:49' target='_blank'>49</a> de la Charte).</p>
-                    <p><strong>37.</strong> Une serrure ou un mécanisme qui restreint l’accès au logement ne peut être posé ou remplacé qu’avec le consentement du locateur et du locataire (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1934' target='_blank'>1934</a> C.c.Q.).</p>
-                    <p><strong>38.</strong> Le locateur ne peut interdire l’accès à l’immeuble ou au logement à un candidat à une élection provinciale, fédérale, municipale ou scolaire, à un délégué officiel nommé par un comité national ou à leur représentant autorisé, à des fins de propagande électorale ou de consultation populaire en vertu d’une loi (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1935' target='_blank'>1935</a> C.c.Q.).</p>
-                    
-                    <hr>
-                    <h3>LES AVIS</h3>
-                    <p><strong>39.</strong> Tout avis concernant le bail, donné par le locateur (exemple : avis de modification des conditions du bail) ou par le locataire (exemple : avis de résiliation du bail), doit être écrit et rédigé dans la même langue que celle du bail. Il doit être donné à l’adresse indiquée au bail ou à une nouvelle adresse communiquée depuis</p>
-                    <p>(art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1898' target='_blank'>1898</a> C.c.Q.).</p>
-                    <p>Exception : Seul l’avis donné par le locateur pour avoir accès au logement peut être verbal.</p>
-                    <p><strong>40.</strong> Si un avis ne respecte pas les exigences relatives à l’écrit, à l’adresse ou à la langue, celui-ci n’est valide que si preuve est faite, par celui qui l’a donné, que le destinataire n’en subit aucun préjudice.</p>
-
-                    <hr>
-                    <h3>LA RECONDUCTION ET LA MODIFICATION DU BAIL</h3>
-                    <utd-accordeon titre="La reconduction du bail" tag="h4" reduit="false">
-                    <p><strong>41.</strong> Le bail à durée fixe est renouvelé à son terme aux mêmes conditions. On dit que le bail est « reconduit de plein droit » (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1941' target='_blank'>1941</a> C.c.Q.).</p>
-                    <p>Le locateur ne peut empêcher la reconduction du bail que dans certains cas (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1944' target='_blank'>1944 al. 2</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1991' target='_blank'>1991</a> C.c.Q.). Il peut cependant pour cette reconduction, modifier les conditions du bail. Pour cela, il doit, notamment dans le cas d’un bail de douze mois, donner un avis de modification au locataire entre trois et six mois avant la fin du bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1942' target='_blank'>1942</a> C.c.Q.) et, si le bail est de moins de douze mois, le locateur doit donner un tel avis entre un et deux mois avant la fin du bail.</p>
-                    <p><strong>42.</strong> Dans cet avis de modification, le locateur doit indiquer au locataire :</p>
-                    <ul>
-                    <li>son intention de modifier le loyer (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1992' target='_blank'>1992</a> C.c.Q.) ;</li>
-                    <li>toute autre modification demandée (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1942' target='_blank'>1942</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1993' target='_blank'>1993</a> C.c.Q.) ;</li>
-                    <li>les options de réponse du locataire.</li>
-                    </ul>
-                    <p>Sauf lorsqu’il s’agit d’un avis d’intention de modifier le loyer, le locateur doit aussi indiquer le délai accordé au locataire pour refuser la modification demandée (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1943' target='_blank'>1943</a> C.c.Q.) et reproduire le texte contenu à l’annexe I du Règlement sur le contenu obligatoire de l’avis de modification du bail d’un logement, RLRQ, c. T-15.01, r. 1.1.</p>
-                    <p><strong>43.</strong> Le locataire doit fournir au locateur le nom des personnes qui habitent avec lui et les preuves requises pour l’attestation des revenus. Ces renseignements doivent être fournis dans un délai d’un mois de la demande du locateur (réglementation de la Société d’habitation du Québec relative aux conditions de location).</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="La non-reconduction du bail par le locataire" tag="h4" reduit="false">
-                    <p><strong>44.</strong> Le locataire qui n’a pas reçu un avis de modification d’une condition du bail ou d’intention de modifier le loyer peut aviser le locateur qu’il entend quitter le logement à la fin du bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1946' target='_blank'>1946</a> C.c.Q.).</p>
-                    <p>Cet avis de non-reconduction est donné dans les mêmes délais que ceux qui sont prévus par le Code civil du Québec pour modifier le bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1942' target='_blank'>1942</a> C.c.Q.).</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="La contestation de l’avis de modification" tag="h4" reduit="false">
-                    <p><strong>45.</strong> Le locataire qui a reçu un avis de modification d’une condition du bail autre que le loyer a un mois à compter de la réception de l’avis pour demander au Tribunal administratif du logement de se prononcer sur le bienfondé de cette modification, sinon il est réputé avoir accepté les nouvelles conditions (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1993' target='_blank'>1993</a> C.c.Q.).</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="La détermination du loyer" tag="h4" reduit="false">
-                    <p><strong>46.</strong> Si le loyer n’est pas déterminé conformément aux règlements de la Société d’habitation du Québec, le locataire a deux mois à compter de la détermination du loyer pour s’adresser au Tribunal administratif du logement pour le faire réviser (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1956' target='_blank'>1956</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1992' target='_blank'>1992</a> C.c.Q.).</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="L’entente sur les modifications" tag="h4" reduit="false">
-                    <p><strong>47.</strong> Lorsque le locateur et le locataire se sont entendus sur les modifications à apporter au bail (exemples : loyer, autres conditions), le locateur doit remettre au locataire, avant le début du bail à reconduire, un document décrivant ces modifications (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1895' target='_blank'>1895</a> C.c.Q.).</p>
-                    </utd-accordeon>
-
-                    <hr>
-                    <h3>LA RÉSILIATION DU BAIL PAR LE LOCATAIRE</h3>
-                    <p><strong>48.</strong> Le locataire d’un logement à loyer modique peut résilier son bail en tout temps en donnant un avis préalable de trois mois (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1995' target='_blank'>1995 al. 2</a> C.c.Q.).</p>
-                    <p>Selon l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974' target='_blank'>1974</a> C.c.Q., un locataire peut</p>
-                    <p>notamment résilier son bail :</p>
-                    <ul>
-                    <li>soit il lui est attribué un autre logement à loyer</li>
-                    <li>modique ;</li>
-                    <li>soit il est relogé dans un logement équivalent qui correspond à ses besoins, à la suite d’une décision du tribunal ;</li>
-                    <li>soit il ne peut plus occuper son logement en raison d’un handicap ;</li>
-                    <li>soit il est une personne âgée admise de façon permanente dans un centre d’hébergement et de soins de longue durée (CHSLD), dans une ressource intermédiaire, dans une résidence privée pour aînés où lui sont offerts les soins infirmiers ou les services d’assistance personnelle que nécessite son état de santé ou dans tout autre lieu d’hébergement, quelle qu’en soit l’appellation, où lui sont offerts de tels soins ou services, qu’elle réside ou non dans un tel endroit au moment de son admission.</li>
-                    </ul>
-                    <p><strong>49.</strong> Selon l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974_1' target='_blank'>1974.1</a> C.c.Q., un locataire peut aussi résilier son bail :</p>
-                    <ul>
-                    <li>si, en raison de violence conjugale ou de violence sexuelle, ou de violence envers un enfant qui habite le logement visé par le bail, sa sécurité ou celle de l’enfant est menacée.</li>
-                    </ul>
-                    <utd-accordeon titre="Les avis" tag="h4" reduit="false">
-                    <p>-Article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974' target='_blank'>1974</a> C.c.Q.</p>
-                    <p>La résiliation prend effet deux mois après l’envoi d’un avis au locateur ou un mois après cet avis, lorsque le bail est à durée indéterminée ou de moins de douze mois, ou avant l’expiration de ce délai si les parties en conviennent ou si le logement étant libéré par le locataire est reloué durant ce délai.</p>
-                    <p>L’avis doit être accompagné d’une attestation de l’autorité concernée.</p>
-                    <p>Dans le cas d’une personne âgée, un certificat d’une personne autorisée certifiant que les conditions relatives à l’admission sont remplies doit aussi être joint à l’avis de résiliation.</p>
-                    <p>-Article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974_1' target='_blank'>1974.1</a> C.c.Q.</p>
-                    <p>La résiliation prend effet deux mois après l’envoi d’un avis au locateur ou un mois après cet avis, lorsque le bail est à durée indéterminée ou de moins de douze mois, ou avant l’expiration de ce délai si les parties en conviennent ou si le logement étant libéré par le locataire est reloué durant ce délai.</p>
-                    <p>L’avis doit être accompagné d’une attestation d’un fonctionnaire ou d’un officier public désigné par le ministre de la Justice, qui, sur le vu de la déclaration sous serment du locataire selon laquelle il existe une situation de violence et sur le vu d’autres éléments de faits ou de documents provenant de personnes en contact avec les victimes et appuyant cette déclaration, considère que la résiliation du bail, pour le locataire, est une mesure de nature à assurer la sécurité de ce dernier ou celle d’un enfant qui habite avec lui. Le fonctionnaire ou l’officier public doit agir avec célérité.</p>
-                    </utd-accordeon>
-                    <utd-accordeon titre="Les services" tag="h4" reduit="false">
-                    <p>(art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974' target='_blank'>1974</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974_1' target='_blank'>1974.1</a> C.c.Q.)</p>
-                    <p>Si le loyer inclut des services qui se rattachent au locataire lui-même ou à son enfant, le cas échéant, le locataire n’est tenu de payer que pour les services fournis avant le départ du logement, que ces services aient ou non été offerts en vertu d’un contrat distinct du bail.</p>
-                    </utd-accordeon>
-                    
-                    <hr>
-                    <h3>LA CESSION ET LA SOUS-LOCATION</h3>
-                    <p><strong>50.</strong> Le locataire d’un logement à loyer modique ne peut sous-louer son logement ou céder son bail (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1995' target='_blank'>1995 al. 1</a> C.c.Q.).</p>
-                    
-                    <hr>
-                    <h3>LE RELOGEMENT DU LOCATAIRE</h3>
-                    <p><strong>51.</strong> Le locataire qui occupe un logement d’une catégorie autre que celle à laquelle il a droit peut s’adresser au locateur afin d’être réinscrit sur la liste d’admissibilité (réglementation sur l’attribution d’un logement à loyer modique).</p>
-                    <p>Si le locateur refuse de réinscrire le locataire ou l’inscrit dans une catégorie autre que celle à laquelle il a droit, ce dernier a un mois à compter de la réception de l’avis de refus du locateur ou de l’attribution du logement pour s’adresser au</p>
-                    <p>Tribunal administratif du logement pour contester la décision du locateur (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1989' target='_blank'>1989</a> C.c.Q.).</p>
-                    <p><strong>52.</strong> Si le locataire occupe un logement d’une catégorie autre que celle à laquelle il a droit, le locateur peut, en tout temps, le reloger dans un logement approprié s’il lui donne un avis de trois mois.</p>
-                    <p>Le locataire a un mois à compter de la réception de l’avis du locateur pour demander au Tribunal administratif du logement de réviser cette décision (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1990' target='_blank'>1990</a> C.c.Q.).</p>
-                    <p><strong>53.</strong> Le demandeur inscrit sur la liste d’admissibilité et qui réside déjà dans un logement à loyer modique peut être relogé, notamment si sa sécurité ou sa santé ou, le cas échéant, celles d’un membre de son ménage, le requièrent, en conformité avec les critères prévus par un règlement du locateur et la réglementation sur l’attribution d’un logement à loyer modique.</p>
-                    
-                    <hr>
-                    <h3>LA REMISE DU LOGEMENT À LA FIN DU BAIL</h3>
-                    <p><strong>54.</strong> Le locataire doit quitter son logement à la fin du bail, aucun délai de grâce n’étant prévu par la loi.</p>
-                    <p>Le locataire doit, lorsqu’il quitte son logement, enlever tout meuble ou objet autre que ceux appartenant au locateur (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1890' target='_blank'>1890</a> C.c.Q.).</p>
-                    <p><strong>55.</strong> À la fin du bail, le locataire doit remettre le logement dans l’état où il l’a reçu, à l’exception des changements résultant du vieillissement, de l’usure normale ou d’un cas de force majeure.</p>
-                    <p>L’état du logement peut être constaté par la description ou les photographies qu’en ont faites les parties, sinon le locataire est présumé l’avoir reçu en bon état (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1890' target='_blank'>1890</a> C.c.Q.).</p>
-                    <p><strong>56.</strong> À la fin du bail, le locataire doit enlever les constructions, ouvrages ou plantations qu’il a faits. S’ils ne peuvent être enlevés sans détériorer le logement, le locateur peut les conserver en en payant la valeur ou obliger le locataire à les enlever et à remettre le logement dans l’état où il l’a reçu.</p>
-                    <p>Lorsqu’il est impossible de remettre le logement dans l’état où il a été reçu, le locateur peut les conserver sans verser d’indemnité au locataire (art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1891' target='_blank'>1891</a> C.c.Q.).</p>
-
+                    <h3>NOPE</h3>
+                    <p>bla bla bla bla</p> 
+                    <p>TODO section à compléter... comporte plusieurs différences avec les mentions légales du bail 53000.</p>
 
 
   # Finalisation du bail
