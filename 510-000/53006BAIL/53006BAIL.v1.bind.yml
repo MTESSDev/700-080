@@ -374,3 +374,91 @@ bind:
       champs: [estMemeBienServicesConditions==true]
     ClauseG_conditions_non:
       champs: [estMemeBienServicesConditions==false]
+    Nom_cooperative:
+      champs: [cooperative.0.nom]
+    Numero_civique_cooperative:
+      champs: [cooperative.0.adressecoop.0.NoCivique]
+    Rue_cooperative:
+      champs: [cooperative.0.adressecoop.0.Rue]
+    App_cooperative:
+      champs: [cooperative.0.adressecoop.0.Appartement]
+    Municipalite_cooperative:
+      champs:
+      - cooperative.0.adressecoop.0.Province
+      - cooperative.0.adressecoop.0.Municipalite
+      formule: '{cooperative.0.adressecoop.0.Municipalite}, {cooperative.0.adressecoop.0.Province}'
+    Code_postal_cooperative:
+      champs: [cooperative.0.adressecoop.0.CodePostal]
+    Telephone_cooperative:
+      champs: [cooperative.0.noTelephone]
+    Autre_telephone_cooperative:
+      champs: [cooperative.0.autreNoTelephoneCell]
+    Adresse_courriel_cooperative:
+      champs: [cooperative.0.courriel]
+    Representant_cooperative:
+      champs: [cooperative.0.representant]
+    Nombre_de_pieces:
+      champs:
+      - nbPieces
+      - nbPiecesAutre
+      formule: '{nbPieces:include(autre):{nbPiecesAutre}|{nbPieces}}'
+    Stationnement_interieur_oui:
+      champs: [dependancesIncluses==StationnementInterieur]
+    Nombre_de_places_interieur:
+      champs: [stationnementInterieur.0.nbPlaces]
+    Emplacement_interieur:
+      champs: [stationnementInterieur.0.emplacements]
+    Remise_rangement_oui:
+      champs: [dependancesIncluses==RemiseOuEspaceRangement]
+    Nombre_places_remise_rangement:
+      champs: [remiseEspaceRangement.0.nbPlaces]
+    Emplacement_remise_rangement:
+      champs: [remiseEspaceRangement.0.emplacements]
+    Autres_Preciser:
+      champs: [autresAccessoiresDependances]
+    Subvention_oui:
+      champs: [subventionPaiementLoyer==true]
+    Subvention_non:
+      champs: [subventionPaiementLoyer==false]
+    Subvention_preciser:
+      champs: [preciserSubventionPaiementLoyer]
+    Concierge_preciser:
+      champs: [precisionsServicesConcierge]
+    Nom_concierge:
+      champs: [coordonneesConcierge.0.nomConcierge]
+    Telephone_concierge:
+      champs: [coordonneesConcierge.0.noTelephone]
+    Adresse_courriel_concierge:
+      champs: [coordonneesConcierge.0.adresseCourriel]
+    Autre_telephone_concierge:
+      champs: [coordonneesConcierge.0.autreNoTelephoneCell]
+    Chauffage_electricite:
+      champs: [typeChauffageLogement==electricite]
+    Chauffage_gaz:
+      champs: [typeChauffageLogement==gaz]
+    Chauffage_mazout:
+      champs: [typeChauffageLogement==mazout]
+    Chauffage_cooperative:
+      champs: [responsabiliteChauffage==cooperative]
+    Chauffage_locataire:
+      champs: [responsabiliteChauffage==locataire]
+    Gaz_cooperative:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteGaz==cooperative]
+    Gaz_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteGaz==locataire]
+    Elect_cooperative:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteElectricite==cooperative]
+    Elect_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteElectricite==locataire]
+    Chauffe_eau_cooperative:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteChauffeEau==cooperative]
+    Chauffe_eau_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteChauffeEau==locataire]
+    Eau_chaude_cooperative:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteEauChaude==cooperative]
+    Eau_chaude_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteEauChaude==locataire]
+    Taxe_eau_cooperative:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteTaxeConsommationEau==cooperative]
+    Taxe_eau_locataire:
+      champs: [responsabiliteServicesTaxesCoutsConsommation.0.responsabiliteTaxeConsommationEau==locataire]
