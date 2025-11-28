@@ -995,7 +995,7 @@ form:
                 fr: Je m’engage, conformément à mes responsabilités, à respecter la réglementation relative à la présence et au bon fonctionnement des avertisseurs de fumée dans le logement et dans l’immeuble
                 en: TODO english Je m’engage, conformément à mes responsabilités, à respecter la réglementation relative à la présence et au bon fonctionnement des avertisseurs de fumée dans le logement et dans l’immeuble
 
-    # Annexes
+    # F - Annexes
     - sectionGroup:
         fr: F - Annexes
         en: F - Schedules
@@ -1654,6 +1654,14 @@ form:
         fr: Finalisation du bail
         en: Finalization of the lease
       classes: icone clipboard-check
+      filtreEtapes:
+        - initial:
+        - contributionSignature:
+        - transmission:
+        - consultation: 
+          - locataire:
+          - autreSignataire:
+          - locateur:
       sections:
         # Choix de la langue du bail
         - section:
@@ -1675,17 +1683,10 @@ form:
               text:
                 fr: |
                   <p>Le formulaire de bail sera créé automatiquement en format PDF.<p>                                    
-            - type: radio
+            - type: langue
               name: langueBail
               label:
                 fr: Dans quelle langue les parties veulent-elles que le formulaire de bail en format PDF soit créé et transmis?
-              options: 
-                francais: 
-                  fr: Français
-                  en: French
-                anglais:
-                  fr: Anglais
-                  en: English
         
         # Choix du mot de passe
         - section:
@@ -1701,7 +1702,7 @@ form:
                 fr: |
                   <div class="utd-page-texte">
                     <p>Le mot de passe protège l'accès au formulaire de bail électronique. Il est requis par toutes les parties (autres locateurs, locataires et cautions, s'il y a lieu) pour accéder au bail, valider les informations qui s’y trouvent et y apposer leurs initiales et leurs signatures.</p>
-                    <p>Le locateur principal doit choisir un mot de passe et le <b>communiquer en toute sécurité à tous les autres signataires concernés</b> en toute sécurité.</p>
+                    <p>Le locateur responsable doit choisir un mot de passe et le <b>communiquer en toute sécurité à tous les autres signataires concernés</b>.</p>
                   </div>
             - name: motPasseWF
               type: text            
@@ -1710,12 +1711,74 @@ form:
                 en: Password
               outerClasses: lg
 
-        # Aperçu du bail
+        # Aperçu du bail (initial)
         - section:
             fr: Aperçu du bail
-          id: apercuBailLocateur
+          id: apercuInitial
+          cacherTexteExplicatifChampsObligatoires: true          
           filtreEtapes: 
             - initial: 
+          sommaire: 
+            inclureSections : *inclureSectionsBailSaisiLocateur
+
+        # Aperçu et signature du bail (locataire 1)
+        - section:
+            fr: Aperçu et signature du bail
+          id: apercuSignatureLocataire1
+          cacherTexteExplicatifChampsObligatoires: true          
+          filtreEtapes: 
+            - contributionSignature:
+              - locataire: 1 
+            - consultation:
+              - locataire: 1             
+          sommaire: 
+            inclureSections :  
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire         
+              - autresSignataires
+              - locataire1engagementAvertisseursFumeeLocataire     
+              - locataire1consentementChequesPostDatesLocataire
+              - locataire1confirmationReglementImmeubleLocataire     
+              - locataire1avisNouveauLocataireContributionLocataire
+              - locataire1engagementSolidaireContributionLocataire
+              - locataire1avisResidenceFamiliale
+          components:
+            - name: signatureLocataire1
+              type: signature
+              label: 
+                fr: Signature électronique
+                en: (EN) Signature électronique
+              additionals:
+                texte-consentement : <p>En apposant votre signature, vous confirmez avoir lu, compris, et acceptez les modalités du bail.</p>
+
+        # Aperçu et signature du bail (locataire 2)
+        - section:
+            fr: Aperçu et signature du bail
+          id: apercuSignatureLocataire2
+          cacherTexteExplicatifChampsObligatoires: true          
+          filtreEtapes: 
+            - contributionSignature:
+              - locataire: 2 
+            - consultation:
+              - locataire: 2
           sommaire: 
             inclureSections : 
               - infosLocateur
@@ -1737,13 +1800,443 @@ form:
               - autresServicesConditionsRestriction
               - restrictionsLoyerBail
               - avisNouveauLocataire
-              - engagementSolidaire              
+              - engagementSolidaire  
+              - autresSignataires       
+              - locataire2engagementAvertisseursFumeeLocataire     
+              - locataire2consentementChequesPostDatesLocataire
+              - locataire2confirmationReglementImmeubleLocataire     
+              - locataire2avisNouveauLocataireContributionLocataire
+              - locataire2engagementSolidaireContributionLocataire
+              - locataire2avisResidenceFamiliale
+          components:
+            - name: signatureLocataire2
+              type: signature
+              label: 
+                fr: Signature électronique
+                en: (EN) Signature électronique
+              additionals:
+                texte-consentement : <p>En apposant votre signature, vous confirmez avoir lu, compris, et acceptez les modalités du bail.</p>
+
+        # Aperçu et signature du bail (locataire 3)
+        - section:
+            fr: Aperçu et signature du bail
+          id: apercuSignatureLocataire3
+          cacherTexteExplicatifChampsObligatoires: true          
+          filtreEtapes: 
+            - contributionSignature:
+              - locataire: 3
+            - consultation:
+              - locataire: 3             
+          sommaire: 
+            inclureSections : 
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire  
+              - autresSignataires       
+              - locataire3engagementAvertisseursFumeeLocataire     
+              - locataire3consentementChequesPostDatesLocataire
+              - locataire3confirmationReglementImmeubleLocataire     
+              - locataire3avisNouveauLocataireContributionLocataire
+              - locataire3engagementSolidaireContributionLocataire
+              - locataire3avisResidenceFamiliale
+          components:
+            - name: signatureLocataire3
+              type: signature
+              label: 
+                fr: Signature électronique
+                en: (EN) Signature électronique
+              additionals:
+                texte-consentement : <p>En apposant votre signature, vous confirmez avoir lu, compris, et acceptez les modalités du bail.</p>
+
+        # Aperçu et signature du bail (locataire 4)
+        - section:
+            fr: Aperçu et signature du bail
+          id: apercuSignatureLocataire4
+          cacherTexteExplicatifChampsObligatoires: true          
+          filtreEtapes: 
+            - contributionSignature:
+              - locataire: 4
+            - consultation:
+              - locataire: 4             
+          sommaire: 
+            inclureSections : 
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire      
+              - autresSignataires   
+              - locataire4engagementAvertisseursFumeeLocataire     
+              - locataire4consentementChequesPostDatesLocataire
+              - locataire4confirmationReglementImmeubleLocataire     
+              - locataire4avisNouveauLocataireContributionLocataire
+              - locataire4engagementSolidaireContributionLocataire
+              - locataire4avisResidenceFamiliale
+          components:
+            - name: signatureLocataire4
+              type: signature
+              label: 
+                fr: Signature électronique
+                en: (EN) Signature électronique
+              additionals:
+                texte-consentement : <p>En apposant votre signature, vous confirmez avoir lu, compris, et acceptez les modalités du bail.</p>
+
+        # Aperçu et signature du bail (autre signataire 1)
+        - section:
+            fr: Aperçu et signature du bail
+          id: apercuSignatureAutreSignataire1
+          cacherTexteExplicatifChampsObligatoires: true          
+          filtreEtapes: 
+            - contributionSignature:
+              - autreSignataire: 1 
+            - consultation:
+              - autreSignataire: 1             
+          sommaire: 
+            inclureSections : 
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire         
+              - autresSignataires
+              - autreSignataire1engagementAvertisseursFumeeLocataire     
+              - autreSignataire1consentementChequesPostDatesLocataire
+              - autreSignataire1confirmationReglementImmeubleLocataire     
+              - autreSignataire1avisNouveauLocataireContributionLocataire
+              - autreSignataire1engagementSolidaireContributionLocataire
+              - autreSignataire1avisResidenceFamiliale
+          components:
+            - name: signatureAutreSignataire1
+              type: signature
+              label: 
+                fr: Signature électronique
+                en: (EN) Signature électronique
+              additionals:
+                texte-consentement : <p>En apposant votre signature, vous confirmez avoir lu, compris, et acceptez les modalités du bail.</p>
+
+        # Aperçu et signature du bail (autre signataire 2)
+        - section:
+            fr: Aperçu et signature du bail
+          id: apercuSignatureAutreSignataire2
+          cacherTexteExplicatifChampsObligatoires: true          
+          filtreEtapes: 
+            - contributionSignature:
+              - autreSignataire: 2 
+            - consultation:
+              - autreSignataire: 2 
+          sommaire: 
+            inclureSections : 
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire         
+              - autresSignataires
+              - autreSignataire2engagementAvertisseursFumeeLocataire     
+              - autreSignataire2consentementChequesPostDatesLocataire
+              - autreSignataire2confirmationReglementImmeubleLocataire     
+              - autreSignataire2avisNouveauLocataireContributionLocataire
+              - autreSignataire2engagementSolidaireContributionLocataire
+              - autreSignataire2avisResidenceFamiliale
+          components:
+            - name: signatureAutreSignataire2
+              type: signature
+              label: 
+                fr: Signature électronique
+                en: (EN) Signature électronique
+              additionals:
+                texte-consentement : <p>En apposant votre signature, vous confirmez avoir lu, compris, et acceptez les modalités du bail.</p>
+
+        # Aperçu et signature du bail (autre locateur 1)
+        - section:
+            fr: Aperçu et signature du bail
+          id: signatureBailLocateur1
+          cacherTexteExplicatifChampsObligatoires: true          
+          filtreEtapes: 
+            - contributionSignature:
+              - locateur: 1
+            - consultation:
+              - locateur: 1
+          sommaire: 
+            inclureSections : 
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire         
+              - autresSignataires
+              - locateur1engagementAvertisseursFumeeLocateurs     
+              - locateur1confirmationAvisNouveauLocataireParLocateur
+
+          components:
+            - name: signatureLocateur1
+              type: signature
+              label: 
+                fr: Signature électronique
+                en: (EN) Signature électronique
+              additionals:
+                texte-consentement : <p>En apposant votre signature, vous confirmez avoir lu, compris, et acceptez les modalités du bail.</p>
+
+        # Aperçu et signature du bail (autre locateur 2)
+        - section:
+            fr: Aperçu et signature du bail
+          id: signatureBailLocateur2
+          cacherTexteExplicatifChampsObligatoires: true          
+          filtreEtapes: 
+            - contributionSignature:
+              - locateur: 2
+            - consultation:
+              - locateur: 2
+          sommaire: 
+            inclureSections : 
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire   
+              - autresSignataires     
+              - locateur2engagementAvertisseursFumeeLocateurs     
+              - locateur2confirmationAvisNouveauLocataireParLocateur
+
+          components:
+            - name: signatureLocateur2
+              type: signature
+              label: 
+                fr: Signature électronique
+                en: (EN) Signature électronique
+              additionals:
+                texte-consentement : <p>En apposant votre signature, vous confirmez avoir lu, compris, et acceptez les modalités du bail.</p>
+
+        # Aperçu et signature du bail (autre locateur 3)
+        - section:
+            fr: Aperçu et signature du bail
+          id: signatureBailLocateur3
+          cacherTexteExplicatifChampsObligatoires: true          
+          filtreEtapes: 
+            - contributionSignature:
+              - locateur: 3
+            - consultation:
+              - locateur: 3
+          sommaire: 
+            inclureSections : 
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire    
+              - autresSignataires     
+              - locateur3engagementAvertisseursFumeeLocateurs     
+              - locateur3confirmationAvisNouveauLocataireParLocateur
+
+          components:
+            - name: signatureLocateur3
+              type: signature
+              label: 
+                fr: Signature électronique
+                en: (EN) Signature électronique
+              additionals:
+                texte-consentement : <p>En apposant votre signature, vous confirmez avoir lu, compris, et acceptez les modalités du bail.</p>
+        
+        # Aperçu et signature du bail (locateur principal)
+        - section:
+            fr: Aperçu et signature du bail
+          id: signatureBailLocateurPrincipalTransmission
+          cacherTexteExplicatifChampsObligatoires: true          
+          filtreEtapes: 
+            - transmission:
+          sommaire: 
+            inclureSections : 
+              - infosLocateur
+              - infosLocataire
+              - descriptionLogement
+              - destinationLogement
+              - dependances
+              - appareilsInclus
+              - meublesInclus
+              - engagementAvertisseursFumeeLocateur1
+              - dureeBail
+              - cout
+              - paiement
+              - reglementImmeuble
+              - travauxEtReparations
+              - servicesConcierge
+              - servicesTaxesCoutsConsommation
+              - conditions
+              - autresServicesConditionsRestriction
+              - restrictionsLoyerBail
+              - avisNouveauLocataire
+              - engagementSolidaire      
+              - autresSignataires   
+              - locataire1engagementAvertisseursFumeeLocataire     
+              - locataire2engagementAvertisseursFumeeLocataire     
+              - locataire3engagementAvertisseursFumeeLocataire                   
+              - locataire4engagementAvertisseursFumeeLocataire                   
+              - locataire1consentementChequesPostDatesLocataire
+              - locataire2consentementChequesPostDatesLocataire     
+              - locataire3consentementChequesPostDatesLocataire                   
+              - locataire4consentementChequesPostDatesLocataire                   
+              - locataire1confirmationReglementImmeubleLocataire     
+              - locataire2confirmationReglementImmeubleLocataire     
+              - locataire3confirmationReglementImmeubleLocataire                   
+              - locataire4confirmationReglementImmeubleLocataire     
+              - locataire1avisNouveauLocataireContributionLocataire
+              - locataire2avisNouveauLocataireContributionLocataire     
+              - locataire3avisNouveauLocataireContributionLocataire                   
+              - locataire4avisNouveauLocataireContributionLocataire                  
+              - locataire1engagementSolidaireContributionLocataire
+              - locataire2engagementSolidaireContributionLocataire
+              - locataire3engagementSolidaireContributionLocataire
+              - locataire4engagementSolidaireContributionLocataire
+              - locataire1avisResidenceFamiliale
+              - locataire2avisResidenceFamiliale
+              - locataire3avisResidenceFamiliale
+              - locataire4avisResidenceFamiliale
+              - autreSignataire1engagementAvertisseursFumeeLocataire     
+              - autreSignataire1consentementChequesPostDatesLocataire
+              - autreSignataire1confirmationReglementImmeubleLocataire     
+              - autreSignataire1avisNouveauLocataireContributionLocataire
+              - autreSignataire1engagementSolidaireContributionLocataire
+              - autreSignataire1avisResidenceFamiliale
+              - autreSignataire2engagementAvertisseursFumeeLocataire     
+              - autreSignataire2consentementChequesPostDatesLocataire
+              - autreSignataire2confirmationReglementImmeubleLocataire     
+              - autreSignataire2avisNouveauLocataireContributionLocataire
+              - autreSignataire2engagementSolidaireContributionLocataire
+              - autreSignataire2avisResidenceFamiliale
+              - locateur1engagementAvertisseursFumeeLocateurs     
+              - locateur1confirmationAvisNouveauLocataireParLocateur
+              - locateur2engagementAvertisseursFumeeLocateurs     
+              - locateur2confirmationAvisNouveauLocataireParLocateur
+              - locateur3engagementAvertisseursFumeeLocateurs     
+              - locateur3confirmationAvisNouveauLocataireParLocateur
+            
+          components:
+            - name: signatureLocateurPrincipal
+              type: signature
+              label: 
+                fr: Signature électronique
+                en: (EN) Signature électronique
+              additionals:
+                texte-consentement : <p>En apposant votre signature, vous confirmez avoir lu, compris, et acceptez les modalités du bail.</p>
+
+        
         # Révision
         - section: 
             fr: Révision
             en: Revision
           id: revision
           cacherTexteExplicatifChampsObligatoires: true
+          filtreEtapes: 
+            - initial: 
+            - contributionSignature:
+            - transmission:            
           components:
             - type: dynamic
               tag: div
@@ -1752,14 +2245,40 @@ form:
               text: 
                 fr: Vous devez cliquer sur le bouton « Valider » afin de vérifier que le formulaire est rempli correctement.
                 en: You must click on the Validate button to verify that the form has been properly filled out.
+            # Étape 'initial' (locateurPrincipal)
             - type: dynamic
               tag: div
-              v-if: val('EtatRevision') === 'sans-erreur'
+              v-if: val('EtatRevision') === 'sans-erreur' && this.wf.etape.nom === 'initial'
               classes: texte-revision
               text: 
                 fr: |
-                  <p>Votre formulaire est validé et ne contient aucune erreur.</p>
-                  <p>Vous pouvez le revérifier en cliquant sur le bouton "Précédent" au bas de la page ou en accédant directement à la page nommée "Aperçu du bail" dans le menu de navigation.</p>
-                  <p>Lorsque tout est correct, vous pouvez cliquer sur le bouton « Soumettre » afin de transmettre le bail aux participants du processus de signature électronique.</p>
-                en: |
-                  Your form has been validated. You can click on the Submit button.
+                  <p>Le formulaire de bail électronique est maintenant complété.</p>
+                  <p>Avant de le transmettre aux autres parties (locateur(s), locataire(s), caution(s), etc.), nous vous invitons à le relire attentivement afin de <strong>vérifier l’exactitude de toutes les informations</strong> qu’il contient, en accédant à la section « Aperçu du bail ». Vous pourrez vérifier chaque section et y apporter les corrections nécessaires. Si toutes les informations sont exactes, vous pouvez cliquer sur le bouton « Soumettre ». Le formulaire de bail électronique sera <strong>automatiquement transmis</strong> aux autres parties afin qu'elles puissent remplir les sections qui les concernent.</p>
+                  <p>Lors de cette étape, les parties pourront <strong>communiquer avec vous si elles ont une interrogation et/ou une modification à apporter</strong>.</p>  
+                  <p>Si aucune modification n’est nécessaire, les parties pourront y apposer leur signature.</p> 
+                  <p>Assurez-vous d’avoir transmis à toutes les autres parties le <b>mot de passe pour qu’elles puissent accéder au formulaire de bail électronique</b>.</p>
+                  <utd-avis type="avertissement">
+                    <p>Veuillez noter que l’hyperlien pour <b>signer et conclure</b> le formulaire de bail électronique est valide pour <strong>36 heures</strong> à compter de sa transmission aux autres parties.</p>
+                  </utd-avis>
+            # Étape 'contributionSignature' (locataire, locateur, autre signataire)
+            - type: dynamic
+              tag: div
+              v-if: val('EtatRevision') === 'sans-erreur' && this.wf.etape.nom === 'contributionSignature'
+              classes: texte-revision
+              text: 
+                fr: |
+                  <p>Le formulaire de bail électronique est maintenant rempli.</p>
+                  <p>Tant que le formulaire de bail n’est pas transmis au locateur, vous pouvez accéder à la section <b>« Aperçu et signature du bail »</b> et revérifier l’exactitude de toutes les informations qu’il contient.</p>
+                  <p>Si toutes les informations sont exactes, vous pouvez cliquer sur le bouton <b>« Soumettre »</b>. Le formulaire de bail sera automatiquement envoyé au locateur pour qu’il puisse signer à son tour.</p>  
+                  <p>Lorsque toutes les parties concernées auront complété et signé le formulaire de bail électronique <b>vous recevrez votre formulaire de bail électronique final par courriel</b> ainsi que tous les documents joints (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p>  
+                  <p>Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>  
+            # Étape 'transmission' (locateur principal)
+            - type: dynamic
+              tag: div
+              v-if: val('EtatRevision') === 'sans-erreur' && this.wf.etape.nom === 'transmission' && val('paiement.etat') === 'a-faire'
+              classes: texte-revision
+              text: 
+                fr: |
+                  <p>Le formulaire de bail électronique est maintenant rempli et signé par toutes les parties. <b>Afin de finaliser la transaction, vous devez procéder au paiement de 2,99 $ (taxes en sus)</b>.</p>
+                  <p>Une fois le paiement effectué, <b>vous recevrez votre formulaire de bail électronique final par courriel ainsi que tous les documents joints</b> (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p>
+                  <p>Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>                  
