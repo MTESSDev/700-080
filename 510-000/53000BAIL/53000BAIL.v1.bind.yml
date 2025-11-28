@@ -1129,3 +1129,71 @@ bind:
       champs: [assistancePersonnelle.0.precisionSoinsInvasifs]
     Assistance_cout_mensuel:
       champs: [assistancePersonnelle.0.coutMensuelAssistancePersonnelle]
+    Soins_infirmiers_cout:
+      champs: [soinsInfirmiers.0.coutInfirmier]
+    Soins_infirmiers_preciser1:
+      champs: [soinsInfirmiers.0.precisionInfirmier]
+    Soins_infirmiers_heures:
+      champs: [soinsInfirmiers.0.heuresInfirmier]
+    Soins_infirmiers_auxiliaire_cout:
+      champs: [soinsInfirmiers.0.coutInfirmierAuxiliaire]
+    Soins_infirmiers_auxiliaire_preciser1:
+      champs: [soinsInfirmiers.0.precisionAuxiliaire]
+    Soins_infirmiers_auxiliaire_heures:
+      champs: [soinsInfirmiers.0.heuresAuxiliaire]
+    Soins_prepose_cout:
+      champs: [soinsInfirmiers.0.coutPrepose]
+    Soins_prepose_preciser1:
+      champs: [soinsInfirmiers.0.precisionPrepose]
+    Soins_prepose_heures:
+      champs: [soinsInfirmiers.0.heuresPrepose]
+    Soins_infirmiers_cout_mensuel:
+      champs: [soinsInfirmiers.0.coutMensuelSoins]
+    Aide_linge_maison_frequence_semaine:
+      champs: [aideDomestique.0.lingeMaisonNbFoisSemaine]
+    Aide_linge_maison_frequence_mois:
+      champs: [aideDomestique.0.lingeMaisonNbFoisMois]
+    Aide_ligne_maison_cout:
+      champs: [aideDomestique.0.coutLingeMaison]
+    Aide_vetements_frequence_semaine:
+      champs: [aideDomestique.0.vetementsNbFoisSemaine]
+    Aide_vetements_frequence_mois:
+      champs: [aideDomestique.0.vetementsNbFoisMois]
+    Aide_vetements_cout:
+      champs: [aideDomestique.0.coutVetements]
+    Aide_menager_frequence_semaine:
+      champs: [aideDomestique.0.menageNbFoisSemaine]
+    Aide_menager_frequence_mois:
+      champs: [aideDomestique.0.menageNbFoisMois]
+    Aide_menager_cout:
+      champs: [aideDomestique.0.coutMenageLogement]
+    Aide_menager_preciser1:
+      champs: [aideDomestique.0.precisionMenage]
+    Aide_domestique_cout_mensuel:
+      champs: [aideDomestique.0.coutMensuelDomestique]
+    Autres_deplacement_cout:
+      champs: [autresServices.0.coutDeplacement]
+    Autres_deplacement_preciser1:
+      champs: [autresServices.0.precisionDeplacement]
+    Autres_accompagnement_medical_cout:
+      champs: [autresServices.0.coutAccompagnementMedical]
+    Autres_accompagnement_courses_cout:
+      champs: [autresServices.0.coutCourses]
+    Autres_alerte_securite_cout:
+      champs: [autresServices.0.coutDispositifAlerte]
+    Autres_alerte_securite_preciser1:
+      champs: [autresServices.0.precisionAlerte]
+    Autres_aide_formulaires_cout:
+      champs: [autresServices.0.coutImpot]
+    Autres_autres_preciser1:
+      champs: [autresServices.0.autresServicesOffertsDetails]
+    Autres_autres_cout:
+      champs: [autresServices.0.coutAutreServices]
+    Autres_services_cout_mensuel:
+      champs: [autresServices.0.coutMensuelAutresServices]
+    Cout_mensuel_total_services:
+      champs: [totaux.0.coutTotalServices]
+    Loyer_base:
+      champs: [totaux.0.montantLoyerBase]
+    Loyer_total:
+      champs: [totaux.0.montantLoyerTotal]
