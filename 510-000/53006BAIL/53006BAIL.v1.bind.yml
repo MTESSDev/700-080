@@ -29,7 +29,7 @@ templates:
   name: 53006 - BAIL
   gabarit:
     fr: 53006_Bail_coop_VF
-    en: 53006_Lease_coop_VF
+    en: 53007_Lease_coop_VF
   toujoursProduire: false
 - id: annexe6
   name: Annexe 6
