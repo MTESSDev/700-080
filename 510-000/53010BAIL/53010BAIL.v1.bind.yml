@@ -26,7 +26,7 @@ bundles:
     lignes: ['{{NoConfirmation}}']
 templates:
 - id: bail
-  name: 53008 - BAIL
+  name: 53010 - BAIL
   gabarit:
     fr: 53010_Bail_maison_mobile_VF
     en: 53011_Lease_mobile-home_VF
