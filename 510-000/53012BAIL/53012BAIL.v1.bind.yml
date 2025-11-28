@@ -64,9 +64,7 @@ bind:
     Autre_telephone_locateur_1:
       champs: [locateurs.0.autreNoTelephoneCell]
     Adresse_courriel_locateur_1:
-      champs:
-      - locateurs.0.courrielLocateur
-      - locateurs.0.courrielRepresentant
+      champs: [locateurs.0.courrielPrincipal]
       formule: '{locateurs.0.questionRepresentant:{locateurs.0.courrielRepresentant}|{locateurs.0.courrielLocateur}}'
     Representant_locateur_1:
       champs: [locateurs.0.representant]
@@ -86,18 +84,12 @@ bind:
       champs: [locataires.0.noTelephone]
     Autre_Telephone_locataire_1:
       champs: [locataires.0.autreNoTelephoneCell]
-    Adresse_courriel_locataire_1:
-      champs:
-      - locataires.0.questionRepresentant
-      - locataires.0.courrielLocataire
-      - locataires.0.courrielRepresentant
-      formule: '{locataires.0.questionRepresentant:{locataires.0.courrielRepresentant}|{locataires.0.courrielLocataire}}'
     Representant_locataire_1:
       champs: [locataires.0.representant]
     Numero_civique_logement:
-      champs: [adresseLogement.0.NoCivique]
+      champs: [adresseChambre.0.NoCivique]
     Rue_logement:
-      champs: [adresseLogement.0.Rue]
+      champs: [adresseChambre.0.Rue]
     App_logement:
       champs: [adresseLogement.0.Appartement]
     Municipalite_logement:
@@ -367,6 +359,8 @@ bind:
       champs: [autresSignataires.0.nom]
     Adresse_autre_signataire1:
       champs: [autresSignataires.0.adresse.0.AdresseComplete]
+    Adresse_courriel_locataire_1:
+      champs: [locataires.0.courriel]
   ajout:
     Nom_locateur_1:
       champs: [locateurs.2.nom]
