@@ -1980,6 +1980,68 @@ form:
       filtreEtapes: 
         - initial: 
       sections:
+        - section: 
+            fr: Information 
+            en: Informations
+          id: informationsAnnexe6
+          cacherTexteExplicatifChampsObligatoires: true                    
+          components:                 
+            - type: dynamic
+              tag: div
+              classes: utd-page-texte
+              text: 
+                fr: |             
+                  <utd-avis type="avertissement">                  
+                    <p>En cas de divergence entre le présent document et les lois applicables au logement, ces lois ont priorité.</p>
+                  </utd-avis>
+
+                  <utd-avis>                  
+                    <p>La présente annexe doit être utilisée lorsqu’un locateur offre des services additionnels à ceux indiqués au bail, incluant les services qui se rattachent à la personne même du locataire conformément aux articles <b><a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892_1' target='_blank'>1892.1</a></b> et <b><a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1895_1' target='_blank'>1895.1</a></b> du <b>Code civil du Québec (C.c.Q.)</b>. Elle peut, en outre, être exigée par Revenu Québec pour accorder à un locataire un crédit d’impôt pour maintien à domicile.</p>
+                    <p>Les dispositions relatives aux droits et obligations des locateurs et des locataires que l’on trouve aux articles <b><a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1851' target='_blank'>1851</a> à <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:2000' target='_blank'>2000</a> C.c.Q.</b>, ainsi que certaines dispositions relatives aux personnes vivant dans une résidence privée pour aînés, selon la <b>Loi sur les services de santé et les services sociaux (LSSSS)</b> et le <b>Règlement sur les conditions d’obtention d’un certificat de conformité et les normes d’exploitation d’une résidence privée pour aînés</b>, s’appliquent non seulement au logement ou à la chambre louée, mais aussi aux services (exemples: repas, soins infirmiers, buanderie), aux accessoires et aux dépendances.</p>
+                    <p>Le locateur ne peut, par une clause du bail, limiter le droit du locataire d’acheter des biens ou d’obtenir des services des personnes de son choix suivant les modalités dont le locataire convient lui-même.</p>
+                  </utd-avis>
+
+                  <div class="zone-evidence mt-16 mb-16">
+                    <h3>Coûts des services personnels offerts au locataire</h3>
+                      <p>Lorsque le bail prévoit des services qui se rattachent à la personne même du locataire, le locateur doit remplir la présente annexe et inscrire
+                      la partie du loyer afférente au coût de chacun de ces services. Il en est de même pour une personne âgée admise dans une résidence
+                      privée pour aînés où lui sont offerts les soins infirmiers ou les services d’assistance personnelle que nécessite son état de santé, ou dans tout
+                      autre lieu d’hébergement, quelle qu’en soit l’appellation, où lui sont offerts de tels soins ou services.</p>
+                  </div>
+
+                  <h3>Avis de résiliation de bail</h3>
+                  <p>Art. <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1938' target='_blank'>1938</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1939' target='_blank'>1939</a>, <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974' target='_blank'>1974</a> et <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1974_1' target='_blank'>1974.1</a> C.c.Q.
+                  <p>Le locateur qui reçoit un avis écrit de résiliation en cours de bail ne peut réclamer que le loyer qui se rapporte au logement ainsi que la partie du loyer afférente aux coûts des services prévus au bail, à la présente annexe ou dans un contrat distinct, et qui ont été fournis au locataire avant son départ du logement, lorsque ce dernier le quitte pour l’une ou l’autre des raisons suivantes :</p>
+                  <ul class="utd">
+                      <li>s’il lui est attribué un logement à loyer modique ; ou</li>
+                      <li>s’il est relogé dans un logement équivalent qui correspond à ses besoins, à la suite d’une décision du tribunal ; ou</li>
+                      <li>s’il ne peut plus occuper son logement en raison d’un handicap ; ou</li>
+                      <li>si sa sécurité ou celle d’un enfant qui habite avec lui est menacée en raison de la violence de son conjoint ou de son ancien conjoint, ou en raison d’une agression à caractère sexuel, même par un tiers ; ou</li>
+                      <li>s’il est décédé, auquel cas l’avis de résiliation peut être donné par l’une des personnes prévues à la loi (voir la mention sur le décès aux formulaires de bail obligatoires) ; ou</li>
+                      <li>s’il est une personne âgée admise de façon permanente dans un centre d’hébergement et de soins de longue durée (CHLSD), dans une ressource intermédiaire, dans une résidence privée pour aînés où lui sont offerts les soins infirmiers ou les services d’assistance personnelle que nécessite son état de santé ou dans tout autre lieu d’hébergement, quelle qu’en soit l’appellation, où lui sont offerts de tels soins ou services, qu’elle réside ou non dans un tel endroit au moment de son admission.</li>
+                  </ul>
+                
+
+                  <h3>Résidence privée pour aînés</h3>
+                  <p>L’exploitant d’une résidence privée pour personnes âgées doit obtenir un certificat de conformité en vertu de la LSSSS qui définit la dénomination « résidence privée pour aînés ». Seul l’exploitant ayant obtenu une certification ou une attestation temporaire de conformité peut utiliser cette appellation.</p>
+                  <p>Pour conserver ce certificat, l’exploitant doit respecter un ensemble de critères sociosanitaires et de normes d’exploitation. Ces derniers sont définis dans le Règlement sur les conditions d’obtention d’un certificat de conformité et les normes d’exploitation d’une résidence privée pour aînés.</p>
+                  <p>Ils concernent notamment les droits des résidents, l’échange d’information entre l’exploitant et ses locataires relativement à leur santé et à leur sécurité, l’alimentation, la médication et l’assurance responsabilité.</p>
+                  <p>Dans certains cas et aux conditions prévues à la LSSSS, le bail peut être résilié ou le locataire peut être relocalisé (art. 346.0.18 et 346.0.20.2 à 346.0.20.4 de la LSSSS).</p>
+                  
+                  <h4>Services destinés à des personnes âgées autonomes</h4>
+                  <p>Le locateur d’une résidence privée pour aînés dont les services s’adressent à des personnes âgées autonomes offre des services qui sont compris dans au moins deux des catégories de services suivantes : services de repas, d’aide domestique, de sécurité ou de loisirs (voir ci-après les parties 1 et 2). De plus, l’exploitant d’une telle résidence doit remettre à la personne qui souhaite y résider ou à son représentant, le cas échéant, un document qui doit notamment mentionner qu’il n’offre aucun service infirmier ou d’assistance personnelle.</p>
+
+                  <h4>Services destinés à des personnes âgées semi-autonomes</h4>                    
+                  <p>Le locateur d’une résidence privée pour aînés dont les services s’adressent à des personnes âgées semi-autonomes offre des services qui sont compris dans au moins deux des catégories de services suivantes : services de repas, d’aide domestique, de sécurité, de loisirs, d’assistance personnelle ou de soins infirmiers (voir ci-après les parties 1 et 2). De plus, au moins l’un des services offerts au locataire appartient à la catégorie des services d’assistance personnelle ou à la catégorie des soins infirmiers. Il est à noter que les soins infirmiers relèvent de l’exercice d’une activité professionnelle par une infirmière ou un infirmier ou par une infirmière ou un infirmier auxiliaire, selon la loi ou un règlement habilitant, ou par toute autre personne qui y est autorisée en vertu d’une loi ou d’un règlement.</p>
+                  <p>Une même résidence peut offrir des services destinés à la fois à des personnes âgées autonomes et semi-autonomes.</p>
+
+                  <div class="zone-evidence mt-16">
+                    <h3>Respect du bail</h3>
+                    <p>Le locateur doit, avant la conclusion du bail, déterminer avec la personne qui souhaite y habiter ou son représentant, le cas échéant, l’ensemble des services qu’elle veut obtenir. Pendant la durée du bail, le locateur doit offrir et maintenir les services prévus au bail ou dans la présente
+                    annexe, ou dans un contrat distinct, et ce, sans augmentation de coût ni diminution de la qualité des services. Le coût de ces services peut être inclus dans le loyer ou être payable suivant un autre mode prévu
+                    au bail ou à la présente annexe, ou dans un contrat distinct.</p>
+                  </div>
+                
         # Description détaillée du logement, des accessoires, des dépendances et des services autres que personnels
         - section:
             fr: Description détaillée du logement, des accessoires, des dépendances et des services autres que personnels
