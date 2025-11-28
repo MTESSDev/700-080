@@ -1053,3 +1053,79 @@ bind:
       champs: [annexe6AutresServicesOfferts.0.annexe6Securite]
     Securite_horaire:
       champs: [annexe6AutresServicesOfferts.0.annexe6SecuriteHoraire]
+    Repas_nombre:
+      champs: [servicesAlimentaires.0.nbRepasQuotidiens]
+    Repas_dejeuner_cout:
+      champs: [servicesAlimentaires.0.coutDejeuner]
+    Repas_diner_cout:
+      champs: [servicesAlimentaires.0.coutDiner]
+    Repas_souper_cout:
+      champs: [servicesAlimentaires.0.coutSouper]
+    Repas_menu_jour_cout:
+      champs: [servicesAlimentaires.0.coutMenuJour]
+    Repas_menu_choix_cout:
+      champs: [servicesAlimentaires.0.coutMenuChoix]
+    Repas_menu_dietetiques_cout:
+      champs: [servicesAlimentaires.0.coutMenuDiet]
+    Menu_preciser1:
+      champs: [servicesAlimentaires.0.precisionMenuDiet]
+    Horaire_dejeuner_debut:
+      champs: [servicesAlimentaires.0.dejeunerDe]
+    Horaire_dejeuner_fin:
+      champs: [servicesAlimentaires.0.dejeunerA]
+    Horaire_diner_debut:
+      champs: [servicesAlimentaires.0.dinerDe]
+    Horaire_diner_fin:
+      champs: [servicesAlimentaires.0.dinerA]
+    Horaire_souper_debut:
+      champs: [servicesAlimentaires.0.souperDe]
+    Horaire_souper_fin:
+      champs: [servicesAlimentaires.0.souperA]
+    Collation_cout:
+      champs: [servicesAlimentaires.0.coutCollations]
+    Nombre_collation_jour:
+      champs: [servicesAlimentaires.0.nbCollations]
+    Horaire_collation:
+      champs: [servicesAlimentaires.0.horaireCollations]
+    Collation_salle_manger:
+      champs: [servicesAlimentaires.0.lieuRepas==SalleManger]
+    Collation_cafeteria:
+      champs: [servicesAlimentaires.0.lieuRepas==Cafeteria]
+    Collation_logement_cout:
+      champs: [servicesAlimentaires.0.coutRepasServiceLogement]
+    Cout_mensuel_repas:
+      champs: [servicesAlimentaires.0.coutMensuelAlimentaire]
+    Aide_alimentation_cout:
+      champs: [assistancePersonnelle.0.coutAlimentation]
+    Aide_alimentation_preciser1:
+      champs: [assistancePersonnelle.0.precisionAlimentation]
+    Collation_logement:
+      champs: [servicesAlimentaires.0.lieuRepas==Logement]
+    Aide_hygiene_cout:
+      champs: [assistancePersonnelle.0.coutHygiene]
+    Aide_hygiene_preciser:
+      champs: [assistancePersonnelle.0.precisionHygiene]
+    Aide_bain_cout:
+      champs: [assistancePersonnelle.0.coutBain]
+    Aide_bain_frequence:
+      champs: [assistancePersonnelle.0.frequenceBain]
+    Aide_habillage_cout:
+      champs: [assistancePersonnelle.0.coutHabillage]
+    Aide_habillage_preciser:
+      champs: [assistancePersonnelle.0.precisionHabillage]
+    Aide_autre_cout:
+      champs: [assistancePersonnelle.0.coutAutresServicesAssistancePerso]
+    Aide_autre_preciser1:
+      champs: [assistancePersonnelle.0.precisionAutreServicesAssistancePerso]
+    Assistance_medicaments_distribution_cout:
+      champs: [assistancePersonnelle.0.coutDistributionMedicaments]
+    Assistance_medicaments_administration_cout:
+      champs: [assistancePersonnelle.0.coutAdministrationMedicaments]
+    Assistance_medicaments_administration_preciser1:
+      champs: [assistancePersonnelle.0.precisionAdministration]
+    Soins_invasifs_cout:
+      champs: [assistancePersonnelle.0.coutSoinsInvasifs]
+    Soins_invasifs_preciser1:
+      champs: [assistancePersonnelle.0.precisionSoinsInvasifs]
+    Assistance_cout_mensuel:
+      champs: [assistancePersonnelle.0.coutMensuelAssistancePersonnelle]
