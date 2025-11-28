@@ -1981,7 +1981,7 @@ form:
         - initial: 
       sections:
         - section: 
-            fr: Information 
+            fr: Informations 
             en: Informations
           id: informationsAnnexe6
           cacherTexteExplicatifChampsObligatoires: true                    
