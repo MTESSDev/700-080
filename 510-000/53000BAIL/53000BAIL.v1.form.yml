@@ -231,156 +231,104 @@ form:
             en: Lessor
           id: infosLocateur
           components:
-            - type: avis
-              classes: information
-              text:
-                fr: <p>Les noms indiqués dans le bail doivent correspondre à ceux que le locateur et le locataire peuvent légalement utiliser.</p>
-                    <p>Le terme « locateur » que l’on trouve au Code civil du Québec renvoie généralement au propriétaire de l’immeuble.</p>
-                en: <p>The names indicated in the lease must be those that the lessor is legally authorized to use.</p>
-                    <p>The term “lessor” in the Civil Code of Québec generally refers to the owner of the immovable.</p>
-            - type: repeatableGroup
-              repeatable: true
-              limit: 4
-              instanceLabel:
+          - type: avis
+            classes: information
+            text:
+              fr: <p>Les noms indiqués dans le bail doivent correspondre à ceux que le locateur et le locataire peuvent légalement utiliser.</p>
+                  <p>Le terme « locateur » que l’on trouve au Code civil du Québec renvoie généralement au propriétaire de l’immeuble.</p>
+              en: <p>The names indicated in the lease must be those that the lessor is legally authorized to use.</p>
+                  <p>The term “lessor” in the Civil Code of Québec generally refers to the owner of the immovable.</p>
+          - type: repeatableGroup
+            repeatable: true
+            limit: 4
+            instanceLabel:
+              fr: Locateur
+              en: Lessor
+            addLabel:
+              fr: Ajouter un locateur
+              en: Add a lessor
+            removeLabel:
+              fr: Supprimer le locateur
+              en: Remove the lessor
+            name: locateurs
+            label:
+              fr: Locateur(s)
+              en: Lessor(s)
+            tooltip:
+              title: 
                 fr: Locateur
                 en: Lessor
-              addLabel:
-                fr: Ajouter un locateur
-                en: Add a lessor
-              removeLabel:
-                fr: Supprimer le locateur
-                en: Remove the lessor
-              name: locateurs
-              label:
-                fr: Locateur(s)
-                en: Lessor(s)
-              tooltip:
-                title: 
-                  fr: Locateur
-                  en: Lessor
-                text:
-                  fr: Le locateur est la personne qui loue un logement à un locataire.
-                  en: TODO english - Le locateur est la personne qui loue un logement à un locataire.
-              components:
-                - name: nom
-                  type: text
-                  label: 
-                    fr: Nom
-                    en: Name                  
-                - type: adresse
-                  name: adresse
-                  label:
-                    fr: Adresse
-                    en: Address
-                - type: tel
-                  name: noTelephone
-                  label: 
-                    fr: Numéro de téléphone
-                    en: Telephone number
-                  validations:
+              text:
+                fr: Le locateur est la personne qui loue un logement à un locataire.
+                en: TODO english - Le locateur est la personne qui loue un logement à un locataire.
+            components:
+              - name: nom
+                type: text
+                label: 
+                  fr: Nom
+                  en: Name                  
+              - type: adresse
+                name: adresse
+                label:
+                  fr: Adresse
+                  en: Address
+              - type: tel
+                name: noTelephone
+                label: 
+                  fr: Numéro de téléphone
+                  en: Telephone number
+                validations:
                     optional: null
-                - type: tel
-                  name: autreNoTelephoneCell
-                  label: 
-                    fr: Autre numéro de téléphone (cellulaire)
-                    en: Other telephone number (cell phone)
-                  validations:
-                    optional: null
-                - type: radio
-                  name: questionRepresentant
-                  label:
-                    fr: Serez-vous représenté par quelqu’un pour la signature du bail?
-                    en: TODO English Serez-vous représenté par quelqu’un pour la signature du bail?
-                  tooltip:
-                    title:
-                      fr: Le représentant
-                      en: TODO - Le représentant
-                    text:
-                      fr: |
-                        <p>Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locateur est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
-                      en: |
-                        <p>TODO english - Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locateur est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
-                  options: yesno
-
-                - type: avis
-                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
+              - type: tel
+                name: autreNoTelephoneCell
+                label: 
+                  fr: Autre numéro de téléphone (cellulaire)
+                  en: Other telephone number (cell phone)
+                validations:
+                  optional: null
+              - type: courrielWorkflow
+                v-if: index === 0
+                role: locateurPrincipal
+                motDePasse: val('motPasseWF')
+                name: courriel
+                label: 
+                  fr: Adresse de courriel
+                  en: Email address
+                help:
+                  fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
+                  en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
+              - type: courrielWorkflow
+                v-if: index > 0              
+                role: locateur
+                motDePasse: val('motPasseWF')
+                name: courriel
+                label: 
+                  fr: Adresse de courriel
+                  en: Email address
+                help:
+                  fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
+                  en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
+              - type: radio
+                name: questionRepresentant
+                label:
+                  fr: Serez-vous représenté par quelqu’un pour la signature du bail?
+                  en: TODO English Serez-vous représenté par quelqu’un pour la signature du bail?
+                tooltip:
+                  title:
+                    fr: Le représentant
+                    en: TODO - Le représentant
                   text:
                     fr: |
-                      <p>Les parties (locateur(s) et locataire(s)) doivent prendre certains engagements avant de signer le formulaire de bail électronique.</p>
-                      <p>Lorsqu’une partie choisit d’être représentée pour la conclusion du bail, <b>elle autorise le représentant à s’engager en son nom</b>.</p>
-                      <p>Le représentant recevra par courriel un hyperlien pour <b>valider les informations saisies, prendre les engagements requis et signer le formulaire de bail électronique au nom de la partie qu’il représente</b>.</p>                  
-                      
-                - type: text
-                  name: representant            
-                  label: 
-                    fr: Représenté par
-                    en: Represented by
-                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
-
-                # Courriel du locateur principal
-                - type: courrielWorkflow
-                  v-if: index === 0 && val(`${name}.questionRepresentant`, index) === 'false'
-                  role: locateurPrincipal
-                  motDePasse: val('motPasseWF')
-                  name: courrielLocateur
-                  label: 
-                    fr: Adresse de courriel
-                    en: Email address
-                  help:
-                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
-                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
-
-                # Courriel autre locateur
-                - type: courrielWorkflow
-                  v-if: index > 0 && val(`${name}.questionRepresentant`, index) === 'false'             
-                  role: locateur
-                  motDePasse: val('motPasseWF')
-                  name: courrielLocateur
-                  label: 
-                    fr: Adresse de courriel
-                    en: Email address
-                  help:
-                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
-                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
-                
-                # Courriel du représentant locateur principal
-                - type: courrielWorkflow
-                  v-if: index === 0 && val(`${name}.questionRepresentant`, index) === 'true'
-                  role: locateurPrincipal
-                  motDePasse: val('motPasseWF')
-                  name: courrielRepresentant
-                  label: 
-                    fr: Adresse de courriel du représentant
-                    en: Email address
-                  help:
-                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
-                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
-
-                # Courriel du représentant autre locateur 
-                - type: courrielWorkflow
-                  v-if: index > 0 && val(`${name}.questionRepresentant`, index) === 'true'             
-                  role: locateur
-                  motDePasse: val('motPasseWF')
-                  name: courrielRepresentant
-                  label: 
-                    fr: Adresse de courriel du représentant
-                    en: Email address
-                  help:
-                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
-                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
-
-                # Courriel du locateur mandant
-                - type: courrielWorkflow
-                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
-                  role: mandant
-                  motDePasse: val('motPasseWF')
-                  name: courrielMandant
-                  label: 
-                    fr: Adresse de courriel du locateur
-                  help:
-                    fr: Une adresse de courriel valide est requise pour recevoir une copie du bail final.
-                  validations:
-                    optional:
+                      <p>Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locateur est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
+                    en: |
+                      <p>TODO english - Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locateur est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
+                options: yesno
+              - type: text
+                name: representant            
+                label: 
+                  fr: Représenté par
+                  en: Represented by
+                v-if: val(`${name}.questionRepresentant`, index) === 'true'
 
         # Locataire
         - section:
@@ -388,146 +336,108 @@ form:
             en: Lessee
           id: infosLocataire
           components:
-            - type: avis
-              classes: information
-              text:
-                fr: <p>Les noms indiqués dans le bail doivent correspondre à ceux que le locateur et le locataire peuvent légalement utiliser.</p>
-                en: <p>The names indicated in the lease must be those that the lessee is legally authorized to use.</p>
-            - type: repeatableGroup
-              repeatable: true
-              limit: 4
-              instanceLabel:
+          - type: avis
+            classes: information
+            text:
+              fr: <p>Les noms indiqués dans le bail doivent correspondre à ceux que le locateur et le locataire peuvent légalement utiliser.</p>
+              en: <p>The names indicated in the lease must be those that the lessee is legally authorized to use.</p>
+          - type: repeatableGroup
+            repeatable: true
+            limit: 4
+            instanceLabel:
+              fr: Locataire
+              en: Lessee
+            addLabel:
+              fr: Ajouter un locataire
+              en: Add a lessee
+            removeLabel:
+              fr: Supprimer le locataire
+              en: Remove the lessee
+            name: locataires
+            label:
+              fr: Locataire(s)
+              en: Lessee(s)
+            tooltip:
+              title: 
                 fr: Locataire
                 en: Lessee
-              addLabel:
-                fr: Ajouter un locataire
-                en: Add a lessee
-              removeLabel:
-                fr: Supprimer le locataire
-                en: Remove the lessee
-              name: locataires
-              label:
-                fr: Locataire(s)
-                en: Lessee(s)
-              tooltip:
-                title: 
-                  fr: Locataire
-                  en: Lessee
-                text:
-                  fr: Le locataire est la personne qui loue un logement à un locateur, généralement le propriétaire de l’immeuble où se situe le logement.
-                  en: TODO english - Le locataire est la personne qui loue un logement à un locateur, généralement le propriétaire de l’immeuble où se situe le logement.
-              components:
-                - name: nom
-                  type: text
-                  label: 
+              text:
+                fr: Le locataire est la personne qui loue un logement à un locateur, généralement le propriétaire de l’immeuble où se situe le logement.
+                en: TODO english - Le locataire est la personne qui loue un logement à un locateur, généralement le propriétaire de l’immeuble où se situe le logement.
+            components:
+              - name: nom
+                type: text
+                label: 
+                  fr: Nom
+                  en: Name
+                tooltip:
+                  title:
                     fr: Nom
                     en: Name
-                  tooltip:
-                    title:
-                      fr: Nom
-                      en: Name
-                    text:
-                      fr: <p>Afin de s’assurer de l’identité de l'aspirant locataire, le locateur peut demander que lui soit présentée une pièce d’identité, avec ou sans photo, comme un permis de conduire, une carte d’assurance maladie ou sociale ou un passeport. Toutefois, le locateur ne peut recueillir les informations contenues sur cette pièce. Il ne peut donc pas faire une photocopie de cette pièce, ni la prendre en photo, ni la conserver dans le dossier de location.</p>
-                      en: <p>TODO english</p>
-                - type: adresse
-                  name: adresse
-                  label:
-                    fr: Adresse
-                    en: Address
-                  help: 
-                    fr: Veuillez inscrire l'adresse actuelle du locataire.
-                    en: TODO english
-                - type: tel
-                  name: noTelephone
-                  label: 
-                    fr: Numéro de téléphone
-                    en: Telephone number
-                  validations:
+                  text:
+                    fr: <p>Afin de s’assurer de l’identité de l'aspirant locataire, le locateur peut demander que lui soit présentée une pièce d’identité, avec ou sans photo, comme un permis de conduire, une carte d’assurance maladie ou sociale ou un passeport. Toutefois, le locateur ne peut recueillir les informations contenues sur cette pièce. Il ne peut donc pas faire une photocopie de cette pièce, ni la prendre en photo, ni la conserver dans le dossier de location.</p>
+                    en: <p>TODO english</p>
+              - type: adresse
+                name: adresse
+                label:
+                  fr: Adresse
+                  en: Address
+                help: 
+                  fr: Veuillez inscrire l'adresse actuelle du locataire.
+                  en: TODO english
+              - type: tel
+                name: noTelephone
+                label: 
+                  fr: Numéro de téléphone
+                  en: Telephone number
+                validations:
                     optional: null
-                - type: tel
-                  name: autreNoTelephoneCell
-                  label: 
-                    fr: Autre numéro de téléphone (cellulaire)
-                    en: Other telephone number (cell phone)
-                  validations:
-                    optional: null
-                - type: radio
-                  name: questionRepresentant
-                  label:
-                    fr: Serez-vous représenté par quelqu’un pour la signature du bail?
-                    en: TODO English Serez-vous représenté par quelqu’un pour la signature du bail?
-                  options: yesno
-                  tooltip:
-                    title:
-                      fr: Le représentant
-                      en: TODO - Le représentant
-                    text:
-                      fr: |
-                        <p>Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locataire est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
-                      en: |
-                        <p>TODO english - Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locataire est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
-                - type: avis
-                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
+              - type: tel
+                name: autreNoTelephoneCell
+                label: 
+                  fr: Autre numéro de téléphone (cellulaire)
+                  en: Other telephone number (cell phone)
+                validations:
+                  optional: null
+              - type: courrielWorkflow
+                role: locataire
+                motDePasse: val('motPasseWF')
+                name: courriel
+                label: 
+                  fr: Adresse de courriel
+                  en: Email address
+                help:
+                  fr: C'est à cette adresse qu'un lien sera envoyé pour compléter et signer le bail.
+                  en: TODO (EN) C'est à cette adresse qu'un lien sera envoyé pour compléter et signer le bail.
+                tooltip:
+                  title:
+                    fr: Adresse de courriel
+                    en: Email adress
+                  text:
+                    fr: <p>L’adresse de courriel du locataire peut être pratique pour communiquer avec lui. Toutefois, il est préférable d’obtenir un consentement libre et éclairé du locataire pour procéder ainsi. Vous pourrez joindre son consentement en le téléchargeant à la “Section services et conditions”.</p>
+                    en: <p>TODO english</p>
+              - type: radio
+                name: questionRepresentant
+                label:
+                  fr: Serez-vous représenté par quelqu’un pour la signature du bail?
+                  en: TODO English Serez-vous représenté par quelqu’un pour la signature du bail?
+                options: yesno
+                tooltip:
+                  title:
+                    fr: Le représentant
+                    en: TODO - Le représentant
                   text:
                     fr: |
-                      <p>Les parties (locateur(s) et locataire(s)) doivent prendre certains engagements avant de signer le formulaire de bail électronique.</p>
-                      <p>Lorsqu’une partie choisit d’être représentée pour la conclusion du bail, <b>elle autorise le représentant à s’engager en son nom</b>.</p>
-                      <p>Le représentant recevra par courriel un hyperlien pour <b>valider les informations saisies, prendre les engagements requis et signer le formulaire de bail électronique au nom de la partie qu’il représente</b>.</p>                  
+                      <p>Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locataire est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
+                    en: |
+                      <p>TODO english - Le représentant participe à la rédaction du bail de logement, mais il n'est pas responsable de celui-ci. Seul le locataire est responsable du bail et détient tous les droits et obligations qui en découlent.</p>
+              - type: text
+                name: representant            
+                label: 
+                  fr: Représenté par
+                  en: Represented by
+                v-if: val(`${name}.questionRepresentant`, index) === 'true'
 
-                - type: text
-                  name: representant            
-                  label: 
-                    fr: Représenté par
-                    en: Represented by
-                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
-
-
-                - type: courrielWorkflow
-                  role: locataire
-                  motDePasse: val('motPasseWF')
-                  name: courrielLocataire
-                  v-if: val(`${name}.questionRepresentant`, index) === 'false'                
-                  label: 
-                    fr: Adresse de courriel
-                    en: Email address
-                  help:
-                    fr: C'est à cette adresse qu'un lien sera envoyé pour compléter et signer le bail.
-                    en: TODO (EN) C'est à cette adresse qu'un lien sera envoyé pour compléter et signer le bail.
-                  tooltip:
-                    title:
-                      fr: Adresse de courriel
-                      en: Email adress
-                    text:
-                      fr: <p>L’adresse de courriel du locataire peut être pratique pour communiquer avec lui. Toutefois, il est préférable d’obtenir un consentement libre et éclairé du locataire pour procéder ainsi. Vous pourrez joindre son consentement en le téléchargeant à la “Section services et conditions”.</p>
-                      en: <p>TODO english</p>
-
-
-                # Courriel du représentant locataire
-                - type: courrielWorkflow
-                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
-                  role: locataire
-                  motDePasse: val('motPasseWF')
-                  name: courrielRepresentant
-                  label: 
-                    fr: Adresse de courriel du représentant
-                    en: Email address
-                  help:
-                    fr: Une adresse de courriel valide est requise pour recevoir et signer le bail.
-                    en: TODO (EN) Une adresse de courriel valide est requise pour recevoir et signer le bail.
-
-                # Courriel du locataire mandant
-                - type: courrielWorkflow
-                  v-if: val(`${name}.questionRepresentant`, index) === 'true'
-                  role: mandant
-                  motDePasse: val('motPasseWF')
-                  name: courrielMandant
-                  label: 
-                    fr: Adresse de courriel du locataire
-                  help:
-                    fr: Une adresse de courriel valide est requise pour recevoir une copie du bail final.
-                  validations:
-                    optional:
-              
     # B - Description et destination du logement loué, des accessoires et dépendances
     - sectionGroup:
         fr: B - Description et destination du logement loué, des accessoires et des dépendances
@@ -548,7 +458,7 @@ form:
                 fr: |
                   <p>Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/fr/document/lc/ccq-1991#se:1892' target='_blank'>1892</a> C.c.Q.</p>
                 en: |                  
-                  <p>TODO english Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1892' target='_blank'>1892</a> C.C.Q.</p>
+                  <p>TODO english Pour plus de précisions, veuillez consulter l’article <a href='https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1892' target='_blank'>1892</a> C.C.Q.</p
             - type: adresse
               name: adresseLogement
               label:
@@ -1980,7 +1890,6 @@ form:
       filtreEtapes: 
         - initial: 
       sections:
-        # Description détaillée du logement, des accessoires, des dépendances et des services autres que personnels
         - section:
             fr: Description détaillée du logement, des accessoires, des dépendances et des services autres que personnels
             en: Detailed description of dwelling, accessories, dependencies and services other than those of a personal nature
@@ -2482,865 +2391,9 @@ form:
                     optional: null
                   additionals:
                     max-caracteres: 300
-                    hauteur-automatique: true        
-        # Partie 2 - Services Personnels
-        - section:
-            fr: Services personnels
-            en: Services of a personal nature
-          id: annexe6ServicesPersonnels
-          components:
-            - type: avis
-              text: 
-                fr: |
-                  <p>Le locateur a l’obligation d’indiquer le coût attribuable à chacun des services offerts qui se rattachent à la personne même d’un locataire.</p>
-                  <p>Ces services sont notamment compris dans les catégories de services suivantes : services de repas, d’aide domestique, de sécurité, de loisirs,
-                  d’assistance personnelle ou de soins infirmiers.</p>
-                  <p>Des services personnels additionnels à ceux qui sont inscrits à la présente annexe peuvent être utilisés de manière temporaire ou
-                  permanente en considération des besoins du locataire et à sa demande, aux coûts prévus à la liste de l’ensemble des services offerts
-                  remise au locataire ou à son représentant, le cas échéant, par l’exploitant d’une résidence privée pour aînés, avant la conclusion du
-                  bail. Le locateur s’engage à fournir ces services aux mêmes coûts que ceux qui sont indiqués sur cette liste, et ce, pendant toute la
-                  durée du bail.</p>                
-
-            - type: zoneEvidence
-              text:
-                fr: Veuillez fournir les détails (coût, fréquence, précisions, etc.) propres à chacun de ces services, lorsque applicable.
-                en: Please provide the specific details (cost, frequency, further information, etc.) for each of these services, if applicable.
-
-            # Groupe Services alimentaires
-            - name: servicesAlimentaires
-              type: group
-              label:
-                fr: Services alimentaires
-                en: Food services              
-              components:
-                # REPAS
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <b>REPAS</b>
-                    en: <b>MEALS</b>
-                - name: nbRepasQuotidiens
-                  type: radio
-                  outerClasses: boutons-inline
-                  label:
-                    fr: Nombre de repas quotidiens
-                    en: Number of meals per day
-                  options: [0,1,2,3]                    
-                  validations:
-                    optional: null
-                - type: dynamic 
-                  tag : div
-                  v-if: val('servicesAlimentaires.nbRepasQuotidiens') > 0
-                  components:                                       
-                    - type: inline
-                      components:
-                        - name: coutDejeuner
-                          type: montant
-                          label:
-                            fr: Déjeuner
-                            en: Breakfast
-                          validations:
-                            optional: null
-                        - name: coutDiner
-                          type: montant
-                          label:
-                            fr: Dîner
-                            en: Lunch
-                          validations:
-                            optional: null
-                        - name: coutSouper
-                          type: montant
-                          label:
-                            fr: Souper
-                            en: Supper
-                          validations:
-                            optional: null
-
-                    - type: dynamic            
-                      tag: div            
-                      classes: utd-text-lg mb-8
-                      text:
-                        fr: <b>Types de repas</b>
-                        en: <b>Type of meals</b>
-
-                    - type: inline
-                      components:
-                        - name: coutMenuJour
-                          type: montant
-                          label:
-                            fr: Menus du jour
-                            en: Daily specials
-                          validations:
-                            optional: null
-                        - name: coutMenuChoix
-                          type: montant
-                          label:
-                            fr: Menus au choix
-                            en: A la carte meals
-                          validations:
-                            optional: null
-                        - name: coutMenuDiet
-                          type: montant
-                          label:
-                            fr: Menus diététiques
-                            en: Special diet meals
-                          validations:
-                            optional: null                    
-                        - name: precisionMenuDiet
-                          type: text
-                          v-if: val('servicesAlimentaires.coutMenuDiet') > 0
-                          label:
-                            fr: Préciser (Menus diététiques)
-                            en: Specify (Special diet meals)
-                          validations:
-                            optional: null
-                    
-                    # Sous-section Horaire des repas
-                    - type: dynamic            
-                      tag: div            
-                      classes: utd-text-lg mb-8
-                      text:
-                        fr: <b>Horaire des repas</b>
-                        en: <b>Meal hours</b>
-                    
-                    - type: inline
-                      components:
-                        - name: dejeunerDe
-                          type: text
-                          label: 
-                            fr: Déjeuner de
-                            en: Breakfast from
-                          outerClasses: md
-                          validations:
-                            optional: null
-                        - name: dejeunerA
-                          type: text
-                          label: 
-                            fr: Déjeuner à
-                            en: Breakfast to
-                          outerClasses: md
-                          validations:
-                            optional: null
-                    - type: inline
-                      components:
-                        - name: dinerDe
-                          type: text
-                          label:
-                            fr: Dîner de
-                            en: Lunch from
-                          outerClasses: md
-                          validations:
-                            optional: null
-                        - name: dinerA
-                          type: text
-                          label: 
-                            fr: Dîner à
-                            en: Lunch to
-                          outerClasses: md
-                          validations:
-                            optional: null
-                    - type: inline
-                      components:
-                        - name: souperDe
-                          type: text
-                          label:
-                            fr: Souper de
-                            en: Supper from
-                          outerClasses: md
-                          validations:
-                            optional: null
-                        - name: souperA
-                          type: text
-                          label: 
-                            fr: Souper à
-                            en: Supper to
-                          outerClasses: md
-                          validations:
-                            optional: null
-                # Collations
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <hr><b>COLLATIONS</b>
-                    en: <hr><b>SNACKS</b>
-                - name: nbCollations
-                  type: radio
-                  label:
-                    fr: Nombre de collations par jour
-                    en: Number of snacks per day
-                  outerClasses: boutons-inline
-                  options: [0,1,2,3]                    
-                  validations:
-                    optional: null
-
-                - name: coutCollations
-                  type: montant
-                  v-if: val('servicesAlimentaires.nbCollations') > 0
-                  label:
-                    fr: Coût des collations
-                    en: Snacks cost
-                  validations:
-                    optional: null
-
-                - name: horaireCollations
-                  type: text
-                  v-if: val('servicesAlimentaires.nbCollations') > 0
-                  label:
-                    fr: Horaire des collations
-                    en: Snacks schedule
-                  validations:
-                    optional: null
-
-                - name: lieuRepas
-                  type: checkbox                  
-                  label:
-                    fr: Les repas et collations sont servis
-                    en: Meals and snacks are served
-                  v-if: val('servicesAlimentaires.nbRepasQuotidiens') > 0 || val('servicesAlimentaires.nbCollations') > 0                    
-                  options:
-                    SalleManger:
-                      fr: À la salle à manger
-                      en: In the dining-room
-                    Cafeteria:
-                      fr: À la cafétéria
-                      en: In the cafeteria
-                    Logement:
-                      fr: Au logement ou à la chambre
-                      en: In the dwelling or room
-                  validations:
-                    optional: null
-                - name: coutRepasServiceLogement
-                  type: montant
-                  v-if: val('servicesAlimentaires.lieuRepas').includes('Logement')
-                  label:
-                    fr: Coût service au logement
-                    en: Service in dwelling cost
-                  validations:
-                    optional: null
-                - type: dynamic            
-                  tag: hr                              
-                - name: coutMensuelAlimentaire
-                  type: montant
-                  label:
-                    fr: Coût mensuel total (Services alimentaires)
-                    en: Total monthly cost (Food services)
-                  validations:
-                    optional: null
-
-            # Groupe Services d'assistance personnelle
-            - name: assistancePersonnelle
-              type: group
-              label:
-                fr: Services d'assistance personnelle
-                en: Personal assistance services
-              components:
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <b>AIDE À L'ALIMENTATION</b>
-                    en: <b>EATING ASSISTANCE</b>
-                - name: coutAlimentation
-                  type: montant
-                  label:
-                    fr: Coût lié à l'aide à l'alimentation
-                    en: Eating assistance cost
-                  validations:
-                    optional: null
-                    
-                - name: precisionAlimentation
-                  type: text
-                  #v-if: val('assistancePersonnelle.coutAlimentation')
-                  label:
-                    fr: Précisions sur l'aide à l'alimentation
-                  outerClasses: xxl
-                  validations:
-                    optional: null
-
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <hr><b>AIDE À L'HYGIÈNE QUOTIDIENNE</b>
-                    en: <hr><b>ASSISTANCE WITH DAILY PERSONAL HYGIENE</b>
-                - name: coutHygiene
-                  type: montant
-                  label:
-                    fr: Coût lié à l'aide à l'hygiène quotidienne
-                    en: Daily hygiene cost
-                  validations:
-                    optional: null
-                - name: precisionHygiene
-                  type: text
-                  #v-if: val('assistancePersonnelle.coutHygiene')
-                  label:
-                    fr: Précisions sur l'aide à l'hygiène quotidienne
-                    en: Daily hygiene details
-                  validations:
-                    optional: null
-                
-                - name: frequenceBain
-                  type: radio
-                  label:
-                    fr: Nombre de bains par semaine
-                    en: Number of baths per week
-                  outerClasses: boutons-inline
-                  options: [0,1,2,3,4,5,6,7]                    
-                  validations:
-                    optional: null
-
-                - name: coutBain
-                  type: montant
-                  label:
-                    fr: Coût bain(s)
-                    en: Bathing cost
-                  v-if: val('assistancePersonnelle.frequenceBain') > 0
-                  validations:
-                    optional: null
-                
-                - name: coutHabillage
-                  type: montant
-                  label:
-                    fr: Coût lié à l'aide à l'habillage
-                    en: Dressing help cost
-                  validations:
-                    optional: null
-                - name: precisionHabillage
-                  type: text
-                  #v-if: val('assistancePersonnelle.coutHabillage')
-                  label:
-                    fr: Précisions sur l'aide à l'habillage
-                    en: Dressing help details
-                  validations:
-                    optional: null
-                
-                - name: coutAutresServicesAssistancePerso
-                  type: montant
-                  label:
-                    fr: Coût lié aux autres service d'assistance personnelle
-                    en: Other personal assistance services cost
-                  validations:
-                    optional: null
-                - name: precisionAutreServicesAssistancePerso
-                  type: textarea
-                  #v-if: val('assistancePersonnelle.coutAutresServicesAssistancePerso') > 0
-                  label:
-                    fr: Précisions sur les autres services d'assistance personnelle
-                    en: Specify other personal assistance services
-                  validations: 
-                    optional: null
-                    max: 200
-                  additionals:
-                    max-caracteres: 200
-                    hauteur-automatique: true              
-
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <hr><b>MÉDICAMENTS</b>
-                    en: <hr><b>MEDICATION</b>
-                - name: coutDistributionMedicaments
-                  type: montant
-                  label:
-                    fr: Coût lié à la distribution des médicaments
-                    en: Distribution of medication cost
-                  validations:
-                    optional: null
-                - name: coutAdministrationMedicaments
-                  type: montant
-                  label:
-                    fr: Coût lié à l'administration des médicaments
-                    en: Administration of medication cost
-                  validations:
-                    optional: null
-                - name: precisionAdministration
-                  type: text
-                  #v-if: val('assistancePersonnelle.coutAdministrationMedicaments')
-                  label:
-                    fr: Précisions sur l'administration des médicaments
-                    en: Specify administration of medication
-                    outerClasses: xxl
-                  validations:
-                    optional: null
-
-                - name: coutSoinsInvasifs
-                  type: montant
-                  label:
-                    fr: Coût lié aux soins invasifs d'assistance aux activités de la vie quotidienne
-                    en: Invasive care services involved in assistance with activities of daily living cost
-                  validations:
-                    optional: null
-                - name: precisionSoinsInvasifs
-                  type: textarea
-                  #v-if: val('assistancePersonnelle.coutSoinsInvasifs')
-                  label:
-                    fr: Précisions sur les soins invasifs d'assistance aux activités de la vie quotidienne
-                    en: Invasive care services involved in assistance with activities of daily living details
-                  validations: 
-                    optional: null
-                    max: 200
-                  additionals:
-                    max-caracteres: 200
-                    hauteur-automatique: true   
-                - type: dynamic            
-                  tag: hr
-                - name: coutMensuelAssistancePersonnelle
-                  type: montant
-                  label:
-                    fr: Coût mensuel total (Services d'assistance personnelle)
-                    en: Total monthly cost (Personal assistance services)
-                  validations:
-                    optional: null
-
-            # Groupe Soins infirmiers
-            - name: soinsInfirmiers
-              type: group
-              label:
-                fr: Soins infirmiers
-                en: Nursing care
-              components:
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <b>INFIRMIÈRE ET INFIRMIER</b>
-                    en: <b>NURSE</b>
-                - name: coutInfirmier
-                  type: montant
-                  label:
-                    fr: Coût lié à l'infirmière et l'infirmier
-                    en: Nurse cost
-                  validations:
-                    optional: null
-                - name: precisionInfirmier
-                  type: text
-                  #v-if: val('soinsInfirmiers.coutInfirmier')
-                  label:
-                    fr: Précisions sur les services de l'infirmière et l'infirmier
-                    en: Nurse details
-                  outerClasses: xxl
-                  validations:
-                    optional: null
-                - name: heuresInfirmier
-                  type: number
-                  outerClasses: sm
-                  label:
-                    fr: Nombre d'heures
-                    en: Number of hours
-                  validations:
-                    optional: null
-                # INFIRMIÈRE AUXILIAIRE ET INFIRMIER AUXILIAIRE
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <hr><b>INFIRMIÈRE AUXILIAIRE ET INFIRMIER AUXILIAIRE</b>
-                    en: <hr><b>NURSING ASSISTANT</b>
-                - name: coutInfirmierAuxiliaire
-                  type: montant
-                  label:
-                    fr: Coût lié à l'infirmière auxiliaire et l'infirmier auxiliaire
-                    en: Nursing assistant cost
-                  validations:
-                    optional: null
-                - name: precisionAuxiliaire
-                  type: text
-                  #v-if: val('soinsInfirmiers.coutInfirmierAuxiliaire')
-                  label:
-                    fr: Précisions sur les services de l'infirmière auxiliaire et l'infirmier auxiliaire
-                    en: Nursing assistant details
-                  outerClasses: xxl
-                  validations:
-                    optional: null
-                - name: heuresAuxiliaire
-                  type: number
-                  label:
-                    fr: Nombre d'heures
-                    en: Number of hours
-                  outerClasses: sm
-                  validations:
-                    optional: null
-                # PRÉPOSÉ
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <hr><b>PRÉPOSÉ</b>
-                    en: <hr><b>CARE ATTENDANT</b>
-                - name: coutPrepose
-                  type: montant
-                  label:
-                    fr: Coût lié au préposé
-                    en: Care attendant cost
-                  validations:
-                    optional: null
-                - name: precisionPrepose
-                  type: text
-                  #v-if: val('soinsInfirmiers.coutPrepose')
-                  label:
-                    fr: Précisions sur les services de préposé
-                    en: Care attendant details
-                  outerClasses: xxl                    
-                  validations:
-                    optional: null
-                - name: heuresPrepose
-                  type: number
-                  label:
-                    fr: Nombre d'heures
-                    en: Number of hours
-                  outerClasses: sm
-                  validations:
-                    optional: null
-                - type: dynamic            
-                  tag: hr                              
-                - name: coutMensuelSoins
-                  type: montant
-                  label:
-                    fr: Coût mensuel total (Soins infirmiers)
-                    en: Total monthly cost (Nursing)
-                  validations:
-                    optional: null
-            
-            # Groupe Services d'aide domestique
-            - name: aideDomestique
-              type: group
-              label:
-                fr: Services d'aide domestique
-                en: Domestic help services
-              components:
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <b>BUANDERIE - LINGE DE MAISON</b>
-                    en: <b>LAUNDRY - HOUSEHOLD LINEN</b>
-
-                - name: frequenceBuanderieLingeMaison
-                  type: radio
-                  label:
-                    fr: Fréquence des services de buanderie - linge de maison
-                    en: Laundry - household linen frequency
-                  options:
-                    Semaine:
-                      fr: semaine
-                      en: week
-                    Mois:
-                      fr: mois
-                      en: month
-                    Aucun:
-                      fr: aucun
-                      en: none
-                  outerClasses: boutons-inline md
-                  validations:
-                    optional: null
-
-                - name: lingeMaisonNbFoisSemaine
-                  type: number
-                  label:
-                    fr: Nombre de fois par semaine
-                    en: Number of times a week
-                  v-if: val('aideDomestique.frequenceBuanderieLingeMaison') === 'Semaine'                                        
-                  outerClasses: sm
-                  validations:
-                    optional: null
-                - name: lingeMaisonNbFoisMois
-                  type: number
-                  label:
-                    fr: Nombre de fois par mois
-                    en: Number of times a month
-                  v-if: val('aideDomestique.frequenceBuanderieLingeMaison') === 'Mois'                                                            
-                  outerClasses: sm
-                  validations:
-                    optional: null
-
-                - name: coutLingeMaison
-                  type: montant
-                  label:
-                    fr: Coût lié au linge de maison
-                    en: Household linen cost
-                  v-if: val('aideDomestique.frequenceBuanderieLingeMaison') === 'Semaine' || val('aideDomestique.frequenceBuanderieLingeMaison') === 'Mois'                    
-                  validations:
-                    optional: null
-
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <hr><b>BUANDERIE - VÊTEMENTS</b>
-                    en: <hr><b>LAUNDRY - CLOTHING</b>
-                - name: frequenceBuanderieVetements
-                  type: radio
-                  label:
-                    fr: Fréquence des services de buanderie - vêtements
-                    en: Laundry - cloathing frequency
-                  options:
-                    Semaine:
-                      fr: semaine
-                      en: week
-                    Mois:
-                      fr: mois
-                      en: month
-                    Aucun:
-                      fr: aucun
-                      en: none
-                  outerClasses: boutons-inline md
-                  validations:
-                    optional: null
-
-                - name: vetementsNbFoisSemaine
-                  type: number
-                  label:
-                    fr: Nombre de fois par semaine
-                    en: Number of times a week
-                  v-if: val('aideDomestique.frequenceBuanderieVetements') === 'Semaine'                    
-                  outerClasses: sm
-                  validations:
-                    optional: null
-                - name: vetementsNbFoisMois
-                  type: number
-                  label:
-                    fr: Nombre de fois par mois
-                    en: Number of times a month
-                  v-if: val('aideDomestique.frequenceBuanderieVetements') === 'Mois'                                        
-                  outerClasses: sm
-                  validations:
-                    optional: null
-                - name: coutVetements
-                  type: montant
-                  label:
-                    fr: Coûts liés aux vêtements
-                    en: Clothing cost
-                  v-if: val('aideDomestique.frequenceBuanderieVetements') === 'Semaine' || val('aideDomestique.frequenceBuanderieVetements') === 'Mois'
-                  validations:
-                    optional: null
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <hr><b>ENTRETIEN MÉNAGER</b>
-                    en: <hr><b>HOUSEKEEPING</b>
-                - name: frequenceMenage
-                  type: radio
-                  label:
-                    fr: Fréquence du ménage du logement ou de la chambre
-                    en: Cleaning of dwelling or room frequency
-                  options:
-                    Semaine:
-                      fr: semaine
-                      en: week
-                    Mois:
-                      fr: mois
-                      en: month
-                    Aucun:
-                      fr: aucun
-                      en: none
-                  outerClasses: boutons-inline md
-                  validations:
-                    optional: null
-                - name: menageNbFoisSemaine
-                  type: number                  
-                  label:
-                    fr: Nombre de fois par semaine
-                    en: Number of times a week
-                  outerClasses: sm
-                  v-if: val('aideDomestique.frequenceMenage') === 'Semaine'
-                  validations:
-                    optional: null
-                - name: menageNbFoisMois
-                  type: number
-                  label:
-                    fr: Nombre de fois par mois
-                    en: Number of times a month
-                  outerClasses: sm
-                  v-if: val('aideDomestique.frequenceMenage') === 'Mois'                  
-                  validations:
-                    optional: null
-
-                - name: coutMenageLogement
-                  type: montant
-                  label:
-                    fr: Coût lié au ménage du logement ou de la chambre
-                    en: Cleaning of dwelling or room cost
-                  v-if: val('aideDomestique.frequenceMenage') === 'Semaine' || val('aideDomestique.frequenceMenage') === 'Mois'                                        
-                  validations:
-                    optional: null
-
-                - name: precisionMenage
-                  type: text
-                  #v-if: val('aideDomestique.coutMenageLogement')
-                  label:
-                    fr: Précisions sur le ménage du logement ou de la chambre
-                    en: Cleaning of dwelling or room details
-                  outerClasses: xxl
-                  v-if: val('aideDomestique.frequenceMenage') === 'Semaine' || val('aideDomestique.frequenceMenage') === 'Mois'                                        
-                  validations:
-                    optional: null
-                - type: dynamic            
-                  tag: hr                              
-                - name: coutMensuelDomestique
-                  type: montant
-                  label:
-                    fr: Coût mensuel total (Services d'aide domestique)
-                    en: Total monthly cost (Domestic help services)
-                  validations:
-                    optional: null
-
-            - name: autresServices
-              type: group
-              label:
-                fr: Autres services offerts
-                en: Other services offered
-              components:
-                # AIDE AU DÉPLACEMENT
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <b>AIDE AU DÉPLACEMENT</b>
-                    en: <b>HELP WITH GETTING AROUND</b>
-                - name: coutDeplacement
-                  type: montant
-                  label:
-                    fr: Coût lié à l'aide au déplacement
-                    en: Help with getting around cost
-                  validations:
-                    optional: null
-                - name: precisionDeplacement
-                  type: text
-                  #v-if: val('autresServices.coutDeplacement')
-                  label:
-                    fr: Précisions sur l'aide au déplacement
-                    en: Help with getting around details
-                  outerClasses: xxl
-                  validations:
-                    optional: null
-                # SERVICE D'ACCOMPAGNEMENT
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <hr><b>SERVICE D'ACCOMPAGNEMENT</b>
-                    en: <hr><b>ESCORT SERVICE</b>
-                - name: coutAccompagnementMedical
-                  type: montant
-                  label:
-                    fr: Visites médicales
-                    en: Medical appointments
-                  validations:
-                    optional: null
-                - name: coutCourses
-                  type: montant
-                  label:
-                    fr: Courses
-                    en: Errands
-                  validations:
-                    optional: null
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <hr><b>DISPOSITIF D’ALERTE DE SÉCURITÉ (risque d’errance)</b>
-                    en: <hr><b>SECURITY DEVICE (for persons at risk of wandering)</b>
-                - name: coutDispositifAlerte
-                  type: montant
-                  label:
-                    fr: Coût lié au service d'alerte de sécurité
-                    en: Security device cost
-                  validations:
-                    optional: null                    
-                - name: precisionAlerte
-                  type: text
-                  #v-if: val('autresServices.coutDispositifAlerte')
-                  label:
-                    fr: Précisions sur le service d'alerte de sécurité
-                    en: Security device details
-                  outerClasses: xxl
-                  validations:
-                    optional: null
-
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <hr><b>ASSISTANCE POUR REMPLIR LES FORMULAIRES DE CRÉDIT D’IMPÔT</b>
-                    en: <hr><b>ASSISTANCE FOR COMPLETING FORMS RELATED TO THE TAX CREDIT</b>
-
-                - name: coutImpot
-                  type: montant
-                  label:
-                    fr: Assistance pour remplir les formulaires de crédit d'impôt pour maintien à domicile
-                    en: Assistance for completing tax credit forms for home-support services for seniors
-                  validations:
-                    optional: null
-                - type: dynamic            
-                  tag: div            
-                  classes: mb-24
-                  text:
-                    fr: <hr><b>AUTRES</b>
-                    en: <hr><b>OTHER</b>
-
-                - name: autresServicesOffertsDetails
-                  type: textarea
-                  label:
-                    fr: Précisez les autres services, s'il y a lieu
-                  validations: 
-                    optional: null
-                    max: 200
-                  additionals:
-                    max-caracteres: 200
-                    hauteur-automatique: true              
-                - name: coutAutreServices
-                  type: montant
-                  label:
-                    fr: Coût lié aux autres services
-                    en: Other
-                  validations:
-                    optional: null
-                - type: dynamic            
-                  tag: hr
-                - name: coutMensuelAutresServices
-                  type: montant
-                  label:
-                    fr: Coût mensuel total (autres services offerts)
-                    en: Total monthly cost (ather services offered)
-                  validations:
-                    optional: null
-
-            - name: totaux
-              type: group
-              label:
-                fr: Totaux
-                en: Totals
-              components:
-                - name: coutTotalServices
-                  type: montant
-                  label:
-                    fr: Coût mensuel total des services
-                    en: Total monthly cost of services
-                  validations:
-                    optional: null
-                - name: montantLoyerBase
-                  type: montant
-                  label:
-                    fr: Loyer de base
-                    en: Basic rent
-                  help:
-                    fr: Voir le formulaire de bail obligatoire
-                    en: See mandatory lease form
-
-                  validations:
-                    optional: null
-                - name: montantLoyerTotal
-                  type: montant
-                  label:
-                    fr: Loyer total
-                    en: Total rent
-                  validations:
-                    optional: null
-
+                    hauteur-automatique: true
+          
+    # Locataire 1 (contribution et signature)
     - sectionGroup:
         fr: Locataire 1
         en: Lessee 1
@@ -3362,16 +2415,10 @@ form:
           filtreEtapes: 
             contributionSignature:
           components:
-            - type: avis
-              v-if: val(`locataires.questionRepresentant`, this.wf.participant.instance - 1) === 'true'
-              text:
-                fr: |
-                  <p>À titre de représentant, vous devez être autorisé par la partie qui vous nomme à <b>valider les informations saisies, prendre les engagements requis et signer le formulaire de bail électronique</b>.</p>
-
             - type: dynamic
               tag: div              
               text:
-                fr: |                  
+                fr: |
                   <h3>1. Remplissage du formulaire de bail électronique</h3>
                   <p>Le locateur a complété le formulaire de bail électronique. Vous devez maintenant remplir les sections qui vous concernent et prendre certains engagements.</p>
                   <p>Les champs <b>obligatoires</b> sont identifiés par un astérisque (<span class="icone-champ-requis">*</span>).</p>
@@ -3391,23 +2438,19 @@ form:
         # Fonctionnement bail locataires consultation
         - section:
             fr: Suivi de l'évolution du formulaire de bail électronique
+            en: TODO english Suivi de l'évolution du formulaire de bail électronique
           id: fonctionnementBailLocatairesConsultation
           cacherTexteExplicatifChampsObligatoires: true          
           filtreEtapes: 
             consultation:
           components:
-            - type: avis
-              v-if: val(`locataires.questionRepresentant`, this.wf.participant.instance - 1) === 'true'
-              text:
-                fr: |
-                  <p>À titre de représentant, vous devez être autorisé par la partie qui vous nomme à <b>valider les informations saisies, prendre les engagements requis et signer le formulaire de bail électronique</b>.</p>
             - type: dynamic
               tag: div              
               text:
                 fr: |
                   <p>Le formulaire de bail électronique a été transmis à toutes les parties concernées.</p>
-                  <p>Tant que le « statut » d’au moins un participant indique <b>« non complété »</b>, le locateur responsable ne pourra pas signer le formulaire de bail électronique et ainsi terminer le processus.</p>
-                  <p>Lorsque toutes les parties concernées auront complété et signé le formulaire de bail électronique <b>vous recevrez votre formulaire de bail électronique final par courriel</b> ainsi que tous les documents joints (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p> 
+                  <p>Tant que le « statut » d’au moins un participant indique « non complété », le locateur responsable ne pourra pas signer le formulaire de bail électronique et ainsi terminer le processus.</p>
+                  <p>Lorsque toutes les parties concernées auront complété et signé le formulaire de bail électronique vous recevrez votre formulaire de bail électronique final par courriel ainsi que tous les documents joints (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p> 
                   <p>Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>
             - type: suiviEtapesWF
               name: suiviEtapesWFSignaturesConsultationLocataires            
@@ -3686,12 +2729,6 @@ form:
             - contributionSignature:
               - locateur:
           components:
-            - type: avis
-              v-if: val(`locateurs.questionRepresentant`, this.wf.participant.instance) === 'true'
-              text:
-                fr: |
-                  <p>À titre de représentant, vous devez être autorisé par la partie qui vous nomme à <b>valider les informations saisies, prendre les engagements requis et signer le formulaire de bail électronique</b>.</p>
-
             - type: dynamic
               tag: div              
               text:
@@ -3702,7 +2739,8 @@ form:
 
         # Compléter votre formulaire de bail : étapes à suivre (Locateur consultation)
         - section:
-            fr: "Suivi de l'évolution du formulaire de bail électronique"
+            fr: "Compléter votre formulaire de bail : étapes à suivre"
+            en: "TODO english - Compléter votre formulaire de bail : étapes à suivre"
           id: fonctionnementBailLocateurConsultation
           cacherTexteExplicatifChampsObligatoires: true          
           filtreEtapes: 
@@ -3713,10 +2751,12 @@ form:
               tag: div              
               text:
                 fr: |
-                  <p>Le formulaire de bail électronique a été transmis à toutes les parties concernées.</p>
-                  <p>Tant que le « statut » d’au moins un participant indique <b>« non complété »</b>, le locateur responsable ne pourra pas signer le formulaire de bail électronique et ainsi terminer le processus.</p>
-                  <p>Lorsque toutes les parties concernées auront complété et signé le formulaire de bail électronique <b>vous recevrez votre formulaire de bail électronique final par courriel</b> ainsi que tous les documents joints (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p> 
-                  <p>Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>
+                  <h3>1. Remplissage du formulaire de bail électronique</h3>
+                  <p>TODO PAM - Vous avez déjà signé le bail.</p>
+                  <p>Vous devez attendre que le locateur principal signe à son tour le bail.</p>
+                  <hr>
+                  <h3>2. Finalisation du formulaire de bail électronique</h3>
+                  <p>Une fois que le locateur principal aura signé le bail, vous recevrez automatiquement un courriel. Dans ce courriel, vous y trouverez le formulaire de bail électronique final rempli et signé par toutes les parties ainsi que les documents joints par le locateur, le cas échéant (P. ex. règlement de l’immeuble, contrat de cautionnement, etc.). Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>
             - type: suiviEtapesWF
               name: suiviEtapesWFSignaturesConsultationLocateurs            
               label: 
@@ -3821,12 +2861,6 @@ form:
           id: suiviEvoBailLocateurPrincipalConsultation
           cacherTexteExplicatifChampsObligatoires: true          
           components:
-            - type: avis
-              v-if: val(`locateurs.questionRepresentant`, this.wf.participant.instance - 1) === 'true'
-              text:
-                fr: |
-                  <p>À titre de représentant, vous devez être autorisé par la partie qui vous nomme à <b>valider les informations saisies, prendre les engagements requis et signer le formulaire de bail électronique</b>.</p>
-
             - type: dynamic
               tag: div                        
               classes: mb-32
@@ -3856,7 +2890,7 @@ form:
           sommaire: 
             inclureSections : *inclureSectionsBailSaisiLocateur
 
-    # Locateur responsable (Transmission)
+    # Transmission
     - sectionGroup:
         fr: Locateur responsable
       filtreEtapes: 
