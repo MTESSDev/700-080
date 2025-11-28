@@ -188,7 +188,7 @@ gabaritsCourriels:
       <p>Vous êtes invité à valider les informations saisies par le locateur et à remplir les sections du formulaire de bail qui vous concernent.</p>
       <p>Si vous avez des questions ou si vous constatez que des erreurs ou des modifications doivent être apportées au formulaire de bail, veuillez communiquer directement avec le locateur (p. ex : téléphone, message texte, courriel, etc.). Il sera en mesure d’effectuer les modifications nécessaires et un nouveau formulaire de bail vous sera transmis, le cas échéant.</p>
       <p><b>Pour accéder au formulaire de bail, veuillez cliquer sur l’hyperlien ci-dessous :</b><br/>
-        <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>Suivre l'avancement du processus de signature du bail de logement</a>
+        <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>Compléter et signer le bail de logement</a>
       </p>
       <p><b>Veuillez noter que l’hyperlien pour signer et conclure le formulaire de bail électronique est valide pour 36 heures à compter de sa transmission aux autres parties</b>. Une fois ce délai écoulé, le formulaire de bail électronique ne vous sera plus accessible.</p>
       <br>
@@ -244,7 +244,7 @@ gabaritsCourriels:
       </p>
       <p>Nous vous confirmons que les parties ont complété et signé le formulaire de bail électronique.</p>
       <p>Pour le signer à votre tour et conclure le contrat de bail, vous pouvez cliquer sur l’hyperlien ci-dessous :<br/>
-        <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>Suivre l'avancement du processus de signature du bail de logement</a>
+        <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>Vérifier et signer le bail de logement</a>
       </p>
       <p><b>Veuillez noter que l’hyperlien pour signer et conclure le formulaire de bail électronique est valide pour 36 heures à compter de sa transmission aux autres parties</b>. Une fois ce délai écoulé, le formulaire de bail électronique ne sera plus accessible et vous devrez le remplir à nouveau.</p>
       <br>
