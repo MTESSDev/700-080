@@ -379,8 +379,6 @@ form:
                     fr: Adresse de courriel du locateur
                   help:
                     fr: Une adresse de courriel valide est requise pour recevoir une copie du bail final.
-                  validations:
-                    optional:
 
         # Locataire
         - section:
@@ -525,8 +523,6 @@ form:
                     fr: Adresse de courriel du locataire
                   help:
                     fr: Une adresse de courriel valide est requise pour recevoir une copie du bail final.
-                  validations:
-                    optional:
               
     # B - Description et destination du logement loué, des accessoires et dépendances
     - sectionGroup:
