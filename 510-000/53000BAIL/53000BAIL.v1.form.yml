@@ -41,6 +41,7 @@ config:
         en: https://www.tal.gouv.qc.ca/en/contact-us
   paiement:
     actif: false
+    etapeWF: transmission
     fournisseur:
       type: moneris
       storeId: store1
@@ -166,52 +167,47 @@ form:
               classes: avertissement
               text: 
                 fr: |
-                  <p><b>Avant d’utiliser le service de bail électronique, vous devez vous assurer que toutes les parties signataires possèdent une adresse de courriel valide.</b><p>
-                  <p>À défaut, un formulaire de bail en version papier est en vente dans les bureaux du Tribunal administratif du logement, dans les librairies et aux Publications du Québec (1 800 463-2100). Il est également possible d’acheter le formulaire de bail en ligne sur le site web des <a href="https://boutique.publicationsduquebec.gouv.qc.ca/recherche/bail" target="_blank">Publications du Québec</a>.</p> 
-                  <p>Si vous utilisez un formulaire de bail en version papier, veuillez noter que le Tribunal administratif du logement met à la disposition de sa clientèle, sur son site web, une trousse comprenant l’ensemble des informations à jour concernant les droits et obligations des parties et ce, jusqu’à ce que le formulaire en version papier intègre l’ensemble des modifications légales.</p>
-                en: |
-                  <p>TODO english - <b>Avant d’utiliser le service de bail électronique, vous devez vous assurer que toutes les parties signataires possèdent une adresse de courriel valide.</b><p>
-                  <p>À défaut, un formulaire de bail en version papier est en vente dans les bureaux du Tribunal administratif du logement, dans les librairies et aux Publications du Québec (1 800 463-2100). Il est également possible d’acheter le formulaire de bail en ligne sur le site web des <a href="https://boutique.publicationsduquebec.gouv.qc.ca/recherche/bail" target="_blank">Publications du Québec</a>.</p> 
-                  <p>En ce cas, veuillez noter que le Tribunal administratif du logement met à la disposition de sa clientèle, sur son site web, une trousse comprenant l’ensemble des informations à jour concernant les droits et obligations des parties et ce, jusqu’à ce que le formulaire en version papier intègre l’ensemble des modifications légales.</p>
-
+                  <p>Avant d’utiliser le service de bail électronique, vous devez vous assurer que toutes les parties signataires possèdent une adresse de courriel valide.<p>
+                  <p>À défaut, un formulaire de bail en version papier est en vente dans les bureaux du Tribunal administratif du logement, dans les librairies et aux Publications du Québec (1 800 463-2100). Il est également possible d’acheter le formulaire de bail en ligne sur le site Web <a href="https://boutique.publicationsduquebec.gouv.qc.ca/recherche/bail" target="_blank">Publications du Québec</a>.</p> 
+                  <p>Si vous utilisez un formulaire de bail en version papier, veuillez noter que le Tribunal administratif du logement met à la disposition de sa clientèle, sur son site Web, une trousse comprenant l’ensemble des informations à jour concernant les droits et obligations des parties, et ce, jusqu’à ce que le formulaire en version papier intègre l’ensemble des modifications légales.</p>
             - type: dynamic
               tag: div              
               text:
                 fr: |
                   <h3>1. Remplissage du formulaire de bail électronique</h3>
-                  <p>À titre de <strong>locateur responsable</strong>, vous complétez le formulaire de bail en ligne.</p>
+                  <p>À titre de <strong>locateur responsable</strong>, vous remplissez le formulaire de bail en ligne.</p>
                   <ul class="utd">
                     <li>
                       Les champs <b>obligatoires</b> sont identifiés par un astérisque (<span class="icone-champ-requis">*</span>).
                     </li>
                     <li>
-                      Une fois le formulaire de bail électronique complété, il est automatiquement <b>transmis à toutes les
-                      personnes concernées</b>, par exemple : le(s) autre(s) locateur(s), le(s) locataire(s) et le(s) caution(s).
+                      Une fois le formulaire de bail électronique complété, il est <b>automatiquement transmis à toutes les
+                      personnes concernées</b> (p. ex. : autres locateurs, locataires et cautions, s'il y a lieu).
                     </li>
                   </ul>
-                  <p>Pour que chaque partie puisse recevoir le document, il est <b>nécessaire d’indiquer une adresse de courriel valide</b>.</p>
+                  <p>Pour que chaque partie puisse recevoir le formulaire de bail électronique, il est <b>nécessaire d’indiquer une adresse de courriel valide</b>.</p>
                   <utd-avis type="avertissement">
-                    <p>Seul le locateur responsable peut modifier le contenu du formulaire de bail électronique. Si une erreur est constatée par une autre partie, <strong>celle-ci doit communiquer avec vous</strong> pour que vous y apportiez les corrections.</p>
+                    <p>Seul le locateur responsable peut modifier le contenu du formulaire de bail électronique. Si une erreur est constatée par une autre partie, celle-ci doit communiquer avec le locateur responsable pour qu’il puisse effectuer les corrections nécessaires, le cas échéant.</p>
                   </utd-avis>
                   <h4>Enregistrement du formulaire de bail électronique</h4>
-                  <p>Si vous le souhaitez, vous pouvez enregistrer le formulaire de bail électronique et ainsi poursuivre la saisie des informations demandées à un autre moment. Pour ce faire, vous recevrez, à votre adresse de courriel, un message contenant un lien pour y accéder.</p>
-                  <p>L’accès sera protégé par un mot de passe que vous aurez fourni. Si vous oubliez ou perdez ce mot de passe, vous devrez recommencer votre demande.</p>                
+                  <p>Si vous le souhaitez, vous pouvez enregistrer le formulaire de bail électronique et poursuivre la saisie des informations demandées à un autre moment. Le cas échéant, un hyperlien vous permettant d’accéder au formulaire vous sera transmis par courriel.</p>
+                  <p>L’accès au formulaire sera protégé par un mot de passe que vous aurez créé. Si vous oubliez ou perdez ce mot de passe, vous devrez remplir de nouveau le formulaire.</p>                
                   <hr>
                   <h3>2. Validation et signature</h3>
-                  <p>Chaque partie reçoit un <b>lien personnalisé</b> lui permettant de :</p>
+                  <p>Chaque partie reçoit un <b>hyperlien personnalisé</b> lui permettant de :</p>
                   <ul class="utd">
                     <li>consulter le formulaire de bail électronique;</li>
-                    <li>valider les informations;</li>
-                    <li>apposer sa <b>signature électronique</b>.</li>
+                    <li>valider les informations qui y sont inscrites;</li>
+                    <li>apposer sa signature électronique.</li>
                   </ul>
-                  <p>L’hyperlien pour <b>signer et conclure</b> le formulaire de bail électronique est valide pour <b>36 heures</b> à compter de sa transmission aux autres parties.</p>
-                  <p>Pour des raisons de sécurité, un <b>mot de passe</b> est exigé.</p>
-                  <p>Vous devrez choisir un mot de passe et le <b>transmettre aux parties</b> par le moyen de votre choix (p. ex : téléphone, message texte, courriel, etc.).</p>        
+                  <p>L’hyperlien pour signer et conclure le formulaire de bail électronique est valide pour <b>36 heures</b> à compter de sa transmission aux autres parties.</p>
+                  <p>Pour des raisons de sécurité, un <b>mot de passe est exigé</b>.</p>
+                  <p>Vous devrez choisir un mot de passe et le <b>transmettre aux parties par le moyen de votre choix</b> (p. ex : téléphone, message texte, courriel, etc.).</p>        
                   <hr>
                   <h3>3. Finalisation du formulaire de bail électronique</h3>
                   <p>Une fois <b>toutes les signatures apposées, et le paiement effectué</b>, le formulaire de bail électronique est :</p>
                   <ul class="utd">
-                    <li><b>verrouillé</b> (plus aucune modification n'est possible via la plateforme);</li>
+                    <li><b>verrouillé</b> (aucune modification n’est possible dans le service en ligne);</li>
                     <li><b>généré automatiquement au format PDF</b>;</li>
                     <li><b>accessible à toutes les parties</b> pour téléchargement ou impression.</li>
                   </ul>
@@ -3417,10 +3413,10 @@ form:
       classes: icone user
       sections: &sectionsLocataireEtAutreSignataire
 
-        # Compléter votre formulaire de bail : étapes à suivre
+        # Rempolir votre formulaire de bail : étapes à suivre
         - section:
-            fr: "Compléter votre formulaire de bail : étapes à suivre"
-            en: "TODO english - Compléter votre formulaire de bail : étapes à suivre"
+            fr: |
+              Remplir votre formulaire de bail : étapes à suivre
           id: fonctionnementBailLocatairesContribution
           cacherTexteExplicatifChampsObligatoires: true          
           filtreEtapes: 
@@ -3437,20 +3433,18 @@ form:
               text:
                 fr: |                  
                   <h3>1. Remplissage du formulaire de bail électronique</h3>
-                  <p>Le locateur a complété le formulaire de bail électronique. Vous devez maintenant remplir les sections qui vous concernent et prendre certains engagements.</p>
-                  <p>Les champs <b>obligatoires</b> sont identifiés par un astérisque (<span class="icone-champ-requis">*</span>).</p>
-                  <utd-avis type="avertissement">
-                    <p>Si vous avez des questions ou si vous constatez que des erreurs ou des modifications doivent être apportées au formulaire de bail, veuillez communiquer directement avec le locateur (p. ex : téléphone, message texte, courriel, etc.). Il sera en mesure d’effectuer les modifications nécessaires et un nouveau formulaire de bail vous sera transmis, le cas échéant.</p>
-                  </utd-avis>
+                  <p>Le locateur a rempli le formulaire de bail électronique. Vous devez maintenant remplir les sections qui vous concernent et prendre certains engagements.</p>
+                  <p>Les champs <b>obligatoires</b> sont identifiés par un astérisque (<span class="icone-champ-requis">*</span>).</p>                  
+                  <p>Si vous avez des questions, si vous constatez des erreurs ou que des modifications doivent être apportées au formulaire de bail électronique, veuillez communiquer directement avec le locateur (p. ex : téléphone, message texte, courriel, etc.). Il sera en mesure d’effectuer les modifications nécessaires et un nouveau formulaire de bail vous sera transmis, le cas échéant.</p>                  
                   <hr>
                   <h3>2. Signature du formulaire de bail électronique</h3>
-                  <p>Vous trouverez dans la section « Aperçu et signature du bail » une ébauche du bail qui comprend les informations que vous avez saisies.</p>
-                  <p>Si toutes les informations sont exactes, vous pouvez inscrire votre nom complet et cliquer sur le bouton « Signer ».</p>
+                  <p>Vous trouverez dans la section <strong>« Aperçu et signature du bail »</strong> une ébauche du bail qui comprend les informations que vous avez saisies.</p>
+                  <p>Si toutes les informations sont exactes, vous pouvez inscrire votre nom complet et cliquer sur le bouton <strong>« Signer »</strong>.</p>
                   <hr>
                   <h3>3. Transmission du formulaire de bail électronique</h3>
-                  <p>Vous pourrez transmettre au locateur votre formulaire de bail complété et signé à la section « Révision ».</p>
-                  <p>Lorsque toutes les parties concernées auront complété et signé le formulaire de bail électronique <b>vous recevrez votre formulaire de bail électronique final par courriel</b> ainsi que tous les documents joints (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p>
-                  <p>Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>
+                  <p>Vous pourrez transmettre au locateur votre formulaire de bail signé à la section <strong>« Révision »</strong>.</p>
+                  <p><b>Lorsque toutes les parties concernées l’auront rempli et signé, vous recevrez la version finale par courriel</b> ainsi que tous les documents joints (p. ex. : règlement de l’immeuble, contrat de cautionnement, etc.).</p>
+                  <p>Ces documents seront présentés en format PDF et disponibles pour téléchargement ou impression pendant <b>90 jours. Une fois ce délai expiré, les documents ne seront plus disponibles</b>.</p>
 
         # Fonctionnement bail locataires consultation
         - section:
@@ -3470,9 +3464,9 @@ form:
               text:
                 fr: |
                   <p>Le formulaire de bail électronique a été transmis à toutes les parties concernées.</p>
-                  <p>Tant que le « statut » d’au moins un participant indique <b>« non complété »</b>, le locateur responsable ne pourra pas signer le formulaire de bail électronique et ainsi terminer le processus.</p>
-                  <p>Lorsque toutes les parties concernées auront complété et signé le formulaire de bail électronique <b>vous recevrez votre formulaire de bail électronique final par courriel</b> ainsi que tous les documents joints (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p> 
-                  <p>Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>
+                  <p>Tant que le <b>« statut »</b> d’au moins un participant indique <strong>« non complété »</strong>, le locateur responsable ne pourra pas le signer et ainsi terminer le processus.</p>
+                  <p>Lorsque toutes les parties concernées l’auront rempli et signé, <b>vous recevrez la version finale par courriel</b> ainsi que tous les documents joints (p. ex. : règlement de l’immeuble, contrat de cautionnement, etc.).</p> 
+                  <p>Ces documents seront présentés en format PDF et disponibles pour téléchargement ou impression pendant <b>90 jours. Une fois ce délai expiré, les documents ne seront plus disponibles</b>.</p>
             - type: suiviEtapesWF
               name: suiviEtapesWFSignaturesConsultationLocataires            
               label: 
@@ -3881,7 +3875,6 @@ form:
         # Suivi de l'évolution du formulaire de bail électronique
         - section:
             fr: Suivi de l'évolution du formulaire de bail électronique
-            en: TODO english Suivi de l'évolution du formulaire de bail électronique
           id: suiviEvoBailLocateurPrincipalConsultation
           cacherTexteExplicatifChampsObligatoires: true          
           components:
@@ -3897,12 +3890,12 @@ form:
               text:
                 fr: |
                   <p>Le formulaire de bail électronique a été transmis à toutes les parties concernées.</p>                  
-                  <p>Tant que le « statut » d’au moins un participant indique « non complété », vous ne pouvez pas signer le formulaire de bail électronique.</p>                
+                  <p>Tant que le <b>« statut »</b> d’au moins un participant indique <b>« non complété »</b>, il ne vous sera pas possible de le signer.</p>                
             - type: avis
               classes: avertissement
               text:
                 fr: |
-                  <p>Veuillez noter que l’hyperlien pour <b>signer et conclure</b> le formulaire de bail électronique est valide pour <strong>36 heures</strong> à compter de sa transmission aux autres parties.</p>
+                  <p><b>Veuillez noter que l’hyperlien pour signer et finaliser le formulaire de bail électronique est valide pour 36 heures à compter de sa transmission aux autres parties</b>.</p>
             - type: suiviEtapesWF
               name: suiviEtapesWFSignaturesConsultationLocateurPrincipal            
               label: 
@@ -3931,21 +3924,21 @@ form:
         # Fonctionnement bail locateurPrincipal transmission
         - section:
             fr: Finalisation du formulaire de bail électronique
-            en: TODO english Finalisation du formulaire de bail électronique
           id: fonctionnementBailLocateurPrincipalTransmission
           cacherTexteExplicatifChampsObligatoires: true          
           components:
             - type: dynamic
-              tag: div                        
+              tag: div     
               text:
                 fr: |
                   <h3>1. Signature du formulaire de bail électronique</h3>
-                  <p>Le formulaire de bail électronique a été complété et signé par toutes les parties au bail.</p>                  
-                  <p>Vous trouverez dans la section « Aperçu et signature du bail » une ébauche du bail qui comprend les informations que toutes les parties ont saisies.</p>
+                  <p>Le formulaire de bail électronique a été rempli et signé par toutes les parties au bail.</p>                  
+                  <p>Vous trouverez dans la section <strong>« Aperçu et signature du bail »</strong> une ébauche du bail qui comprend les informations que toutes les parties ont saisies.</p>
                   <p>Si vous devez modifier le formulaire de bail électronique, les autres parties devront recommencer le processus et signer de nouveau.</p>
-                  <p>Si toutes les informations sont exactes, vous pouvez inscrire votre nom complet et cliquer sur le bouton « Signer ».</p> 
+                  <p>Si toutes les informations sont exactes, vous pouvez inscrire votre nom complet et cliquer sur le bouton <strong>« Signer »</strong>.</p> 
+                  <hr>
                   <h3>2. Paiement</h3>
-                  <p>Vous devez <strong>procéder au paiement</strong> afin de recevoir le formulaire de bail électronique final par courriel. Il sera également transmis automatiquement à toutes les autres parties par courriel.</p>
+                  <p>Vous devez <strong>procéder au paiement</strong> afin de recevoir la version finale du formulaire de bail électronique par courriel. Il sera également transmis automatiquement à toutes les autres parties par courriel.</p>
                   <utd-avis>
                     <p>Mode de paiement accepté : carte de crédit</p>
                     <p>Vous recevrez par courriel une confirmation de transaction.</p>
@@ -4359,7 +4352,7 @@ form:
             - type: langue
               name: langueBail
               label:
-                fr: Dans quelle langue les parties veulent-elles que le formulaire de bail en format PDF soit créé et transmis?
+                fr: Dans quelle langue les parties veulent-elles que le formulaire de bail soit créé?
         
         # Choix du mot de passe
         - section:
@@ -4374,7 +4367,7 @@ form:
               text:
                 fr: |
                   <div class="utd-page-texte">
-                    <p>Le mot de passe protège l'accès au formulaire de bail électronique. Il est requis par toutes les parties (autres locateurs, locataires et cautions, s'il y a lieu) pour accéder au bail, valider les informations qui s’y trouvent et y apposer leurs initiales et leurs signatures.</p>
+                    <p>Le mot de passe protège l’accès au formulaire de bail électronique. Il est requis pour que toutes les parties (p. ex. : autres locateurs, locataires et cautions, s’il y a lieu) puissent accéder au bail, valider les informations qui s’y trouvent et y apposer leurs initiales et leurs signatures.</p>
                     <p>Le locateur responsable doit choisir un mot de passe et le <b>communiquer en toute sécurité à tous les autres signataires concernés</b>.</p>
                   </div>
             - name: motPasseWF
@@ -4924,13 +4917,14 @@ form:
               classes: texte-revision
               text: 
                 fr: |
-                  <p>Le formulaire de bail électronique est maintenant complété.</p>
-                  <p>Avant de le transmettre aux autres parties (locateur(s), locataire(s), caution(s), etc.), nous vous invitons à le relire attentivement afin de <strong>vérifier l’exactitude de toutes les informations</strong> qu’il contient, en accédant à la section « Aperçu du bail ». Vous pourrez vérifier chaque section et y apporter les corrections nécessaires. Si toutes les informations sont exactes, vous pouvez cliquer sur le bouton « Soumettre ». Le formulaire de bail électronique sera <strong>automatiquement transmis</strong> aux autres parties afin qu'elles puissent remplir les sections qui les concernent.</p>
-                  <p>Lors de cette étape, les parties pourront <strong>communiquer avec vous si elles ont une interrogation et/ou une modification à apporter</strong>.</p>  
+                  <p>Le formulaire de bail électronique est maintenant rempli.</p>
+                  <p>Avant de le transmettre aux autres parties (p. ex. : autres locateurs, locataires et cautions, s’il y a lieu), relisez-le attentivement afin de <b>vérifier l’exactitude de toutes les informations qu’il contient</b> et d’apporter les corrections nécessaires, le cas échéant. Vous pouvez le faire en accédant à la section <strong>« Aperçu du bail »</strong>.</p>
+                  <p>Si toutes les informations sont exactes, vous pouvez cliquer sur le bouton <strong>« Soumettre »</strong>. Le formulaire de bail électronique sera automatiquement transmis aux autres parties afin qu’elles puissent remplir les sections qui les concernent.</p>  
+                  <p><b>Lors de cette étape, les parties devront communiquer avec vous si elles ont une interrogation ou une modification à apporter</b>.</p>  
                   <p>Si aucune modification n’est nécessaire, les parties pourront y apposer leur signature.</p> 
-                  <p>Assurez-vous d’avoir transmis à toutes les autres parties le <b>mot de passe pour qu’elles puissent accéder au formulaire de bail électronique</b>.</p>
+                  <p>Assurez-vous d’avoir transmis à toutes les autres parties le mot de passe pour qu’elles puissent accéder au formulaire de bail électronique.</p>
                   <utd-avis type="avertissement">
-                    <p>Veuillez noter que l’hyperlien pour <b>signer et conclure</b> le formulaire de bail électronique est valide pour <strong>36 heures</strong> à compter de sa transmission aux autres parties.</p>
+                    <p>Veuillez noter que l’hyperlien pour signer et conclure le formulaire de bail électronique est valide pour 36 heures à compter de sa transmission aux autres parties.</p>
                   </utd-avis>
             # Étape 'contributionSignature' (locataire, locateur, autre signataire)
             - type: dynamic
@@ -4940,10 +4934,10 @@ form:
               text: 
                 fr: |
                   <p>Le formulaire de bail électronique est maintenant rempli.</p>
-                  <p>Tant que le formulaire de bail n’est pas transmis au locateur, vous pouvez accéder à la section <b>« Aperçu et signature du bail »</b> et revérifier l’exactitude de toutes les informations qu’il contient.</p>
-                  <p>Si toutes les informations sont exactes, vous pouvez cliquer sur le bouton <b>« Soumettre »</b>. Le formulaire de bail sera automatiquement envoyé au locateur pour qu’il puisse signer à son tour.</p>  
-                  <p>Lorsque toutes les parties concernées auront complété et signé le formulaire de bail électronique <b>vous recevrez votre formulaire de bail électronique final par courriel</b> ainsi que tous les documents joints (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p>  
-                  <p>Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>  
+                  <p>Tant que le formulaire de bail n’est pas transmis à votre locateur, vous pouvez accéder à la section <strong>« Aperçu et signature du bail »</strong> et vérifier l’exactitude de toutes les informations qu’il contient.</p>
+                  <p>Si toutes les informations sont exactes, vous pouvez cliquer sur le bouton <strong>« Soumettre »</strong>. Le formulaire de bail sera automatiquement envoyé à votre locateur pour qu’il puisse le signer à son tour.</p>
+                  <p>Lorsque toutes les parties concernées l’auront rempli et signé, <b>vous recevrez la version finale par courriel</b> ainsi que tous les documents joints (p. ex. : règlement de l’immeuble, contrat de cautionnement, etc.).</p>                    
+                  <p>Ces documents seront présentés en format PDF et disponibles pour téléchargement ou impression pendant <b>90 jours. Une fois ce délai expiré, les documents ne seront plus disponibles</b>.</p>  
             # Étape 'transmission' (locateur principal)
             - type: dynamic
               tag: div
@@ -4951,7 +4945,8 @@ form:
               classes: texte-revision
               text: 
                 fr: |
-                  <p>Le formulaire de bail électronique est maintenant rempli et signé par toutes les parties. <b>Afin de finaliser la transaction, vous devez procéder au paiement de 2,99 $ (taxes en sus)</b>.</p>
-                  <p>Une fois le paiement effectué, <b>vous recevrez votre formulaire de bail électronique final par courriel ainsi que tous les documents joints</b> (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p>
-                  <p>Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>                  
+                  <p>Le formulaire de bail électronique est maintenant rempli et signé par toutes les parties.</p>
+                  <p>Afin de finaliser la transaction, vous devez procéder au paiement des frais de 2,99 $ (taxes en sus).</p>
+                  <p>Une fois le paiement effectué, <b>vous recevrez la version finale par courriel</b> ainsi que tous les documents joints (p. ex. : règlement de l’immeuble, contrat de cautionnement, etc.).</p>
+                  <p>Ces documents seront présentés en format PDF et disponibles pour téléchargement ou impression pendant <b>90 jours. Une fois ce délai expiré, les documents ne seront plus disponibles</b>.</p>                  
 

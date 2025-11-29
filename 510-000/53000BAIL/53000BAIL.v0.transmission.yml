@@ -182,18 +182,14 @@ gabaritsCourriels:
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
     corps: |
       <p>Bonjour,</p>
-      <p><b>Ce courriel concerne le logement situé au :</b><br>
-      {{donneesFormulaire.form.adresseLogement.0.adresseComplete}}</p>      
-      </p>
+      <p>Ce courriel concerne le logement situé au : <b>{{donneesFormulaire.form.adresseLogement.0.adresseComplete}}</b></p>      
       <p>Vous êtes invité à valider les informations saisies par le locateur et à remplir les sections du formulaire de bail qui vous concernent.</p>
-      <p>Si vous avez des questions ou si vous constatez que des erreurs ou des modifications doivent être apportées au formulaire de bail, veuillez communiquer directement avec le locateur (p. ex : téléphone, message texte, courriel, etc.). Il sera en mesure d’effectuer les modifications nécessaires et un nouveau formulaire de bail vous sera transmis, le cas échéant.</p>
-      <p><b>Pour accéder au formulaire de bail, veuillez cliquer sur l’hyperlien ci-dessous :</b><br/>
+      <p>Si vous avez des questions, si vous constatez des erreurs ou que des modifications doivent être apportées au formulaire de bail, veuillez communiquer directement avec le locateur (p. ex : téléphone, message texte, courriel, etc.). Il sera en mesure d’effectuer les modifications nécessaires et un nouveau formulaire de bail vous sera transmis, le cas échéant.</p>
+      <p><b>Pour y accéder, veuillez cliquer sur l’hyperlien ci-dessous :</b><br/>
         <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>Compléter et signer le bail de logement</a>
       </p>
-      <p><b>Veuillez noter que l’hyperlien pour signer et conclure le formulaire de bail électronique est valide pour 36 heures à compter de sa transmission aux autres parties</b>. Une fois ce délai écoulé, le formulaire de bail électronique ne vous sera plus accessible.</p>
-      <br>
-      <p>Cordialement,</p>
-      <p>Le Tribunal administratif du logement</p>
+      <p>Un <b>mot de passe est nécessaire</b> pour y accéder. Si le locateur ne vous l’a pas fourni, nous vous invitons à communiquer avec lui.</p>
+      <p>Veuillez noter que l’hyperlien pour <b>signer et finaliser</b> le formulaire de bail électronique est valide pour <strong>36 heures</strong> à compter de sa transmission aux autres parties. Une fois ce délai écoulé, il ne sera plus accessible.</p>
       <br><br>
       <p><i>Veuillez ne pas répondre à ce message, car il a été envoyé automatiquement.</i><p>
 
@@ -206,23 +202,17 @@ gabaritsCourriels:
     nomExpediteur: TAL
     # Permet de spécifier l'adresse de retour
     # L'objet du courriel peut contenir des parties variables
-    objet: Suivi de l'évolution du formulaire de bail électronique
+    objet: Suivi de l’évolution de votre formulaire de bail électronique
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
     corps: |          
       <p>Bonjour,</p>
-      <p><b>Ce courriel concerne le logement situé au :</b><br>
-      {{donneesFormulaire.form.adresseLogement.0.adresseComplete}}</p>      
-      </p>
-      <p>Nous vous confirmons que le formulaire de bail électronique a été transmis aux parties afin qu’elles en prennent connaissance et le signent.</p> 
-      <p>Pour suivre l’évolution de votre formulaire de bail électronique, vous pouvez cliquer sur l’hyperlien ci-dessous :<br/>
+      <p>Ce courriel concerne le logement situé au : <b>{{donneesFormulaire.form.adresseLogement.0.adresseComplete}}</b></p>      
+      <p>Nous vous confirmons que votre formulaire de bail électronique a été transmis aux autres parties afin qu’elles en prennent connaissance et le signent.</p> 
+      <p>Vous pourrez vérifier en tout temps si les autres parties ont complété les sections qui les concernent et signé le formulaire en cliquant sur l’hyperlien ci-dessous :<br/>
         <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>Suivre l'avancement du processus de signature du bail de logement</a>
       </p>
-      <p>Vous pourrez vérifier en tout temps si les parties ont complété les sections qui les concernent et si elles ont signé le formulaire de bail électronique.</p>
-      <p><b>Vous recevrez un courriel lorsque toutes les parties concernées auront complété et signé le formulaire de bail électronique.</b></p>
-      <p><b>Veuillez noter que l’hyperlien pour signer et conclure le formulaire de bail électronique est valide pour 36 heures à compter de sa transmission aux autres parties</b>. Une fois ce délai écoulé, le formulaire de bail électronique ne sera plus accessible et vous devrez le remplir à nouveau.</p>
-      <br>
-      <p>Cordialement,</p>
-      <p>Le Tribunal administratif du logement</p>
+      <p><b>Un avis sera transmis à votre adresse de courriel lorsque toutes les parties auront rempli et signé le formulaire.</b></p>
+      <p>Veuillez noter que l’hyperlien pour <b>signer et finaliser</b> le formulaire de bail électronique est valide pour <strong>36 heures</strong> à compter de sa transmission aux autres parties. Une fois ce délai écoulé, il ne sera plus accessible et vous devrez le remplir à nouveau.</p>
       <br><br>
       <p><i>Veuillez ne pas répondre à ce message, car il a été envoyé automatiquement.</i><p>
         
@@ -239,17 +229,12 @@ gabaritsCourriels:
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
     corps: |
       <p>Bonjour,</p>
-      <p><b>Ce courriel concerne le logement situé au :</b><br>
-      {{donneesFormulaire.form.adresseLogement.0.adresseComplete}}</p>      
-      </p>
-      <p>Nous vous confirmons que les parties ont complété et signé le formulaire de bail électronique.</p>
+      <p>Ce courriel concerne le logement situé au : <b>{{donneesFormulaire.form.adresseLogement.0.adresseComplete}}</b></p>      
+      <p>Nous vous confirmons que les autres parties ont rempli et signé le formulaire de bail électronique.</p>
       <p>Pour le signer à votre tour et conclure le contrat de bail, vous pouvez cliquer sur l’hyperlien ci-dessous :<br/>
         <a href='{{envoyerCourriel.participantCourant.lienReprise}}'>Vérifier et signer le bail de logement</a>
       </p>
-      <p><b>Veuillez noter que l’hyperlien pour signer et conclure le formulaire de bail électronique est valide pour 36 heures à compter de sa transmission aux autres parties</b>. Une fois ce délai écoulé, le formulaire de bail électronique ne sera plus accessible et vous devrez le remplir à nouveau.</p>
-      <br>
-      <p>Cordialement,</p>
-      <p>Le Tribunal administratif du logement</p>
+      <p><b>Veuillez noter que l’hyperlien pour signer et finaliser le formulaire de bail électronique est valide pour 36 heures</b>. Une fois ce délai écoulé, il ne sera plus accessible et vous devrez le remplir à nouveau.</p>
       <br><br>
       <p><i>Veuillez ne pas répondre à ce message, car il a été envoyé automatiquement.</i><p>
 
@@ -266,21 +251,15 @@ gabaritsCourriels:
     # Les données du formulaires peuvent être réutilisées dans le contenu du courriel
     corps: |
       <p>Bonjour,</p>
-      <p><b>Ce courriel concerne le logement situé au :</b><br>
-      {{donneesFormulaire.form.adresseLogement.0.adresseComplete}}</p>      
-      </p>
-      <p>Nous avons le plaisir de vous confirmer que <b>le formulaire de bail électronique est maintenant complété et final</b>. Il est joint au présent courriel ainsi que tous les documents qui l’accompagnent, le cas échéant.</p>
-      <p>Ces documents sont disponibles pour téléchargement et/ou impression pendant <b>90 jours. Une fois ce délai expiré, les documents ne seront plus disponibles.</b></p>
-      <p>Nous vous recommandons d’en garder une copie en lieu sûr pour référence future.</p>
-      <p>Merci pour votre contribution et votre efficacité – votre implication a vraiment facilité l’avancement de cette démarche.</p>
+      <p>Ce courriel concerne le logement situé au : <b>{{donneesFormulaire.form.adresseLogement.0.adresseComplete}}</b></p>            
+      <p><b>Le formulaire de bail électronique est maintenant complété et final</b>. Il est joint au présent courriel ainsi que tous les documents qui l’accompagnent, le cas échéant.</p>
+      <p>Ces documents seront disponibles pour téléchargement ou impression pendant <b>90 jours. Une fois ce délai expiré, les documents ne seront plus disponibles</b>.</p>
+      <p>Veuillez en conserver une copie en lieu sûr pour référence future.</p>
       <p><b>Veuillez trouver ci-dessous le(s) document(s) :</b></p>
       <ul>
         {{#listePJ}}
       <li><a href="{{url}}">{{nomOriginal}}</a></li>
         {{/listePJ}}
       </ul>    
-      <br>
-      <p>Cordialement,</p>
-      <p>Le Tribunal administratif du logement</p>
       <br><br>
       <p><i>Veuillez ne pas répondre à ce message, car il a été envoyé automatiquement.</i><p>
