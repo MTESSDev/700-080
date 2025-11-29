@@ -289,8 +289,8 @@ form:
                 - type: radio
                   name: questionRepresentant
                   label:
-                    fr: Serez-vous représenté par quelqu’un pour la signature du bail?
-                    en: TODO English Serez-vous représenté par quelqu’un pour la signature du bail?
+                    fr: Est-ce que le locateur sera représenté pour la signature du bail?
+                    en: TODO English Est-ce que le locateur sera représenté pour la signature du bail?
                   tooltip:
                     title:
                       fr: Le représentant
@@ -452,8 +452,8 @@ form:
                 - type: radio
                   name: questionRepresentant
                   label:
-                    fr: Serez-vous représenté par quelqu’un pour la signature du bail?
-                    en: TODO English Serez-vous représenté par quelqu’un pour la signature du bail?
+                    fr: Est-ce que le locataire sera représenté pour la signature du bail?
+                    en: TODO English Est-ce que le locataire sera représenté pour la signature du bail?
                   options: yesno
                   tooltip:
                     title:
@@ -2021,8 +2021,8 @@ form:
                   <h3>Résidence privée pour aînés</h3>
                   <p>L’exploitant d’une résidence privée pour personnes âgées doit obtenir un certificat de conformité en vertu de la LSSSS qui définit la dénomination « résidence privée pour aînés ». Seul l’exploitant ayant obtenu une certification ou une attestation temporaire de conformité peut utiliser cette appellation.</p>
                   <p>Pour conserver ce certificat, l’exploitant doit respecter un ensemble de critères sociosanitaires et de normes d’exploitation. Ces derniers sont définis dans le Règlement sur les conditions d’obtention d’un certificat de conformité et les normes d’exploitation d’une résidence privée pour aînés.</p>
-                  <p>Ils concernent notamment les droits des résidents, l’échange d’information entre l’exploitant et ses locataires relativement à leur santé et à leur sécurité, l’alimentation, la médication et l’assurance responsabilité.</p>
-                  <p>Dans certains cas et aux conditions prévues à la LSSSS, le bail peut être résilié ou le locataire peut être relocalisé (art. 346.0.18 et 346.0.20.2 à 346.0.20.4 de la LSSSS).</p>
+                  <p>Ils concernent notamment les droits des résidents, l’échange d’information entre l’exploitant et ses locataires relativement à leur santé et à leur sécurité, l’alimentation, la médication et l’assurance responsabilité.
+                  Dans certains cas et aux conditions prévues à la LSSSS, le bail peut être résilié ou le locataire peut être relocalisé (art. 346.0.18 et 346.0.20.2 à 346.0.20.4 de la LSSSS).</p>
                   
                   <h4>Services destinés à des personnes âgées autonomes</h4>
                   <p>Le locateur d’une résidence privée pour aînés dont les services s’adressent à des personnes âgées autonomes offre des services qui sont compris dans au moins deux des catégories de services suivantes : services de repas, d’aide domestique, de sécurité ou de loisirs (voir ci-après les parties 1 et 2). De plus, l’exploitant d’une telle résidence doit remettre à la personne qui souhaite y résider ou à son représentant, le cas échéant, un document qui doit notamment mentionner qu’il n’offre aucun service infirmier ou d’assistance personnelle.</p>
@@ -2038,19 +2038,22 @@ form:
                     au bail ou à la présente annexe, ou dans un contrat distinct.</p>
                   </div>
                 
+                  <h3>Charte des droits et libertés de la personne</h3>                  
+                  <p>Les droits et obligations découlant du bail doivent s’exercer dans le respect de la Charte qui prescrit, entre autres choses, que toute personne âgée ou handicapée a droit d’être protégée contre toute forme d’exploitation.
+
         # Description détaillée du logement, des accessoires, des dépendances et des services autres que personnels
         - section:
-            fr: Description détaillée du logement, des accessoires, des dépendances et des services autres que personnels
-            en: Detailed description of dwelling, accessories, dependencies and services other than those of a personal nature
+            fr: Partie 1 – Description détaillée du logement, des accessoires, des dépendances et des services autres que personnels
+            en: Part 1 – Detailed description of dwelling, accessories, dependencies and services other than those of a personal nature
           id: descriptionLogementAnnexe6
           components:
             - type: avis
               classes: information
               text:
                 fr: |
-                  <p>Le locateur doit fournir le logement et maintenir l’ensemble des services, des accessoires et des dépendances pour lesquels le locataire s’engage à payer un loyer.</p>
+                  <p>Le locateur doit fournir le logement et maintenir l’ensemble des services, des accessoires et des dépendances pour lesquels le locataire s’engage à payer un loyer. <b>Indiquer ce qui est inclus au bail</b>.</p>
                 en: |
-                  <p>The lessor must provide the dwelling and maintain all the services, accessories and dependencies for which the lessee undertakes to pay rent.</p>
+                  <p>The lessor must provide the dwelling and maintain all the services, accessories and dependencies for which the lessee undertakes to pay rent. <b>Indicate what is included in the lease</b>.</p>
             - type: group
               name: annexe6TypeResidence
               label:
@@ -2095,12 +2098,13 @@ form:
                 en: Description of premises and services
               components:
                 - name: logementOuChambre
-                  type: checkbox
+                  type: radio
                   label:
                     fr: Type de logement
                   options:
                     logement:
-                      fr: Logement avec pièces
+                      fr: Logement
+                      en: Dwelling
                     chambrePrivee:
                       fr: Chambre privée
                       en: Private room
@@ -2109,12 +2113,12 @@ form:
                       en: Shared room
                 - name: nbPiecesLogement
                   type: text
-                  v-if: val('annexe6DescriptionLieux.logementOuChambre').includes('logement')                    
+                  v-if: val('annexe6DescriptionLieux.logementOuChambre') === 'logement'
                   label:
                     fr: Veuillez préciser le nombre de pièces du logement
                   outerClasses: md
                 - name: salleBain
-                  type: checkbox
+                  type: radio
                   label:
                     fr: Salle de bain
                   options:
@@ -2294,14 +2298,15 @@ form:
                   label:
                     fr: Accès à des activités de loisirs
                   help: 
-                    fr: Indiquer les activités de loisirs disponibles.
+                    fr: Veuillez préciser les activités de loisirs, s'il y a lieu.
                   validations:
                     optional: null
 
                 - name: annexe6Animateur
                   type: checkbox
                   label:
-                    fr: Animateur disponible
+                    fr: Animateur
+                    en: Social director
                   validations:
                     optional: null
 
@@ -2374,8 +2379,6 @@ form:
                   v-if: val('annexe6ServicesLoisirs.annexe6EspacesCommunsExterieur').includes('autres')
                   label:
                     fr: Veuillez préciser les autres espaces communs à l'extérieur
-                  validations:
-                    optional: null
                     max: 150
                   additionals:
                     max-caracteres: 150
@@ -2391,7 +2394,7 @@ form:
                   label:
                     fr: Activités religieuses
                   help:
-                    fr: Indiquer les activités religieuses disponibles s'il y a lieu.
+                    fr: Veuillez indiquer les activités religieuses, s'il y a lieu.
                   outerClasses: xxl
                   validations:
                     optional: null
@@ -2411,7 +2414,7 @@ form:
                   label:
                     fr: Services médicaux
                   help:
-                    fr: Indiquer les services médicaux disponibles s'il y a lieu.
+                    fr: Veuillez préciser les services médicaux disponibles, s'il y a lieu.
                   validations:
                     optional: null
                     max: 150
@@ -2419,56 +2422,60 @@ form:
                     max-caracteres: 150
                     hauteur-automatique: true        
 
-                - name: annexe6Infirmiere
+                - name: annexe6soinsInfirmiers
                   type: checkbox
                   label:
-                    fr: Infirmière et infirmier
+                    fr: Soins infirmiers (services offerts par le locateur)
+                    en: Nursing care (services offered by the lessor)
+                  options: 
+                    infirmiere: 
+                      fr: Infirmière
+                      en: Nurse
+                    assistanteInfirmiere: 
+                      fr: Assistante infirmière
+                      en: Nursing assistant
                   validations:
                     optional: null
+
                 - name: annexe6DetailsInfirmiere
                   type: text
-                  v-if: val('annexe6AutresServicesOfferts.annexe6Infirmiere')
+                  v-if: val('annexe6AutresServicesOfferts.annexe6soinsInfirmiers').includes('infirmiere')
                   label:
                     fr: Veuillez préciser les services offerts par l'infirmière/infirmier
                 - name: annexe6HoraireInfirmiere
                   type: text
-                  v-if: val('annexe6AutresServicesOfferts.annexe6Infirmiere')
+                  v-if: val('annexe6AutresServicesOfferts.annexe6soinsInfirmiers').includes('infirmiere')
                   label:
                     fr: Horaire de service de l'infirmière/infirmier
-                - name: annexe6InfirmiereAuxiliaire
-                  type: checkbox
-                  label:
-                    fr: Infirmière auxiliaire et infirmier auxiliaire
-                  validations:
-                    optional: null
                 - name: annexe6DetailsInfirmiereAuxiliaire
                   type: text
-                  v-if: val('annexe6AutresServicesOfferts.annexe6InfirmiereAuxiliaire')
+                  v-if: val('annexe6AutresServicesOfferts.annexe6soinsInfirmiers').includes('assistanteInfirmiere')
                   label:
                     fr: Veuillez préciser les services offerts par l'infirmière auxiliaire/infirmier auxiliaire
                 - name: annexe6HoraireInfirmiereAuxiliaire
                   type: text
-                  v-if: val('annexe6AutresServicesOfferts.annexe6InfirmiereAuxiliaire')
+                  v-if: val('annexe6AutresServicesOfferts.annexe6soinsInfirmiers').includes('assistanteInfirmiere')
                   label:
                     fr: Horaire de service de l'infirmière auxiliaire/infirmier auxiliaire
 
                 - name: annexe6Prepose
                   type: checkbox
                   label:
-                    fr: Préposé (Services offerts par le locateur)
+                    fr: Préposé (services offerts par le locateur)
+                    en: Care attendant (services offered by the lessor)
                   validations:
                     optional: null
                 - name: annexe6DetailsPrepose
                   type: text
                   v-if: val('annexe6AutresServicesOfferts.annexe6Prepose')
                   label:
-                    fr: Veuillez préciser les services offerts par le préposé
+                    fr: Veuillez préciser les services offerts par le préposé, s'il y a lieu.
 
                 - name: annexe6HorairePrepose
                   type: text
                   v-if: val('annexe6AutresServicesOfferts.annexe6Prepose')
                   label:
-                    fr: Horaire de service du préposé
+                    fr: Horaire des services offerts par le préposé
 
                 - name: annexe6Securite
                   type: checkbox
@@ -2529,12 +2536,12 @@ form:
                   type: radio
                   v-if: val('annexe6AutresServicesOfferts.annexe6Transport').includes('autres')
                   label:
-                    fr: Autres services de transport payables à chaque utilisation?
+                    fr: Ces autres services de transport sont-ils payables à chaque utilisation?
                   options: yesno     
                 - name: annexe6AutresServices
                   type: textarea                  
                   label:
-                    fr: Veuillez préciser les autres services offerts s'il y a lieu
+                    fr: Veuillez préciser tout autre service, s’il y a lieu
                   validations:
                     max: 300
                     optional: null
@@ -2543,8 +2550,8 @@ form:
                     hauteur-automatique: true        
         # Partie 2 - Services Personnels
         - section:
-            fr: Services personnels
-            en: Services of a personal nature
+            fr: Partie 2 – Services personnels
+            en: Part 2 – Services of a personal nature
           id: annexe6ServicesPersonnels
           components:
             - type: avis
@@ -2553,15 +2560,15 @@ form:
                   <p>Le locateur a l’obligation d’indiquer le coût attribuable à chacun des services offerts qui se rattachent à la personne même d’un locataire.</p>
                   <p>Ces services sont notamment compris dans les catégories de services suivantes : services de repas, d’aide domestique, de sécurité, de loisirs,
                   d’assistance personnelle ou de soins infirmiers.</p>
-                  <p>Des services personnels additionnels à ceux qui sont inscrits à la présente annexe peuvent être utilisés de manière temporaire ou
+                  <b>Des services personnels additionnels à ceux qui sont inscrits à la présente annexe peuvent être utilisés de manière temporaire ou
                   permanente en considération des besoins du locataire et à sa demande, aux coûts prévus à la liste de l’ensemble des services offerts
                   remise au locataire ou à son représentant, le cas échéant, par l’exploitant d’une résidence privée pour aînés, avant la conclusion du
                   bail. Le locateur s’engage à fournir ces services aux mêmes coûts que ceux qui sont indiqués sur cette liste, et ce, pendant toute la
-                  durée du bail.</p>                
+                  durée du bail.</b>                
 
             - type: zoneEvidence
               text:
-                fr: Veuillez fournir les détails (coût, fréquence, précisions, etc.) propres à chacun de ces services, lorsque applicable.
+                fr: Veuillez fournir les détails (coût, fréquence, précisions, etc.) propres à chacun de ces services, lorsqu'applicable.
                 en: Please provide the specific details (cost, frequency, further information, etc.) for each of these services, if applicable.
 
             # Groupe Services alimentaires
@@ -2574,10 +2581,10 @@ form:
                 # REPAS
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <b>REPAS</b>
-                    en: <b>MEALS</b>
+                    fr: <b>Repas</b>
+                    en: <b>Meals</b>
                 - name: nbRepasQuotidiens
                   type: radio
                   outerClasses: boutons-inline
@@ -2619,7 +2626,7 @@ form:
                       tag: div            
                       classes: utd-text-lg mb-8
                       text:
-                        fr: <b>Types de repas</b>
+                        fr: <b>Types de menus</b>
                         en: <b>Type of meals</b>
 
                     - type: inline
@@ -2646,11 +2653,10 @@ form:
                           validations:
                             optional: null                    
                         - name: precisionMenuDiet
-                          type: text
-                          v-if: val('servicesAlimentaires.coutMenuDiet') > 0
+                          type: text                          
                           label:
-                            fr: Préciser (Menus diététiques)
-                            en: Specify (Special diet meals)
+                            fr: Préciser (menus diététiques)
+                            en: Specify (special diet meals)
                           validations:
                             optional: null
                     
@@ -2719,10 +2725,10 @@ form:
                 # Collations
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <hr><b>COLLATIONS</b>
-                    en: <hr><b>SNACKS</b>
+                    fr: <hr><b>Collations</b>
+                    en: <hr><b>Snacks</b>
                 - name: nbCollations
                   type: radio
                   label:
@@ -2773,7 +2779,7 @@ form:
                   type: montant
                   v-if: val('servicesAlimentaires.lieuRepas').includes('Logement')
                   label:
-                    fr: Coût service au logement
+                    fr: Coût du service au logement ou à la chambre
                     en: Service in dwelling cost
                   validations:
                     optional: null
@@ -2782,8 +2788,8 @@ form:
                 - name: coutMensuelAlimentaire
                   type: montant
                   label:
-                    fr: Coût mensuel total (Services alimentaires)
-                    en: Total monthly cost (Food services)
+                    fr: Coût mensuel total des services alimentaires
+                    en: Total monthly cost of food services
                   validations:
                     optional: null
 
@@ -2796,10 +2802,10 @@ form:
               components:
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <b>AIDE À L'ALIMENTATION</b>
-                    en: <b>EATING ASSISTANCE</b>
+                    fr: <b>Aide à l'alimentation</b>
+                    en: <b>Eating assistance</b>
                 - name: coutAlimentation
                   type: montant
                   label:
@@ -2819,10 +2825,10 @@ form:
 
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <hr><b>AIDE À L'HYGIÈNE QUOTIDIENNE</b>
-                    en: <hr><b>ASSISTANCE WITH DAILY PERSONAL HYGIENE</b>
+                    fr: <hr><b>Aide à l'hygiène quotidienne</b>
+                    en: <hr><b>Assistance with daily personal hygiene</b>
                 - name: coutHygiene
                   type: montant
                   label:
@@ -2852,7 +2858,7 @@ form:
                 - name: coutBain
                   type: montant
                   label:
-                    fr: Coût bain(s)
+                    fr: Coût lié au(x) bain(s)
                     en: Bathing cost
                   v-if: val('assistancePersonnelle.frequenceBain') > 0
                   validations:
@@ -2896,10 +2902,10 @@ form:
 
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <hr><b>MÉDICAMENTS</b>
-                    en: <hr><b>MEDICATION</b>
+                    fr: <hr><b>Médicaments</b>
+                    en: <hr><b>Medication</b>
                 - name: coutDistributionMedicaments
                   type: montant
                   label:
@@ -2948,8 +2954,8 @@ form:
                 - name: coutMensuelAssistancePersonnelle
                   type: montant
                   label:
-                    fr: Coût mensuel total (Services d'assistance personnelle)
-                    en: Total monthly cost (Personal assistance services)
+                    fr: Coût mensuel total des services d’assistance personnelle
+                    en: Total monthly cost of personal assistance services
                   validations:
                     optional: null
 
@@ -2962,14 +2968,14 @@ form:
               components:
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <b>INFIRMIÈRE ET INFIRMIER</b>
-                    en: <b>NURSE</b>
+                    fr: <b>Infirmière et infirmier</b>
+                    en: <b>Nurse</b>
                 - name: coutInfirmier
                   type: montant
                   label:
-                    fr: Coût lié à l'infirmière et l'infirmier
+                    fr: Coût lié à l'infirmière et à l'infirmier
                     en: Nurse cost
                   validations:
                     optional: null
@@ -2977,7 +2983,7 @@ form:
                   type: text
                   #v-if: val('soinsInfirmiers.coutInfirmier')
                   label:
-                    fr: Précisions sur les services de l'infirmière et l'infirmier
+                    fr: Précisions sur les services de l'infirmière et de l'infirmier
                     en: Nurse details
                   outerClasses: xxl
                   validations:
@@ -2993,10 +2999,10 @@ form:
                 # INFIRMIÈRE AUXILIAIRE ET INFIRMIER AUXILIAIRE
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <hr><b>INFIRMIÈRE AUXILIAIRE ET INFIRMIER AUXILIAIRE</b>
-                    en: <hr><b>NURSING ASSISTANT</b>
+                    fr: <hr><b>Infirmière auxiliaire et infirmier auxiliaire</b>
+                    en: <hr><b>Nursing assistant</b>
                 - name: coutInfirmierAuxiliaire
                   type: montant
                   label:
@@ -3024,10 +3030,10 @@ form:
                 # PRÉPOSÉ
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <hr><b>PRÉPOSÉ</b>
-                    en: <hr><b>CARE ATTENDANT</b>
+                    fr: <hr><b>Préposé</b>
+                    en: <hr><b>Care attendant</b>
                 - name: coutPrepose
                   type: montant
                   label:
@@ -3039,7 +3045,7 @@ form:
                   type: text
                   #v-if: val('soinsInfirmiers.coutPrepose')
                   label:
-                    fr: Précisions sur les services de préposé
+                    fr: Précisions sur les services du préposé
                     en: Care attendant details
                   outerClasses: xxl                    
                   validations:
@@ -3057,8 +3063,8 @@ form:
                 - name: coutMensuelSoins
                   type: montant
                   label:
-                    fr: Coût mensuel total (Soins infirmiers)
-                    en: Total monthly cost (Nursing)
+                    fr: Coût mensuel total des soins infirmiers
+                    en: Total monthly cost of nursing
                   validations:
                     optional: null
             
@@ -3071,10 +3077,10 @@ form:
               components:
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <b>BUANDERIE - LINGE DE MAISON</b>
-                    en: <b>LAUNDRY - HOUSEHOLD LINEN</b>
+                    fr: <b>Buanderie - linge de maison</b>
+                    en: <b>Laundry - household linen</b>
 
                 - name: frequenceBuanderieLingeMaison
                   type: radio
@@ -3125,10 +3131,10 @@ form:
 
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <hr><b>BUANDERIE - VÊTEMENTS</b>
-                    en: <hr><b>LAUNDRY - CLOTHING</b>
+                    fr: <hr><b>Buanderie - vêtements</b>
+                    en: <hr><b>Laundry - clothing</b>
                 - name: frequenceBuanderieVetements
                   type: radio
                   label:
@@ -3176,10 +3182,10 @@ form:
                     optional: null
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <hr><b>ENTRETIEN MÉNAGER</b>
-                    en: <hr><b>HOUSEKEEPING</b>
+                    fr: <hr><b>Entretien ménager</b>
+                    en: <hr><b>Housekeeping</b>
                 - name: frequenceMenage
                   type: radio
                   label:
@@ -3230,7 +3236,7 @@ form:
                   type: text
                   #v-if: val('aideDomestique.coutMenageLogement')
                   label:
-                    fr: Précisions sur le ménage du logement ou de la chambre
+                    fr: Précisions sur l’entretien ménagé du logement ou de la chambre
                     en: Cleaning of dwelling or room details
                   outerClasses: xxl
                   v-if: val('aideDomestique.frequenceMenage') === 'Semaine' || val('aideDomestique.frequenceMenage') === 'Mois'                                        
@@ -3241,8 +3247,8 @@ form:
                 - name: coutMensuelDomestique
                   type: montant
                   label:
-                    fr: Coût mensuel total (Services d'aide domestique)
-                    en: Total monthly cost (Domestic help services)
+                    fr: Coût mensuel total des services d'aide domestique
+                    en: Total monthly cost of domestic help services
                   validations:
                     optional: null
 
@@ -3255,10 +3261,10 @@ form:
                 # AIDE AU DÉPLACEMENT
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <b>AIDE AU DÉPLACEMENT</b>
-                    en: <b>HELP WITH GETTING AROUND</b>
+                    fr: <b>Aide au déplacement</b>
+                    en: <b>Help with getting around</b>
                 - name: coutDeplacement
                   type: montant
                   label:
@@ -3278,30 +3284,30 @@ form:
                 # SERVICE D'ACCOMPAGNEMENT
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <hr><b>SERVICE D'ACCOMPAGNEMENT</b>
-                    en: <hr><b>ESCORT SERVICE</b>
+                    fr: <hr><b>Service d'accompagnement</b>
+                    en: <hr><b>Escort service</b>
                 - name: coutAccompagnementMedical
                   type: montant
                   label:
-                    fr: Visites médicales
-                    en: Medical appointments
+                    fr: Coût lié à l’accompagnement aux visites médicales
+                    en: Medical appointments cost
                   validations:
                     optional: null
                 - name: coutCourses
                   type: montant
                   label:
-                    fr: Courses
-                    en: Errands
+                    fr: Coût lié à l’accompagnement aux courses
+                    en: Errands cost
                   validations:
                     optional: null
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <hr><b>DISPOSITIF D’ALERTE DE SÉCURITÉ (risque d’errance)</b>
-                    en: <hr><b>SECURITY DEVICE (for persons at risk of wandering)</b>
+                    fr: <hr><b>Dispositif d'alerte de sécurité (risque d’errance)</b>
+                    en: <hr><b>Security device (for persons at risk of wandering)</b>
                 - name: coutDispositifAlerte
                   type: montant
                   label:
@@ -3321,24 +3327,24 @@ form:
 
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <hr><b>ASSISTANCE POUR REMPLIR LES FORMULAIRES DE CRÉDIT D’IMPÔT</b>
-                    en: <hr><b>ASSISTANCE FOR COMPLETING FORMS RELATED TO THE TAX CREDIT</b>
+                    fr: <hr><b>Assistance pour remplir les formulaires de crédit d'impôt</b>
+                    en: <hr><b>Assistance for completing forms related to the tax credit</b>
 
                 - name: coutImpot
                   type: montant
                   label:
-                    fr: Assistance pour remplir les formulaires de crédit d'impôt pour maintien à domicile
-                    en: Assistance for completing tax credit forms for home-support services for seniors
+                    fr: Coût lié à l'assistance pour remplir les formulaires de crédit d'impôt pour maintien à domicile
+                    en: Assistance for completing tax credit forms for home-support services for seniors cost
                   validations:
                     optional: null
                 - type: dynamic            
                   tag: div            
-                  classes: mb-24
+                  classes: mb-24 utd-text-lg
                   text:
-                    fr: <hr><b>AUTRES</b>
-                    en: <hr><b>OTHER</b>
+                    fr: <hr><b>Autres</b>
+                    en: <hr><b>Other</b>
 
                 - name: autresServicesOffertsDetails
                   type: textarea
@@ -3362,8 +3368,8 @@ form:
                 - name: coutMensuelAutresServices
                   type: montant
                   label:
-                    fr: Coût mensuel total (autres services offerts)
-                    en: Total monthly cost (ather services offered)
+                    fr: Coût mensuel total des autres services offerts
+                    en: Total monthly cost of other services offered
                   validations:
                     optional: null
 
@@ -3383,8 +3389,8 @@ form:
                 - name: montantLoyerBase
                   type: montant
                   label:
-                    fr: Loyer de base
-                    en: Basic rent
+                    fr: Coût mensuel du loyer de base
+                    en: Monthly basic rent
                   help:
                     fr: Voir le formulaire de bail obligatoire
                     en: See mandatory lease form
@@ -3394,8 +3400,8 @@ form:
                 - name: montantLoyerTotal
                   type: montant
                   label:
-                    fr: Loyer total
-                    en: Total rent
+                    fr: Coût mensuel du loyer total
+                    en: Monthly total rent
                   validations:
                     optional: null
 
