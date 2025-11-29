@@ -843,6 +843,21 @@ form:
                 <p>If such by-laws exist, the lessor must give a copy of them to the lessee before entering into the lease so that the by-laws form part of the lease (art. <a href="https://www.legisquebec.gouv.qc.ca/en/document/cs/ccq-1991#se:1894" target="_blank">1894</a>1894 C.C.Q.).</p>
                 <p>The by-laws may not contradict the lease or violate the law.</p>
                           
+          - name: possedeRemiseReglementImmeuble
+            type: radio
+            #v-if: val('logementCoproprieteDivise') === 'false'
+            options: yesno
+            label: 
+              fr: Un exemplaire du règlement de l’immeuble a-t-il été remis au locataire avant la conclusion du bail?  
+              en: TODO english - Un exemplaire du règlement de l’immeuble a-t-il été remis au locataire avant la conclusion du bail? 
+          - name: dateRemiseReglementImmeuble
+            type: date
+            #v-if: val('logementCoproprieteDivise') === 'false' && val('possedeRemiseReglementImmeuble') === 'true'
+            v-if: val('possedeRemiseReglementImmeuble') === 'true'
+            label:
+              fr: Veuillez indiquer la date de remise du règlement de l’immeuble
+              en: TODO english - Veuillez indiquer la date de remise du règlement de l’immeuble
+
           - name: possedeReglementImmeubleJointBail
             type: radio
             options: yesno
@@ -1022,6 +1037,92 @@ form:
               v-if: val('bailPossedeAnnexes') === 'true'
               validations:
                 optional: null
+
+    # G - Solidarité et caution
+    - sectionGroup:
+        fr: G - Solidarité et caution
+      classes: icone register
+      filtreEtapes: 
+        - initial:         
+      sections:
+        # Engagement solidaire
+        - section:
+            fr: Engagement solidaire
+          id: engagementSolidaire
+          components:
+            - type: avis
+              text:
+                fr: |
+                  <p>Si le bail contient une clause prévoyant la solidarité, chaque colocataire peut être poursuivi individuellement pour la totalité de la somme réclamée.</p>
+                  <p>Exceptionnellement, la solidarité existe automatiquement à l’égard des colocataires mariés.</p>
+            - name: estLocatairesEngagementSolidaire
+              type: radio
+              options: yesno
+              label:
+                fr: Les locataires s’engagent-ils solidairement?
+                en: TODO english - Les locataires s’engagent-ils solidairement?
+              help:
+                fr: Réf. mentions 16 et 17.
+        # Autres signataires
+        - section:
+            fr: Autres signataires
+          id: autresSignataires
+          components:
+            - name: possedeAutresSignataires
+              type: radio
+              options: yesno
+              label:
+                fr: Une autre personne, telle une caution, signe-t-elle le bail?
+                en: TODO english - Une autre personne, telle une caution, signe-t-elle le bail?
+              tooltip:
+                title:
+                  fr: La caution
+                text:
+                  fr: La caution est une personne qui s’engage envers le locateur à remplir une obligation contractée par le locataire dans l’éventualité où celui-ci omettrait d’y satisfaire.
+            - type: repeatableGroup
+              repeatable: true
+              limit: 2
+              instanceLabel:
+                fr: Autre signataire
+              addLabel:
+                fr: Ajouter un signataire
+              removeLabel:
+                fr: Supprimer le signataire
+              name: autresSignataires
+              label:
+                fr: Autre(s) signataires(s)
+              v-if: val('possedeAutresSignataires') === 'true'                          
+              components:
+                - name: nom
+                  type: text
+                  label: 
+                    fr: Nom
+                    en: Name
+                - name: qualite
+                  type: text
+                  label: 
+                    fr: En quelle qualité cette personne doit signer le bail? 
+                  help:
+                    fr: P. ex. autre locataire, caution, etc. (mentions 16 et 17)
+                - type: adresse
+                  name: adresse
+                  label:
+                    fr: Adresse
+                    en: Address
+                  help: 
+                    fr: Veuillez inscrire l'adresse actuelle du signataire.
+                    en: TODO english
+                - type: courrielWorkflow
+                  role: autreSignataire
+                  motDePasse: val('motPasseWF')
+                  name: courriel
+                  label: 
+                    fr: Adresse de courriel
+                    en: Email address
+                  help:
+                    fr: C'est à cette adresse qu'un lien sera envoyé pour compléter et signer le bail.
+                    en: TODO (EN) C'est à cette adresse qu'un lien sera envoyé pour compléter et signer le bail.
+
 
     # Annexe 6 - Services offerts au locataire par le locateur
     - sectionGroup:
