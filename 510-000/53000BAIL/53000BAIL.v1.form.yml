@@ -2429,10 +2429,10 @@ form:
                     en: Nursing care (services offered by the lessor)
                   options: 
                     infirmiere: 
-                      fr: Infirmière
+                      fr: Infirmière et infirmier
                       en: Nurse
-                    assistanteInfirmiere: 
-                      fr: Assistante infirmière
+                    infirmiereAuxiliaire: 
+                      fr: Infirmière auxiliaire et infirmier auxiliaire
                       en: Nursing assistant
                   validations:
                     optional: null
@@ -2449,12 +2449,12 @@ form:
                     fr: Horaire de service de l'infirmière/infirmier
                 - name: annexe6DetailsInfirmiereAuxiliaire
                   type: text
-                  v-if: val('annexe6AutresServicesOfferts.annexe6soinsInfirmiers').includes('assistanteInfirmiere')
+                  v-if: val('annexe6AutresServicesOfferts.annexe6soinsInfirmiers').includes('infirmiereAuxiliaire')
                   label:
                     fr: Veuillez préciser les services offerts par l'infirmière auxiliaire/infirmier auxiliaire
                 - name: annexe6HoraireInfirmiereAuxiliaire
                   type: text
-                  v-if: val('annexe6AutresServicesOfferts.annexe6soinsInfirmiers').includes('assistanteInfirmiere')
+                  v-if: val('annexe6AutresServicesOfferts.annexe6soinsInfirmiers').includes('infirmiereAuxiliaire')
                   label:
                     fr: Horaire de service de l'infirmière auxiliaire/infirmier auxiliaire
 
@@ -2626,7 +2626,7 @@ form:
                       tag: div            
                       classes: utd-text-lg mb-8
                       text:
-                        fr: <b>Types de menus</b>
+                        fr: <b>Type de menus</b>
                         en: <b>Type of meals</b>
 
                     - type: inline
@@ -2655,8 +2655,8 @@ form:
                         - name: precisionMenuDiet
                           type: text                          
                           label:
-                            fr: Préciser (menus diététiques)
-                            en: Specify (special diet meals)
+                            fr: Précisions sur les menus diététiques
+                            en: Special diet meals details
                           validations:
                             optional: null
                     
