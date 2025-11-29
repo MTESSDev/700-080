@@ -238,9 +238,8 @@ form:
                     <p>Le terme « locateur » que l’on trouve au Code civil du Québec renvoie généralement au propriétaire de l’immeuble.</p>
                 en: <p>The names indicated in the lease must be those that the lessor is legally authorized to use.</p>
                     <p>The term “lessor” in the Civil Code of Québec generally refers to the owner of the immovable.</p>
-            - type: repeatableGroup
-              repeatable: true
-              limit: 1
+            - type: group
+              #limit: 1
               instanceLabel:
                 fr: Locateur
                 en: Lessor
@@ -2282,3 +2281,4 @@ form:
                   <p>Le formulaire de bail électronique est maintenant rempli et signé par toutes les parties. <b>Afin de finaliser la transaction, vous devez procéder au paiement de 2,99 $ (taxes en sus)</b>.</p>
                   <p>Une fois le paiement effectué, <b>vous recevrez votre formulaire de bail électronique final par courriel ainsi que tous les documents joints</b> (p. ex. règlement de l’immeuble, contrat de cautionnement, etc.).</p>
                   <p>Ces documents seront au format PDF et disponibles pour téléchargement ou impression.</p>                  
+
