@@ -798,27 +798,42 @@ bind:
       - signatureLocataire2.0.Initiales
       - signatureLocataire4.0.Initiales
       formule: '{signatureLocataire2.0.Initiales} {signatureLocataire4.0.Initiales}'
-    Nom_du_conjoint1:
+    Nom_du_conjoint-1:
       champs: [locataire2nomConjoint]
-    Nom_du_conjoint2:
+    Nom_du_conjoint-2:
       champs: [locataire3nomConjoint]
-    Nom_du_conjoint3:
+    Nom_du_conjoint-3:
       champs: [locataire4nomConjoint]
     Signature_locataire1:
       champs: [signatureLocataire2.0.NomComplet]
     Signature_locataire2:
       champs: [signatureLocataire3.0.NomComplet]
-    Signature_locataire3:
-      champs: [signatureLocataire4.0.NomComplet]
-    Date_signature_locataire1:
+    Date_signature_locataire-1:
       champs: [signatureLocataire2.0.Date]
       formule: '{signatureLocataire2.0.Date:dd          MM          yyyy}'
-    Date_signature_locataire2:
+    Date_signature_locataire-2:
       champs: [signatureLocataire3.0.Date]
       formule: '{signatureLocataire3.0.Date:dd          MM          yyyy}'
-    Date_signature_locataire3:
+    Signature_conjoint1:
+      champs: [signatureLocataire2.0.NomComplet]
+    Signature_conjoint2:
+      champs: [signatureLocataire3.0.NomComplet]
+    Signature_conjoint3:
+      champs: [signatureLocataire4.0.NomComplet]
+    Date_signature_conjoint1:
+      champs: [signatureLocataire2.0.Date]
+    Date_signature_conjoint2:
+      champs: [signatureLocataire3.0.Date]
+    Date_signature_conjoint3:
       champs: [signatureLocataire4.0.Date]
-      formule: '{signatureLocataire4.0.Date:dd          MM          yyyy}'
+    Signature_locateur1:
+      champs: [signatureLocateur2.0.NomComplet]
+    Signature_locateur2:
+      champs: [signatureLocateur3.0.NomComplet]
+    Date_signature_locateur-1:
+      champs: [signatureLocateur2.0.Date]
+    Date_signature_locateur-2:
+      champs: [signatureLocateur3.0.Date]
   annexe6:
     Personne_autonome_oui:
       champs: [annexe6TypeResidence.0.servicesDestinesA==personnesAutonomes]
