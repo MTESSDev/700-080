@@ -602,8 +602,10 @@ bind:
     Solidarite_non:
       champs: [estLocatairesEngagementSolidaire==false]
     Date_signature_conjoint:
-      champs: [signatureLocataire1.0.Date]
-      formule: '{signatureLocataire1.0.Date:dd          MM          yyyy}'
+      champs:
+      - locataire1logementResidenceFamiliale
+      - signatureLocataire1.0.Date
+      formule: '{locataire1logementResidenceFamiliale:include(true):{signatureLocataire1.0.Date:dd          MM          yyyy}}'
     Date_signature_locateur1:
       champs: [signatureLocateurPrincipal.0.Date]
       formule: '{signatureLocateurPrincipal.0.Date:dd          MM          yyyy}'
@@ -635,7 +637,10 @@ bind:
       champs: [signatureLocateur1.0.Date]
       formule: '{signatureLocateur1.0.Date:dd          MM          yyyy}'
     Signature_conjoint:
-      champs: [signatureLocataire1.0.NomComplet]
+      champs:
+      - locataire1logementResidenceFamiliale
+      - signatureLocataire1.0.NomComplet
+      formule: '{locataire1logementResidenceFamiliale:include(true):{signatureLocataire1.0.NomComplet}}'
     Signature_locataire1:
       champs: [signatureLocataire1.0.NomComplet]
     ClauseG_Signature_locataire1:
