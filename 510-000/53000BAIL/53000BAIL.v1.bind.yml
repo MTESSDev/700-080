@@ -1032,13 +1032,13 @@ bind:
     Services_medicaux_preciser1:
       champs: [annexe6AutresServicesOfferts.0.annexe6ServicesMedicaux]
     Infirmier_oui:
-      champs: [annexe6AutresServicesOfferts.0.annexe6Infirmiere]
+      champs: [annexe6AutresServicesOfferts.0.annexe6soinsInfirmiers==infirmiere]
     Infirmier_preciser:
       champs: [annexe6AutresServicesOfferts.0.annexe6DetailsInfirmiere]
     Infirmier_horaire:
       champs: [annexe6AutresServicesOfferts.0.annexe6HoraireInfirmiere]
     Infirmier_auxiliaire_oui:
-      champs: [annexe6AutresServicesOfferts.0.annexe6InfirmiereAuxiliaire]
+      champs: [annexe6AutresServicesOfferts.0.annexe6soinsInfirmiers==infirmiereAuxiliaire]
     Infirmier_auxiliaire_preciser:
       champs: [annexe6AutresServicesOfferts.0.annexe6DetailsInfirmiereAuxiliaire]
     Infirmier_auxiliaire_horaire:
@@ -1197,3 +1197,28 @@ bind:
       champs: [totaux.0.montantLoyerBase]
     Loyer_total:
       champs: [totaux.0.montantLoyerTotal]
+    Signature_locateur1:
+      champs: [signatureLocateurPrincipal.0.NomComplet]
+    Signature_locateur2:
+      champs: [signatureLocateur1.0.NomComplet]
+    Signature_locataire1:
+      champs: [signatureLocataire1.0.NomComplet]
+    Signature_locataire2:
+      champs: [signatureLocataire2.0.NomComplet]
+    Date_signature_locateur_1:
+      champs: [signatureLocateurPrincipal.0.Date]
+      formule: '{signatureLocateurPrincipal.0.Date:dd          MM          yyyy}'
+    Date_signature_locateur_2:
+      champs: [signatureLocateur1.0.Date]
+      formule: '{signatureLocateur1.0.Date:dd          MM          yyyy}'
+    Date_signature_locataire_1:
+      champs: [signatureLocataire1.0.Date]
+      formule: '{signatureLocataire1.0.Date:dd          MM          yyyy}'
+    Date_signature_locataire_2:
+      champs: [signatureLocataire2.0.Date]
+      formule: '{signatureLocataire2.0.Date:dd          MM          yyyy}'
+    Signature_autre:
+      champs: [signatureAutreSignataire1.0.NomComplet]
+    Date_signature_autres1:
+      champs: [signatureAutreSignataire1.0.Date]
+      formule: '{signatureAutreSignataire1.0.Date:dd          MM          yyyy}'
